@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="vilenius">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/vilenius.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
