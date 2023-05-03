@@ -1,3 +1,5 @@
+package Extra;
+
 /**
  * This is the driver class for the entire Heroes versus Monsters game.
  *

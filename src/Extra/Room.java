@@ -1,4 +1,4 @@
-/*
+package Extra;/*
  * Room.java
  *
  * TCSS 143 - Spring 2021

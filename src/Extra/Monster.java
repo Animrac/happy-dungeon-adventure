@@ -1,4 +1,4 @@
-/*
+package Extra;/*
  * Monster.java
  *
  * TCSS 143 - Spring 2021
@@ -126,7 +126,7 @@ public abstract class Monster extends DungeonCharacter {
       * @return healPoints
       */
      private int generateHealPoints() {
-    	 int healPoints = DungeonCharacter.generateRangedValue(myMinHeal, myMaxHeal);
+    	 int healPoints = generateRangedValue(myMinHeal, myMaxHeal);
     	 if (healPoints + getHitPoints() > myOriginalHitPoints) {
     		 healPoints = myOriginalHitPoints - getHitPoints();
     	 }
