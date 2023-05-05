@@ -1,30 +1,15 @@
 package src.Model;
-
-package Extra;/*
- * Hero.java
- *
- * TCSS 143 - Spring 2021
- * Assignment 5
- */
-
 import java.util.*;
 
 /**
- * This program creates an outline for a hero character that differs from a DungeonCharacter
+ * This program creates an outline for a hero character that differs from Adventurer
  * as it has the ability to use a special attack.
  *
- * Also keeps track of the characters location in the maze.
- *
- * Code from class.
- *
  * @author Anastasia Vilenius
- * @version 06/10/21
+ * @version 05/05/23
  */
 public abstract class Hero extends Adventurer {
-    /**
-     * Indicates the odds of a hero being able to block an attack.
-     */
-    private double myBlockOdds;
+
     /**
      * Indicates whether a hero chose to run away.
      */
@@ -33,21 +18,6 @@ public abstract class Hero extends Adventurer {
      * Indicates the odds of a hero being able to use their special skill in an attack.
      */
     private double mySpecialSkillOdds;
-
-    /**
-     * Indicates current X position of hero.
-     */
-    private int curX;
-
-    /**
-     * Indicates current Y position of hero.
-     */
-    private int curY;
-
-//    /**
-//     * Indicates position of current room.
-//     */
-//    private Room curPos;
 
     /**
      * Stores items that hero has picked up, such as healing potions, etc.
@@ -97,18 +67,6 @@ public abstract class Hero extends Adventurer {
     }
 
     /**
-     * Checks whether the odds of blocking are between 0 and 100.
-     *
-     * @param theBlockOdds
-     */
-    private final void setBlockOdds(final double theBlockOdds) {
-        if(theBlockOdds < 0 || theBlockOdds > 100) {
-            throw new IllegalArgumentException("value passed to setBlockOdds not between 0 and 100");
-        }
-        myBlockOdds = theBlockOdds;
-    }
-
-    /**
      *
      * @param theRunAway
      */
@@ -126,22 +84,6 @@ public abstract class Hero extends Adventurer {
 
     /**
      *
-     * @return curX
-     */
-    public int getCurX() {
-        return curX;
-    }
-
-    /**
-     *
-     * @return curY;
-     */
-    public int getCurY() {
-        return curY;
-    }
-
-    /**
-     *
      * @return myInventory
      */
     public List<String> getInventory() {
@@ -149,12 +91,12 @@ public abstract class Hero extends Adventurer {
     }
 
     /**
-     * Overrides the attack method in DungeonCharacter class and allows user to choose hero attack.
+     * Overrides the attack method in Adventurer class and allows user to choose hero attack.
      *
      * @param theOpponent
      */
     @Override
-    public void attack(final DungeonCharacter theOpponent) {
+    public void attack(final Adventurer theOpponent) {
         int attackChoice;
         int numberOfAttacks = theOpponent.getAttackSpeed();
 
@@ -163,8 +105,8 @@ public abstract class Hero extends Adventurer {
         }
 
         while (numberOfAttacks > 0 && theOpponent.alive() && !runAway()) {
-            System.out.println(getName() + " hit points: " + getHitPoints());
-            System.out.println(theOpponent.getName() + " hit points: " + theOpponent.getHitPoints());
+            System.out.println(getName() + " hit points: " + getHealth());
+            System.out.println(theOpponent.getName() + " hit points: " + theOpponent.getHealth());
 
             attackChoice = getChoice();
             if(attackChoice == 1) {
@@ -186,23 +128,23 @@ public abstract class Hero extends Adventurer {
      *
      * @param theOpponent
      */
-    protected void specialAttack(final DungeonCharacter theOpponent) {}
+    protected void specialAttack(final Adventurer theOpponent) {}
 
     /**
-     * Overrides subtractHitPoints method in DungeonCharacter class by allowing hero a chance to block
+     * Overrides subtractHitPoints method in Adventure class by allowing hero a chance to block
      * an attack from a monster.
      *
      * @param theAmount
      */
-    @Override
-    protected void subtractHitPoints(final int theAmount) {
-        if (MY_RANDOM.nextInt(101) <= myBlockOdds) {
-            System.out.println(getName() + " blocked the attack!");
-        }
-        else {
-            super.subtractHitPoints(theAmount);
-        }
-    }
+//    @Override
+//    protected void subtractHitPoints(final int theAmount) {
+//        if (MY_RANDOM.nextInt(101) <= myBlockOdds) {
+//            System.out.println(getName() + " blocked the attack!");
+//        }
+//        else {
+//            super.subtractHitPoints(theAmount);
+//        }
+//    }
 
     /**
      * Prompts user to choose whether to attack normally, use special attack, or to run away.
@@ -223,7 +165,6 @@ public abstract class Hero extends Adventurer {
         input.nextLine();
 
         return choice;
-
     }
 }
 
