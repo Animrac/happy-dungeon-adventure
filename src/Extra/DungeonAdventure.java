@@ -1,18 +1,10 @@
-/*
- * DungeonAdventure.java
- *
- * TCSS 143 - Spring 2021
- * Assignment 5
- */
+package src.Extra;
 
 /**
  * This is the driver class for the entire Heroes versus Monsters game.
- * 
- * Majority of my user interaction takes place in the HeroesVersusMonster class,
- * so it made more sense to me to keep it there and execute it here.
  *
- * @author Anastasia Vilenius
- * @version 06/10/21
+ * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
+ * @version 04/24/23
  */
 public class DungeonAdventure {
 	
@@ -24,6 +16,9 @@ public class DungeonAdventure {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
+		//should probably research Java GUI stuff
+
 		displayIntro();
 		HeroesVersusMonsters.gamePlay();
 	}

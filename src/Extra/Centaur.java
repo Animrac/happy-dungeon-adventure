@@ -1,4 +1,4 @@
-/*
+package Extra;/*
  * Centaur.java
  *
  * TCSS 143 - Spring 2021

@@ -1,4 +1,4 @@
-/*
+package Extra;/*
  * Minotaur.java
  *
  * TCSS 143 - Spring 2021

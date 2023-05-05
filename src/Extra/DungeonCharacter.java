@@ -1,3 +1,5 @@
+package src.Extra;
+
 /*
  * DungeonCharacter.java
  *
