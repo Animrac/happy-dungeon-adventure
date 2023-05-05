@@ -1,4 +1,6 @@
-package Extra;/*
+package src.Extra;
+
+/*
  * DungeonCharacter.java
  *
  * TCSS 143 - Spring 2021
