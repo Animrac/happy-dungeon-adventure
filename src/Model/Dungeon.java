@@ -185,7 +185,8 @@ public class Dungeon {
 
         }
 
-        if (theTouchPillars >= 4 && theTouchExit) {
+        if (theTouchPillars == 4 && theTouchExit) {
+            System.out.println(theTouchPillars);
             itTraversed = true;
         }
 
