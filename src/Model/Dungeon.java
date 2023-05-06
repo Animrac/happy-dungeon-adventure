@@ -20,8 +20,8 @@ public class Dungeon {
                 }
             }
 
-//            isTraversable(tempDungeon, startRow, startCol, 0, false);
-            isTraversable(tempDungeon, startRow, startCol);
+            isTraversable(tempDungeon, startRow, startCol, 0, false);
+//            isTraversable(tempDungeon, startRow, startCol);
 
         }
 
@@ -122,148 +122,148 @@ public class Dungeon {
 
     /* My original, less pretty code for isTraversable: */
 
-//    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol,
-//                                         int theTouchPillars, boolean theTouchExit) {
-//
-//        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X'){ //Look West.
-//
-//            if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
-//                theTouchPillars++;
-//            }
-//            else if (theDungeon[theCurrRow - 1][theCurrCol] == 'E') {
-//                theTouchExit = true;
-//            }
-//
-//            theDungeon[theCurrRow - 1][theCurrCol] = 'X'; //We don't need to look at it anymore.
-//
-//            isTraversable(theDungeon, theCurrRow - 1, theCurrCol, theTouchPillars, theTouchExit);
-//
-//        }
-//
-//        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X'){ //Look North.
-//
-//            if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
-//                theTouchPillars++;
-//            }
-//            else if (theDungeon[theCurrRow][theCurrCol - 1] == 'E') {
-//                theTouchExit = true;
-//            }
-//
-//            theDungeon[theCurrRow][theCurrCol - 1] = 'X'; //We don't need to look at it anymore.
-//
-//            isTraversable(theDungeon, theCurrRow, theCurrCol - 1, theTouchPillars, theTouchExit);
-//
-//        }
-//
-//        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X'){ //Look East.
-//
-//            if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
-//                theTouchPillars++;
-//            }
-//            else if (theDungeon[theCurrRow + 1][theCurrCol] == 'E') {
-//                theTouchExit = true;
-//            }
-//
-//            theDungeon[theCurrRow + 1][theCurrCol] = 'X'; //We don't need to look at it anymore.
-//
-//            isTraversable(theDungeon, theCurrRow + 1, theCurrCol, theTouchPillars, theTouchExit);
-//
-//        }
-//
-//        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X'){ //Look South.
-//
-//            if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
-//                theTouchPillars++;
-//            }
-//            else if (theDungeon[theCurrRow][theCurrCol + 1] == 'E') {
-//                theTouchExit = true;
-//            }
-//
-//            theDungeon[theCurrRow][theCurrCol + 1] = 'X'; //We don't need to look at it anymore.
-//
-//            isTraversable(theDungeon, theCurrRow, theCurrCol + 1, theTouchPillars, theTouchExit);
-//
-//        }
-//
-//        if (theTouchPillars >= 4 && theTouchExit) {
-//            itTraversed = true;
-//        }
-//
-//    }
+    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol,
+                                         int theTouchPillars, boolean theTouchExit) {
 
-    /* ChatGPT with some cleanup for isTraversable: */
+        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X'){ //Look West.
 
-    private static int theTouchPillars = 0;
-    private static boolean theTouchExit = false;
+            if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
+                theTouchPillars++;
+            }
+            else if (theDungeon[theCurrRow - 1][theCurrCol] == 'E') {
+                theTouchExit = true;
+            }
 
-    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-        traverseWest(theDungeon, theCurrRow, theCurrCol);
-        traverseNorth(theDungeon, theCurrRow, theCurrCol);
-        traverseEast(theDungeon, theCurrRow, theCurrCol);
-        traverseSouth(theDungeon, theCurrRow, theCurrCol);
+            theDungeon[theCurrRow - 1][theCurrCol] = 'X'; //We don't need to look at it anymore.
 
-        //TODO: There is a bug here. We might touch the SAME pillar more than once.
+            isTraversable(theDungeon, theCurrRow - 1, theCurrCol, theTouchPillars, theTouchExit);
+
+        }
+
+        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X'){ //Look North.
+
+            if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
+                theTouchPillars++;
+            }
+            else if (theDungeon[theCurrRow][theCurrCol - 1] == 'E') {
+                theTouchExit = true;
+            }
+
+            theDungeon[theCurrRow][theCurrCol - 1] = 'X'; //We don't need to look at it anymore.
+
+            isTraversable(theDungeon, theCurrRow, theCurrCol - 1, theTouchPillars, theTouchExit);
+
+        }
+
+        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X'){ //Look East.
+
+            if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
+                theTouchPillars++;
+            }
+            else if (theDungeon[theCurrRow + 1][theCurrCol] == 'E') {
+                theTouchExit = true;
+            }
+
+            theDungeon[theCurrRow + 1][theCurrCol] = 'X'; //We don't need to look at it anymore.
+
+            isTraversable(theDungeon, theCurrRow + 1, theCurrCol, theTouchPillars, theTouchExit);
+
+        }
+
+        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X'){ //Look South.
+
+            if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
+                theTouchPillars++;
+            }
+            else if (theDungeon[theCurrRow][theCurrCol + 1] == 'E') {
+                theTouchExit = true;
+            }
+
+            theDungeon[theCurrRow][theCurrCol + 1] = 'X'; //We don't need to look at it anymore.
+
+            isTraversable(theDungeon, theCurrRow, theCurrCol + 1, theTouchPillars, theTouchExit);
+
+        }
+
         if (theTouchPillars >= 4 && theTouchExit) {
             itTraversed = true;
         }
 
     }
 
-    private static void traverseWest(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X') {
+    /* ChatGPT with some cleanup for isTraversable, but buggy: */
 
-            if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
-                theTouchPillars++;
-            } else if (theDungeon[theCurrRow - 1][theCurrCol] == 'E') {
-                theTouchExit = true;
-            }
-
-            theDungeon[theCurrRow - 1][theCurrCol] = 'X';
-            isTraversable(theDungeon, theCurrRow - 1, theCurrCol);
-        }
-    }
-
-    private static void traverseNorth(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X') {
-
-            if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
-                theTouchPillars++;
-            } else if (theDungeon[theCurrRow][theCurrCol - 1] == 'E') {
-                theTouchExit = true;
-            }
-
-            theDungeon[theCurrRow][theCurrCol - 1] = 'X';
-            isTraversable(theDungeon, theCurrRow, theCurrCol - 1);
-        }
-    }
-
-    private static void traverseEast(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X') {
-
-            if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
-                theTouchPillars++;
-            } else if (theDungeon[theCurrRow + 1][theCurrCol] == 'E') {
-                theTouchExit = true;
-            }
-
-            theDungeon[theCurrRow + 1][theCurrCol] = 'X';
-            isTraversable(theDungeon, theCurrRow + 1, theCurrCol);
-        }
-    }
-
-    private static void traverseSouth(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X') {
-            if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
-                theTouchPillars++;
-            } else if (theDungeon[theCurrRow][theCurrCol + 1] == 'E') {
-                theTouchExit = true;
-            }
-
-            theDungeon[theCurrRow][theCurrCol + 1] = 'X';
-            isTraversable(theDungeon, theCurrRow, theCurrCol + 1);
-
-        }
-    }
+//    private static int theTouchPillars = 0;
+//    private static boolean theTouchExit = false;
+//
+//    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+//        traverseWest(theDungeon, theCurrRow, theCurrCol);
+//        traverseNorth(theDungeon, theCurrRow, theCurrCol);
+//        traverseEast(theDungeon, theCurrRow, theCurrCol);
+//        traverseSouth(theDungeon, theCurrRow, theCurrCol);
+//
+        //TODO: There is a bug here. We might touch the SAME pillar more than once. This does not seem to apply to my code.
+//        if (theTouchPillars >= 4 && theTouchExit) {
+//            itTraversed = true;
+//        }
+//
+//    }
+//
+//    private static void traverseWest(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+//        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X') {
+//
+//            if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
+//                theTouchPillars++;
+//            } else if (theDungeon[theCurrRow - 1][theCurrCol] == 'E') {
+//                theTouchExit = true;
+//            }
+//
+//            theDungeon[theCurrRow - 1][theCurrCol] = 'X';
+//            isTraversable(theDungeon, theCurrRow - 1, theCurrCol);
+//        }
+//    }
+//
+//    private static void traverseNorth(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+//        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X') {
+//
+//            if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
+//                theTouchPillars++;
+//            } else if (theDungeon[theCurrRow][theCurrCol - 1] == 'E') {
+//                theTouchExit = true;
+//            }
+//
+//            theDungeon[theCurrRow][theCurrCol - 1] = 'X';
+//            isTraversable(theDungeon, theCurrRow, theCurrCol - 1);
+//        }
+//    }
+//
+//    private static void traverseEast(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+//        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X') {
+//
+//            if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
+//                theTouchPillars++;
+//            } else if (theDungeon[theCurrRow + 1][theCurrCol] == 'E') {
+//                theTouchExit = true;
+//            }
+//
+//            theDungeon[theCurrRow + 1][theCurrCol] = 'X';
+//            isTraversable(theDungeon, theCurrRow + 1, theCurrCol);
+//        }
+//    }
+//
+//    private static void traverseSouth(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+//        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X') {
+//            if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
+//                theTouchPillars++;
+//            } else if (theDungeon[theCurrRow][theCurrCol + 1] == 'E') {
+//                theTouchExit = true;
+//            }
+//
+//            theDungeon[theCurrRow][theCurrCol + 1] = 'X';
+//            isTraversable(theDungeon, theCurrRow, theCurrCol + 1);
+//
+//        }
+//    }
 }
 
 
