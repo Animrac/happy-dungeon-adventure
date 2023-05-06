@@ -20,7 +20,8 @@ public class Dungeon {
                 }
             }
 
-            isTraversable(tempDungeon, startRow, startCol, 0, false);
+//            isTraversable(tempDungeon, startRow, startCol, 0, false);
+            isTraversable(tempDungeon, startRow, startCol);
 
         }
 
@@ -50,6 +51,7 @@ public class Dungeon {
      */
     final private char myDungeon[][];
 
+
     /**
      * Default rows for the dungeon maze.
      */
@@ -68,6 +70,8 @@ public class Dungeon {
     private static int startRow = -1;
     private static int startCol = -1;
 
+    //TODO: When the Dungeon is initialized, it should ALREADY be traversable.
+    // This means we have to check if it's traversable inside the Constructor.
     public Dungeon(final int theRows, final int theCols) {
 
         int pillarCount = 0;
@@ -82,109 +86,184 @@ public class Dungeon {
 
                 //add wall
                 if (i == 0 || i == theRows - 1 || j == 0 || j == theCols - 1 || randomNum <= PERCENTAGE_OF_WALLS) {
-                    myDungeon[i][j] = 'X';
+                    this.myDungeon[i][j] = 'X';
                 }
                 //add empty room
                 else {
-                    myDungeon[i][j] = 'O';
+                    this.myDungeon[i][j] = 'O';
                 }
             }
         }
 
-            boolean isFourPillars = false, isExit = false, isStart = false;
+        boolean isFourPillars = false, isExit = false, isStart = false;
 
-            do {
-                int randomRow = ThreadLocalRandom.current().nextInt(1, 10 + 1);
-                int randomCol = ThreadLocalRandom.current().nextInt(1, 10 + 1);
+        do {
+            int randomRow = ThreadLocalRandom.current().nextInt(1, 10 + 1);
+            int randomCol = ThreadLocalRandom.current().nextInt(1, 10 + 1);
 
-                if (!(isFourPillars) && myDungeon[randomRow][randomCol] == 'O') {
-                    myDungeon[randomRow][randomCol] = 'P';
-                    pillarCount++;
-                    if (pillarCount == 4) {
-                        isFourPillars = true;
-                    }
-                } else if (!(isStart) && myDungeon[randomRow][randomCol] == 'O') {
-                    myDungeon[randomRow][randomCol] = 'S';
-                    startRow = randomRow;
-                    startCol = randomCol;
-                    isStart = true;
-                } else if (!(isExit) && myDungeon[randomRow][randomCol] == 'O') {
-                    myDungeon[randomRow][randomCol] = 'E';
-                    isExit = true;
+            if (!(isFourPillars) && this.myDungeon[randomRow][randomCol] == 'O') {
+                this.myDungeon[randomRow][randomCol] = 'P';
+                pillarCount++;
+                if (pillarCount == 4) {
+                    isFourPillars = true;
                 }
-            } while (!(isFourPillars && isExit && isStart));
+            } else if (!(isStart) && this.myDungeon[randomRow][randomCol] == 'O') {
+                this.myDungeon[randomRow][randomCol] = 'S';
+                this.startRow = randomRow;
+                this.startCol = randomCol;
+                isStart = true;
+            } else if (!(isExit) && this.myDungeon[randomRow][randomCol] == 'O') {
+                this.myDungeon[randomRow][randomCol] = 'E';
+                isExit = true;
+            }
+        } while (!(isFourPillars && isExit && isStart));
 
     }
 
-    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol,
-                                         int theTouchPillars, boolean theTouchExit) {
+    /* My original, less pretty code for isTraversable: */
 
-        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X'){ //Look West.
+//    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol,
+//                                         int theTouchPillars, boolean theTouchExit) {
+//
+//        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X'){ //Look West.
+//
+//            if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
+//                theTouchPillars++;
+//            }
+//            else if (theDungeon[theCurrRow - 1][theCurrCol] == 'E') {
+//                theTouchExit = true;
+//            }
+//
+//            theDungeon[theCurrRow - 1][theCurrCol] = 'X'; //We don't need to look at it anymore.
+//
+//            isTraversable(theDungeon, theCurrRow - 1, theCurrCol, theTouchPillars, theTouchExit);
+//
+//        }
+//
+//        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X'){ //Look North.
+//
+//            if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
+//                theTouchPillars++;
+//            }
+//            else if (theDungeon[theCurrRow][theCurrCol - 1] == 'E') {
+//                theTouchExit = true;
+//            }
+//
+//            theDungeon[theCurrRow][theCurrCol - 1] = 'X'; //We don't need to look at it anymore.
+//
+//            isTraversable(theDungeon, theCurrRow, theCurrCol - 1, theTouchPillars, theTouchExit);
+//
+//        }
+//
+//        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X'){ //Look East.
+//
+//            if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
+//                theTouchPillars++;
+//            }
+//            else if (theDungeon[theCurrRow + 1][theCurrCol] == 'E') {
+//                theTouchExit = true;
+//            }
+//
+//            theDungeon[theCurrRow + 1][theCurrCol] = 'X'; //We don't need to look at it anymore.
+//
+//            isTraversable(theDungeon, theCurrRow + 1, theCurrCol, theTouchPillars, theTouchExit);
+//
+//        }
+//
+//        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X'){ //Look South.
+//
+//            if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
+//                theTouchPillars++;
+//            }
+//            else if (theDungeon[theCurrRow][theCurrCol + 1] == 'E') {
+//                theTouchExit = true;
+//            }
+//
+//            theDungeon[theCurrRow][theCurrCol + 1] = 'X'; //We don't need to look at it anymore.
+//
+//            isTraversable(theDungeon, theCurrRow, theCurrCol + 1, theTouchPillars, theTouchExit);
+//
+//        }
+//
+//        if (theTouchPillars >= 4 && theTouchExit) {
+//            itTraversed = true;
+//        }
+//
+//    }
 
-            if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
-                theTouchPillars++;
-            }
-            else if (theDungeon[theCurrRow - 1][theCurrCol] == 'E') {
-                theTouchExit = true;
-            }
+    /* ChatGPT with some cleanup for isTraversable: */
 
-            theDungeon[theCurrRow - 1][theCurrCol] = 'X'; //We don't need to look at it anymore.
+    private static int theTouchPillars = 0;
+    private static boolean theTouchExit = false;
 
-            isTraversable(theDungeon, theCurrRow - 1, theCurrCol, theTouchPillars, theTouchExit);
+    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+        traverseWest(theDungeon, theCurrRow, theCurrCol);
+        traverseNorth(theDungeon, theCurrRow, theCurrCol);
+        traverseEast(theDungeon, theCurrRow, theCurrCol);
+        traverseSouth(theDungeon, theCurrRow, theCurrCol);
 
-        }
-
-        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X'){ //Look North.
-
-            if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
-                theTouchPillars++;
-            }
-            else if (theDungeon[theCurrRow][theCurrCol - 1] == 'E') {
-                theTouchExit = true;
-            }
-
-            theDungeon[theCurrRow][theCurrCol - 1] = 'X'; //We don't need to look at it anymore.
-
-            isTraversable(theDungeon, theCurrRow, theCurrCol - 1, theTouchPillars, theTouchExit);
-
-        }
-
-        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X'){ //Look East.
-
-            if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
-                theTouchPillars++;
-            }
-            else if (theDungeon[theCurrRow + 1][theCurrCol] == 'E') {
-                theTouchExit = true;
-            }
-
-            theDungeon[theCurrRow + 1][theCurrCol] = 'X'; //We don't need to look at it anymore.
-
-            isTraversable(theDungeon, theCurrRow + 1, theCurrCol, theTouchPillars, theTouchExit);
-
-        }
-
-        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X'){ //Look South.
-
-            if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
-                theTouchPillars++;
-            }
-            else if (theDungeon[theCurrRow][theCurrCol + 1] == 'E') {
-                theTouchExit = true;
-            }
-
-            theDungeon[theCurrRow][theCurrCol + 1] = 'X'; //We don't need to look at it anymore.
-
-            isTraversable(theDungeon, theCurrRow, theCurrCol + 1, theTouchPillars, theTouchExit);
-
-        }
-
+        //TODO: There is a bug here. We might touch the SAME pillar more than once.
         if (theTouchPillars >= 4 && theTouchExit) {
             itTraversed = true;
         }
 
     }
 
+    private static void traverseWest(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X') {
+
+            if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
+                theTouchPillars++;
+            } else if (theDungeon[theCurrRow - 1][theCurrCol] == 'E') {
+                theTouchExit = true;
+            }
+
+            theDungeon[theCurrRow - 1][theCurrCol] = 'X';
+            isTraversable(theDungeon, theCurrRow - 1, theCurrCol);
+        }
+    }
+
+    private static void traverseNorth(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X') {
+
+            if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
+                theTouchPillars++;
+            } else if (theDungeon[theCurrRow][theCurrCol - 1] == 'E') {
+                theTouchExit = true;
+            }
+
+            theDungeon[theCurrRow][theCurrCol - 1] = 'X';
+            isTraversable(theDungeon, theCurrRow, theCurrCol - 1);
+        }
+    }
+
+    private static void traverseEast(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X') {
+
+            if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
+                theTouchPillars++;
+            } else if (theDungeon[theCurrRow + 1][theCurrCol] == 'E') {
+                theTouchExit = true;
+            }
+
+            theDungeon[theCurrRow + 1][theCurrCol] = 'X';
+            isTraversable(theDungeon, theCurrRow + 1, theCurrCol);
+        }
+    }
+
+    private static void traverseSouth(char[][] theDungeon, int theCurrRow, int theCurrCol) {
+        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X') {
+            if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
+                theTouchPillars++;
+            } else if (theDungeon[theCurrRow][theCurrCol + 1] == 'E') {
+                theTouchExit = true;
+            }
+
+            theDungeon[theCurrRow][theCurrCol + 1] = 'X';
+            isTraversable(theDungeon, theCurrRow, theCurrCol + 1);
+
+        }
+    }
 }
 
 
