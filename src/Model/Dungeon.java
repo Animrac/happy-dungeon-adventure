@@ -3,126 +3,153 @@ package src.Model;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Dungeon {
-
-    public static void main(String[] args) { //this main method is just to test
-
-        Dungeon d = null;
-        char[][] tempDungeon = new char[0][]; //we don't need this at this scope level, it's just to test
-
-        while (!(itTraversed)) {
-
-            d = new Dungeon(DEFAULT_ROWS, DEFAULT_COLUMNS);
-            tempDungeon = new char[DEFAULT_ROWS][DEFAULT_COLUMNS]; //to keep the original dungeon
-
-            for (int i = 0; i < d.myDungeon.length; i++) {
-                for (int j = 0; j < d.myDungeon.length; j++) {
-                    tempDungeon[i][j] = d.myDungeon[i][j];
-                }
-            }
-
-            isTraversable(tempDungeon, startRow, startCol, 0, false);
-//            isTraversable(tempDungeon, startRow, startCol);
-
-        }
-
-        //VISUALIZATION
-        System.out.println("Original:");
-        for (int i = 0; i < d.myDungeon.length; i++) {
-            for (int j = 0; j < d.myDungeon[i].length; j++) {
-                System.out.print(d.myDungeon[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println();
-        System.out.println("Traversed:");
-        for (int i = 0; i < tempDungeon.length; i++) {
-            for (int j = 0; j < tempDungeon[i].length; j++) {
-                System.out.print(tempDungeon[i][j]);
-            }
-            System.out.println();
-        }
-
-
-    }
-
-    private static boolean itTraversed = false;
-    /**
-     * 2d array dungeon maze.
-     */
-    final private char myDungeon[][];
-
-
     /**
      * Default rows for the dungeon maze.
      */
-    final private static int DEFAULT_ROWS = 12;
+    private static int dungeonRows;
 
     /**
      * Default columns for the dungeon maze.
      */
-    final private static int DEFAULT_COLUMNS = 12;
+    private static int dungeonColumns;
+    private static boolean itTraversed;
+
+    private static int startRow = -1;
+    private static int startCol = -1;
+    /**
+     * 2d array of the dungeon layout. This does not contain the rooms.
+     */
+    final private char[][] myDungeonLayout;
+
+    /**
+     * 2d array of the dungeon with Room objects.
+     */
+    private Room[][] myDungeon;
+
 
     /**
      * Percentage that walls appear.
      */
     final private static int PERCENTAGE_OF_WALLS = 50;
 
-    private static int startRow = -1;
-    private static int startCol = -1;
 
-    //TODO: When the Dungeon is initialized, it should ALREADY be traversable.
-    // This means we have to check if it's traversable inside the Constructor.
-    public Dungeon(final int theRows, final int theCols) {
+    public Dungeon() { //default 12x12
+        this.dungeonRows = 12;
+        this.dungeonColumns = 12;
+        this.myDungeonLayout = new char[dungeonRows][dungeonColumns];
+        makeDungeon();
+    }
+
+    public Dungeon(final int theRows, final int theCols) { //custom dungeon
+        this.dungeonRows = theRows;
+        this.dungeonColumns = theCols;
+        this.myDungeonLayout = new char[theRows][theCols];
+        makeDungeon();
+    }
+
+    /**
+     * Randomly fills empty space with walls, the four pillars, the start, and the exit.
+     */
+    private void makeDungeon() {
 
         int pillarCount = 0;
-        this.myDungeon = new char[theRows][theCols];
 
-        int i, j;
+        boolean isFourPillars = false, isExit = false, isStart = false;
 
-        for (i = 0; i < theRows; i++) {
-            for (j = 0; j < theCols; j++) {
+        for (int i = 0; i < this.dungeonRows; i++) {
+            for (int j = 0; j < this.dungeonColumns; j++) {
 
                 int randomNum = ThreadLocalRandom.current().nextInt(1, 100 + 1);
 
                 //add wall
-                if (i == 0 || i == theRows - 1 || j == 0 || j == theCols - 1 || randomNum <= PERCENTAGE_OF_WALLS) {
-                    this.myDungeon[i][j] = 'X';
+                if (i == 0 || i == this.dungeonRows - 1 || j == 0 || j == this.dungeonColumns - 1
+                        || randomNum <= PERCENTAGE_OF_WALLS) {
+                    this.myDungeonLayout[i][j] = 'X';
                 }
                 //add empty room
                 else {
-                    this.myDungeon[i][j] = 'O';
+                    this.myDungeonLayout[i][j] = 'O';
                 }
             }
         }
 
-        boolean isFourPillars = false, isExit = false, isStart = false;
-
         do {
-            int randomRow = ThreadLocalRandom.current().nextInt(1, 10 + 1);
-            int randomCol = ThreadLocalRandom.current().nextInt(1, 10 + 1);
+            int randomRow = ThreadLocalRandom.current().nextInt(1, dungeonRows - 2 + 1); //-2 for the walls, +1 for the boundary
+            int randomCol = ThreadLocalRandom.current().nextInt(1,  dungeonColumns - 2 + 1);
 
-            if (!(isFourPillars) && this.myDungeon[randomRow][randomCol] == 'O') {
-                this.myDungeon[randomRow][randomCol] = 'P';
+            if (!(isFourPillars) && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+                this.myDungeonLayout[randomRow][randomCol] = 'P';
                 pillarCount++;
                 if (pillarCount == 4) {
                     isFourPillars = true;
                 }
-            } else if (!(isStart) && this.myDungeon[randomRow][randomCol] == 'O') {
-                this.myDungeon[randomRow][randomCol] = 'S';
+            } else if (!isStart && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+                this.myDungeonLayout[randomRow][randomCol] = 'S';
                 this.startRow = randomRow;
                 this.startCol = randomCol;
                 isStart = true;
-            } else if (!(isExit) && this.myDungeon[randomRow][randomCol] == 'O') {
-                this.myDungeon[randomRow][randomCol] = 'E';
+            } else if (!isExit && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+                this.myDungeonLayout[randomRow][randomCol] = 'E';
                 isExit = true;
             }
         } while (!(isFourPillars && isExit && isStart));
+
+        ensureTraversable();
+
+    }
+
+    /**
+     * Creates a new dungeon if the current dungeon is not traversable.
+     */
+    private void ensureTraversable() {
+
+        char[][] tempDungeon = new char[0][];
+        boolean firstRun = true;
+
+        while (!(this.isItTraversable())) {
+
+            if (!firstRun){
+                makeDungeon();
+            }
+
+            firstRun = false;
+
+            tempDungeon = new char[this.dungeonRows][this.dungeonColumns]; //to keep the original dungeon
+
+            for (int i = 0; i < this.dungeonRows; i++) {
+                for (int j = 0; j < this.dungeonColumns; j++) {
+                    tempDungeon[i][j] = this.myDungeonLayout[i][j];
+                }
+            }
+
+            isTraversable(tempDungeon, this.startRow, this.startCol, 0, false);
+//            System.out.println(this.isItTraversable());
+//            isTraversable(tempDungeon, startRow, startCol);
+        }
+
+//        //this is good test code
+//        System.out.println();
+//        System.out.println("Traversed:"); //shouldn't show any P, E, or S
+//        for (int i = 0; i < tempDungeon.length; i++) {
+//            for (int j = 0; j < tempDungeon[i].length; j++) {
+//                System.out.print(tempDungeon[i][j]);
+//            }
+//            System.out.println();
+//        }
 
     }
 
     /* My original, less pretty code for isTraversable: */
 
-    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol,
+    /**
+     * Ensures that the player can traverse and access the four pillars, the start, and the exit.
+     * @param theDungeon The dungeon being checked.
+     * @param theCurrRow The current row being checked.
+     * @param theCurrCol The current column being checked.
+     * @param theTouchPillars How many pillars can be accessed.
+     * @param theTouchExit If the exit can be accessed.
+     */
+    public static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol,
                                          int theTouchPillars, boolean theTouchExit) {
 
         if (theDungeon[theCurrRow - 1][theCurrCol] != 'X'){ //Look West.
@@ -170,7 +197,7 @@ public class Dungeon {
 
         }
 
-        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X'){ //Look South.
+        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X') { //Look South.
 
             if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
                 theTouchPillars++;
@@ -180,13 +207,13 @@ public class Dungeon {
             }
 
             theDungeon[theCurrRow][theCurrCol + 1] = 'X'; //We don't need to look at it anymore.
-
+            
             isTraversable(theDungeon, theCurrRow, theCurrCol + 1, theTouchPillars, theTouchExit);
 
         }
 
         if (theTouchPillars == 4 && theTouchExit) {
-            System.out.println(theTouchPillars);
+//            System.out.println(theTouchPillars);
             itTraversed = true;
         }
 
@@ -265,6 +292,47 @@ public class Dungeon {
 //
 //        }
 //    }
+
+
+    /* Getters and setters */
+
+    public boolean isItTraversable() {
+        return itTraversed;
+    }
+
+    public char[][] getMyDungeon() {
+        return myDungeonLayout;
+    }
+
+    public int getPercentageOfWalls() {
+        return PERCENTAGE_OF_WALLS;
+    }
+
+    public int getStartRow() {
+        return startRow;
+    }
+
+    public void setStartRow(int theStartRow) {
+        startRow = theStartRow;
+    }
+
+    public int getStartCol() {
+        return startCol;
+    }
+
+    public void setStartCol(int theStartCol) {
+        startCol = theStartCol;
+    }
+
+//    //TODO For the Room class.
+//    public void addRooms(Dungeon theDungeonLayout){
+//        for (int i = 0; i < theDungeonLayout.myDungeonLayout.length; i++) {
+//            for (int j = 0; j < theDungeonLayout.myDungeonLayout[i].length; j++) {
+//                this.myDungeon[i][j] = new Room(theDungeonLayout.myDungeonLayout[i][j]);
+//            }
+//        }
+//    }
+
 }
 
 

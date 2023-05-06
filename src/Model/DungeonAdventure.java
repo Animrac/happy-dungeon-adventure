@@ -1,5 +1,7 @@
 package src.Model;
 
+import java.util.Scanner;
+
 /**
  * This is the driver class for the entire Heroes versus Monsters game.
  *
@@ -8,6 +10,7 @@ package src.Model;
  */
 public class DungeonAdventure {
 
+
     /**
      * Driver method for class (and entire game)
      * Calls displayIntro() class to display an introduction to the game.
@@ -15,14 +18,56 @@ public class DungeonAdventure {
      *
      * @param args
      */
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
+//
+//        //should probably research Java GUI stuff
+//
+//        displayIntro();
+//        //HeroesVersusMonsters.gamePlay();
+//    }
 
-        //should probably research Java GUI stuff
+    public static void main(String[] args) { //this main method is just to test
 
-        displayIntro();
-        //HeroesVersusMonsters.gamePlay();
+        Dungeon layout = null;
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Would you like a custom dungeon? Y/N");
+
+        String custom = input.nextLine();  // Read user input
+        if (custom.equals("Y") || custom.equals("y") || custom.equals("yes") || custom.equals("Yes")) { //i know there are better ways but im lazy rn
+            //TODO 3 works, but it's randomly generated... make it a big number for testing
+            System.out.println("Rows (must be at least 3): ");
+            int cRows = Integer.parseInt(input.nextLine()) + 2;
+            System.out.println("Columns (must be at least 3): ");
+            int cCols = Integer.parseInt(input.nextLine()) + 2;
+            layout = new Dungeon(cRows, cCols);
+        }
+        else {
+            layout = new Dungeon();
+        }
+
+//TODO for Room class
+//        Dungeon.addRooms(layout);
+
+        //VISUALIZATION
+        System.out.println("Original:");
+        for (int i = 0; i < layout.getMyDungeon().length; i++) {
+            for (int j = 0; j < layout.getMyDungeon()[i].length; j++) {
+                System.out.print(layout.getMyDungeon()[i][j]);
+            }
+            System.out.println();
+        }
+//        System.out.println();
+//        System.out.println("Traversed:"); //shouldn't show any P, E, or S
+//        for (int i = 0; i < tempDungeon.length; i++) {
+//            for (int j = 0; j < tempDungeon[i].length; j++) {
+//                System.out.print(tempDungeon[i][j]);
+//            }
+//            System.out.println();
+//        }
+
+
     }
-
     /**
      * Prints out an introduction to the game.
      */
