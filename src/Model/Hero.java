@@ -6,7 +6,7 @@ import java.util.*;
  * as it has the ability to use a special attack.
  *
  * @author Anastasia Vilenius
- * @version 05/05/23
+ * @version 05/07/23
  */
 public abstract class Hero extends Adventurer {
 
@@ -22,7 +22,7 @@ public abstract class Hero extends Adventurer {
     /**
      * Stores items that hero has picked up, such as healing potions, etc.
      */
-    private List<String> myInventory;
+    final private List<String> myInventory;
 
     /**
      * Constructor that initializes fields.
@@ -130,12 +130,12 @@ public abstract class Hero extends Adventurer {
      */
     protected void specialAttack(final Adventurer theOpponent) {}
 
-    /**
-     * Overrides subtractHitPoints method in Adventure class by allowing hero a chance to block
-     * an attack from a monster.
-     *
-     * @param theAmount
-     */
+//    /**
+//     * Overrides subtractHitPoints method in Adventure class by allowing hero a chance to block
+//     * an attack from a monster.
+//     *
+//     * @param theAmount
+//     */
 //    @Override
 //    protected void subtractHitPoints(final int theAmount) {
 //        if (MY_RANDOM.nextInt(101) <= myBlockOdds) {

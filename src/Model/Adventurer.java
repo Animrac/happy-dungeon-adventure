@@ -8,7 +8,7 @@ import java.util.Scanner;
  * for a dungeon adventure game.
  *
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
- * @version 05/05/23
+ * @version 05/07/23
  */
 
 public abstract class Adventurer {
@@ -302,7 +302,6 @@ public abstract class Adventurer {
         }
         if (alive()) {
             double randDouble = MY_RANDOM.nextDouble();
-            //System.out.println("rand double: " + randDouble);
             if (randDouble <= myAttackOdds) {
                 int damage = generateDamage();
                 System.out.println(getName() + " attacks " + opponent.getName());
