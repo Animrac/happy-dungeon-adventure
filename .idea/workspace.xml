@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Coded basic hero and monster child classes">
-      <change beforePath="$PROJECT_DIR$/src/Extra/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Extra/Hero.java" afterDir="false" />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Edited hero class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/Extra/2 -Heroes vs Monsters.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/Extra/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/Extra/readme1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/2 -Heroes vs Monsters.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Centaur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Dryad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Dungeon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/DungeonAdventure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/DungeonCharacter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Goblin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Hero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/HeroesVersusMonsters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Hunter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Minotaur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Monster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/Troll.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Extra/readme1.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +62,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Extra.DungeonAdventure" />
+    <configuration name="DungeonAdventure" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Model.DungeonAdventure" />
       <module name="Dungeon_Adventure" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -68,7 +87,8 @@
       <workItem from="1683437096286" duration="164000" />
       <workItem from="1683437276603" duration="238000" />
       <workItem from="1683500942698" duration="2806000" />
-      <workItem from="1683657377492" duration="5874000" />
+      <workItem from="1683657377492" duration="6414000" />
+      <workItem from="1683666951490" duration="146000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -112,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683666239710</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Coded basic hero and monster child classes">
+      <created>1683666394823</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683666394823</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
