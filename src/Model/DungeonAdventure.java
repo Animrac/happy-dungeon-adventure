@@ -59,11 +59,11 @@ public class DungeonAdventure {
         Monster randoMonster = null;
 
         if (rand == 0) {
-            randoMonster = new Goblin(name);
+            randoMonster = new monsterOne(name);
         } else if (rand == 1) {
-            randoMonster = new Minotaur(name);
+            randoMonster = new monsterTwo(name);
         } else {
-            randoMonster = new Troll(name);
+            randoMonster = new monsterThree(name);
         }
         return randoMonster;
     }
@@ -82,17 +82,17 @@ public class DungeonAdventure {
 
         System.out.println("Time to choose your hero!");
         System.out.println();
-        System.out.println("1: Centaur \n2: Dryad \n3: Hunter");
+        System.out.println("1: heroOne \n2: heroTwo \n3: heroThree");
         System.out.println();
 
         Hero chosenHero = null;
 
         if (in.nextInt() == 1) {
-            chosenHero = new Centaur(name);
+            chosenHero = new heroOne(name);
         } else if (in.nextInt() == 2) {
-            chosenHero = new Dryad(name);
+            chosenHero = new heroTwo(name);
         } else if (in.nextInt() == 3) {
-            chosenHero = new Hunter(name);
+            chosenHero = new heroThree(name);
         }
         return chosenHero;
     }
