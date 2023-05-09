@@ -99,8 +99,8 @@ public class DungeonAdventure {
 
     public static void battle(Hero hero, Monster monster) {
         while (hero.alive() && monster.alive() && !hero.runAway()) {
-            System.out.println(hero.getName() + " hit points: " + hero.getHitPoints());
-            System.out.println(monster.getName() + "hit points: " + monster.getHitPoints());
+            System.out.println(hero.getName() + " hit points: " + hero.getHealth());
+            System.out.println(monster.getName() + "hit points: " + monster.getHealth());
             hero.attack(monster);
 
             if(!hero.runAway()) {

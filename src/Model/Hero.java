@@ -130,21 +130,21 @@ public abstract class Hero extends Adventurer {
      */
     protected void specialAttack(final Adventurer theOpponent) {}
 
-//    /**
-//     * Overrides subtractHitPoints method in Adventure class by allowing hero a chance to block
-//     * an attack from a monster.
-//     *
-//     * @param theAmount
-//     */
-//    @Override
-//    protected void subtractHitPoints(final int theAmount) {
-//        if (MY_RANDOM.nextInt(101) <= myBlockOdds) {
-//            System.out.println(getName() + " blocked the attack!");
-//        }
-//        else {
-//            super.subtractHitPoints(theAmount);
-//        }
-//    }
+    /**
+     * Overrides subtractHitPoints method in Adventure class by allowing hero a chance to block
+     * an attack from a monster.
+     *
+     * @param theAmount
+     */
+    @Override
+    protected void subtractHitPoints(final int theAmount) {
+        if (MY_RANDOM.nextInt(101) <= myBlockOdds) {
+            System.out.println(getName() + " blocked the attack!");
+        }
+        else {
+            super.subtractHitPoints(theAmount);
+        }
+    }
 
     /**
      * Prompts user to choose whether to attack normally, use special attack, or to run away.
