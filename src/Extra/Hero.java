@@ -31,22 +31,7 @@ public abstract class Hero extends DungeonCharacter {
 	 * Indicates the odds of a hero being able to use their special skill in an attack.
 	 */
 	private double mySpecialSkillOdds;
-	
-	/**
-	 * Indicates current X position of hero.
-	 */
-	private int curX;
-	
-	/**
-	 * Indicates current Y position of hero.
-	 */
-	private int curY;
-	
-	/**
-	 * Indicates position of current room.
-	 */
-	private Room curPos;
-	
+
 	/**
 	 * Stores items that hero has picked up, such as healing potions, etc.
 	 */
@@ -70,8 +55,6 @@ public abstract class Hero extends DungeonCharacter {
 		setBlockOdds(theBlockOdds);
 		setRunAway(false);
 		setSpecialSkillOdds(theSpecialSkillOdds);
-		this.curX = 5;
-		this.curY = 5;
 		myInventory = new ArrayList<>();
 	}
 	
@@ -124,23 +107,7 @@ public abstract class Hero extends DungeonCharacter {
 	public final boolean runAway() {
 		return myRunAway;
 	}
-	
-	/**
-	 * 
-	 * @return curX
-	 */
-	public int getCurX() {
-		return curX;
-	}
-	
-	/**
-	 * 
-	 * @return curY;
-	 */
-	public int getCurY() {
-		return curY;
-	}
-	
+
 	/**
 	 * 
 	 * @return myInventory
@@ -148,39 +115,7 @@ public abstract class Hero extends DungeonCharacter {
 	public List<String> getInventory() {
 		return myInventory;
 	}
-	
-	/**
-	 * 
-	 * @return curPos;
-	 */
-	public Room getCurPos() {
-		return curPos;
-	}
-	
-	/**
-	 * 
-	 * @param room
-	 */
-	public void setCurPos(Room room) {
-		curPos = room;
-	}
-	
-	/**
-	 * 
-	 * @param curX
-	 */
-	public void setCurX(int curX) {
-		this.curX = curX;
-	}
-	
-	/**
-	 * 
-	 * @param curY
-	 */
-	public void setCurY(int curY) {
-		this.curY = curY;
-	}
-	
+
 	/**
 	 * Overrides the attack method in DungeonCharacter class and allows user to choose hero attack.
 	 * 
