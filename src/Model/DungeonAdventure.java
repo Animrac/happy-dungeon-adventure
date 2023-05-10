@@ -37,8 +37,7 @@ public class DungeonAdventure {
             System.out.println("--Columns (must be at least 5):--");
             int cCols = Integer.parseInt(input.nextLine()) + 2;
             layout = new Dungeon(cRows, cCols);
-        }
-        else {
+        } else {
             layout = new Dungeon();
         }
 
@@ -77,6 +76,10 @@ public class DungeonAdventure {
             }
             System.out.println();
         }
+
+        gamePlay();
+
+    }
 
 
 //        System.out.println();
