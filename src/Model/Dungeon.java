@@ -24,27 +24,31 @@ public class Dungeon {
     /**
      * 2d array of the dungeon with Room objects.
      */
-    private Room[][] myDungeon;
+    private Room[][] myDungeonRooms;
 
 
     /**
      * Percentage that walls appear.
      */
-    final private static int PERCENTAGE_OF_WALLS = 50;
+    final private static int PERCENTAGE_OF_WALLS = 45;
 
 
     public Dungeon() { //default 12x12
         this.dungeonRows = 12;
         this.dungeonColumns = 12;
         this.myDungeonLayout = new char[dungeonRows][dungeonColumns];
+        this.myDungeonRooms = new Room[dungeonRows][dungeonColumns];
         makeDungeon();
+        addRooms();
     }
 
     public Dungeon(final int theRows, final int theCols) { //custom dungeon
         this.dungeonRows = theRows;
         this.dungeonColumns = theCols;
         this.myDungeonLayout = new char[theRows][theCols];
+        this.myDungeonRooms = new Room[dungeonRows][dungeonColumns];
         makeDungeon();
+        addRooms();
     }
 
     /**
@@ -123,23 +127,9 @@ public class Dungeon {
             }
 
             isTraversable(tempDungeon, this.startRow, this.startCol, 0, false);
-//            System.out.println(this.isItTraversable());
-//            isTraversable(tempDungeon, startRow, startCol);
         }
 
-//        //this is good test code
-//        System.out.println();
-//        System.out.println("Traversed:"); //shouldn't show any P, E, or S
-//        for (int i = 0; i < tempDungeon.length; i++) {
-//            for (int j = 0; j < tempDungeon[i].length; j++) {
-//                System.out.print(tempDungeon[i][j]);
-//            }
-//            System.out.println();
-//        }
-
     }
-
-    /* My original, less pretty code for isTraversable: */
 
     /**
      * Ensures that the player can traverse and access the four pillars, the start, and the exit.
@@ -213,86 +203,19 @@ public class Dungeon {
         }
 
         if (theTouchPillars == 4 && theTouchExit) {
-//            System.out.println(theTouchPillars);
             itTraversed = true;
         }
 
     }
 
-    /* ChatGPT with some cleanup for isTraversable, but buggy: */
-
-//    private static int theTouchPillars = 0;
-//    private static boolean theTouchExit = false;
-//
-//    private static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-//        traverseWest(theDungeon, theCurrRow, theCurrCol);
-//        traverseNorth(theDungeon, theCurrRow, theCurrCol);
-//        traverseEast(theDungeon, theCurrRow, theCurrCol);
-//        traverseSouth(theDungeon, theCurrRow, theCurrCol);
-//
-        //TODO: There is a bug here. We might touch the SAME pillar more than once. This does not seem to apply to my code.
-//        if (theTouchPillars >= 4 && theTouchExit) {
-//            itTraversed = true;
-//        }
-//
-//    }
-//
-//    private static void traverseWest(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-//        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X') {
-//
-//            if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
-//                theTouchPillars++;
-//            } else if (theDungeon[theCurrRow - 1][theCurrCol] == 'E') {
-//                theTouchExit = true;
-//            }
-//
-//            theDungeon[theCurrRow - 1][theCurrCol] = 'X';
-//            isTraversable(theDungeon, theCurrRow - 1, theCurrCol);
-//        }
-//    }
-//
-//    private static void traverseNorth(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-//        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X') {
-//
-//            if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
-//                theTouchPillars++;
-//            } else if (theDungeon[theCurrRow][theCurrCol - 1] == 'E') {
-//                theTouchExit = true;
-//            }
-//
-//            theDungeon[theCurrRow][theCurrCol - 1] = 'X';
-//            isTraversable(theDungeon, theCurrRow, theCurrCol - 1);
-//        }
-//    }
-//
-//    private static void traverseEast(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-//        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X') {
-//
-//            if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
-//                theTouchPillars++;
-//            } else if (theDungeon[theCurrRow + 1][theCurrCol] == 'E') {
-//                theTouchExit = true;
-//            }
-//
-//            theDungeon[theCurrRow + 1][theCurrCol] = 'X';
-//            isTraversable(theDungeon, theCurrRow + 1, theCurrCol);
-//        }
-//    }
-//
-//    private static void traverseSouth(char[][] theDungeon, int theCurrRow, int theCurrCol) {
-//        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X') {
-//            if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
-//                theTouchPillars++;
-//            } else if (theDungeon[theCurrRow][theCurrCol + 1] == 'E') {
-//                theTouchExit = true;
-//            }
-//
-//            theDungeon[theCurrRow][theCurrCol + 1] = 'X';
-//            isTraversable(theDungeon, theCurrRow, theCurrCol + 1);
-//
-//        }
-//    }
-
+    public void addRooms(){
+        for (int i = 0; i < myDungeonLayout.length; i++) {
+            for (int j = 0; j < myDungeonLayout[i].length; j++) {
+                //I don't know if these coordinates (i, j) or (j, i) should be swapped. Seems to work for now.
+                myDungeonRooms[i][j] = new Room(myDungeonLayout, i, j, myDungeonLayout[i][j]);
+            }
+        }
+    }
 
     /* Getters and setters */
 
@@ -300,8 +223,12 @@ public class Dungeon {
         return itTraversed;
     }
 
-    public char[][] getMyDungeon() {
+    public char[][] getMyDungeonLayout() {
         return myDungeonLayout;
+    }
+
+    public Room[][] getMyDungeonRooms() {
+        return myDungeonRooms;
     }
 
     public int getPercentageOfWalls() {
@@ -323,15 +250,6 @@ public class Dungeon {
     public void setStartCol(int theStartCol) {
         startCol = theStartCol;
     }
-
-//    //TODO For the Room class.
-//    public void addRooms(Dungeon theDungeonLayout){
-//        for (int i = 0; i < theDungeonLayout.myDungeonLayout.length; i++) {
-//            for (int j = 0; j < theDungeonLayout.myDungeonLayout[i].length; j++) {
-//                this.myDungeon[i][j] = new Room(theDungeonLayout.myDungeonLayout[i][j]);
-//            }
-//        }
-//    }
 
 }
 
