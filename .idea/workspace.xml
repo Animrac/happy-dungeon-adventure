@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Added Hui's &amp; Carmina's Dungeon &amp; Room classes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +72,7 @@
       <workItem from="1683437276603" duration="238000" />
       <workItem from="1683500942698" duration="2806000" />
       <workItem from="1683657377492" duration="6414000" />
-      <workItem from="1683666951490" duration="1771000" />
-      <workItem from="1683751723023" duration="56000" />
+      <workItem from="1683666951490" duration="894000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -135,14 +137,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683667405585</updated>
     </task>
-    <task id="LOCAL-00010" summary="Added Hui's &amp; Carmina's Dungeon &amp; Room classes">
-      <created>1683667910240</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1683667910240</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +160,11 @@
     <MESSAGE value="Worked on driver class" />
     <MESSAGE value="Coded basic hero and monster child classes" />
     <MESSAGE value="Edited driver class" />
-    <MESSAGE value="Added Hui's &amp; Carmina's Dungeon &amp; Room classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Hui's &amp; Carmina's Dungeon &amp; Room classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited driver class" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Dungeon_Adventure$Dungeon.ic" NAME="Dungeon Coverage Results" MODIFIED="1683363348003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>src.Model.*</FILTER>
+    </SUITE>
   </component>
 </project>
