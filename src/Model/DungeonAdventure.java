@@ -1,16 +1,25 @@
 package src.Model;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.Button;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -27,26 +36,78 @@ public class DungeonAdventure extends Application {
      */
     private static final Random MY_RANDOM = new Random();
 
+    @FXML
+    private MenuBar myMenuBar;
 
+    @FXML
+    private Button startButton;
+
+//    @FXML
+//    private Parent lore ;
+//    @FXML MenuBar myMenuBar;
+    @FXML
+    private AnchorPane lore;
+    @FXML
+    void newGame(ActionEvent event) {
+        System.out.println("You thought there was a game???");
+    }
+
+//    private void setDynamicPane(AnchorPane dynamicPane){
+//        this.lore.getChildren().clear();
+//        this.lore.getChildren().add(dynamicPane);
+//    }
+
+
+    //TODO this doesnt work
+    @FXML
+    void showLore(ActionEvent event) throws IOException {
+//        setDynamicPane((FXMLLoader.load(getClass())).getResources("lore.fxml"));
+        System.out.println("juicy lore test");
+        Stage stage = (Stage) myMenuBar.getScene().getWindow();
+        Scene scene = FXMLLoader.load(getClass().getResource("lore.fxml"));
+        stage.setScene(scene);
+        stage.show();
+
+////        Stage stage = (Stage) myMenuBar.getScene().getWindow();
+//
+////        MenuItem button = (MenuItem)event.getSource();
+//
+//        Parent root = FXMLLoader.load(getClass().getResource("lore.fxml"));
+//
+//        Scene loreScene = new Scene(root);
+//
+//        primaryStage.setScene(loreScene);
+////        loreScene.setRoot(root);
+
+    }
     Button button;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("DunAdv.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("lore.fxml"));
+
         primaryStage.setTitle("Happy Dungeon Adventure!");
-        Label intro = new Label(displayIntro());
+        primaryStage.setScene(new Scene(root));
 
-        button = new Button();
-        button.setText("click me");
 
-        button.setOnAction(e -> System.out.println("you just clicked me!"));
-//        button.setOnAction(this);
 
-        StackPane layout = new StackPane();
-        layout.getChildren().add(intro);
-        layout.getChildren().add(button);
 
-        Scene scene = new Scene(layout, 600, 400);
-        primaryStage.setScene(scene);
+//        Label intro = new Label(displayIntro());
+//
+//        button = new Button();
+//        button.setText("click me");
+//
+//        button.setOnAction(e -> System.out.println("you just clicked me!"));
+////        button.setOnAction(this);
+//
+//        StackPane layout = new StackPane();
+//        layout.getChildren().add(intro);
+//        layout.getChildren().add(button);
+//
+//        Scene scene = new Scene(layout, 600, 400);
+//        primaryStage.setScene(scene);
+
         primaryStage.show();
     }
 
@@ -66,9 +127,11 @@ public class DungeonAdventure extends Application {
      * @param theArgs
      */
     public static void main(String[] theArgs) { //this main method is just to test
-        displayIntro();
+//        displayIntro();
 
         launch(theArgs);
+
+
 //        //1. Create the frame.
 //        JFrame frame = new JFrame("Happy Dungeon Adventure!");
 //        frame.setBounds(600, 400, 600, 400);
