@@ -8,7 +8,7 @@ import java.util.Scanner;
  * for a dungeon adventure game.
  *
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
- * @version 05/05/23
+ * @version 05/07/23
  */
 
 public abstract class Adventurer {
@@ -21,7 +21,7 @@ public abstract class Adventurer {
     /**
      * Scanner for user input.
      */
-    final Scanner input = new Scanner(System.in);
+    static final Scanner input = new Scanner(System.in);
 
     /**
      * Indicates the name of the hero or monster.
@@ -51,7 +51,7 @@ public abstract class Adventurer {
     /**
      * Indicates the odds of a character blocking an attack.
      */
-    private double myBlockOdds;
+    protected double myBlockOdds;
 
 
     /**
@@ -202,7 +202,7 @@ public abstract class Adventurer {
      *
      * @param theAmount the amount of damage to be subtracted from a character's health
      */
-    private void subtractHitPoints(final int theAmount) {
+    protected void subtractHitPoints(final int theAmount) {
         if(theAmount < 0) {
             throw new IllegalArgumentException("hit points passed to subtractHitPoints are negative");
         }
@@ -302,7 +302,6 @@ public abstract class Adventurer {
         }
         if (alive()) {
             double randDouble = MY_RANDOM.nextDouble();
-            //System.out.println("rand double: " + randDouble);
             if (randDouble <= myAttackOdds) {
                 int damage = generateDamage();
                 System.out.println(getName() + " attacks " + opponent.getName());
