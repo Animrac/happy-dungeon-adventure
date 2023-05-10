@@ -23,7 +23,7 @@ public class DungeonAdventure {
      *
      * @param theArgs
      */
-    public static void main(String[] args) { //this main method is just to test
+    public static void main(String[] theArgs) { //this main method is just to test
         displayIntro();
         Dungeon layout = null;
         Scanner input = new Scanner(System.in);
@@ -109,21 +109,21 @@ public class DungeonAdventure {
      * @return randoMonster
      */
     public static Monster spawnMonster() {
-        Scanner in  = new Scanner(System.in);
-
-        System.out.print("First, choose a name for a monster: ");
-        String name = in.next();
-
+//        Scanner in  = new Scanner(System.in);
+//
+//        System.out.print("First, choose a name for a monster: ");
+//        String name = //in.next();
+//
         int rand = MY_RANDOM.nextInt(3);
 
         Monster randoMonster = null;
 
         if (rand == 0) {
-            randoMonster = new monsterOne(name);
+            randoMonster = new monsterOne();
         } else if (rand == 1) {
-            randoMonster = new monsterTwo(name);
+            randoMonster = new monsterTwo();
         } else {
-            randoMonster = new monsterThree(name);
+            randoMonster = new monsterThree();
         }
         return randoMonster;
     }

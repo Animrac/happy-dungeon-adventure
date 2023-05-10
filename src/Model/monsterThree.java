@@ -12,7 +12,7 @@ public class monsterThree extends Monster {
      *
      * @param theName
      */
-    public monsterThree (final String theName) {
-        super(theName, 80, 20, 40, .8, 3, 3);
+    public monsterThree () {
+        super("monsterThree", 80, 20, 40, .8, 3, 3);
     }
 }
