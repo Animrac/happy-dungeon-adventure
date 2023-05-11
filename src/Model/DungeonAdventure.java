@@ -6,6 +6,7 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,13 +15,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.Button;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Random;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 /**
@@ -29,7 +33,7 @@ import java.util.Scanner;
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
  * @version 05/9/23
  */
-public class DungeonAdventure extends Application {
+public class DungeonAdventure extends Application implements Initializable {
 
     /**
      * Random object used to generate random monsters.
@@ -40,84 +44,64 @@ public class DungeonAdventure extends Application {
     private MenuBar myMenuBar;
 
     @FXML
+    private MenuItem menuControls;
+
+    @FXML
+    private MenuItem menuLore;
+
+    @FXML
     private Button startButton;
 
-//    @FXML
-//    private Parent lore ;
-//    @FXML MenuBar myMenuBar;
+    private String currScene;
+
+    @FXML
+    private AnchorPane currPane;
+
     @FXML
     private AnchorPane lore;
     @FXML
-    void newGame(ActionEvent event) {
+    private AnchorPane rootPane;
+
+    @FXML private VBox mainVBox;
+
+    @FXML
+    void newGame(ActionEvent event) throws IOException {
+//        currScene = "mainGame";
         System.out.println("You thought there was a game???");
+
+        Dungeon layout = new Dungeon();
+
+        Parent root = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
+        VBox vboxMainGame = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
+        rootPane.getChildren().setAll(vboxMainGame);
+//        currPane = rootPane;
     }
 
-//    private void setDynamicPane(AnchorPane dynamicPane){
-//        this.lore.getChildren().clear();
-//        this.lore.getChildren().add(dynamicPane);
-//    }
-
-
-    //TODO this doesnt work
     @FXML
     void showLore(ActionEvent event) throws IOException {
-//        setDynamicPane((FXMLLoader.load(getClass())).getResources("lore.fxml"));
-        System.out.println("juicy lore test");
-        Stage stage = (Stage) myMenuBar.getScene().getWindow();
-        Scene scene = FXMLLoader.load(getClass().getResource("lore.fxml"));
-        stage.setScene(scene);
-        stage.show();
-
-////        Stage stage = (Stage) myMenuBar.getScene().getWindow();
-//
-////        MenuItem button = (MenuItem)event.getSource();
-//
-//        Parent root = FXMLLoader.load(getClass().getResource("lore.fxml"));
-//
-//        Scene loreScene = new Scene(root);
-//
-//        primaryStage.setScene(loreScene);
-////        loreScene.setRoot(root);
-
+        Parent root = FXMLLoader.load(getClass().getResource("resources/lore.fxml"));
+        VBox vboxLore = FXMLLoader.load(getClass().getResource("resources/lore.fxml"));
+        rootPane.getChildren().setAll(vboxLore);
     }
-    Button button;
+    @FXML //TODO i need to put all of these methods in a view class
+    void returnPrevScene(ActionEvent event) throws IOException {
+////        Parent root = FXMLLoader.load(getClass().getResource("resources/"+currScene+".fxml"));
+////        VBox vboxPrevScene = FXMLLoader.load(getClass().getResource("resources/"+currScene+".fxml"));
+//        FXMLLoader loader = FXMLLoader(this.getClass().getResource("resources/nameCharacter.fxml"));
+//        AnchorPane anchorPane = loader.load();
+//        VBox vboxPrevScene = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
+//        rootPane.getChildren().setAll(vboxPrevScene);
+        //i think i need a main window
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("DunAdv.fxml"));
-//        Parent root = FXMLLoader.load(getClass().getResource("lore.fxml"));
-
+//        currScene = "nameCharacter";
+        Parent root = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
         primaryStage.setTitle("Happy Dungeon Adventure!");
         primaryStage.setScene(new Scene(root));
-
-
-
-
-//        Label intro = new Label(displayIntro());
-//
-//        button = new Button();
-//        button.setText("click me");
-//
-//        button.setOnAction(e -> System.out.println("you just clicked me!"));
-////        button.setOnAction(this);
-//
-//        StackPane layout = new StackPane();
-//        layout.getChildren().add(intro);
-//        layout.getChildren().add(button);
-//
-//        Scene scene = new Scene(layout, 600, 400);
-//        primaryStage.setScene(scene);
-
         primaryStage.show();
     }
-
-    //if we did this, we have to implement EventHandler, but lambda expressions seem easier
-//    @Override
-//    public void handle(Event event) {
-//        if (event.getSource() == button){
-//            //do something
-//        }
-//    }
 
     /**
      * Driver method for class (and entire game)
@@ -127,109 +111,12 @@ public class DungeonAdventure extends Application {
      * @param theArgs
      */
     public static void main(String[] theArgs) { //this main method is just to test
-//        displayIntro();
-
         launch(theArgs);
 
-
-//        //1. Create the frame.
-//        JFrame frame = new JFrame("Happy Dungeon Adventure!");
-//        frame.setBounds(600, 400, 600, 400);
-//
-//        //Set the frame icon to an image loaded from a file.
-////        frame.setIconImage(new ImageIcon(imgURL).getImage());
-//
-//        //2. Optional: What happens when the frame closes?
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//
-//        //3. Create components and put them in the frame.
-//        //...create emptyLabel...
-////        frame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
-//
-//        //4. Size the frame.
-//        frame.pack();
-//
-//        //5. Show it.
-//        frame.setVisible(true);
-//
-//        Dungeon layout = null;
-//        Scanner input = new Scanner(System.in);
-//
-//        System.out.println("--Would you like a custom dungeon? Y/N--");
-//        String custom = input.nextLine();  // Read user input
-//
-//        if (custom.equals("Y") || custom.equals("y") || custom.equals("yes") || custom.equals("Yes")) { //i know there are better ways but im lazy rn
-//            System.out.println("--Rows (must be at least 5):--");
-//            int cRows = Integer.parseInt(input.nextLine()) + 2;
-//            System.out.println("--Columns (must be at least 5):--");
-//            int cCols = Integer.parseInt(input.nextLine()) + 2;
-//            layout = new Dungeon(cRows, cCols);
-//        } else {
-//            layout = new Dungeon();
-//        }
-//
-//        //TODO: USE REGEX FOR INVALID INPUT
-//        //VISUALIZATION TEST CODE
-//        System.out.println("Dungeon:");
-//        for (int i = 0; i < layout.getMyDungeonLayout().length; i++) {
-//            for (int j = 0; j < layout.getMyDungeonLayout()[i].length; j++) {
-//                System.out.print(layout.getMyDungeonLayout()[i][j]);
-//            }
-//            System.out.println();
-//        }
-//
-//
-//        //getMyDungeonRooms()[y][x]
-//        System.out.println();
-//
-//        System.out.println("Room (1,1):");
-//        System.out.print(layout.getMyDungeonRooms()[1][1].toString());
-//
-//        System.out.println();
-//
-//        System.out.println("Room (3,5):");
-//        System.out.print(layout.getMyDungeonRooms()[5][3].toString());
-//
-//        System.out.println();
-//
-//        System.out.println("Room (2,4):");
-//        System.out.print(layout.getMyDungeonRooms()[4][2].toString());
-//
-//        //PRINT TEST ALL THE ROOMS EVERYWHERE, this does not include the boundary
-//        for (int i = 1; i < layout.getMyDungeonRooms().length; i++) {
-//            for (int j = 1; j < layout.getMyDungeonRooms()[i].length; j++) {
-//                System.out.println("Room (" + j + ", " + i + ")");
-//                System.out.println(layout.getMyDungeonRooms()[i][j]);
-//            }
-//            System.out.println();
-//        }
-//
 //        gamePlay();
 
     }
 
-
-//        System.out.println();
-//        System.out.println("Traversed:"); //shouldn't show any P, E, or S
-//        for (int i = 0; i < tempDungeon.length; i++) {
-//            for (int j = 0; j < tempDungeon[i].length; j++) {
-//                System.out.print(tempDungeon[i][j]);
-//            }
-//            System.out.println();
-//        }
-
-    /**
-     * Prints out an introduction to the game.
-     */
-    public static String displayIntro() {
-        StringBuilder s = new StringBuilder();
-        s.append("You are about to begin a Happy Adventure!");
-        s.append("\nBut wait!!!"
-                + "\n\nUnfortunately, you were thrown in a dungeon by the scary Tom Nook because you forgot to pay your bills on time. "
-                + "\n\nNow, you must venture on a dangerous expedition to collect the four pillars of OO, all while paying your rent to make it out of the dungeon alive."
-                + "\n\nGood luck! You'll need it!\n");
-        return s.toString();
-    }
 
     /**
      * Prompts user to enter name of monster,
@@ -325,5 +212,8 @@ public class DungeonAdventure extends Application {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
 }

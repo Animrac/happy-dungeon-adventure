@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added JavaFX library and dependency and tried making a little window and button with label">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/Model/DunAdv.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DunAdv.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Dungeon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/lore.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,21 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Mina/Desktop/tcss2023/Dungeon_Adventure",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mina/Desktop/tcss2023/Dungeon_Adventure&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\src\Model" />
@@ -95,7 +98,11 @@
       <workItem from="1683500942698" duration="2806000" />
       <workItem from="1683657377492" duration="6414000" />
       <workItem from="1683666951490" duration="894000" />
-      <workItem from="1683738884363" duration="10056000" />
+      <workItem from="1683738884363" duration="12881000" />
+      <workItem from="1683772513104" duration="877000" />
+      <workItem from="1683773411956" duration="79000" />
+      <workItem from="1683773510354" duration="1031000" />
+      <workItem from="1683789377941" duration="3424000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -174,7 +181,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683703347177</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added more JavaFX GUI and main name scene">
+      <created>1683755016172</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683755016172</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added more JavaFX GUI and main name scene">
+      <created>1683755044141</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683755044141</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +220,8 @@
     <MESSAGE value="Edited driver class" />
     <MESSAGE value="merged everyone's current files, added a line to make DungeonAdventure run" />
     <MESSAGE value="added JavaFX library and dependency and tried making a little window and button with label" />
-    <option name="LAST_COMMIT_MESSAGE" value="added JavaFX library and dependency and tried making a little window and button with label" />
+    <MESSAGE value="added more JavaFX GUI and main name scene" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more JavaFX GUI and main name scene" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dungeon_Adventure$Dungeon.ic" NAME="Dungeon Coverage Results" MODIFIED="1683363348003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

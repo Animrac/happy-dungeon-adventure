@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0f92914e-ba18-441c-a5cc-f99bb9f808e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Dungeon_Adventure/src/Model/DunAdv.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/Dungeon_Adventure/src/Model/DunAdv.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/DunAdv.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Dungeon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/DungeonAdventure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +82,7 @@
       <workItem from="1683569822177" duration="61000" />
       <workItem from="1683674584874" duration="16000" />
       <workItem from="1683738865804" duration="16000" />
+      <workItem from="1683789348838" duration="28000" />
     </task>
     <servers />
   </component>

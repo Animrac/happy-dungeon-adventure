@@ -1,8 +1,9 @@
 package src.Model;
 
+import java.io.Serializable;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Dungeon {
+public class Dungeon implements Serializable {
     /**
      * Default rows for the dungeon maze.
      */
