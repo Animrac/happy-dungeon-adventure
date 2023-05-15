@@ -11,6 +11,14 @@ public class Room {
 
     private char[][] currRoom = new char[3][3]; //3x3 character array to represent the room
 
+    private boolean canGoNorth;
+
+    private boolean canGoSouth;
+
+    private boolean canGoEast;
+
+    private boolean canGoWest;
+
     private char north;
     private char south;
     private char east;
@@ -63,16 +71,20 @@ public class Room {
 
         //if not a wall or edge, make it passable
         if (north != 'X' && north != '/') {
-            this.currRoom[1][0] = '|';
+            this.currRoom[0][1] = '-';
+            canGoNorth = true;
         }
         if (south != 'X' && south != '/') {
-            this.currRoom[1][2] = '|';
+            this.currRoom[2][1] = '-';
+            canGoSouth = true;
         }
         if (west != 'X' && west != '/') {
-            this.currRoom[0][1] = '-';
+            this.currRoom[1][0] = '|';
+            canGoWest = true;
         }
         if (east != 'X' && east != '/') {
-            this.currRoom[2][1] = '-';
+            this.currRoom[1][2] = '|';
+            canGoEast = true;
         }
 
         if (c == 'O'){ //empty room
@@ -149,22 +161,35 @@ public class Room {
         return room.toString();
     }
 
-        public boolean isEntrance () {
-            return isEntrance;
-        }
+    public boolean isEntrance () {
+        return isEntrance;
+    }
 
-        public void setEntrance ( boolean isEntrance){
-            this.isEntrance = isEntrance;
-        }
+    public void setEntrance ( boolean isEntrance){
+        this.isEntrance = isEntrance;
+    }
 
-        public boolean isExit () {
-            return isExit;
-        }
+    public boolean isExit () {
+        return isExit;
+    }
 
-        public void setExit ( boolean isExit){
-            this.isExit = isExit;
-        }
+    public void setExit ( boolean isExit){
+        this.isExit = isExit;
+    }
 
+    public boolean getCanGoNorth(){
+        return canGoNorth;
+    }
+
+    public boolean getCanGoSouth(){
+        return canGoSouth;
+    }
+    public boolean getCanGoEast(){
+        return canGoEast;
+    }
+    public boolean getCanGoWest(){
+        return canGoWest;
+    }
         // Getters and setters
 
     //might need these later, not sure yet

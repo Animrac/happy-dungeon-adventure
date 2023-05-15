@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -41,11 +42,16 @@
   <children>
     <AnchorPane fx:id="lore" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Text layoutX="137.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are about to begin a Happy Adventure!&#10;&#10;But wait!!&#10;&#10;Unfortunately, you were thrown in a dungeon by the scary Tom Nook because you forgot to pay your bills on time.&#10;&#10;Now, you must venture on a dangerous expedition to collect the four pillars of OO, all while paying your rent to make it out of the dungeon alive.&#10;&#10;Good luck! You'll need it ;)&#10;" wrappingWidth="365.14683532714844">
+            <Text layoutX="137.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are about to begin a Happy Adventure!&#10;&#10;But wait!!&#10;&#10;Unfortunately, you were thrown in a dungeon by the scary Tom Nook because you forgot to pay your bills on time.&#10;&#10;Now, you must venture on a dangerous expedition to collect the four pillars of OO, all while paying your rent to make it out of the dungeon alive.&#10;&#10;Good luck! You'll need it ;)&#10;" wrappingWidth="365.14683532714844">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
+            <Button layoutX="273.0" layoutY="335.0" mnemonicParsing="false" onAction="#returnPrevScene" text="Okie Dokie">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
       </children>
     </AnchorPane>
   </children>

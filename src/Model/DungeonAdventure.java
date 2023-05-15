@@ -1,6 +1,10 @@
 package src.Model;
 
 import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -10,17 +14,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.Button;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
@@ -41,10 +47,16 @@ public class DungeonAdventure extends Application implements Initializable {
     private static final Random MY_RANDOM = new Random();
 
     @FXML
+    private Label textRoom;
+
+    @FXML
     private MenuBar myMenuBar;
 
     @FXML
     private MenuItem menuControls;
+
+    @FXML
+    private TextField heroName;
 
     @FXML
     private MenuItem menuLore;
@@ -54,6 +66,18 @@ public class DungeonAdventure extends Application implements Initializable {
 
     private String currScene;
 
+
+//    Details heroDat[] = {new Details("Warrior", "so that I can kill things easily."),
+//            new Details("Thief", "so that I am sneaky."),
+//            new Details("Priestess", "so that I can help myself.")};
+//    @FXML
+//    private ChoiceBox heroChoice = new ChoiceBox(FXCollections.observableArrayList(heroDat));;
+
+    @FXML
+    private ChoiceBox heroChoice;
+
+    private Dungeon layout = new Dungeon();
+
     @FXML
     private AnchorPane currPane;
 
@@ -62,19 +86,52 @@ public class DungeonAdventure extends Application implements Initializable {
     @FXML
     private AnchorPane rootPane;
 
+    @FXML
+    private TextField heroSummary = new TextField("<-- Select your hero!");
+
     @FXML private VBox mainVBox;
 
+    private int currCol = -1;
+    private int currRow = -1;
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    @FXML
+    private Button buttonEast;
+
+    @FXML
+    private Button buttonNorth;
+
+    @FXML
+    private Button buttonSouth;
+
+    @FXML
+    private Button buttonWest;
     @FXML
     void newGame(ActionEvent event) throws IOException {
-//        currScene = "mainGame";
+        String name = heroName.getText();
+        Details heroChosen = (Details) heroChoice.getValue();
+        System.out.println(name + " is a " +heroChosen);
         System.out.println("You thought there was a game???");
-
-        Dungeon layout = new Dungeon();
-
+//        layout = new Dungeon();
         Parent root = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
-        VBox vboxMainGame = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
-        rootPane.getChildren().setAll(vboxMainGame);
-//        currPane = rootPane;
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+////        currScene = "mainGame";
+//        System.out.println("You thought there was a game???");
+//
+//        Dungeon layout = new Dungeon();
+//
+//        Parent root = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
+//        VBox vboxMainGame = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
+//        rootPane.getChildren().setAll(vboxMainGame);
+////        currPane = rootPane;
     }
 
     @FXML
@@ -85,6 +142,15 @@ public class DungeonAdventure extends Application implements Initializable {
     }
     @FXML //TODO i need to put all of these methods in a view class
     void returnPrevScene(ActionEvent event) throws IOException {
+        //TODO this doesn't actually return to the previous scene. I couldn't figure out how to do it.
+        Parent root = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+//        VBox vboxChar = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
+//        rootPane.getChildren().setAll(vboxChar);
+
 ////        Parent root = FXMLLoader.load(getClass().getResource("resources/"+currScene+".fxml"));
 ////        VBox vboxPrevScene = FXMLLoader.load(getClass().getResource("resources/"+currScene+".fxml"));
 //        FXMLLoader loader = FXMLLoader(this.getClass().getResource("resources/nameCharacter.fxml"));
@@ -96,6 +162,20 @@ public class DungeonAdventure extends Application implements Initializable {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+//        ObservableList<Details> heroData = FXCollections.observableArrayList();
+////        String st[] = { "Arnab", "Andrew", "Ankit", "None" };
+//        heroData.add(new Details("Warrior", "so that I can kill things easily."));
+//        heroData.add(new Details("Thief", "so that I am sneaky."));
+//        heroData.add(new Details("Priestess", "so that I can help myself."));
+//        heroChoice.setItems(heroData);
+//        heroChoice.getSelectionModel().selectFirst();
+//        heroSummary.setText(heroData.get(0).getText());
+//        heroChoice.valueProperty().addListener((o, ov, nv) -> {
+//            Details d = (Details) nv;
+//            heroSummary.setText(d.getText());
+//        });
+
 //        currScene = "nameCharacter";
         Parent root = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
         primaryStage.setTitle("Happy Dungeon Adventure!");
@@ -213,7 +293,131 @@ public class DungeonAdventure extends Application implements Initializable {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) { //this is every time a Parent is called i think
+
+        for (int i = 0; i < layout.getMyDungeonLayout().length; i++) {
+            for (int j = 0; j < layout.getMyDungeonLayout().length; j++) {
+                System.out.print(layout.getMyDungeonLayout()[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("Start Row: " + layout.getStartRow());
+        System.out.println("Start Col: " + layout.getStartCol());
+        currRow = layout.getStartRow();
+        currCol = layout.getStartCol();
+        System.out.println(layout.getMyDungeonRooms()[currRow][currCol].toString());
+        checkSurroundings();
+        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+
+
+        ObservableList<Details> heroData = FXCollections.observableArrayList();
+//        String st[] = { "Arnab", "Andrew", "Ankit", "None" };
+        heroData.add(new Details("Warrior", "so that I can kill things easily."));
+        heroData.add(new Details("Thief", "so that I am sneaky."));
+        heroData.add(new Details("Priestess", "so that I can help myself."));
+        heroChoice.setItems(heroData);
+        heroChoice.getSelectionModel().selectFirst();
+        heroSummary.setText(heroData.get(0).getText());
+        heroChoice.valueProperty().addListener((o, ov, nv) -> {
+            Details d = (Details) nv;
+            heroSummary.setText(d.getText());
+        });
+    }
+
+    private static class Details {
+
+        private final StringProperty name;
+        private final StringProperty text;
+
+        public Details(String name, String text) {
+            this.name = new SimpleStringProperty(name);
+            this.text = new SimpleStringProperty(text);
+        }
+        public String getText() {
+            return text.get();
+        }
+        public String getName() {
+            return name.get();
+        }
+        @Override
+        public String toString() {
+            return getName();
+        }
+    }
+
+    private void checkSurroundings(){
+        //TODO im so sorry
+        if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoWest() == false){
+            buttonWest.setDisable(true);
+        }
+        else {
+            buttonWest.setDisable(false);
+        }
+
+        if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoEast() == false){
+            buttonEast.setDisable(true);
+        }
+        else {
+            buttonEast.setDisable(false);
+        }
+
+        if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoNorth() == false){
+            buttonNorth.setDisable(true);
+        }
+        else {
+            buttonNorth.setDisable(false);
+        }
+
+        if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoSouth() == false){
+            buttonSouth.setDisable(true);
+        }
+        else {
+            buttonSouth.setDisable(false);
+        }
+    }
+    @FXML
+    void goEast(ActionEvent event) {
+
+        currCol += 1;
+//        currRow += 1;
+        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+
+        checkSurroundings();
+
 
     }
+
+    @FXML
+    void goNorth(ActionEvent event) {
+
+        currRow -= 1;
+        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+
+        checkSurroundings();
+
+    }
+
+    @FXML
+    void goSouth(ActionEvent event) {
+
+        currRow += 1;
+        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+
+        checkSurroundings();
+
+    }
+
+    @FXML
+    void goWest(ActionEvent event) {
+
+        currCol -= 1;
+//        currRow -= 1;
+        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+
+        checkSurroundings();
+
+    }
+
+
+
 }
