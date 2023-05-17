@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Fixed bug w/ choosing heroThree">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Adventurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/monsterOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/monsterThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/monsterTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,15 +24,7 @@
       </list>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/AnastasiaBranch" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -53,31 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mina/Desktop/tcss2023/Dungeon_Adventure&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\src\Model" />
-    </key>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="DungeonAdventure" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Model.DungeonAdventure" />
       <module name="Dungeon_Adventure" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\javafx-sdk-20.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,14 +82,9 @@
       <workItem from="1683500942698" duration="2806000" />
       <workItem from="1683657377492" duration="6414000" />
       <workItem from="1683666951490" duration="894000" />
-      <workItem from="1683738884363" duration="12881000" />
-      <workItem from="1683772513104" duration="877000" />
-      <workItem from="1683773411956" duration="79000" />
-      <workItem from="1683773510354" duration="1031000" />
-      <workItem from="1683789377941" duration="3486000" />
-      <workItem from="1684131698936" duration="15895000" />
-      <workItem from="1684292495799" duration="638000" />
-      <workItem from="1684348257124" duration="2192000" />
+      <workItem from="1684127183938" duration="920000" />
+      <workItem from="1684298185576" duration="12000" />
+      <workItem from="1684362548113" duration="1684000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -174,49 +149,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683667405585</updated>
     </task>
-    <task id="LOCAL-00010" summary="merged everyone's current files, added a line to make DungeonAdventure run">
-      <created>1683694645329</created>
+    <task id="LOCAL-00010" summary="Got rid of option to name monster in driver class">
+      <created>1683752827881</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1683694645329</updated>
+      <updated>1683752827881</updated>
     </task>
-    <task id="LOCAL-00011" summary="added JavaFX library and dependency and tried making a little window and button with label">
-      <created>1683703347177</created>
+    <task id="LOCAL-00011" summary="Fixed bug w/ choosing heroThree">
+      <created>1684127971560</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1683703347177</updated>
+      <updated>1684127971560</updated>
     </task>
-    <task id="LOCAL-00012" summary="added more JavaFX GUI and main name scene">
-      <created>1683755016172</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1683755016172</updated>
-    </task>
-    <task id="LOCAL-00013" summary="added more JavaFX GUI and main name scene">
-      <created>1683755044141</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1683755044141</updated>
-    </task>
-    <task id="LOCAL-00014" summary="added somewhat working code for GUI but still broken">
-      <created>1683793400599</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1683793400599</updated>
-    </task>
-    <task id="LOCAL-00015" summary="added visual representation with the toString() method and control buttons to move around the dungeon and rooms. Also fixed bugs that had to do with opening other scenes.">
-      <created>1684144277997</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1684144277997</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,12 +186,9 @@
     <MESSAGE value="Worked on driver class" />
     <MESSAGE value="Coded basic hero and monster child classes" />
     <MESSAGE value="Edited driver class" />
-    <MESSAGE value="merged everyone's current files, added a line to make DungeonAdventure run" />
-    <MESSAGE value="added JavaFX library and dependency and tried making a little window and button with label" />
-    <MESSAGE value="added more JavaFX GUI and main name scene" />
-    <MESSAGE value="added somewhat working code for GUI but still broken" />
-    <MESSAGE value="added visual representation with the toString() method and control buttons to move around the dungeon and rooms. Also fixed bugs that had to do with opening other scenes." />
-    <option name="LAST_COMMIT_MESSAGE" value="added visual representation with the toString() method and control buttons to move around the dungeon and rooms. Also fixed bugs that had to do with opening other scenes." />
+    <MESSAGE value="Got rid of option to name monster in driver class" />
+    <MESSAGE value="Fixed bug w/ choosing heroThree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug w/ choosing heroThree" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dungeon_Adventure$Dungeon.ic" NAME="Dungeon Coverage Results" MODIFIED="1683363348003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
