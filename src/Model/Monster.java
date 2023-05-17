@@ -11,6 +11,7 @@ public abstract class Monster extends Adventurer {
     /**
      * Constructor that initializes fields.
      *
+     * @param monsterThree
      * @param theHealth
      * @param theMinDamage
      * @param theMaxDamage
@@ -18,7 +19,7 @@ public abstract class Monster extends Adventurer {
      * @param theBlockOdds
      * @param theAttackSpeed
      */
-    protected Monster(int theHealth, int theMinDamage, int theMaxDamage,
+    protected Monster(String monsterThree, int theHealth, int theMinDamage, int theMaxDamage,
                       double theAttackOdds, double theBlockOdds, int theAttackSpeed) {
         super(theHealth, theMinDamage, theMaxDamage, theAttackOdds, theBlockOdds, theAttackSpeed);
         setOriginalHitPoints(theHealth);
