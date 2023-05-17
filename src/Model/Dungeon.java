@@ -13,10 +13,22 @@ public class Dungeon implements Serializable {
      * Default columns for the dungeon maze.
      */
     private static int dungeonColumns;
+
+    /**
+     * This boolean tells us if the dungeon can be successfully traversed or not.
+     */
     private static boolean itTraversed;
 
+    /**
+     * The dungeon row the player will start in.
+     */
     private static int startRow = -1;
+
+    /**
+     * The dungeon column the player will start in.
+     */
     private static int startCol = -1;
+
     /**
      * 2d array of the dungeon layout. This does not contain the rooms.
      */
@@ -34,7 +46,10 @@ public class Dungeon implements Serializable {
     final private static int PERCENTAGE_OF_WALLS = 45;
 
 
-    public Dungeon() { //default 12x12
+    /**
+     * The constructor for a default dungeon, which have the dimensions of 12 x 12.
+     */
+    public Dungeon() {
         this.dungeonRows = 12;
         this.dungeonColumns = 12;
         this.myDungeonLayout = new char[dungeonRows][dungeonColumns];
@@ -43,7 +58,10 @@ public class Dungeon implements Serializable {
         addRooms();
     }
 
-    public Dungeon(final int theRows, final int theCols) { //custom dungeon
+    /**
+     * The constructor for a custom dungeon, which you can input the custom rows and column dimensions.
+     */
+    public Dungeon(final int theRows, final int theCols) {
         this.dungeonRows = theRows;
         this.dungeonColumns = theCols;
         this.myDungeonLayout = new char[theRows][theCols];
@@ -57,7 +75,7 @@ public class Dungeon implements Serializable {
      */
     private void makeDungeon() {
 
-        int pillarCount = 0;
+        int pillarCount = 0; // To keep track that there will be four pillars.
 
         boolean isFourPillars = false, isExit = false, isStart = false;
 

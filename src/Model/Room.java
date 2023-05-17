@@ -271,3 +271,7 @@ public class Room {
             this.hasPillar = hasPillar;
         }
 }
+
+
+//array[5][j]
+//[ROW][COLUMN]
