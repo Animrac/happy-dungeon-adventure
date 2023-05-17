@@ -80,10 +80,10 @@ public abstract class Adventurer {
      * @param theBlockOdds the odds of a character being able to block an attack
      * @param theAttackSpeed the # of attack generated per round
      */
-     protected Adventurer(final String theName, final int theHealth, final int theMinDamage,
+     protected Adventurer(final int theHealth, final int theMinDamage,
                 final int theMaxDamage, final double theAttackOdds, final double theBlockOdds, final int theAttackSpeed) {
 
-        setName(theName);
+//        setName(theName);
         setHealth(theHealth);
         setMinDamage(theMinDamage);
         setMaxDamage(theMaxDamage);

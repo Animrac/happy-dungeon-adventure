@@ -215,11 +215,11 @@ public class DungeonAdventure extends Application implements Initializable {
         Monster randoMonster = null;
 
         if (rand == 0) {
-            randoMonster = new monsterOne(name);
+            randoMonster = new monsterOne();
         } else if (rand == 1) {
-            randoMonster = new monsterTwo(name);
+            randoMonster = new monsterTwo();
         } else {
-            randoMonster = new monsterThree(name);
+            randoMonster = new monsterThree();
         }
         return randoMonster;
     }
