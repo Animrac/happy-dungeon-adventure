@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added visual representation with the toString() method and control buttons to move around the dungeon and rooms. Also fixed bugs that had to do with opening other scenes.">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="made a new branch with everyone's stuff just in case.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Dungeon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/monsterOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/monsterThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/monsterTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="CarminaBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,21 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Mina/Desktop/tcss2023/Dungeon_Adventure",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mina/Desktop/tcss2023/Dungeon_Adventure&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\src\Model" />
@@ -102,6 +107,7 @@
       <workItem from="1684131698936" duration="15895000" />
       <workItem from="1684292495799" duration="638000" />
       <workItem from="1684348257124" duration="2192000" />
+      <workItem from="1684393648288" duration="6976000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>

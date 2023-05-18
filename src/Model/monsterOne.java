@@ -9,10 +9,8 @@ public class monsterOne extends Monster {
 
     /**
      * Constructor that initializes fields.
-     *
-     * @param theName
      */
-    public monsterOne (final String theName) {
-        super(theName, 80, 20, 40, .8, 3, 3);
+    public monsterOne () {
+        super("Monster One", 80, 20, 40, .8, 3, 3);
     }
 }
