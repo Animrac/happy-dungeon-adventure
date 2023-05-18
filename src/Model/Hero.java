@@ -21,19 +21,19 @@ public abstract class Hero extends Adventurer {
     /**
      * Inventory for the hero
      */
-    private Inventory myInventory;
+    private final Inventory myInventory;
 
     /**
      * Constructor that initializes fields.
      *
-     * @param theName
-     * @param theHealth
-     * @param theMinDamage
-     * @param theMaxDamage
-     * @param theAttackOdds
-     * @param theBlockOdds
-     * @param theAttackSpeed
-     * @param theSpecialSkillOdds
+     * @param theName the name chosen by the player for the hero
+     * @param theHealth the HP of the hero
+     * @param theMinDamage the min amount of damage that can be generated during an attack
+     * @param theMaxDamage the max amount of damage that can be generated during an attack
+     * @param theAttackOdds the odds of an attack landing
+     * @param theBlockOdds the odds of the hero blocking an attack from a monster
+     * @param theAttackSpeed the number of attacks that can be generated during a round
+     * @param theSpecialSkillOdds the odds of a special skill working
      */
     protected Hero(final String theName, final int theHealth, final int theMinDamage, final int theMaxDamage,
                    final double theAttackOdds, final double theBlockOdds, final int theAttackSpeed, final double theSpecialSkillOdds) {
@@ -47,7 +47,7 @@ public abstract class Hero extends Adventurer {
      * Checks if special skill odds are less than or equal to 0 and if so,
      * throws and IllegalArgumentException.
      *
-     * @param theSpecialSkillOdds
+     * @param theSpecialSkillOdds the odds of a special skill working
      */
     private void setSpecialSkillOdds(double theSpecialSkillOdds) {
         if(theSpecialSkillOdds <= 0) {
@@ -67,7 +67,7 @@ public abstract class Hero extends Adventurer {
 
     /**
      *
-     * @param theRunAway
+     * @param theRunAway whether a hero chose to run away or not
      */
     private void setRunAway(final boolean theRunAway) {
         myRunAway = theRunAway;
@@ -91,7 +91,7 @@ public abstract class Hero extends Adventurer {
     /**
      * Overrides the attack method in Adventurer class and allows user to choose hero attack.
      *
-     * @param theOpponent
+     * @param theOpponent the monster that the hero battles
      */
     @Override
     public void attack(final Adventurer theOpponent) {
@@ -124,7 +124,7 @@ public abstract class Hero extends Adventurer {
     /**
      * Allows hero to execute their special attack
      *
-     * @param theOpponent
+     * @param theOpponent the monster that the hero battles
      */
     protected void specialAttack(final Adventurer theOpponent) {}
 
@@ -133,7 +133,7 @@ public abstract class Hero extends Adventurer {
      * Overrides subtractHitPoints method in Adventure class by allowing hero a chance to block
      * an attack from a monster.
      *
-     * @param theAmount
+     * @param theAmount the amount of hit points to be subtracted
      */
     @Override
     protected void subtractHitPoints(final int theAmount) {
@@ -150,7 +150,7 @@ public abstract class Hero extends Adventurer {
      *
      * @return choice an integer representing user choice of attack
      */
-    private final int getChoice() {
+    private int getChoice() {
         int choice = 0;
         do {
             System.out.println("(1) regular attack\n(2) special attack\n(3) run away!\n");

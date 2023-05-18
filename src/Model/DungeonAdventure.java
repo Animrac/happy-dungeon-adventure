@@ -37,7 +37,7 @@ import java.util.Scanner;
  * This is the driver class for the entire Heroes versus Monsters game.
  *
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
- * @version 05/9/23
+ * @version 05/18/23
  */
 public class DungeonAdventure extends Application implements Initializable {
 
@@ -46,24 +46,45 @@ public class DungeonAdventure extends Application implements Initializable {
      */
     private static final Random MY_RANDOM = new Random();
 
+    /**
+     *
+     */
     @FXML
     private Label textRoom;
 
+    /**
+     *
+     */
     @FXML
     private MenuBar myMenuBar;
 
+    /**
+     *
+     */
     @FXML
     private MenuItem menuControls;
 
+    /**
+     *
+     */
     @FXML
     private TextField heroName;
 
+    /**
+     *
+     */
     @FXML
     private MenuItem menuLore;
 
+    /**
+     *
+     */
     @FXML
     private Button startButton;
 
+    /**
+     *
+     */
     private String currScene;
 
 
@@ -73,42 +94,100 @@ public class DungeonAdventure extends Application implements Initializable {
 //    @FXML
 //    private ChoiceBox heroChoice = new ChoiceBox(FXCollections.observableArrayList(heroDat));;
 
+    /**
+     *
+     */
     @FXML
     private ChoiceBox heroChoice;
 
+    /**
+     *
+     */
     private Dungeon layout = new Dungeon();
 
+    /**
+     *
+     */
     @FXML
     private AnchorPane currPane;
 
+    /**
+     *
+     */
     @FXML
     private AnchorPane lore;
+
+    /**
+     *
+     */
     @FXML
     private AnchorPane rootPane;
 
+    /**
+     *
+     */
     @FXML
     private TextField heroSummary = new TextField("<-- Select your hero!");
 
+    /**
+     *
+     */
     @FXML private VBox mainVBox;
 
+    /**
+     *
+     */
     private int currCol = -1;
+
+    /**
+     *
+     */
     private int currRow = -1;
 
+    /**
+     *
+     */
     private Stage stage;
+
+    /**
+     *
+     */
     private Scene scene;
+
+    /**
+     *
+     */
     private Parent root;
 
+    /**
+     *
+     */
     @FXML
     private Button buttonEast;
 
+    /**
+     *
+     */
     @FXML
     private Button buttonNorth;
 
+    /**
+     *
+     */
     @FXML
     private Button buttonSouth;
 
+    /**
+     *
+     */
     @FXML
     private Button buttonWest;
+
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void newGame(ActionEvent event) throws IOException {
         String name = heroName.getText();
@@ -134,12 +213,23 @@ public class DungeonAdventure extends Application implements Initializable {
 ////        currPane = rootPane;
     }
 
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void showLore(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/lore.fxml"));
         VBox vboxLore = FXMLLoader.load(getClass().getResource("resources/lore.fxml"));
         rootPane.getChildren().setAll(vboxLore);
     }
+
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML //TODO i need to put all of these methods in a view class
     void returnPrevScene(ActionEvent event) throws IOException {
         //TODO this doesn't actually return to the previous scene. I couldn't figure out how to do it.
@@ -160,6 +250,11 @@ public class DungeonAdventure extends Application implements Initializable {
         //i think i need a main window
     }
 
+    /**
+     *
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -197,22 +292,16 @@ public class DungeonAdventure extends Application implements Initializable {
 
     }
 
-
     /**
-     * Prompts user to enter name of monster,
-     * and then randomly generates a kind of monster.
+     * Randomly generates a kind of monster.
      *
      * @return randoMonster
      */
     public static Monster spawnMonster() {
-        Scanner in  = new Scanner(System.in);
-
-        System.out.print("First, choose a name for a monster: ");
-        String name = in.next();
 
         int rand = MY_RANDOM.nextInt(3);
 
-        Monster randoMonster = null;
+        Monster randoMonster;
 
         if (rand == 0) {
             randoMonster = new monsterOne();
@@ -254,6 +343,12 @@ public class DungeonAdventure extends Application implements Initializable {
         return chosenHero;
     }
 
+    /**
+     * Checks to see if hero and monster are alive and creates battle between the two.
+     *
+     * @param hero
+     * @param monster
+     */
     public static void battle(Hero hero, Monster monster) {
         while (hero.alive() && monster.alive() && !hero.runAway()) {
             System.out.println(hero.getName() + " hit points: " + hero.getHealth());
@@ -292,7 +387,11 @@ public class DungeonAdventure extends Application implements Initializable {
         battle(hero, monster);
     }
 
-
+    /**
+     *
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) { //this is every time a Parent is called i think
 
@@ -325,6 +424,9 @@ public class DungeonAdventure extends Application implements Initializable {
         });
     }
 
+    /**
+     *
+     */
     private static class Details {
 
         private final StringProperty name;
@@ -346,6 +448,9 @@ public class DungeonAdventure extends Application implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     private void checkSurroundings(){
         //TODO im so sorry
         if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoWest() == false){
@@ -376,6 +481,11 @@ public class DungeonAdventure extends Application implements Initializable {
             buttonSouth.setDisable(false);
         }
     }
+
+    /**
+     *
+     * @param event
+     */
     @FXML
     void goEast(ActionEvent event) {
 
@@ -388,6 +498,10 @@ public class DungeonAdventure extends Application implements Initializable {
 
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     void goNorth(ActionEvent event) {
 
@@ -398,6 +512,10 @@ public class DungeonAdventure extends Application implements Initializable {
 
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     void goSouth(ActionEvent event) {
 
@@ -408,6 +526,10 @@ public class DungeonAdventure extends Application implements Initializable {
 
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     void goWest(ActionEvent event) {
 

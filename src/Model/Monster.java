@@ -11,13 +11,13 @@ public abstract class Monster extends Adventurer {
     /**
      * Constructor that initializes fields.
      *
-     * @param monsterThree
-     * @param theHealth
-     * @param theMinDamage
-     * @param theMaxDamage
-     * @param theAttackOdds
-     * @param theBlockOdds
-     * @param theAttackSpeed
+     * @param monsterThree the third monster type
+     * @param theHealth the health of the monster
+     * @param theMinDamage the minimum amount of damage a monster can create
+     * @param theMaxDamage the maximum amount of damage a monster can create
+     * @param theAttackOdds the odds of an attack succeeding
+     * @param theBlockOdds the odds of a monster being able to block
+     * @param theAttackSpeed the number of attacks that can be generated in one round
      */
     protected Monster(String monsterThree, int theHealth, int theMinDamage, int theMaxDamage,
                       double theAttackOdds, double theBlockOdds, int theAttackSpeed) {
@@ -36,25 +36,5 @@ public abstract class Monster extends Adventurer {
             throw new IllegalArgumentException(" original hit points must be greater than 0");
         }
     }
-
-//
-//    /**
-//     * Overrides subtractHitPoints method in DungeonClass and allows monster
-//     * a chance to heal after hit points have been lost, as long as monster has not fainted.
-//     *
-//     * @param theHealth
-//     */
-//    @Override
-//    protected void subtractHitPoints(final int theHealth) {
-//        super.subtractHitPoints(theHealth);
-//        if (alive() && canHeal()) {
-//            myOriginalHitPoints += generateHealPoints();
-//            System.out.println(getName() + " healed from the attack!");
-//        }
-//        else {
-//            super.subtractHitPoints(theHealth);
-//        }
-//    }
-//
 }
 

@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Merge of all our branches, including GUI">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Added fix to bug w/ choosing heroThree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/heroOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/heroThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/heroTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/monsterOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/monsterThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/monsterTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/monsterTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +53,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -92,6 +101,7 @@
       <workItem from="1684127183938" duration="920000" />
       <workItem from="1684298185576" duration="12000" />
       <workItem from="1684362548113" duration="1684000" />
+      <workItem from="1684430177062" duration="2065000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -184,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684367863515</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added fix to bug w/ choosing heroThree">
+      <created>1684368569622</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684368569622</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +228,8 @@
     <MESSAGE value="Fixed bug w/ choosing heroThree" />
     <MESSAGE value="Backup" />
     <MESSAGE value="Merge of all our branches, including GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge of all our branches, including GUI" />
+    <MESSAGE value="Added fix to bug w/ choosing heroThree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fix to bug w/ choosing heroThree" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dungeon_Adventure$Dungeon.ic" NAME="Dungeon Coverage Results" MODIFIED="1683363348003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

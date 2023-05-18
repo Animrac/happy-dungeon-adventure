@@ -9,8 +9,6 @@ public class monsterTwo extends Monster {
 
     /**
      * Constructor that initializes fields.
-     *
-     * @param theName
      */
     public monsterTwo () {
         super("monsterTwo", 80, 20, 40, .8, 3, 3);
