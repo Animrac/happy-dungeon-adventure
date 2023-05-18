@@ -108,26 +108,28 @@ public class Dungeon implements Serializable {
             }
         }
 
-        do {
+        do { // Do add pillars, entrance, and exit to a random empty room,
+             // while there are not enough pillars, no entrance, and no exit.
             int randomRow = ThreadLocalRandom.current().nextInt(1, dungeonRows - 2 + 1); //-2 for the walls, +1 for the boundary
             int randomCol = ThreadLocalRandom.current().nextInt(1,  dungeonColumns - 2 + 1);
 
-            if (!(isFourPillars) && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+            if (!isFourPillars && this.myDungeonLayout[randomRow][randomCol] == 'O') { //if there aren't four pillars yet and land in an empty room
                 this.myDungeonLayout[randomRow][randomCol] = 'P';
                 pillarCount++;
                 if (pillarCount == 4) {
                     isFourPillars = true;
                 }
-            } else if (!isStart && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+            } else if (!isStart && this.myDungeonLayout[randomRow][randomCol] == 'O') { //if there isn't an entrance yet and land in an empty room
                 this.myDungeonLayout[randomRow][randomCol] = 'S';
                 this.startRow = randomRow;
                 this.startCol = randomCol;
                 isStart = true;
-            } else if (!isExit && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+            } else if (!isExit && this.myDungeonLayout[randomRow][randomCol] == 'O') { //if there isn't an exit yet and land in an empty room
                 this.myDungeonLayout[randomRow][randomCol] = 'E';
                 isExit = true;
             }
-        } while (!(isFourPillars && isExit && isStart));
+        }
+        while (!(isFourPillars && isExit && isStart));
 
         ensureTraversable();
 
