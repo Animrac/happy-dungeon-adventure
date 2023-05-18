@@ -241,13 +241,14 @@ public class DungeonAdventure extends Application implements Initializable {
         System.out.println("1: heroOne \n2: heroTwo \n3: heroThree");
         System.out.println();
 
+        int choice = in.nextInt(); //fixes bug with choosing heroThree
         Hero chosenHero = null;
 
-        if (in.nextInt() == 1) {
+        if (choice == 1) {
             chosenHero = new heroOne(name);
-        } else if (in.nextInt() == 2) {
+        } else if (choice == 2) {
             chosenHero = new heroTwo(name);
-        } else if (in.nextInt() == 3) {
+        } else if (choice == 3) {
             chosenHero = new heroThree(name);
         }
         return chosenHero;
