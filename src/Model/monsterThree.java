@@ -11,6 +11,6 @@ public class monsterThree extends Monster {
      * Constructor that initializes fields.
      */
     public monsterThree () {
-        super("monsterThree", 80, 20, 40, .8, 3, 3);
+        super("Monster Three", 80, 20, 40, .8, 3, 3);
     }
 }

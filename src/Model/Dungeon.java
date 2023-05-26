@@ -3,16 +3,28 @@ package src.Model;
 import java.io.Serializable;
 import java.util.concurrent.ThreadLocalRandom;
 
+    /*
+
+    Dungeon Map 2d Array Key:
+    X - Wall
+    O - Empty Room
+    S - Start/Entrance (In)
+    E - Exit (Out)
+    A, E, I, P - Pillars
+
+     */
+
 public class Dungeon implements Serializable {
+
     /**
      * Default rows for the dungeon maze.
      */
-    private static int dungeonRows;
+    private int dungeonRows;
 
     /**
      * Default columns for the dungeon maze.
      */
-    private static int dungeonColumns;
+    private int dungeonColumns;
 
     /**
      * This boolean tells us if the dungeon can be successfully traversed or not.
@@ -22,12 +34,12 @@ public class Dungeon implements Serializable {
     /**
      * The dungeon row the player will start in.
      */
-    private static int startRow = -1;
+    private int startRow = -1;
 
     /**
      * The dungeon column the player will start in.
      */
-    private static int startCol = -1;
+    private int startCol = -1;
 
     /**
      * 2d array of the dungeon layout. This does not contain the rooms.
@@ -43,7 +55,7 @@ public class Dungeon implements Serializable {
     /**
      * Percentage that walls appear.
      */
-    final private static int PERCENTAGE_OF_WALLS = 45;
+    final private int PERCENTAGE_OF_WALLS = 40;
 
 
     /**
@@ -96,26 +108,28 @@ public class Dungeon implements Serializable {
             }
         }
 
-        do {
+        do { // Do add pillars, entrance, and exit to a random empty room,
+             // while there are not enough pillars, no entrance, and no exit.
             int randomRow = ThreadLocalRandom.current().nextInt(1, dungeonRows - 2 + 1); //-2 for the walls, +1 for the boundary
             int randomCol = ThreadLocalRandom.current().nextInt(1,  dungeonColumns - 2 + 1);
 
-            if (!(isFourPillars) && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+            if (!isFourPillars && this.myDungeonLayout[randomRow][randomCol] == 'O') { //if there aren't four pillars yet and land in an empty room
                 this.myDungeonLayout[randomRow][randomCol] = 'P';
                 pillarCount++;
                 if (pillarCount == 4) {
                     isFourPillars = true;
                 }
-            } else if (!isStart && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+            } else if (!isStart && this.myDungeonLayout[randomRow][randomCol] == 'O') { //if there isn't an entrance yet and land in an empty room
                 this.myDungeonLayout[randomRow][randomCol] = 'S';
                 this.startRow = randomRow;
                 this.startCol = randomCol;
                 isStart = true;
-            } else if (!isExit && this.myDungeonLayout[randomRow][randomCol] == 'O') {
+            } else if (!isExit && this.myDungeonLayout[randomRow][randomCol] == 'O') { //if there isn't an exit yet and land in an empty room
                 this.myDungeonLayout[randomRow][randomCol] = 'E';
                 isExit = true;
             }
-        } while (!(isFourPillars && isExit && isStart));
+        }
+        while (!(isFourPillars && isExit && isStart));
 
         ensureTraversable();
 
@@ -127,17 +141,20 @@ public class Dungeon implements Serializable {
     private void ensureTraversable() {
 
         char[][] tempDungeon = new char[0][];
-        boolean firstRun = true;
 
-        while (!(this.isItTraversable())) {
+        boolean firstRun = true; // This switch has to be here to make sure another dungeon isn't created after
+                                 // the first one without checking it.
 
-            if (!firstRun){
+        while (!(this.isItTraversable())) { // While the current Dungeon has not been determined to be traversable:
+
+            if (!firstRun){ // If it's not the first run, then the first run failed.
+                            // So, make a new Dungeon to see if that one is traversable.
                 makeDungeon();
             }
 
-            firstRun = false;
+            firstRun = false; // It's no longer the first run.
 
-            tempDungeon = new char[this.dungeonRows][this.dungeonColumns]; //to keep the original dungeon
+            tempDungeon = new char[this.dungeonRows][this.dungeonColumns]; // To keep the original dungeon.
 
             for (int i = 0; i < this.dungeonRows; i++) {
                 for (int j = 0; j < this.dungeonColumns; j++) {
@@ -227,10 +244,12 @@ public class Dungeon implements Serializable {
 
     }
 
+    /**
+     * Adds Room objects to a 2d array based on the Dungeon 2d array.
+     */
     public void addRooms(){
-        for (int i = 0; i < myDungeonLayout.length; i++) {
-            for (int j = 0; j < myDungeonLayout[i].length; j++) {
-                //I don't know if these coordinates (i, j) or (j, i) should be swapped. Seems to work for now.
+        for (int i = 0; i < myDungeonLayout.length; i++) { //ROW i
+            for (int j = 0; j < myDungeonLayout[i].length; j++) { //COLUMN j
                 myDungeonRooms[i][j] = new Room(myDungeonLayout, i, j, myDungeonLayout[i][j]);
             }
         }
@@ -250,25 +269,22 @@ public class Dungeon implements Serializable {
         return myDungeonRooms;
     }
 
-    public int getPercentageOfWalls() {
-        return PERCENTAGE_OF_WALLS;
-    }
-
     public int getStartRow() {
         return startRow;
     }
 
     public void setStartRow(int theStartRow) {
         startRow = theStartRow;
+    } //might be useful for saving
+
+    public void setStartCol(int theStartCol) {
+        startCol = theStartCol;
     }
 
     public int getStartCol() {
         return startCol;
     }
 
-    public void setStartCol(int theStartCol) {
-        startCol = theStartCol;
-    }
 
 }
 

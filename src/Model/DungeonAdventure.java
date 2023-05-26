@@ -1,13 +1,9 @@
 package src.Model;
 
 import javafx.application.Application;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,13 +16,10 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
@@ -46,178 +39,80 @@ public class DungeonAdventure extends Application implements Initializable {
      */
     private static final Random MY_RANDOM = new Random();
 
-    /**
-     *
-     */
     @FXML
     private Label textRoom;
 
-    /**
-     *
-     */
     @FXML
     private MenuBar myMenuBar;
 
-    /**
-     *
-     */
     @FXML
     private MenuItem menuControls;
 
-    /**
-     *
-     */
     @FXML
     private TextField heroName;
 
-    /**
-     *
-     */
     @FXML
     private MenuItem menuLore;
 
-    /**
-     *
-     */
-    @FXML
-    private Button startButton;
-
-    /**
-     *
-     */
-    private String currScene;
-
-
-//    Details heroDat[] = {new Details("Warrior", "so that I can kill things easily."),
-//            new Details("Thief", "so that I am sneaky."),
-//            new Details("Priestess", "so that I can help myself.")};
-//    @FXML
-//    private ChoiceBox heroChoice = new ChoiceBox(FXCollections.observableArrayList(heroDat));;
-
-    /**
-     *
-     */
     @FXML
     private ChoiceBox heroChoice;
 
-    /**
-     *
-     */
-    private Dungeon layout = new Dungeon();
-
-    /**
-     *
-     */
     @FXML
     private AnchorPane currPane;
 
-    /**
-     *
-     */
     @FXML
     private AnchorPane lore;
 
-    /**
-     *
-     */
     @FXML
     private AnchorPane rootPane;
 
-    /**
-     *
-     */
     @FXML
     private TextField heroSummary = new TextField("<-- Select your hero!");
 
-    /**
-     *
-     */
-    @FXML private VBox mainVBox;
+    @FXML
+    private VBox mainVBox;
 
-    /**
-     *
-     */
-    private int currCol = -1;
+    @FXML
+    private Button startButton;
 
-    /**
-     *
-     */
-    private int currRow = -1;
-
-    /**
-     *
-     */
-    private Stage stage;
-
-    /**
-     *
-     */
-    private Scene scene;
-
-    /**
-     *
-     */
-    private Parent root;
-
-    /**
-     *
-     */
     @FXML
     private Button buttonEast;
 
-    /**
-     *
-     */
     @FXML
     private Button buttonNorth;
 
-    /**
-     *
-     */
     @FXML
     private Button buttonSouth;
 
-    /**
-     *
-     */
     @FXML
     private Button buttonWest;
 
-    /**
-     *
-     * @param event
-     * @throws IOException
-     */
+    //TODO this should not be static i think, can't save it otherwise
+    private static Dungeon dungeonLayout;
+
+    private int currCol = -1;
+    private int currRow = -1;
+
+    private Stage stage;
+
+    private Scene scene;
+
+    private Parent root;
+
+    private String currScene;
+
     @FXML
     void newGame(ActionEvent event) throws IOException {
         String name = heroName.getText();
         Details heroChosen = (Details) heroChoice.getValue();
         System.out.println(name + " is a " +heroChosen);
-        System.out.println("You thought there was a game???");
-//        layout = new Dungeon();
         Parent root = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
-
-////        currScene = "mainGame";
-//        System.out.println("You thought there was a game???");
-//
-//        Dungeon layout = new Dungeon();
-//
-//        Parent root = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
-//        VBox vboxMainGame = FXMLLoader.load(getClass().getResource("resources/mainGame.fxml"));
-//        rootPane.getChildren().setAll(vboxMainGame);
-////        currPane = rootPane;
     }
 
-    /**
-     *
-     * @param event
-     * @throws IOException
-     */
     @FXML
     void showLore(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/lore.fxml"));
@@ -225,53 +120,18 @@ public class DungeonAdventure extends Application implements Initializable {
         rootPane.getChildren().setAll(vboxLore);
     }
 
-    /**
-     *
-     * @param event
-     * @throws IOException
-     */
-    @FXML //TODO i need to put all of these methods in a view class
+    @FXML //TODO i need to put all of these methods in a view class I think
     void returnPrevScene(ActionEvent event) throws IOException {
-        //TODO this doesn't actually return to the previous scene. I couldn't figure out how to do it.
+        //TODO this doesn't actually return to the previous scene. I have not figured out how to do it yet.
         Parent root = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-//        VBox vboxChar = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
-//        rootPane.getChildren().setAll(vboxChar);
-
-////        Parent root = FXMLLoader.load(getClass().getResource("resources/"+currScene+".fxml"));
-////        VBox vboxPrevScene = FXMLLoader.load(getClass().getResource("resources/"+currScene+".fxml"));
-//        FXMLLoader loader = FXMLLoader(this.getClass().getResource("resources/nameCharacter.fxml"));
-//        AnchorPane anchorPane = loader.load();
-//        VBox vboxPrevScene = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
-//        rootPane.getChildren().setAll(vboxPrevScene);
-        //i think i need a main window
     }
 
-    /**
-     *
-     * @param primaryStage
-     * @throws Exception
-     */
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-//        ObservableList<Details> heroData = FXCollections.observableArrayList();
-////        String st[] = { "Arnab", "Andrew", "Ankit", "None" };
-//        heroData.add(new Details("Warrior", "so that I can kill things easily."));
-//        heroData.add(new Details("Thief", "so that I am sneaky."));
-//        heroData.add(new Details("Priestess", "so that I can help myself."));
-//        heroChoice.setItems(heroData);
-//        heroChoice.getSelectionModel().selectFirst();
-//        heroSummary.setText(heroData.get(0).getText());
-//        heroChoice.valueProperty().addListener((o, ov, nv) -> {
-//            Details d = (Details) nv;
-//            heroSummary.setText(d.getText());
-//        });
-
-//        currScene = "nameCharacter";
         Parent root = FXMLLoader.load(getClass().getResource("resources/nameCharacter.fxml"));
         primaryStage.setTitle("Happy Dungeon Adventure!");
         primaryStage.setScene(new Scene(root));
@@ -279,29 +139,88 @@ public class DungeonAdventure extends Application implements Initializable {
     }
 
     /**
-     * Driver method for class (and entire game)
-     * Calls displayIntro() class to display an introduction to the game.
+     * Driver method for class (and the entire game).
      * Runs game play.
      *
      * @param theArgs
      */
-    public static void main(String[] theArgs) { //this main method is just to test
+    public static void main(String[] theArgs) { //TODO currently lots of test code
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("--Would you like a custom dungeon? Y/N--");
+        String custom = input.nextLine();  // Read user input
+
+        if (custom.equals("Y") || custom.equals("y") || custom.equals("yes") || custom.equals("Yes")) { //i know there are better ways but im lazy rn
+            System.out.println("--Rows (must be at least 5):--");
+            int cRows = Integer.parseInt(input.nextLine()) + 2;
+            System.out.println("--Columns (must be at least 5):--");
+            int cCols = Integer.parseInt(input.nextLine()) + 2;
+            dungeonLayout = new Dungeon(cRows, cCols);
+        } else {
+            dungeonLayout = new Dungeon();
+        }
+
+        //TODO: USE REGEX FOR INVALID INPUT
+        //VISUALIZATION TEST CODE
+        System.out.println("Dungeon:");
+        for (int i = 0; i < dungeonLayout.getMyDungeonLayout().length; i++) {
+            for (int j = 0; j < dungeonLayout.getMyDungeonLayout()[i].length; j++) {
+                System.out.print(dungeonLayout.getMyDungeonLayout()[i][j]);
+            }
+            System.out.println();
+        }
+
+
+        //getMyDungeonRooms()[y/row][x/column]
+        System.out.println();
+
+        System.out.println("Room [1][1]:");
+        System.out.print(dungeonLayout.getMyDungeonRooms()[1][1].toString());
+
+        System.out.println();
+
+        System.out.println("Room [5][3]:");
+        System.out.print(dungeonLayout.getMyDungeonRooms()[5][3].toString());
+
+        System.out.println();
+
+        System.out.println("Room [4][2]:");
+        System.out.print(dungeonLayout.getMyDungeonRooms()[4][2].toString());
+
+        System.out.println();
+
+//        //PRINT TEST ALL THE ROOMS EVERYWHERE, this does not include the boundaries
+//        for (int i = 1; i < layout.getMyDungeonRooms().length-1; i++) {
+//            for (int j = 1; j < layout.getMyDungeonRooms()[i].length-1; j++) {
+//                System.out.println("Room [" + i + "][" + j + "]");
+//                System.out.println(layout.getMyDungeonRooms()[i][j]);
+//            }
+//            System.out.println();
+//        }
+
+
+        //GUI
         launch(theArgs);
 
+        //Console Version of the Game
 //        gamePlay();
 
     }
 
+
     /**
-     * Randomly generates a kind of monster.
+     * Prompts user to enter name of monster,
+     * and then randomly generates a kind of monster.
      *
      * @return randoMonster
      */
     public static Monster spawnMonster() {
+        Scanner in  = new Scanner(System.in);
 
         int rand = MY_RANDOM.nextInt(3);
 
-        Monster randoMonster;
+        Monster randoMonster = null;
 
         if (rand == 0) {
             randoMonster = new monsterOne();
@@ -330,25 +249,18 @@ public class DungeonAdventure extends Application implements Initializable {
         System.out.println("1: heroOne \n2: heroTwo \n3: heroThree");
         System.out.println();
 
-        int choice = in.nextInt(); //fixes bug with choosing heroThree
         Hero chosenHero = null;
 
-        if (choice == 1) {
+        if (in.nextInt() == 1) {
             chosenHero = new heroOne(name);
-        } else if (choice == 2) {
+        } else if (in.nextInt() == 2) {
             chosenHero = new heroTwo(name);
-        } else if (choice == 3) {
+        } else if (in.nextInt() == 3) {
             chosenHero = new heroThree(name);
         }
         return chosenHero;
     }
 
-    /**
-     * Checks to see if hero and monster are alive and creates battle between the two.
-     *
-     * @param hero
-     * @param monster
-     */
     public static void battle(Hero hero, Monster monster) {
         while (hero.alive() && monster.alive() && !hero.runAway()) {
             System.out.println(hero.getName() + " hit points: " + hero.getHealth());
@@ -377,7 +289,7 @@ public class DungeonAdventure extends Application implements Initializable {
      */
     public static void gamePlay() {
         Monster monster = spawnMonster();
-        System.out.println("Oh no! A " + monster.getClass() + " has spawned!\nIt is named " + monster.getName());
+        System.out.println("Oh no! A " + monster.getClass() + " has spawned!");
         System.out.println();
 
         Hero hero = chooseHero();
@@ -387,34 +299,33 @@ public class DungeonAdventure extends Application implements Initializable {
         battle(hero, monster);
     }
 
-    /**
-     *
-     * @param url
-     * @param resourceBundle
-     */
+
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) { //this is every time a Parent is called i think
+    public void initialize(URL theURL, ResourceBundle theResourceBundle) { //this is every time a Parent is called i think
 
-        for (int i = 0; i < layout.getMyDungeonLayout().length; i++) {
-            for (int j = 0; j < layout.getMyDungeonLayout().length; j++) {
-                System.out.print(layout.getMyDungeonLayout()[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println("Start Row: " + layout.getStartRow());
-        System.out.println("Start Col: " + layout.getStartCol());
-        currRow = layout.getStartRow();
-        currCol = layout.getStartCol();
-        System.out.println(layout.getMyDungeonRooms()[currRow][currCol].toString());
-        checkSurroundings();
-        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+//        for (int i = 0; i < dungeonLayout.getMyDungeonLayout().length; i++) {
+//            for (int j = 0; j < dungeonLayout.getMyDungeonLayout().length; j++) {
+//                System.out.print(dungeonLayout.getMyDungeonLayout()[i][j]);
+//            }
+//            System.out.println();
+//        }
+        System.out.println();
+        System.out.println("Start Row: " + dungeonLayout.getStartRow());
+        System.out.println("Start Col: " + dungeonLayout.getStartCol());
+        currRow = dungeonLayout.getStartRow();
+        currCol = dungeonLayout.getStartCol();
 
+        System.out.println(dungeonLayout.getMyDungeonRooms()[currRow][currCol].toString());
+
+        checkSurroundings(); // For arrow buttons.
+        textRoom.setText(dungeonLayout.getMyDungeonRooms()[currRow][currCol].toString());
 
         ObservableList<Details> heroData = FXCollections.observableArrayList();
-//        String st[] = { "Arnab", "Andrew", "Ankit", "None" };
+
         heroData.add(new Details("Warrior", "so that I can kill things easily."));
         heroData.add(new Details("Thief", "so that I am sneaky."));
         heroData.add(new Details("Priestess", "so that I can help myself."));
+
         heroChoice.setItems(heroData);
         heroChoice.getSelectionModel().selectFirst();
         heroSummary.setText(heroData.get(0).getText());
@@ -422,59 +333,32 @@ public class DungeonAdventure extends Application implements Initializable {
             Details d = (Details) nv;
             heroSummary.setText(d.getText());
         });
+
     }
 
-    /**
-     *
-     */
-    private static class Details {
-
-        private final StringProperty name;
-        private final StringProperty text;
-
-        public Details(String name, String text) {
-            this.name = new SimpleStringProperty(name);
-            this.text = new SimpleStringProperty(text);
-        }
-        public String getText() {
-            return text.get();
-        }
-        public String getName() {
-            return name.get();
-        }
-        @Override
-        public String toString() {
-            return getName();
-        }
-    }
-
-    /**
-     *
-     */
     private void checkSurroundings(){
-        //TODO im so sorry
-        if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoWest() == false){
+        if (dungeonLayout.getMyDungeonRooms()[currRow][currCol].getCanGoWest() == false){
             buttonWest.setDisable(true);
         }
         else {
             buttonWest.setDisable(false);
         }
 
-        if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoEast() == false){
+        if (dungeonLayout.getMyDungeonRooms()[currRow][currCol].getCanGoEast() == false){
             buttonEast.setDisable(true);
         }
         else {
             buttonEast.setDisable(false);
         }
 
-        if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoNorth() == false){
+        if (dungeonLayout.getMyDungeonRooms()[currRow][currCol].getCanGoNorth() == false){
             buttonNorth.setDisable(true);
         }
         else {
             buttonNorth.setDisable(false);
         }
 
-        if (layout.getMyDungeonRooms()[currRow][currCol].getCanGoSouth() == false){
+        if (dungeonLayout.getMyDungeonRooms()[currRow][currCol].getCanGoSouth() == false){
             buttonSouth.setDisable(true);
         }
         else {
@@ -482,65 +366,44 @@ public class DungeonAdventure extends Application implements Initializable {
         }
     }
 
-    /**
-     *
-     * @param event
-     */
     @FXML
     void goEast(ActionEvent event) {
 
         currCol += 1;
-//        currRow += 1;
-        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+        textRoom.setText(dungeonLayout.getMyDungeonRooms()[currRow][currCol].toString());
 
         checkSurroundings();
 
-
     }
 
-    /**
-     *
-     * @param event
-     */
     @FXML
     void goNorth(ActionEvent event) {
 
         currRow -= 1;
-        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+        textRoom.setText(dungeonLayout.getMyDungeonRooms()[currRow][currCol].toString());
 
         checkSurroundings();
 
     }
 
-    /**
-     *
-     * @param event
-     */
     @FXML
     void goSouth(ActionEvent event) {
 
         currRow += 1;
-        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+        textRoom.setText(dungeonLayout.getMyDungeonRooms()[currRow][currCol].toString());
 
         checkSurroundings();
 
     }
 
-    /**
-     *
-     * @param event
-     */
     @FXML
     void goWest(ActionEvent event) {
 
         currCol -= 1;
-//        currRow -= 1;
-        textRoom.setText(layout.getMyDungeonRooms()[currRow][currCol].toString());
+        textRoom.setText(dungeonLayout.getMyDungeonRooms()[currRow][currCol].toString());
 
         checkSurroundings();
 
     }
-
-
 
 }
