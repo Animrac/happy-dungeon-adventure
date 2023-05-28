@@ -285,6 +285,7 @@ public class Room implements Serializable {
      * Simply overwrites the current item symbol an M symbol if there
      * are multiple items in the current Room.
      * @param item The symbol of the item placed in the current Room.
+     *             Should not include pillars, entrance, or exit.
      */
     private void putItemSymbol(char item) {
         if (this.isAtLeastOneItem) {
@@ -294,6 +295,14 @@ public class Room implements Serializable {
             this.currRoom[1][1] = item;
         }
         this.isAtLeastOneItem = true;
+    }
+
+    public void removeRoomItems() {
+        this.currRoom[1][1] = ' ';
+        this.setHasHealingPotion(false);
+        this.setHasVisionPotion(false);
+        this.setHasPillar(false);
+
     }
 
     /**
@@ -389,6 +398,13 @@ public class Room implements Serializable {
 
     public void setHasPillar(boolean hasPillar){
         this.hasPillar = hasPillar;
+    }
+
+    public boolean getHasItem() {
+        if(hasPillar || hasVisionPotion || hasHealingPotion) {
+            return true;
+        }
+        return false;
     }
 
 }

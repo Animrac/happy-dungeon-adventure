@@ -5,23 +5,19 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import src.Model.Details;
-import src.Model.Dungeon;
-import src.Model.DungeonAdventure;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
 
 
 public class Main extends Application {
@@ -57,6 +53,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        playAudio();
+
         this.primaryStage = primaryStage;
 //        GameView view = new GameView();
 //        DungeonAdventure model = new DungeonAdventure();
@@ -72,6 +71,13 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    private void playAudio() {
+        Media music = new Media(new File("src/View/lullaby.mp3").toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(music);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        mediaPlayer.play();
+    }
+
     /**
      * Driver method for class (and the entire game).
      * Runs game play.
@@ -79,16 +85,6 @@ public class Main extends Application {
      * @param theArgs
      */
     public static void main(String[] theArgs) {
-//        try (BufferedReader br = new BufferedReader(new FileReader("src/View/start.fxml"))) {
-//            String line;
-//            while ((line = br.readLine()) != null) {
-//                System.out.println(line);
-//            }
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        new DungeonAdventure();
-        //GUI
         launch(theArgs);
 
         //Console Version of the Game
@@ -100,8 +96,6 @@ public class Main extends Application {
     void showLore(ActionEvent event) throws IOException {
         Scene scene = createScene("src/View/lore.fxml");
         primaryStage.setScene(scene);
-//        VBox vboxLore = FXMLLoader.load(getClass().getResource("resources/lore.fxml"));
-//        rootPane.getChildren().setAll(vboxLore);
     }
 
     @FXML
@@ -121,10 +115,6 @@ public class Main extends Application {
 //        stage.show();
 //    }
 
-
-//    public static void setPrimaryStage(Scene theScene){
-//        primaryStage.setScene(theScene);
-//    }
 
     public static Stage getPrimaryStage(){
         return primaryStage;

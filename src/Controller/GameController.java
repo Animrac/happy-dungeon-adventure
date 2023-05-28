@@ -3,6 +3,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import src.Main.Main;
 
 import javafx.fxml.FXML;
@@ -10,12 +13,46 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import src.Model.DungeonAdventure;
+import src.Model.Inventory;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
+    @FXML
+    private Button collectButton;
+
+    @FXML
+    private Button inventoryButton;
+
+    @FXML
+    private ImageView player;
+
+    @FXML
+    private ImageView wallEast;
+
+    @FXML
+    private ImageView wallNorth;
+
+    @FXML
+    private ImageView wallSouth;
+
+    @FXML
+    private ImageView wallWest;
+
+    @FXML
+    private ImageView pit;
+
+    @FXML
+    private ImageView healthpotion;
+
+    @FXML
+    private ImageView visionpotion;
+
+    @FXML
+    private ImageView pillar;
 
     @FXML
     private Button buttonEast;
@@ -32,10 +69,10 @@ public class GameController implements Initializable {
     @FXML
     private Label textRoom;
 
-    private DungeonAdventure dungeonModel;
+    private DungeonAdventure model;
 
     public GameController() {
-        dungeonModel = DungeonAdventure.getInstance();
+        model = DungeonAdventure.getInstance();
     }
 //    private DungeonAdventure model;
 //    private GameView view;
@@ -57,7 +94,7 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL theURL, ResourceBundle theResourceBundle) { //this is every time a Parent is called i think
 
-        dungeonModel.setCurrScene("src/View/mainGame.fxml");
+        model.setCurrScene("src/View/mainGame.fxml");
 
 
 //        for (int i = 0; i < dungeonLayout.getMyDungeonLayout().length; i++) {
@@ -69,45 +106,131 @@ public class GameController implements Initializable {
 
 
 
-        if (!dungeonModel.getInGame()){
+        if (!model.getInGame()){
 
             System.out.println();
-            System.out.println("Start Row: " + dungeonModel.getDungeonLayout().getStartRow());
-            System.out.println("Start Col: " + dungeonModel.getDungeonLayout().getStartCol());
-            dungeonModel.getDungeonLayout().setCurrRow(dungeonModel.getDungeonLayout().getStartRow());
-            dungeonModel.getDungeonLayout().setCurrCol(dungeonModel.getDungeonLayout().getStartCol());
-    
-            System.out.println(dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].toString());
+            System.out.println("Start Row: " + model.getDungeonLayout().getStartRow());
+            System.out.println("Start Col: " + model.getDungeonLayout().getStartCol());
+            model.getDungeonLayout().setCurrRow(model.getDungeonLayout().getStartRow());
+            model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getStartCol());
+            model.setMyRoom(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()]);
 
-            dungeonModel.setInGame(true);
+            System.out.println(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
+
+            model.setInGame(true);
 
         }
 
         //for View??
 
+        checkRoom();
         checkSurroundings(); // For arrow buttons.
 
         //we want to set the text in the view to be the current room as a tostring for now, will change to image tiles later
-        textRoom.setText(dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].toString());
+//        textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
+        setRoom();
 
     }
-    
+
+    @FXML
+    void openInventory(ActionEvent event) {
+
+    }
+
+    @FXML
+    void collectItem(ActionEvent event) {
+
+        Media sound = new Media(new File("src/View/pickup.mp3").toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
+
+        if (model.getMyRoom().isHasPillar()){
+            model.getMyInventory().addPillar();
+        }
+
+        if (model.getMyRoom().isHasHealingPotion()){
+            model.getMyInventory().addHealthPotion();
+        }
+
+        if (model.getMyRoom().isHasVisionPotion()){
+            model.getMyInventory().addVisionPotion();
+        }
+
+        model.getMyRoom().removeRoomItems();
+        collectButton.setDisable(true);
+
+        setRoom();
+//        textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
+
+    }
+
     @FXML
     void goEast(ActionEvent event) {
 
-        dungeonModel.getDungeonLayout().setCurrCol(dungeonModel.getDungeonLayout().getCurrCol() + 1);
-        textRoom.setText(dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].toString());
+        model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getCurrCol() + 1);
+        setRoom();
 
+        checkRoom();
         checkSurroundings();
 
+    }
+
+    private void setRoom() {
+        model.setMyRoom(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()]);
+//        textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
+        if (model.getMyRoom().getCanGoNorth()) {
+            wallNorth.setOpacity(0);
+        }
+        else {
+            wallNorth.setOpacity(100);
+        }
+        if (model.getMyRoom().getCanGoSouth()) {
+            wallSouth.setOpacity(0);
+        }
+        else {
+            wallSouth.setOpacity(100);
+        }
+        if (model.getMyRoom().getCanGoEast()) {
+            wallEast.setOpacity(0);
+        }
+        else {
+            wallEast.setOpacity(100);
+        }
+        if (model.getMyRoom().getCanGoWest()) {
+            wallWest.setOpacity(0);
+        }
+        else {
+            wallWest.setOpacity(100);
+        }
+
+        //ITEMS//
+        if (model.getMyRoom().isHasPillar()) {
+            pillar.setOpacity(100);
+        }
+        else {
+            pillar.setOpacity(0);
+        }
+        if (model.getMyRoom().isHasHealingPotion()) {
+            healthpotion.setOpacity(100);
+        }
+        else {
+            healthpotion.setOpacity(0);
+        }
+        if (model.getMyRoom().isHasVisionPotion()) {
+            visionpotion.setOpacity(100);
+        }
+        else {
+            visionpotion.setOpacity(0);
+        }
     }
 
     @FXML
     void goNorth(ActionEvent event) {
 
-        dungeonModel.getDungeonLayout().setCurrRow(dungeonModel.getDungeonLayout().getCurrRow() - 1);
-        textRoom.setText(dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].toString());
+        model.getDungeonLayout().setCurrRow(model.getDungeonLayout().getCurrRow() - 1);
+        setRoom();
 
+        checkRoom();
         checkSurroundings();
 
     }
@@ -115,9 +238,10 @@ public class GameController implements Initializable {
     @FXML
     void goSouth(ActionEvent event) {
 
-        dungeonModel.getDungeonLayout().setCurrRow(dungeonModel.getDungeonLayout().getCurrRow() + 1);
-        textRoom.setText(dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].toString());
+        model.getDungeonLayout().setCurrRow(model.getDungeonLayout().getCurrRow() + 1);
+        setRoom();
 
+        checkRoom();
         checkSurroundings();
 
     }
@@ -125,9 +249,10 @@ public class GameController implements Initializable {
     @FXML
     void goWest(ActionEvent event) {
 
-        dungeonModel.getDungeonLayout().setCurrCol(dungeonModel.getDungeonLayout().getCurrCol() - 1);
-        textRoom.setText(dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].toString());
+        model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getCurrCol() - 1);
+        setRoom();
 
+        checkRoom();
         checkSurroundings();
 
     }
@@ -148,29 +273,40 @@ public class GameController implements Initializable {
     }
 
     //in the game:
+
+    private void checkRoom(){
+
+        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getHasItem() == false){
+            collectButton.setDisable(true);
+        }
+        else {
+            collectButton.setDisable(false);
+        }
+    }
+
     private void checkSurroundings(){
-        if (dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].getCanGoWest() == false){
+        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getCanGoWest() == false){
             buttonWest.setDisable(true);
         }
         else {
             buttonWest.setDisable(false);
         }
 
-        if (dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].getCanGoEast() == false){
+        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getCanGoEast() == false){
             buttonEast.setDisable(true);
         }
         else {
             buttonEast.setDisable(false);
         }
 
-        if (dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].getCanGoNorth() == false){
+        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getCanGoNorth() == false){
             buttonNorth.setDisable(true);
         }
         else {
             buttonNorth.setDisable(false);
         }
 
-        if (dungeonModel.getDungeonLayout().getMyDungeonRooms()[dungeonModel.getDungeonLayout().getCurrRow()][dungeonModel.getDungeonLayout().getCurrCol()].getCanGoSouth() == false){
+        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getCanGoSouth() == false){
             buttonSouth.setDisable(true);
         }
         else {

@@ -46,16 +46,17 @@ public class DungeonAdventure {
 
     private boolean inGame = false;
 
-
-    //TODO this should not be static i think, can't save it otherwise
     private Dungeon dungeonLayout;
+
+    private Inventory myInventory = new Inventory();
+
+    private Room myRoom;
 
     private String currScene;
 
     //like a new game
     private DungeonAdventure (){
 
-        this.dungeonLayout = dungeonLayout;
         Scanner input = new Scanner(System.in);
 
         System.out.println("--Would you like a custom dungeon? Y/N--");
@@ -236,6 +237,18 @@ public class DungeonAdventure {
 
     public void setInGame(boolean theInGame) {
         this.inGame = theInGame;
+    }
+
+    public Inventory getMyInventory() {
+        return myInventory;
+    }
+
+    public Room getMyRoom() {
+        return myRoom;
+    }
+
+    public void setMyRoom(Room theRoom) {
+        myRoom = theRoom;
     }
 
 }
