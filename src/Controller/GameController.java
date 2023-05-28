@@ -28,7 +28,16 @@ public class GameController implements Initializable {
     private Button inventoryButton;
 
     @FXML
+    private Button exitButton;
+
+    @FXML
     private ImageView player;
+
+    @FXML
+    private ImageView startSign;
+
+    @FXML
+    private ImageView exitSign;
 
     @FXML
     private ImageView wallEast;
@@ -70,6 +79,9 @@ public class GameController implements Initializable {
     private Label textRoom;
 
     private DungeonAdventure model;
+
+    private Media sound = new Media(new File("src/View/pickup.mp3").toURI().toString());
+
 
     public GameController() {
         model = DungeonAdventure.getInstance();
@@ -115,6 +127,9 @@ public class GameController implements Initializable {
             model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getStartCol());
             model.setMyRoom(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()]);
 
+            exitButton.setDisable(true);
+            exitButton.setOpacity(0);
+
             System.out.println(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
 
             model.setInGame(true);
@@ -139,8 +154,6 @@ public class GameController implements Initializable {
 
     @FXML
     void collectItem(ActionEvent event) {
-
-        Media sound = new Media(new File("src/View/pickup.mp3").toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
 
@@ -222,6 +235,28 @@ public class GameController implements Initializable {
         else {
             visionpotion.setOpacity(0);
         }
+
+        //ENTRANCE OR EXIT//
+        if (model.getMyRoom().isExit()) {
+            exitSign.setOpacity(100);
+//            exitButton.setOpacity(20); doesnt seem to work
+//            exitButton.setDisable(true);
+            if (model.getMyInventory().getPillarCount() == 4){
+                exitButton.setOpacity(100);
+                exitButton.setDisable(false);
+            }
+        }
+        else {
+            exitButton.setDisable(true);
+            exitButton.setOpacity(0);
+            exitSign.setOpacity(0);
+        }
+        if (model.getMyRoom().isEntrance()) {
+            startSign.setOpacity(100);
+        }
+        else {
+            startSign.setOpacity(0);
+        }
     }
 
     @FXML
@@ -264,6 +299,21 @@ public class GameController implements Initializable {
 
         try {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("src/View/lore.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Main.getPrimaryStage().setScene(new Scene(root));
+
+    }
+
+    @FXML
+    void endGame(ActionEvent event) {
+
+        Parent root = null;
+
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("src/View/end.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

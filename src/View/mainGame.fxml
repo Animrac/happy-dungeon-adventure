@@ -81,7 +81,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="inventoryButton" layoutX="506.0" layoutY="31.0" mnemonicParsing="false" onAction="#openInventory" text="Inventory">
+            <Button fx:id="inventoryButton" layoutX="494.0" layoutY="31.0" mnemonicParsing="false" onAction="#openInventory" text="INVENTORY">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -96,7 +96,7 @@
                   <Font size="80.0" />
                </font>
             </Label>
-            <Button fx:id="collectButton" layoutX="505.0" layoutY="251.0" mnemonicParsing="false" onAction="#collectItem" prefHeight="90.0" prefWidth="90.0" text="Collect" textAlignment="CENTER">
+            <Button fx:id="collectButton" layoutX="493.0" layoutY="251.0" mnemonicParsing="false" onAction="#collectItem" prefHeight="90.0" prefWidth="106.0" text="COLLECT" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -121,9 +121,9 @@
                   <Image url="@tree.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="wallEast" layoutX="360.0" layoutY="136.0">
+            <ImageView fx:id="startSign" fitHeight="54.0" fitWidth="51.0" layoutX="326.0" layoutY="186.0">
                <image>
-                  <Image url="@tree.png" />
+                  <Image url="@entrance.png" />
                </image>
             </ImageView>
             <ImageView fx:id="wallSouth" layoutX="260.0" layoutY="236.0">
@@ -161,6 +161,21 @@
                   <Image url="@player.gif" />
                </image>
             </ImageView>
+            <ImageView fx:id="exitSign" fitHeight="46.0" fitWidth="41.0" layoutX="245.0" layoutY="190.0">
+               <image>
+                  <Image url="@exit.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="wallEast" layoutX="361.0" layoutY="136.0">
+               <image>
+                  <Image url="@tree.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="exitButton" layoutX="493.0" layoutY="84.0" mnemonicParsing="false" onAction="#endGame" prefHeight="148.0" prefWidth="106.0" text="ESCAPE" textAlignment="CENTER" textFill="#169101">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
       </children>
     </AnchorPane>
   </children>
