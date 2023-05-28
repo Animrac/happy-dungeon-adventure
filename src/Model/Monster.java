@@ -6,12 +6,12 @@ package src.Model;
  * @author anastasiavilenius
  * @version 05/07/23
  */
-public abstract class Monster extends Adventurer {
+public class Monster extends Adventurer {
 
     /**
      * Constructor that initializes fields.
      *
-     * @param monsterThree the third monster type
+     * @param theName the third monster type
      * @param theHealth the health of the monster
      * @param theMinDamage the minimum amount of damage a monster can create
      * @param theMaxDamage the maximum amount of damage a monster can create
@@ -19,9 +19,9 @@ public abstract class Monster extends Adventurer {
      * @param theBlockOdds the odds of a monster being able to block
      * @param theAttackSpeed the number of attacks that can be generated in one round
      */
-    protected Monster(String monsterThree, int theHealth, int theMinDamage, int theMaxDamage,
+    protected Monster(String theName, int theHealth, int theMinDamage, int theMaxDamage,
                       double theAttackOdds, double theBlockOdds, int theAttackSpeed) {
-        super(theHealth, theMinDamage, theMaxDamage, theAttackOdds, theBlockOdds, theAttackSpeed);
+        super(theName, theHealth, theMinDamage, theMaxDamage, theAttackOdds, theBlockOdds, theAttackSpeed);
         setOriginalHitPoints(theHealth);
     }
 
