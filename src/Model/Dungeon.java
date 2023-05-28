@@ -16,6 +16,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Dungeon implements Serializable {
 
+
+
     /**
      * Default rows for the dungeon maze.
      */
@@ -31,15 +33,19 @@ public class Dungeon implements Serializable {
      */
     private static boolean itTraversed;
 
+    private int currCol;
+
+    private int currRow;
+
     /**
      * The dungeon row the player will start in.
      */
-    private int startRow = -1;
+    private int startRow;
 
     /**
      * The dungeon column the player will start in.
      */
-    private int startCol = -1;
+    private int startCol;
 
     /**
      * 2d array of the dungeon layout. This does not contain the rooms.
@@ -62,6 +68,10 @@ public class Dungeon implements Serializable {
      * The constructor for a default dungeon, which have the dimensions of 12 x 12.
      */
     public Dungeon() {
+        this.currCol = -1;
+        this.currRow = -1;
+        this.startCol = -1;
+        this.startRow = -1;
         this.dungeonRows = 12;
         this.dungeonColumns = 12;
         this.myDungeonLayout = new char[dungeonRows][dungeonColumns];
@@ -74,6 +84,10 @@ public class Dungeon implements Serializable {
      * The constructor for a custom dungeon, which you can input the custom rows and column dimensions.
      */
     public Dungeon(final int theRows, final int theCols) {
+        this.currCol = -1;
+        this.currRow = -1;
+        this.startCol = -1;
+        this.startRow = -1;
         this.dungeonRows = theRows;
         this.dungeonColumns = theCols;
         this.myDungeonLayout = new char[theRows][theCols];
@@ -178,7 +192,7 @@ public class Dungeon implements Serializable {
     public static void isTraversable(char[][] theDungeon, int theCurrRow, int theCurrCol,
                                          int theTouchPillars, boolean theTouchExit) {
 
-        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X'){ //Look West.
+        if (theDungeon[theCurrRow - 1][theCurrCol] != 'X'){ //Look North.
 
             if (theDungeon[theCurrRow - 1][theCurrCol] == 'P') {
                 theTouchPillars++;
@@ -193,7 +207,7 @@ public class Dungeon implements Serializable {
 
         }
 
-        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X'){ //Look North.
+        if (theDungeon[theCurrRow][theCurrCol - 1] != 'X'){ //Look West.
 
             if (theDungeon[theCurrRow][theCurrCol - 1] == 'P') {
                 theTouchPillars++;
@@ -208,7 +222,7 @@ public class Dungeon implements Serializable {
 
         }
 
-        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X'){ //Look East.
+        if (theDungeon[theCurrRow + 1][theCurrCol] != 'X'){ //Look South.
 
             if (theDungeon[theCurrRow + 1][theCurrCol] == 'P') {
                 theTouchPillars++;
@@ -223,7 +237,7 @@ public class Dungeon implements Serializable {
 
         }
 
-        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X') { //Look South.
+        if (theDungeon[theCurrRow][theCurrCol + 1] != 'X') { //Look East.
 
             if (theDungeon[theCurrRow][theCurrCol + 1] == 'P') {
                 theTouchPillars++;
@@ -248,9 +262,9 @@ public class Dungeon implements Serializable {
      * Adds Room objects to a 2d array based on the Dungeon 2d array.
      */
     public void addRooms(){
-        for (int i = 0; i < myDungeonLayout.length; i++) { //ROW i
-            for (int j = 0; j < myDungeonLayout[i].length; j++) { //COLUMN j
-                myDungeonRooms[i][j] = new Room(myDungeonLayout, i, j, myDungeonLayout[i][j]);
+        for (int i = 0; i < this.myDungeonLayout.length; i++) { //ROW i
+            for (int j = 0; j < this.myDungeonLayout[i].length; j++) { //COLUMN j
+                this.myDungeonRooms[i][j] = new Room(myDungeonLayout, i, j, myDungeonLayout[i][j]);
             }
         }
     }
@@ -258,33 +272,54 @@ public class Dungeon implements Serializable {
     /* Getters and setters */
 
     public boolean isItTraversable() {
-        return itTraversed;
+        return this.itTraversed;
     }
 
     public char[][] getMyDungeonLayout() {
-        return myDungeonLayout;
+        return this.myDungeonLayout;
     }
 
     public Room[][] getMyDungeonRooms() {
-        return myDungeonRooms;
+        return this.myDungeonRooms;
     }
 
     public int getStartRow() {
-        return startRow;
+        return this.startRow;
     }
 
     public void setStartRow(int theStartRow) {
-        startRow = theStartRow;
+        this.startRow = theStartRow;
     } //might be useful for saving
 
     public void setStartCol(int theStartCol) {
-        startCol = theStartCol;
+        this.startCol = theStartCol;
     }
 
     public int getStartCol() {
-        return startCol;
+        return this.startCol;
     }
 
+    public char[][] getDungeonLayout() {
+        return this.myDungeonLayout;
+    }
+
+//    public void setDungeonLayout(Dungeon dungeonLayout) {
+//        this.myDungeonLayout = myDungeonLayout;
+//    }
+
+    public int getCurrCol(){
+        return currCol;
+    }
+    public void setCurrCol(int theCol){
+        currCol = theCol;
+    }
+
+    public int getCurrRow(){
+        return currRow;
+    }
+    public void setCurrRow(int theRow){
+        currRow = theRow;
+    }
 
 }
 
