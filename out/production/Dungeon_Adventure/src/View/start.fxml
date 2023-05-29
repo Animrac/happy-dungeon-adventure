@@ -41,8 +41,13 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.BeginningController">
   <children>
-    <AnchorPane fx:id="begin" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="begin" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="NEVER">
       <children>
+            <ImageView fitHeight="767.0" fitWidth="1012.0" layoutX="-189.0" layoutY="-74.0">
+               <image>
+                  <Image url="@dungeonSplash.gif" />
+               </image>
+            </ImageView>
             <Button fx:id="beginButton" layoutX="257.0" layoutY="272.0" mnemonicParsing="false" onAction="#showCharacterSelection" prefHeight="61.0" prefWidth="126.0" text="Start" textAlignment="CENTER">
                <font>
                   <Font size="37.0" />

@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import src.Model.DungeonAdventure;
-import src.Model.Inventory;
+import src.Model.SceneMaker;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,16 +40,37 @@ public class GameController implements Initializable {
     private ImageView exitSign;
 
     @FXML
-    private ImageView wallEast;
+    private ImageView wallEast1;
+    @FXML
+    private ImageView wallEast2;
+    @FXML
+    private ImageView wallEast3;
+    @FXML
+    private ImageView wallEast4;
 
     @FXML
-    private ImageView wallNorth;
+    private ImageView wallNorth1;
+    @FXML
+    private ImageView wallNorth2;
 
     @FXML
-    private ImageView wallSouth;
+    private ImageView wallSouth1;
+    @FXML
+    private ImageView wallSouth2;
+    @FXML
+    private ImageView wallSouth3;
+    @FXML
+    private ImageView wallSouth4;
 
     @FXML
-    private ImageView wallWest;
+    private ImageView wallWest1;
+    @FXML
+    private ImageView wallWest2;
+    @FXML
+    private ImageView wallWest3;
+    @FXML
+    private ImageView wallWest4;
+
 
     @FXML
     private ImageView pit;
@@ -80,7 +101,8 @@ public class GameController implements Initializable {
 
     private DungeonAdventure model;
 
-    private Media sound = new Media(new File("src/View/pickup.mp3").toURI().toString());
+    private Media collectSound = new Media(new File("src/View/pickup.mp3").toURI().toString());
+    private Media walkSound = new Media(new File("src/View/walk.mp3").toURI().toString());
 
 
     public GameController() {
@@ -149,12 +171,13 @@ public class GameController implements Initializable {
 
     @FXML
     void openInventory(ActionEvent event) {
-
+        Scene scene = SceneMaker.createScene("src/View/inventory.fxml");
+        Main.getPrimaryStage().setScene(scene);
     }
 
     @FXML
     void collectItem(ActionEvent event) {
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        MediaPlayer mediaPlayer = new MediaPlayer(collectSound);
         mediaPlayer.play();
 
         if (model.getMyRoom().isHasPillar()){
@@ -177,43 +200,52 @@ public class GameController implements Initializable {
 
     }
 
-    @FXML
-    void goEast(ActionEvent event) {
-
-        model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getCurrCol() + 1);
-        setRoom();
-
-        checkRoom();
-        checkSurroundings();
-
-    }
-
     private void setRoom() {
         model.setMyRoom(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()]);
 //        textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
         if (model.getMyRoom().getCanGoNorth()) {
-            wallNorth.setOpacity(0);
+            wallNorth1.setOpacity(0);
+            wallNorth2.setOpacity(0);
         }
         else {
-            wallNorth.setOpacity(100);
+            wallNorth1.setOpacity(100);
+            wallNorth2.setOpacity(100);
         }
         if (model.getMyRoom().getCanGoSouth()) {
-            wallSouth.setOpacity(0);
+            wallSouth1.setOpacity(0);
+            wallSouth2.setOpacity(0);
+            wallSouth3.setOpacity(0);
+            wallSouth4.setOpacity(0);
         }
         else {
-            wallSouth.setOpacity(100);
+            wallSouth1.setOpacity(100);
+            wallSouth2.setOpacity(100);
+            wallSouth3.setOpacity(100);
+            wallSouth4.setOpacity(100);
         }
         if (model.getMyRoom().getCanGoEast()) {
-            wallEast.setOpacity(0);
+            wallEast1.setOpacity(0);
+            wallEast2.setOpacity(0);
+            wallEast3.setOpacity(0);
+            wallEast4.setOpacity(0);
         }
         else {
-            wallEast.setOpacity(100);
+            wallEast1.setOpacity(100);
+            wallEast2.setOpacity(100);
+            wallEast3.setOpacity(100);
+            wallEast4.setOpacity(100);
         }
         if (model.getMyRoom().getCanGoWest()) {
-            wallWest.setOpacity(0);
+            wallWest1.setOpacity(0);
+            wallWest2.setOpacity(0);
+            wallWest3.setOpacity(0);
+            wallWest4.setOpacity(0);
         }
         else {
-            wallWest.setOpacity(100);
+            wallWest1.setOpacity(100);
+            wallWest2.setOpacity(100);
+            wallWest3.setOpacity(100);
+            wallWest4.setOpacity(100);
         }
 
         //ITEMS//
@@ -239,8 +271,8 @@ public class GameController implements Initializable {
         //ENTRANCE OR EXIT//
         if (model.getMyRoom().isExit()) {
             exitSign.setOpacity(100);
-//            exitButton.setOpacity(20); doesnt seem to work
-//            exitButton.setDisable(true);
+            exitButton.setOpacity(0.40);
+            exitButton.setDisable(true);
             if (model.getMyInventory().getPillarCount() == 4){
                 exitButton.setOpacity(100);
                 exitButton.setDisable(false);
@@ -262,6 +294,9 @@ public class GameController implements Initializable {
     @FXML
     void goNorth(ActionEvent event) {
 
+        MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
+        mediaPlayer.play();
+
         model.getDungeonLayout().setCurrRow(model.getDungeonLayout().getCurrRow() - 1);
         setRoom();
 
@@ -273,6 +308,9 @@ public class GameController implements Initializable {
     @FXML
     void goSouth(ActionEvent event) {
 
+        MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
+        mediaPlayer.play();
+
         model.getDungeonLayout().setCurrRow(model.getDungeonLayout().getCurrRow() + 1);
         setRoom();
 
@@ -282,7 +320,23 @@ public class GameController implements Initializable {
     }
 
     @FXML
+    void goEast(ActionEvent event) {
+
+        MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
+        mediaPlayer.play();
+
+        model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getCurrCol() + 1);
+        setRoom();
+
+        checkRoom();
+        checkSurroundings();
+
+    }
+    @FXML
     void goWest(ActionEvent event) {
+
+        MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
+        mediaPlayer.play();
 
         model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getCurrCol() - 1);
         setRoom();
@@ -294,32 +348,14 @@ public class GameController implements Initializable {
 
     @FXML
     void showLore(ActionEvent event) {
-
-        Parent root = null;
-
-        try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("src/View/lore.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        Main.getPrimaryStage().setScene(new Scene(root));
-
+        Scene scene = SceneMaker.createScene("src/View/lore.fxml");
+        Main.getPrimaryStage().setScene(scene);
     }
 
     @FXML
     void endGame(ActionEvent event) {
-
-        Parent root = null;
-
-        try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("src/View/end.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        Main.getPrimaryStage().setScene(new Scene(root));
-
+        Scene scene = SceneMaker.createScene("src/View/end.fxml");
+        Main.getPrimaryStage().setScene(scene);
     }
 
     //in the game:

@@ -9,6 +9,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import src.Main.Main;
 import src.Model.DungeonAdventure;
+import src.Model.SceneMaker;
 
 import java.io.IOException;
 
@@ -26,15 +27,8 @@ public class LoreController {
 
     @FXML
     void returnPrevScene(ActionEvent event) throws IOException {
-        Parent root = null;
-
-        try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource(dungeonModel.getCurrScene()));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        Main.getPrimaryStage().setScene(new Scene(root));
+        Scene scene = SceneMaker.createScene(dungeonModel.getCurrScene());
+        Main.getPrimaryStage().setScene(scene);
     }
 
     public MenuItem getMenuLore() {

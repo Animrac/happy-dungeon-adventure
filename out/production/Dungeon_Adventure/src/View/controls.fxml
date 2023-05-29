@@ -33,31 +33,30 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.BeginningController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.ControlsController">
   <children>
-    <AnchorPane fx:id="begin" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="NEVER">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fitHeight="767.0" fitWidth="1012.0" layoutX="-189.0" layoutY="-74.0">
-               <image>
-                  <Image url="@dungeonSplash.gif" />
-               </image>
-            </ImageView>
-            <Button fx:id="beginButton" layoutX="257.0" layoutY="272.0" mnemonicParsing="false" onAction="#showCharacterSelection" prefHeight="61.0" prefWidth="126.0" text="Start" textAlignment="CENTER">
+            <Text layoutX="248.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to Play:" textAlignment="CENTER">
                <font>
-                  <Font size="37.0" />
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Button layoutX="251.0" layoutY="320.0" mnemonicParsing="false" onAction="#returnPrevScene" text="Okie Dokie">
+               <font>
+                  <Font size="22.0" />
                </font>
             </Button>
-            <ImageView fitHeight="242.0" fitWidth="453.0" layoutX="94.0" layoutY="14.0">
-               <image>
-                  <Image url="@logo.png" />
-               </image>
-            </ImageView>
+            <Text layoutX="41.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Click the arrows to move your character throughout the dungeon.&#10;&#10;2. Collect potions to aid you throughout your journey. &#10;You can access these in your INVENTORY by clicking the button on the top right.&#10;&#10;3. Do you know the Four PIllars of Object-Oriented Programming?  ... No? &#10;Well now's your chance to learn! Collect all four of them! &#10;&#10;4. You might die. Make sure to FIGHT if you encounter someone scary!&#10;&#10;5. Once you've found all Four PIllars, find the EXIT and ESCAPE!" wrappingWidth="556.3467864990234">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
       </children>
     </AnchorPane>
   </children>

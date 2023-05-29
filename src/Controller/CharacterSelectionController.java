@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import src.Model.Details;
 import src.Main.*;
 import src.Model.DungeonAdventure;
+import src.Model.SceneMaker;
 
 import java.io.IOException;
 import java.net.URL;
@@ -81,31 +82,16 @@ public class CharacterSelectionController implements Initializable {
         Details heroChosen = (Details) getHeroChoice().getValue();
         System.out.println(name + " is a " +heroChosen);
 
-        Parent root = null;
-
-        try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("src/View/mainGame.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        Main.getPrimaryStage().setScene(new Scene(root));
+        Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");
+        Main.getPrimaryStage().setScene(scene);
 
     }
 
 
     @FXML
     void showLore(ActionEvent event) {
-        Parent root = null;
-
-        try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("src/View/lore.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        Main.getPrimaryStage().setScene(new Scene(root));
-
+        Scene scene = SceneMaker.createScene("src/View/lore.fxml");
+        Main.getPrimaryStage().setScene(scene);
     }
 
     public TextField getHeroName() {
