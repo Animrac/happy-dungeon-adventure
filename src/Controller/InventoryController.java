@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import src.Main.Main;
 import src.Model.DungeonAdventure;
@@ -47,7 +46,13 @@ public class InventoryController implements Initializable {
     private Text visionInventory;
 
     @FXML
-    private Text currentHealth;
+    private Text myHealth;
+
+    @FXML
+    private Text myName;
+
+    @FXML
+    private Text myClass;
 
 
     private DungeonAdventure model;
@@ -84,6 +89,26 @@ public class InventoryController implements Initializable {
         pillarInventory.setText("x" + model.getMyInventory().getPillarCount());
         visionInventory.setText("x" + model.getMyInventory().getVisionPotionCount());
         healthInventory.setText("x" + model.getMyInventory().getHealthPotionCount());
+
+        myName.setText(model.getMyName());
+        myClass.setText(model.getMyClass());
+        //TODO after adventurer or hero class
+//        myHealth.setText(model.get);
+
+        for (int i = 0; i < model.getMyInventory().getPillarCount(); i ++){
+            if (model.getMyPillars()[i].equals("ABSTRACTION")){
+                abstractionPillar.setOpacity(1);
+            }
+            if (model.getMyPillars()[i].equals("INHERITANCE")){
+                inheritancePillar.setOpacity(1);
+            }
+            if (model.getMyPillars()[i].equals("ENCAPSULATION")){
+                encapsulationPillar.setOpacity(1);
+            }
+            if (model.getMyPillars()[i].equals("POLYMORPHISM")){
+                polymorphismPillar.setOpacity(1);
+            }
+        }
     }
 
     private void checkPotions(){

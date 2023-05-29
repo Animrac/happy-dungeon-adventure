@@ -1,39 +1,11 @@
 package src.Model;
 
-import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import javafx.scene.control.Button;
-
-import java.io.IOException;
-import java.net.URL;
 import java.util.Random;
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
-import src.Controller.*;
-import src.Model.*;
-
 /**
- * This is the driver class for the entire Heroes versus Monsters game.
- *
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
- * @version 05/18/23
+ * @version 05/29/23
  */
 public class DungeonAdventure {
 
@@ -44,9 +16,15 @@ public class DungeonAdventure {
      */
     private static final Random MY_RANDOM = new Random();
 
+    private String myName;
+
+    private String myClass;
+
+    private String myDifficulty;
+
     private boolean inGame = false;
 
-    private Dungeon dungeonLayout;
+    private Dungeon myDungeonLayout;
 
     private Inventory myInventory = new Inventory();
 
@@ -54,76 +32,7 @@ public class DungeonAdventure {
 
     private String currScene;
 
-    //like a new game
-    private DungeonAdventure (){
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("--Would you like a custom dungeon? Y/N--");
-        String custom = input.nextLine();  // Read user input
-
-        //i know there are better ways but im lazy rn
-        //TODO: USE REGEX FOR INVALID INPUT maybe
-        if (custom.equals("Y") || custom.equals("y") || custom.equals("yes") || custom.equals("Yes")) {
-            System.out.println("--Rows (must be at least 5):--");
-            int cRows = Integer.parseInt(input.nextLine()) + 2;
-            System.out.println("--Columns (must be at least 5):--");
-            int cCols = Integer.parseInt(input.nextLine()) + 2;
-            this.dungeonLayout = new Dungeon(cRows, cCols);
-        } else {
-            System.out.println("Okay, you're getting a default dungeon.");
-            System.out.println();
-            this.dungeonLayout = new Dungeon();
-        }
-
-
-        //VISUALIZATION TEST CODE
-        System.out.println("Dungeon:");
-        for (int i = 0; i < dungeonLayout.getMyDungeonLayout().length; i++) {
-            for (int j = 0; j < dungeonLayout.getMyDungeonLayout()[i].length; j++) {
-                System.out.print(dungeonLayout.getMyDungeonLayout()[i][j]);
-            }
-            System.out.println();
-        }
-
-
-        //getMyDungeonRooms()[y/row][x/column]
-        System.out.println();
-
-        System.out.println("Room [1][1]:");
-        System.out.print(dungeonLayout.getMyDungeonRooms()[1][1].toString());
-
-        System.out.println();
-
-        System.out.println("Room [5][3]:");
-        System.out.print(dungeonLayout.getMyDungeonRooms()[5][3].toString());
-
-        System.out.println();
-
-        System.out.println("Room [4][2]:");
-        System.out.print(dungeonLayout.getMyDungeonRooms()[4][2].toString());
-
-        System.out.println();
-
-//        //PRINT TEST ALL THE ROOMS EVERYWHERE, this does not include the boundaries
-//        for (int i = 1; i < layout.getMyDungeonRooms().length-1; i++) {
-//            for (int j = 1; j < layout.getMyDungeonRooms()[i].length-1; j++) {
-//                System.out.println("Room [" + i + "][" + j + "]");
-//                System.out.println(layout.getMyDungeonRooms()[i][j]);
-//            }
-//            System.out.println();
-//        }
-
-    }
-
-//dungeon adventure will NEVER call view
-    //controller calls view and model (dungeon adventure)
-    //eg when player clicks button controller
-    //set method in model/dungeon adventure, like setting name
-    //modularize dungeon adventure
-    //controller tells view when model sets name/data/etc
-    //model is independent and can run by itself"
-
+    private String[] myPillars = new String[]{"ABSTRACTION", "ENCAPSULATION", "INHERITANCE", "POLYMORPHISM"};
 
     /**
      * Prompts user to enter name of monster,
@@ -215,28 +124,25 @@ public class DungeonAdventure {
         battle(hero, monster);
     }
 
+    //GETTERS//
     public static DungeonAdventure getInstance() {
         return instance;
     }
 
-    public Dungeon getDungeonLayout() {
-        return this.dungeonLayout;
+    public Dungeon getMyDungeonLayout() {
+        return myDungeonLayout;
     }
 
     public String getCurrScene() {
         return currScene;
     }
 
-    public void setCurrScene(String theCurrScene) {
-        this.currScene = theCurrScene;
+    public String getMyName() {
+        return myName;
     }
 
-    public boolean getInGame() {
-        return inGame;
-    }
-
-    public void setInGame(boolean theInGame) {
-        this.inGame = theInGame;
+    public String getMyClass() {
+        return myClass;
     }
 
     public Inventory getMyInventory() {
@@ -247,8 +153,44 @@ public class DungeonAdventure {
         return myRoom;
     }
 
+    //SETTERS//
+    public void setMyDungeonLayout(Dungeon theDungeonLayout) {
+        myDungeonLayout = theDungeonLayout;
+    }
+
+    public void setCurrScene(String theCurrScene) {
+        currScene = theCurrScene;
+    }
+
+    public void setMyName(String theName) {
+        myName = theName;
+    }
+
+    public void setMyClass(String theClass) {
+        myClass = theClass;
+    }
+
+    public boolean getInGame() {
+        return inGame;
+    }
+
+    public void setInGame(boolean theInGame) {
+        inGame = theInGame;
+    }
+
     public void setMyRoom(Room theRoom) {
         myRoom = theRoom;
     }
 
+    public void setMyDifficulty(String theDifficulty) {
+        myDifficulty = theDifficulty;
+    }
+
+    public String getMyDifficulty() {
+        return myDifficulty.toString();
+    }
+
+    public String[] getMyPillars(){
+        return myPillars;
+    }
 }

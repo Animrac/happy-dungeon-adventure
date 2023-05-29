@@ -1,16 +1,13 @@
 package src.Controller;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import src.Model.Details;
 import src.Main.*;
 import src.Model.DungeonAdventure;
@@ -22,12 +19,6 @@ import java.util.ResourceBundle;
 
 public class CharacterSelectionController implements Initializable {
 
-    private DungeonAdventure dungeonModel;
-
-    public CharacterSelectionController() {
-        dungeonModel = DungeonAdventure.getInstance();
-    }
-
     @FXML
     private ChoiceBox<?> heroChoice;
 
@@ -35,37 +26,35 @@ public class CharacterSelectionController implements Initializable {
     private TextField heroName;
 
     @FXML
-    private TextField heroSummary = new TextField("<-- Select your hero!");
+    private TextField heroSummary = new TextField("<insert summary of hero>");
 
     @FXML
-    private VBox mainVBox;
+    private ChoiceBox<?> difficultyChoice;
 
     @FXML
-    private MenuItem menuControls;
+    private TextField difficultySummary = new TextField("<insert summary of difficulty>");
 
-    @FXML
-    private MenuItem menuLore;
+    private DungeonAdventure model;
 
-    @FXML
-    private MenuBar myMenuBar;
-
-    @FXML
-    private AnchorPane rootPane;
-
-    @FXML
-    private Button startButton;
-
+    public CharacterSelectionController() {
+        model = DungeonAdventure.getInstance();
+    }
 
     @Override
     public void initialize(URL theURL, ResourceBundle theResourceBundle) { //this is every time a Parent is called i think
 
-        dungeonModel.setCurrScene("src/View/nameCharacter.fxml");
+        model.setCurrScene("src/View/nameCharacter.fxml");
 
         ObservableList<Details> heroData = FXCollections.observableArrayList();
+        ObservableList<Details> difficultyData = FXCollections.observableArrayList();
 
         heroData.add(new Details("Warrior", "so that I can kill things easily."));
         heroData.add(new Details("Thief", "so that I am sneaky."));
         heroData.add(new Details("Priestess", "so that I can help myself."));
+
+        difficultyData.add(new Details("Easy-peasy", "Generates a random 5x5 map."));
+        difficultyData.add(new Details("Default", "Generates a random 10x10 map."));
+        difficultyData.add(new Details("Why", "Generates a random 100x100 map."));
 
         getHeroChoice().setItems(heroData);
         getHeroChoice().getSelectionModel().selectFirst();
@@ -74,13 +63,22 @@ public class CharacterSelectionController implements Initializable {
             Details d = (Details) nv;
             getHeroSummary().setText(d.getText());
         });
+
+        getDifficultyChoice().setItems(difficultyData);
+        getDifficultyChoice().getSelectionModel().selectFirst();
+        getDifficultySummary().setText(difficultyData.get(0).getText());
+        getDifficultyChoice().valueProperty().addListener((o, ov, nv) -> {
+            Details d = (Details) nv;
+            getDifficultySummary().setText(d.getText());
+        });
     }
+
 
     @FXML
     void newGame(ActionEvent event) throws IOException {
-        String name = getHeroName().getText();
-        Details heroChosen = (Details) getHeroChoice().getValue();
-        System.out.println(name + " is a " +heroChosen);
+        model.setMyName(getHeroName().getText());
+        model.setMyClass((getHeroChoice().getValue()).toString());
+        model.setMyDifficulty(getDifficultyChoice().getValue().toString());
 
         Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");
         Main.getPrimaryStage().setScene(scene);
@@ -94,29 +92,40 @@ public class CharacterSelectionController implements Initializable {
         Main.getPrimaryStage().setScene(scene);
     }
 
+    @FXML
+    void showControls(ActionEvent event) {
+        Scene scene = SceneMaker.createScene("src/View/controls.fxml");
+        Main.getPrimaryStage().setScene(scene);
+    }
+
+    @FXML
+    void quit(ActionEvent event) {
+        Platform.exit();
+    }
+
+    @FXML
+    void load(ActionEvent event) {
+        Platform.exit();
+    }
+
     public TextField getHeroName() {
         return heroName;
     }
+
     public ChoiceBox getHeroChoice() {
         return heroChoice;
     }
+
     public TextField getHeroSummary() {
         return heroSummary;
     }
-    public Button getStartButton() {
-        return startButton;
+
+    public ChoiceBox getDifficultyChoice() {
+        return difficultyChoice;
     }
-    public void setHeroName(TextField heroName) {
-        this.heroName = heroName;
-    }
-    public void setHeroChoice(ChoiceBox heroChoice) {
-        this.heroChoice = heroChoice;
-    }
-    public void setStartButton(Button startButton) {
-        this.startButton = startButton;
-    }
-    public void setHeroSummary(TextField heroSummary) {
-        this.heroSummary = heroSummary;
+
+    public TextField getDifficultySummary() {
+        return difficultySummary;
     }
 
 }

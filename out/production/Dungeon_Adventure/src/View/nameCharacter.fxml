@@ -50,14 +50,14 @@
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="Save Game" />
-            <MenuItem mnemonicParsing="false" text="Load Game" />
-            <MenuItem mnemonicParsing="false" text="Exit" />
+            <MenuItem fx:id="saveButton" disable="true" mnemonicParsing="false" text="Save Game" />
+            <MenuItem fx:id="loadButton" mnemonicParsing="false" onAction="#load" text="Load Game" />
+            <MenuItem fx:id="quitButton" mnemonicParsing="false" onAction="#quit" text="Exit" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem fx:id="menuControls" mnemonicParsing="false" text="Game Play Instructions" />
+            <MenuItem fx:id="menuControls" mnemonicParsing="false" onAction="#showControls" text="Game Play Instructions" />
                   <MenuItem fx:id="menuLore" mnemonicParsing="false" onAction="#showLore" text="About (aka Juicy Lore)" />
           </items>
         </Menu>
@@ -65,12 +65,12 @@
     </MenuBar>
     <AnchorPane fx:id="rootPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-        <Label alignment="CENTER" layoutX="188.0" layoutY="149.0" style="&#10;" text="Please enter your NAME :)" textAlignment="CENTER" wrapText="false">
+        <Label alignment="CENTER" layoutX="21.0" layoutY="143.0" style="&#10;" text="Enter your NAME :)" textAlignment="CENTER" wrapText="false">
           <font>
-            <Font size="23.0" />
+            <Font name="System Bold" size="20.0" />
           </font>
         </Label>
-            <TextField fx:id="heroName" alignment="CENTER" layoutX="220.0" layoutY="188.0" promptText="e.g. Isabelle...">
+            <TextField fx:id="heroName" alignment="CENTER" layoutX="219.0" layoutY="140.0" promptText="e.g. Isabelle...">
                <font>
                   <Font size="16.0" />
                </font>
@@ -80,14 +80,26 @@
                   <Font size="22.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="187.0" layoutY="39.0" style="&#10;" text="Please select your HERO :)" textAlignment="CENTER" wrapText="false">
+            <Label alignment="CENTER" layoutX="21.0" layoutY="83.0" style="&#10;" text="Select your HERO :)" textAlignment="CENTER" wrapText="false">
                <font>
-                  <Font size="23.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="heroChoice" layoutX="195.0" layoutY="84.0" prefHeight="31.0" prefWidth="114.0" />
-            <Text layoutX="114.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I want to be a" />
-            <TextField fx:id="heroSummary" editable="false" layoutX="320.0" layoutY="84.0" prefHeight="31.0" prefWidth="199.0" />
+            <ChoiceBox fx:id="heroChoice" layoutX="292.0" layoutY="82.0" prefHeight="31.0" prefWidth="114.0" />
+            <Text layoutX="213.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I want to be a" />
+            <TextField fx:id="heroSummary" editable="false" layoutX="417.0" layoutY="82.0" prefHeight="31.0" prefWidth="199.0" />
+            <Label alignment="CENTER" layoutX="21.0" layoutY="203.0" style="&#10;" text="Choose your DIFFICULTY :)" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Text layoutX="20.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="difficultyChoice" layoutX="286.0" layoutY="202.0" prefHeight="31.0" prefWidth="114.0" />
+            <TextField fx:id="difficultySummary" editable="false" layoutX="411.0" layoutY="202.0" prefHeight="31.0" prefWidth="199.0" />
       </children>
     </AnchorPane>
   </children>

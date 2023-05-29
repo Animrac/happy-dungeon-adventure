@@ -1,31 +1,45 @@
 package src.Controller;
+
+import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
 import src.Main.Main;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import src.Model.Dungeon;
 import src.Model.DungeonAdventure;
 import src.Model.SceneMaker;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
+import java.util.Collections;
+
 public class GameController implements Initializable {
-    @FXML
-    private Button collectButton;
+
+    private static final String PIT_TEXT = "ouch! you fell in a pit :(";
+
+    private final String ALL_PILLARS = "you found all the pillars! get to the exit!";
+
+    private final String COLLECTED = "you collected a ";
+
+    private final double FULL_OPACITY = 1.0;
+
+    private final double NO_OPACITY = 0.0;
 
     @FXML
-    private Button inventoryButton;
+    private Button collectButton;
 
     @FXML
     private Button exitButton;
@@ -71,7 +85,6 @@ public class GameController implements Initializable {
     @FXML
     private ImageView wallWest4;
 
-
     @FXML
     private ImageView pit;
 
@@ -99,73 +112,101 @@ public class GameController implements Initializable {
     @FXML
     private Label textRoom;
 
+    @FXML
+    private Text myHealth;
+
+    @FXML
+    private Text myName;
+
+    @FXML
+    private Text myClass;
+
+    @FXML
+    private Text myNotification;
+
     private DungeonAdventure model;
 
     private Media collectSound = new Media(new File("src/View/pickup.mp3").toURI().toString());
+
     private Media walkSound = new Media(new File("src/View/walk.mp3").toURI().toString());
 
+    private SequentialTransition notifyTransition = new SequentialTransition();
 
     public GameController() {
         model = DungeonAdventure.getInstance();
     }
-//    private DungeonAdventure model;
-//    private GameView view;
-//    private Stage stage;
-//
-//    public GameController(DungeonAdventure model, GameView view, Stage stage) {
-//        this.model = model;
-//        this.view = view;
-//        this.stage = stage;
-//    }
-//
-//    public void switchToScene(String fxmlFileName) {
-//        Scene newScene = view.createScene(fxmlFileName);
-//        if (newScene != null) {
-//            stage.setScene(newScene);
-//        }
-//    }
 
     @Override
     public void initialize(URL theURL, ResourceBundle theResourceBundle) { //this is every time a Parent is called i think
 
+        // Create a fade-in transition
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), myNotification);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0);
+
+        // Create a pause transition
+        PauseTransition pause = new PauseTransition(Duration.seconds(2));
+
+        // Create a fade-out transition
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), myNotification);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+
+        // Create a sequential transition to chain the animations
+        notifyTransition = new SequentialTransition(
+                fadeIn, pause, fadeOut
+        );
+
         model.setCurrScene("src/View/mainGame.fxml");
 
-
-//        for (int i = 0; i < dungeonLayout.getMyDungeonLayout().length; i++) {
-//            for (int j = 0; j < dungeonLayout.getMyDungeonLayout().length; j++) {
-//                System.out.print(dungeonLayout.getMyDungeonLayout()[i][j]);
-//            }
-//            System.out.println();
-//        }
-
-
+        myName.setText(model.getMyName());
+        myClass.setText(model.getMyClass());
+        //TODO
+//            myHealth.setText(model.getMyHealth());
 
         if (!model.getInGame()){
 
-            System.out.println();
-            System.out.println("Start Row: " + model.getDungeonLayout().getStartRow());
-            System.out.println("Start Col: " + model.getDungeonLayout().getStartCol());
-            model.getDungeonLayout().setCurrRow(model.getDungeonLayout().getStartRow());
-            model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getStartCol());
-            model.setMyRoom(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()]);
+            Collections.shuffle(Arrays.asList(model.getMyPillars()));
+
+            if (model.getMyDifficulty().equals("Easy-peasy")){
+                model.setMyDungeonLayout(new Dungeon(5, 5));
+
+            }
+            else if (model.getMyDifficulty().equals("Default")) {
+                model.setMyDungeonLayout(new Dungeon()); // 10x10
+            }
+            else if (model.getMyDifficulty().equals("Why")) {
+                model.setMyDungeonLayout(new Dungeon(100, 100));
+            }
+            else {
+                System.out.println("ERROR: Invalid Difficulty, Giving Default Difficulty Instead");
+                model.setMyDungeonLayout(new Dungeon()); // 10x10
+            }
+
+
+//            System.out.println();
+//            System.out.println("Start Row: " + model.getDungeonLayout().getStartRow());
+//            System.out.println("Start Col: " + model.getDungeonLayout().getStartCol());
+            model.getMyDungeonLayout().setCurrRow(model.getMyDungeonLayout().getStartRow());
+            model.getMyDungeonLayout().setCurrCol(model.getMyDungeonLayout().getStartCol());
+            model.setMyRoom(model.getMyDungeonLayout().getMyDungeonRooms()
+                    [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]);
 
             exitButton.setDisable(true);
-            exitButton.setOpacity(0);
+            exitButton.setOpacity(NO_OPACITY);
 
-            System.out.println(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
+//            System.out.println(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
 
             model.setInGame(true);
 
         }
 
-        //for View??
-
-        checkRoom();
+        checkRoom(); // For collection and escape buttons.
         checkSurroundings(); // For arrow buttons.
 
         //we want to set the text in the view to be the current room as a tostring for now, will change to image tiles later
-//        textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
-        setRoom();
+        //textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
+        setRoom(); // For visualizing the current room.
 
     }
 
@@ -182,14 +223,29 @@ public class GameController implements Initializable {
 
         if (model.getMyRoom().isHasPillar()){
             model.getMyInventory().addPillar();
+
+            // Displays current pillar
+            myNotification.setText(COLLECTED + "pillar of " + model.getMyPillars()[model.getMyInventory().getPillarCount()-1]);
+            notifyPlayer();
+
+            if (model.getMyInventory().getPillarCount() == 4) {
+                myNotification.setText(ALL_PILLARS);
+                notifyPlayer();
+            }
         }
 
         if (model.getMyRoom().isHasHealingPotion()){
             model.getMyInventory().addHealthPotion();
+
+            myNotification.setText(COLLECTED + "health potion!");
+            notifyPlayer();
         }
 
         if (model.getMyRoom().isHasVisionPotion()){
             model.getMyInventory().addVisionPotion();
+
+            myNotification.setText(COLLECTED + "vision potion!");
+            notifyPlayer();
         }
 
         model.getMyRoom().removeRoomItems();
@@ -201,93 +257,93 @@ public class GameController implements Initializable {
     }
 
     private void setRoom() {
-        model.setMyRoom(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()]);
+        model.setMyRoom(model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]);
 //        textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
         if (model.getMyRoom().getCanGoNorth()) {
-            wallNorth1.setOpacity(0);
-            wallNorth2.setOpacity(0);
+            wallNorth1.setOpacity(NO_OPACITY);
+            wallNorth2.setOpacity(NO_OPACITY);
         }
         else {
-            wallNorth1.setOpacity(100);
-            wallNorth2.setOpacity(100);
+            wallNorth1.setOpacity(FULL_OPACITY);
+            wallNorth2.setOpacity(FULL_OPACITY);
         }
         if (model.getMyRoom().getCanGoSouth()) {
-            wallSouth1.setOpacity(0);
-            wallSouth2.setOpacity(0);
-            wallSouth3.setOpacity(0);
-            wallSouth4.setOpacity(0);
+            wallSouth1.setOpacity(NO_OPACITY);
+            wallSouth2.setOpacity(NO_OPACITY);
+            wallSouth3.setOpacity(NO_OPACITY);
+            wallSouth4.setOpacity(NO_OPACITY);
         }
         else {
-            wallSouth1.setOpacity(100);
-            wallSouth2.setOpacity(100);
-            wallSouth3.setOpacity(100);
-            wallSouth4.setOpacity(100);
+            wallSouth1.setOpacity(FULL_OPACITY);
+            wallSouth2.setOpacity(FULL_OPACITY);
+            wallSouth3.setOpacity(FULL_OPACITY);
+            wallSouth4.setOpacity(FULL_OPACITY);
         }
         if (model.getMyRoom().getCanGoEast()) {
-            wallEast1.setOpacity(0);
-            wallEast2.setOpacity(0);
-            wallEast3.setOpacity(0);
-            wallEast4.setOpacity(0);
+            wallEast1.setOpacity(NO_OPACITY);
+            wallEast2.setOpacity(NO_OPACITY);
+            wallEast3.setOpacity(NO_OPACITY);
+            wallEast4.setOpacity(NO_OPACITY);
         }
         else {
-            wallEast1.setOpacity(100);
-            wallEast2.setOpacity(100);
-            wallEast3.setOpacity(100);
-            wallEast4.setOpacity(100);
+            wallEast1.setOpacity(FULL_OPACITY);
+            wallEast2.setOpacity(FULL_OPACITY);
+            wallEast3.setOpacity(FULL_OPACITY);
+            wallEast4.setOpacity(FULL_OPACITY);
         }
         if (model.getMyRoom().getCanGoWest()) {
-            wallWest1.setOpacity(0);
-            wallWest2.setOpacity(0);
-            wallWest3.setOpacity(0);
-            wallWest4.setOpacity(0);
+            wallWest1.setOpacity(NO_OPACITY);
+            wallWest2.setOpacity(NO_OPACITY);
+            wallWest3.setOpacity(NO_OPACITY);
+            wallWest4.setOpacity(NO_OPACITY);
         }
         else {
-            wallWest1.setOpacity(100);
-            wallWest2.setOpacity(100);
-            wallWest3.setOpacity(100);
-            wallWest4.setOpacity(100);
+            wallWest1.setOpacity(FULL_OPACITY);
+            wallWest2.setOpacity(FULL_OPACITY);
+            wallWest3.setOpacity(FULL_OPACITY);
+            wallWest4.setOpacity(FULL_OPACITY);
         }
 
         //ITEMS//
         if (model.getMyRoom().isHasPillar()) {
-            pillar.setOpacity(100);
+            pillar.setOpacity(FULL_OPACITY);
         }
         else {
-            pillar.setOpacity(0);
+            pillar.setOpacity(NO_OPACITY);
         }
         if (model.getMyRoom().isHasHealingPotion()) {
-            healthpotion.setOpacity(100);
+            healthpotion.setOpacity(FULL_OPACITY);
         }
         else {
-            healthpotion.setOpacity(0);
+            healthpotion.setOpacity(NO_OPACITY);
         }
         if (model.getMyRoom().isHasVisionPotion()) {
-            visionpotion.setOpacity(100);
+            visionpotion.setOpacity(FULL_OPACITY);
         }
         else {
-            visionpotion.setOpacity(0);
+            visionpotion.setOpacity(NO_OPACITY);
         }
 
         //ENTRANCE OR EXIT//
         if (model.getMyRoom().isExit()) {
-            exitSign.setOpacity(100);
-            exitButton.setOpacity(0.40);
+            exitSign.setOpacity(FULL_OPACITY);
+            exitButton.setOpacity(0.4);
             exitButton.setDisable(true);
             if (model.getMyInventory().getPillarCount() == 4){
-                exitButton.setOpacity(100);
+                exitButton.setOpacity(FULL_OPACITY);
                 exitButton.setDisable(false);
             }
         }
         else {
             exitButton.setDisable(true);
-            exitButton.setOpacity(0);
-            exitSign.setOpacity(0);
+            exitButton.setOpacity(NO_OPACITY);
+            exitSign.setOpacity(NO_OPACITY);
         }
         if (model.getMyRoom().isEntrance()) {
-            startSign.setOpacity(100);
+            startSign.setOpacity(FULL_OPACITY);
         }
         else {
-            startSign.setOpacity(0);
+            startSign.setOpacity(NO_OPACITY);
         }
     }
 
@@ -297,7 +353,7 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
         mediaPlayer.play();
 
-        model.getDungeonLayout().setCurrRow(model.getDungeonLayout().getCurrRow() - 1);
+        model.getMyDungeonLayout().setCurrRow(model.getMyDungeonLayout().getCurrRow() - 1);
         setRoom();
 
         checkRoom();
@@ -311,7 +367,7 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
         mediaPlayer.play();
 
-        model.getDungeonLayout().setCurrRow(model.getDungeonLayout().getCurrRow() + 1);
+        model.getMyDungeonLayout().setCurrRow(model.getMyDungeonLayout().getCurrRow() + 1);
         setRoom();
 
         checkRoom();
@@ -325,7 +381,7 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
         mediaPlayer.play();
 
-        model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getCurrCol() + 1);
+        model.getMyDungeonLayout().setCurrCol(model.getMyDungeonLayout().getCurrCol() + 1);
         setRoom();
 
         checkRoom();
@@ -338,7 +394,7 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
         mediaPlayer.play();
 
-        model.getDungeonLayout().setCurrCol(model.getDungeonLayout().getCurrCol() - 1);
+        model.getMyDungeonLayout().setCurrCol(model.getMyDungeonLayout().getCurrCol() - 1);
         setRoom();
 
         checkRoom();
@@ -353,6 +409,12 @@ public class GameController implements Initializable {
     }
 
     @FXML
+    void showControls(ActionEvent event) {
+        Scene scene = SceneMaker.createScene("src/View/controls.fxml");
+        Main.getPrimaryStage().setScene(scene);
+    }
+
+    @FXML
     void endGame(ActionEvent event) {
         Scene scene = SceneMaker.createScene("src/View/end.fxml");
         Main.getPrimaryStage().setScene(scene);
@@ -362,37 +424,49 @@ public class GameController implements Initializable {
 
     private void checkRoom(){
 
-        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getHasItem() == false){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()
+                [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
+                .getHasItem()){
             collectButton.setDisable(true);
         }
         else {
             collectButton.setDisable(false);
         }
+
+        //TODO IF A PIT, REDUCE HEALTH
+        if (model.getMyDungeonLayout().getMyDungeonRooms()
+                [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
+                .isHasPit()) {
+            myNotification.setText(PIT_TEXT);
+            notifyPlayer();
+        }
+
+
     }
 
     private void checkSurroundings(){
-        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getCanGoWest() == false){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()].getCanGoWest()){
             buttonWest.setDisable(true);
         }
         else {
             buttonWest.setDisable(false);
         }
 
-        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getCanGoEast() == false){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()].getCanGoEast()){
             buttonEast.setDisable(true);
         }
         else {
             buttonEast.setDisable(false);
         }
 
-        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getCanGoNorth() == false){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()].getCanGoNorth()){
             buttonNorth.setDisable(true);
         }
         else {
             buttonNorth.setDisable(false);
         }
 
-        if (model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].getCanGoSouth() == false){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()].getCanGoSouth()){
             buttonSouth.setDisable(true);
         }
         else {
@@ -400,41 +474,23 @@ public class GameController implements Initializable {
         }
     }
 
-    public Button getButtonEast() {
-        return buttonEast;
+    private void notifyPlayer () {
+        // Stop existing transition
+        notifyTransition.stop();
+        notifyTransition.play();
     }
 
-    public Button getButtonNorth() {
-        return buttonNorth;
+    @FXML
+    void quit(ActionEvent event) {
+        Platform.exit();
     }
-
-    public Button getButtonSouth() {
-        return buttonSouth;
+    //TODO load and save
+    @FXML
+    void load(ActionEvent event) {
+        Platform.exit();
     }
-
-    public Button getButtonWest() {
-        return buttonWest;
-    }
-    public Label getTextRoom() {
-        return textRoom;
-    }
-
-    public void setButtonEast(Button buttonEast) {
-        this.buttonEast = buttonEast;
-    }
-
-    public void setButtonNorth(Button buttonNorth) {
-        this.buttonNorth = buttonNorth;
-    }
-
-    public void setButtonSouth(Button buttonSouth) {
-        this.buttonSouth = buttonSouth;
-    }
-
-    public void setButtonWest(Button buttonWest) {
-        this.buttonWest = buttonWest;
-    }
-    public void setTextRoom(Label textRoom) {
-        this.textRoom = textRoom;
+    @FXML
+    void save(ActionEvent event) {
+        Platform.exit();
     }
 }

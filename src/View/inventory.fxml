@@ -129,19 +129,29 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="backButton" layoutX="504.0" layoutY="42.0" mnemonicParsing="false" onAction="#returnGame" text="GO BACK">
+            <Button fx:id="backButton" layoutX="504.0" layoutY="36.0" mnemonicParsing="false" onAction="#returnGame" text="GO BACK">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Text layoutX="493.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:">
+            <Text layoutX="486.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <Text fx:id="currentHealth" layoutX="547.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+            <Text fx:id="myHealth" layoutX="540.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
                <font>
                   <Font size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="myName" layoutX="486.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert name&gt;">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="myClass" layoutX="486.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert class&gt;">
+               <font>
+                  <Font name="System Italic" size="25.0" />
                </font>
             </Text>
       </children>
