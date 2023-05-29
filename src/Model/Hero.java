@@ -37,7 +37,7 @@ public abstract class Hero extends Adventurer {
      */
     protected Hero(final String theName, final int theHealth, final int theMinDamage, final int theMaxDamage,
                    final double theAttackOdds, final double theBlockOdds, final int theAttackSpeed, final double theSpecialSkillOdds) {
-        super(theHealth, theMinDamage, theMaxDamage, theAttackOdds, theBlockOdds, theAttackSpeed);
+        super(theName, theHealth, theMinDamage, theMaxDamage, theAttackOdds, theBlockOdds, theAttackSpeed);
         setRunAway(false);
         setSpecialSkillOdds(theSpecialSkillOdds);
         myInventory = new Inventory();
