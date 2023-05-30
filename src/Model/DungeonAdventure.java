@@ -1,5 +1,6 @@
 package src.Model;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ import java.util.Scanner;
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
  * @version 05/29/23
  */
-public class DungeonAdventure {
+public class DungeonAdventure implements Serializable {
 
     private static final DungeonAdventure instance = new DungeonAdventure();
 

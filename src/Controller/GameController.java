@@ -311,7 +311,7 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(collectSound);
         mediaPlayer.play();
 
-        if (model.getMyRoom().isHasPillar()){
+        if (model.getMyRoom().getHasPillar()){
             model.getMyInventory().addPillar();
 
             // Displays current pillar
@@ -324,14 +324,14 @@ public class GameController implements Initializable {
             }
         }
 
-        if (model.getMyRoom().isHasHealingPotion()){
+        if (model.getMyRoom().getHasHealingPotion()){
             model.getMyInventory().addHealthPotion();
 
             myNotification.setText(COLLECTED + "health potion!");
             notifyPlayer();
         }
 
-        if (model.getMyRoom().isHasVisionPotion()){
+        if (model.getMyRoom().getHasVisionPotion()){
             model.getMyInventory().addVisionPotion();
 
             myNotification.setText(COLLECTED + "vision potion!");
@@ -395,19 +395,19 @@ public class GameController implements Initializable {
         }
 
         //ITEMS//
-        if (model.getMyRoom().isHasPillar()) {
+        if (model.getMyRoom().getHasPillar()) {
             pillar.setOpacity(FULL_OPACITY);
         }
         else {
             pillar.setOpacity(NO_OPACITY);
         }
-        if (model.getMyRoom().isHasHealingPotion()) {
+        if (model.getMyRoom().getHasHealingPotion()) {
             healthpotion.setOpacity(FULL_OPACITY);
         }
         else {
             healthpotion.setOpacity(NO_OPACITY);
         }
-        if (model.getMyRoom().isHasVisionPotion()) {
+        if (model.getMyRoom().getHasVisionPotion()) {
             visionpotion.setOpacity(FULL_OPACITY);
         }
         else {
@@ -528,7 +528,7 @@ public class GameController implements Initializable {
         //TODO IF A PIT, REDUCE HEALTH
         if (model.getMyDungeonLayout().getMyDungeonRooms()
                 [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
-                .isHasPit()) {
+                .getHasPit()) {
             myNotification.setText(PIT_TEXT);
             notifyPlayer();
         }
@@ -586,11 +586,23 @@ public class GameController implements Initializable {
     }
     //TODO load and save
     @FXML
-    static void load() {
-        //TODO
+    void load(ActionEvent event) {
+        gameLoad();
     }
+
     @FXML
-    void save() {
+    void save(ActionEvent event) {
+        gameSave();
+    }
+
+
+    static void gameLoad() {
         //TODO
     }
+
+
+    static void gameSave() {
+        //TODO
+    }
+
 }
