@@ -22,7 +22,7 @@ public class heroTwo extends Hero {
     /**
      * Constructor that initializes fields.
      *
-     * @param theName
+     * @param theName the name chosen by the player
      */
     public heroTwo(final String theName) {
         super(theName, 100, 30, 60, .8, 3, 4, .6);
@@ -32,7 +32,7 @@ public class heroTwo extends Hero {
 
     /**
      * Checks to make sure that the maximum healing points is above 0.
-     * @param theMaxSpecialHeal
+     * @param theMaxSpecialHeal the maximum amount of HP that can be healed
      */
     private void setMaxSpecialHeal(final int theMaxSpecialHeal) {
         if (theMaxSpecialHeal <= 0) {
@@ -43,7 +43,7 @@ public class heroTwo extends Hero {
 
     /**
      * Checks to make sure that the minimum healing points is above 0.
-     * @param theMinSpecialHeal
+     * @param theMinSpecialHeal the minimum amount of HP that can be healed
      */
     private void setMinSpecialHeal(final int theMinSpecialHeal) {
         if (theMinSpecialHeal <= 0) {
@@ -52,20 +52,20 @@ public class heroTwo extends Hero {
         myMinSpecialHeal = theMinSpecialHeal;
     }
 
-    /**
-     * Checks to make sure the maximum healing points is greater than the minimum.
-     */
-    private void checkMinVersusMax() {
-        if(myMinSpecialHeal > myMaxSpecialHeal) {
-            throw new IllegalArgumentException("min special damage cannot be more than max damage");
-        }
-    }
+//    /**
+//     * Checks to make sure the maximum healing points is greater than the minimum.
+//     */
+//    private void checkMinVersusMax() {
+//        if(myMinSpecialHeal > myMaxSpecialHeal) {
+//            throw new IllegalArgumentException("min special damage cannot be more than max damage");
+//        }
+//    }
 
     /**
-     * Overrides specialAttack method in Adventurer class by allowing Centaur a chance
+     * Overrides specialAttack method in Adventurer class by allowing heroTwo a chance
      * to use a crushing blow special attack.
      *
-     * @param theOpponent
+     * @param theOpponent the monster the hero is battling
      */
     @Override
     protected void specialAttack(final Adventurer theOpponent) {

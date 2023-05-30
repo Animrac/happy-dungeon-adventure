@@ -80,7 +80,7 @@ public abstract class Adventurer {
      * @param theBlockOdds the odds of a character being able to block an attack
      * @param theAttackSpeed the # of attack generated per round
      */
-     protected Adventurer(final String theName, final int theHealth, final int theMinDamage,
+     protected Adventurer (final String theName, final int theHealth, final int theMinDamage,
                 final int theMaxDamage, final double theAttackOdds, final double theBlockOdds, final int theAttackSpeed) {
 
         setName(theName);
@@ -232,21 +232,21 @@ public abstract class Adventurer {
         return myHealth;
     }
 
-    /**
-     *
-     * @return myMaxDamage
-     */
-    public final int getMaxDamage() {
-        return myMaxDamage;
-    }
+//    /**
+//     *
+//     * @return myMaxDamage
+//     */
+//    public final int getMaxDamage() {
+//        return myMaxDamage;
+//    }
 
-    /**
-     *
-     * @return myMinDamage
-     */
-    public final int getMinDamage() {
-        return myMinDamage;
-    }
+//    /**
+//     *
+//     * @return myMinDamage
+//     */
+//    public final int getMinDamage() {
+//        return myMinDamage;
+//    }
 
     /**
      *
@@ -256,21 +256,21 @@ public abstract class Adventurer {
         return myAttackSpeed;
     }
 
-    /**
-     *
-     * @return myAttackOdds
-     */
-    public final double getAttackOdds() {
-        return myAttackOdds;
-    }
+//    /**
+//     *
+//     * @return myAttackOdds
+//     */
+//    public final double getAttackOdds() {
+//        return myAttackOdds;
+//    }
 
-    /**
-     *
-     * @return myBlockOdds
-     */
-    public final double getBlockOdds() {
-        return myBlockOdds;
-    }
+//    /**
+//     *
+//     * @return myBlockOdds
+//     */
+//    public final double getBlockOdds() {
+//        return myBlockOdds;
+//    }
 
     /**
      * Checks if character is still alive.
