@@ -35,26 +35,26 @@ public class DungeonAdventure {
     private String[] myPillars = new String[]{"ABSTRACTION", "ENCAPSULATION", "INHERITANCE", "POLYMORPHISM"};
 
     /**
-     * Prompts user to enter name of monster,
-     * and then randomly generates a kind of monster.
+     * Randomly generates a kind of monster.
      *
      * @return randoMonster
      */
     public static Monster spawnMonster() {
-        Scanner in  = new Scanner(System.in);
-
-        int rand = MY_RANDOM.nextInt(3);
-
-        Monster randoMonster = null;
-
-        if (rand == 0) {
-            randoMonster = new monsterOne();
-        } else if (rand == 1) {
-            randoMonster = new monsterTwo();
-        } else {
-            randoMonster = new monsterThree();
-        }
-        return randoMonster;
+//        Scanner in  = new Scanner(System.in);
+//
+//        int rand = MY_RANDOM.nextInt(3);
+//
+//        Monster randoMonster = null;
+//
+//        if (rand == 0) {
+//            randoMonster = new monsterOne();
+//        } else if (rand == 1) {
+//            randoMonster = new monsterTwo();
+//        } else {
+//            randoMonster = new monsterThree();
+//        }
+//        return randoMonster;
+        return MonsterFactory.getRandomMonster();
     }
 
     /**
