@@ -21,7 +21,7 @@ public class SceneMaker {
 
         Scene scene = new Scene(root);
 
-        scene.getStylesheets().add(css);
+//        scene.getStylesheets().add(css);
 
         return scene;
 

@@ -9,210 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="cleaned up Main and removed unecessary files">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Dungeon_Adventure_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Dungeon_Adventure_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="tried to make an executable and added more images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-console-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-console-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-datetime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-debug-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-errorhandling-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-file-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-file-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-file-l2-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-handle-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-interlocked-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-libraryloader-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-localization-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-memory-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-namedpipe-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-processenvironment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-processthreads-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-processthreads-l1-1-1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-profile-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-synch-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-synch-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-sysinfo-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-timezone-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-core-util-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-conio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-convert-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-environment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-filesystem-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-locale-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-math-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-multibyte-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-private-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-process-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-runtime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-stdio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-time-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/api-ms-win-crt-utility-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/decora_sse.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/fxplugins.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/glass.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/glib-lite.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/gstreamer-lite.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/javafx_font.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/javafx_iio.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/jfxmedia.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/jfxwebkit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/msvcp140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/msvcp140_1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/msvcp140_2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/prism_common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/prism_d3d.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/prism_sw.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/ucrtbase.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/vcruntime140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/bin/vcruntime140_1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.base/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.base/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.base/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.controls/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.controls/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.controls/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.fxml/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.fxml/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.fxml/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.graphics/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.graphics/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.graphics/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.graphics/jpeg_fx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.graphics/mesa3d.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.media/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.media/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.media/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.media/directshow.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.media/glib.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.media/gstreamer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.media/libffi.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.swing/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.swing/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.swing/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.web/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.web/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.web/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.web/icu_web.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.web/libxml2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.web/libxslt.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/legal/javafx.web/webkit.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/javafx.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/artifacts/Dungeon_Adventure_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/artifacts/Dungeon_Adventure_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-console-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-console-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-datetime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-debug-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-errorhandling-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-file-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-file-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-file-l2-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-handle-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-interlocked-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-libraryloader-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-localization-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-memory-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-namedpipe-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-processenvironment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-processthreads-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-processthreads-l1-1-1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-profile-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-synch-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-synch-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-sysinfo-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-timezone-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-core-util-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-conio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-convert-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-environment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-filesystem-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-locale-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-math-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-multibyte-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-private-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-process-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-runtime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-stdio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-time-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/api-ms-win-crt-utility-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/decora_sse.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/fxplugins.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/glass.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/glib-lite.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/gstreamer-lite.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/javafx_font.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/javafx_iio.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/jfxmedia.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/jfxwebkit.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/msvcp140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/msvcp140_1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/msvcp140_2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/prism_common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/prism_d3d.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/prism_sw.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/ucrtbase.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/vcruntime140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/bin/vcruntime140_1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.base/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.base/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.base/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.controls/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.controls/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.controls/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.fxml/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.fxml/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.fxml/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.graphics/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.graphics/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.graphics/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.graphics/jpeg_fx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.graphics/mesa3d.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.media/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.media/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.media/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.media/directshow.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.media/glib.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.media/gstreamer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.media/libffi.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.swing/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.swing/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.swing/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.web/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.web/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.web/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.web/icu_web.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.web/libxml2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.web/libxslt.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/legal/javafx.web/webkit.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/javafx-sdk-20.0.1/lib/javafx.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/controlStyle1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/controlStyle2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/flatred.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/playtime.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/sky.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/tom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/tree - Copy.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/end.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/end.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/mainGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/mainGame.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/start.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SceneMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SceneMaker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,6 +145,7 @@
       <workItem from="1685303431280" duration="16866000" />
       <workItem from="1685365160369" duration="15816000" />
       <workItem from="1685411130543" duration="7862000" />
+      <workItem from="1685424214054" duration="2918000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -507,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685383222635</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="tried to make an executable and added more images">
+      <created>1685424338903</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1685424338903</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +361,8 @@
     <MESSAGE value="added .css, inventory controller, inventory scene, helper methods, and more art" />
     <MESSAGE value="added notifications, randomized pillars, instructions, and difficulty levels based on dungeon dimensions. Cleaned up some unused code in the controller classes as well" />
     <MESSAGE value="cleaned up Main and removed unecessary files" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned up Main and removed unecessary files" />
+    <MESSAGE value="tried to make an executable and added more images" />
+    <option name="LAST_COMMIT_MESSAGE" value="tried to make an executable and added more images" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
