@@ -7,6 +7,10 @@ import src.Main.Main;
 
 import java.io.IOException;
 
+/**
+ * Builds a scene based on an .fxml file.
+ * @author Carmina Cruz, Hui Wagner
+ */
 public class SceneMaker {
     private static final String css = Main.class.getResource("/src/View/application.css").toExternalForm();
 
@@ -21,7 +25,7 @@ public class SceneMaker {
 
         Scene scene = new Scene(root);
 
-//        scene.getStylesheets().add(css);
+        scene.getStylesheets().add(css);
 
         return scene;
 
