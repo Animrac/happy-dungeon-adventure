@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="tried to make an executable and added more images">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="commit before merging from another branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SceneMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SceneMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MonsterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MonsterFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +25,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/AnastasiaBranch" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -145,7 +147,7 @@
       <workItem from="1685303431280" duration="16866000" />
       <workItem from="1685365160369" duration="15816000" />
       <workItem from="1685411130543" duration="7862000" />
-      <workItem from="1685424214054" duration="2918000" />
+      <workItem from="1685424214054" duration="4039000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -315,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685424338903</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="commit before merging from another branch">
+      <created>1685469210549</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1685469210549</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +371,8 @@
     <MESSAGE value="added notifications, randomized pillars, instructions, and difficulty levels based on dungeon dimensions. Cleaned up some unused code in the controller classes as well" />
     <MESSAGE value="cleaned up Main and removed unecessary files" />
     <MESSAGE value="tried to make an executable and added more images" />
-    <option name="LAST_COMMIT_MESSAGE" value="tried to make an executable and added more images" />
+    <MESSAGE value="commit before merging from another branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit before merging from another branch" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
