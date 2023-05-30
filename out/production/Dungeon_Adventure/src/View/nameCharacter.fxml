@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="mainVBox" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.CharacterSelectionController">
+  <children>
+    <MenuBar fx:id="myMenuBar" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="saveButton" disable="true" mnemonicParsing="false" text="Save Game" />
+            <MenuItem fx:id="loadButton" mnemonicParsing="false" onAction="#load" text="Load Game" />
+            <MenuItem fx:id="quitButton" mnemonicParsing="false" onAction="#quit" text="Exit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem fx:id="menuControls" mnemonicParsing="false" onAction="#showControls" text="Game Play Instructions" />
+                  <MenuItem fx:id="menuLore" mnemonicParsing="false" onAction="#showLore" text="About (aka Juicy Lore)" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="rootPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="21.0" layoutY="143.0" style="&#10;" text="Enter your NAME :)" textAlignment="CENTER" wrapText="false">
+          <font>
+            <Font name="System Bold" size="20.0" />
+          </font>
+        </Label>
+            <TextField fx:id="heroName" alignment="CENTER" layoutX="219.0" layoutY="140.0" promptText="e.g. Isabelle...">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button fx:id="startButton" layoutX="244.0" layoutY="268.0" mnemonicParsing="false" onAction="#newGame" prefHeight="56.0" prefWidth="150.0" text="Start">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="21.0" layoutY="83.0" style="&#10;" text="Select your HERO :)" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="heroChoice" layoutX="292.0" layoutY="82.0" prefHeight="31.0" prefWidth="114.0" />
+            <Text layoutX="213.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I want to be a" />
+            <TextField fx:id="heroSummary" editable="false" layoutX="417.0" layoutY="82.0" prefHeight="31.0" prefWidth="199.0" />
+            <Label alignment="CENTER" layoutX="21.0" layoutY="203.0" style="&#10;" text="Choose your DIFFICULTY :)" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Text layoutX="20.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="difficultyChoice" layoutX="286.0" layoutY="202.0" prefHeight="31.0" prefWidth="114.0" />
+            <TextField fx:id="difficultySummary" editable="false" layoutX="411.0" layoutY="202.0" prefHeight="31.0" prefWidth="199.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
