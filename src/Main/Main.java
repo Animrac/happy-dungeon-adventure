@@ -12,6 +12,7 @@ import src.Model.SceneMaker;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 
 public class Main extends Application {
@@ -39,8 +40,8 @@ public class Main extends Application {
 
     }
 
-    private void playAudio() {
-        Media music = new Media(new File("src/View/lullaby.mp3").toURI().toString());
+    private void playAudio() throws MalformedURLException {
+        Media music = new Media(new File("src/View/lullaby.mp3").toURI().toURL().toExternalForm());
         MediaPlayer mediaPlayer = new MediaPlayer(music);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         mediaPlayer.play();
