@@ -80,17 +80,18 @@ public class MonsterFactory {
         int row = 0;
         String theName = "";
 
-        switch (theName.toUpperCase()) {
-            case ("MONSTER ONE") -> row = 1;
-            case ("MONSTER TWO") -> row = 2;
-            case ("MONSTER THREE") -> row = 3;
-
-            default -> {
-                throw new NoSuchElementException(theName + "is not a valid monster");
-            }
-
-        }
-        query = "SELECT * FROM monsterFactory WHERE row = " + row;
+//        switch (theName.toUpperCase()) {
+//            case ("MONSTER ONE") -> row = 1;
+//            case ("MONSTER TWO") -> row = 2;
+//            case ("MONSTER THREE") -> row = 3;
+//
+//            default -> {
+//                throw new NoSuchElementException(theName + "is not a valid monster");
+//            }
+//
+//        }
+//        query = "SELECT * FROM monsterFactory WHERE row = " + row;
+        query = "SELECT * FROM monsterFactory";
 
         try ( Connection conn = ds.getConnection();
               Statement stmt = conn.createStatement();
@@ -105,10 +106,28 @@ public class MonsterFactory {
                     rs.getDouble("BLOCK_ODDS"),
                     rs.getInt("ATTACK_SPEED")
             );
+        while (rs.next()) {
+            String name = rs.getString( "NAME" );
+            String health = rs.getString( "HEALTH" );
+            String minDamage = rs.getString( "MIN_DAMAGE" );
+            String maxDamage = rs.getString( "MAX_DAMAGE" );
+            String attackOdds = rs.getString( "ATTACK_ODDS" );
+            String blockOdds = rs.getString( "BLOCK_ODDS" );
+            String attackSpeed = rs.getString( "ATTACK_SPEED" );
+
+            System.out.println( "Result: Name = " + name +
+                    ", Health = " + health + minDamage + maxDamage + attackOdds + blockOdds + attackSpeed);
+        }
+
         } catch ( SQLException e ) {
             e.printStackTrace();
             System.exit( 0 );
         }
+
+        System.out.println("press enter to close program/window");
+        Scanner input = new Scanner(System.in);
+        input.nextLine();
+
     }
 
 }
