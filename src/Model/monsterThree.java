@@ -1,11 +1,14 @@
 package src.Model;
+
+import java.io.Serializable;
+
 /**
  * This program creates a monsterOne character, a monster.
  *
  * @author Anastasia Vilenius
  * @version 05/09/23
  */
-public class monsterThree extends Monster {
+public class monsterThree extends Monster implements Serializable {
 
     /**
      * Constructor that initializes fields.

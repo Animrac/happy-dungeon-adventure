@@ -1,5 +1,6 @@
 package src.Model;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ import java.util.Scanner;
  * @version 05/07/23
  */
 
-public abstract class Adventurer {
+public abstract class Adventurer implements Serializable {
 
     /**
      * Random object for generation of items/monsters.

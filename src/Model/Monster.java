@@ -1,12 +1,14 @@
 package src.Model;
 
+import java.io.Serializable;
+
 /**
  * This program creates an outline for a monster character.
  *
  * @author anastasiavilenius
  * @version 05/07/23
  */
-public class Monster extends Adventurer {
+public class Monster extends Adventurer implements Serializable {
 
     /**
      * Constructor that initializes fields.

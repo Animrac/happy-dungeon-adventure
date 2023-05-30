@@ -105,7 +105,7 @@ public class CharacterSelectionController implements Initializable {
 
     @FXML
     void load(ActionEvent event) {
-        GameController.gameLoad();
+        //GameController.gameLoad();
     }
 
     public TextField getHeroName() {

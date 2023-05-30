@@ -18,10 +18,7 @@ import src.Model.Dungeon;
 import src.Model.DungeonAdventure;
 import src.Model.SceneMaker;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -589,24 +586,33 @@ public class GameController implements Initializable {
     //TODO load and save
     @FXML
     void load(ActionEvent event) {
-        gameLoad();
+        try {
+            FileInputStream fileIn = new FileInputStream("saveFile.txt");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            model = (DungeonAdventure) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("YourModelClassName not found");
+            c.printStackTrace();
+        }
+        System.out.println("load");
     }
 
     @FXML
     void save(ActionEvent event) {
-        gameSave();
-    }
-
-
-    static void gameLoad() {
-        //TODO
-
-
-    }
-
-
-    static void gameSave() {
-        //TODO
+//        gameSave();
+        try {
+            FileOutputStream fileOut = new FileOutputStream("saveFile.txt");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(model);
+            out.close();
+            fileOut.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
     }
 
 }

@@ -1,4 +1,7 @@
 package src.Model;
+
+import java.io.Serializable;
+
 /**
  * This program creates a hero character.
  *
@@ -7,7 +10,7 @@ package src.Model;
  * @author Anastasia Vilenius
  * @version 05/09/23
  */
-public class heroThree extends Hero {
+public class heroThree extends Hero implements Serializable {
 
     /**
      * Indicates minimum of damage that can be generated from a special attack.

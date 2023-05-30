@@ -1,5 +1,7 @@
 package src.Model;
 
+import java.io.Serializable;
+
 /**
  * This program creates an outline for a hero character that differs from Adventurer
  * as it has the ability to use a special attack.
@@ -7,7 +9,7 @@ package src.Model;
  * @author Anastasia Vilenius
  * @version 05/07/23
  */
-public abstract class Hero extends Adventurer {
+public abstract class Hero extends Adventurer implements Serializable {
 
     /**
      * Indicates whether a hero chose to run away.
