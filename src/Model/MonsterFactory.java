@@ -41,9 +41,8 @@ public class MonsterFactory {
             "BLOCK_ODDS double," +
             "ATTACK_SPEED int)";
 
-        try {
-            Connection connection = ds.getConnection();
-            Statement stmt = connection.createStatement();
+        try (Connection connection = ds.getConnection();
+            Statement stmt = connection.createStatement()) {
             int rv = stmt.executeUpdate( query );
             System.out.println( "executeUpdate() returned " + rv );
         } catch ( SQLException e ) {
@@ -61,7 +60,7 @@ public class MonsterFactory {
 
 
         try (Connection conn = ds.getConnection();
-            Statement stmt = conn.createStatement(); ) {
+            Statement stmt = conn.createStatement()) {
             int rv = stmt.executeUpdate( query1 );
             System.out.println( "1st executeUpdate() returned " + rv );
 
@@ -81,10 +80,10 @@ public class MonsterFactory {
         int row = 0;
         String theName = "";
 
-        switch (theName) {
-            case ("Monster One") -> row = 1;
-            case ("Monster Two") -> row = 2;
-            case ("Monster Three") -> row = 3;
+        switch (theName.toUpperCase()) {
+            case ("MONSTER ONE") -> row = 1;
+            case ("MONSTER TWO") -> row = 2;
+            case ("MONSTER THREE") -> row = 3;
 
             default -> {
                 throw new NoSuchElementException(theName + "is not a valid monster");
@@ -94,9 +93,8 @@ public class MonsterFactory {
         query = "SELECT * FROM monsterFactory WHERE row = " + row;
 
         try ( Connection conn = ds.getConnection();
-              Statement stmt = conn.createStatement()) {
-
-            ResultSet rs = stmt.executeQuery(query);
+              Statement stmt = conn.createStatement();
+              ResultSet rs = stmt.executeQuery(query)) {
 
             new Monster(
                     rs.getString("NAME"),
