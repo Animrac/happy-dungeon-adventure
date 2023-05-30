@@ -1,4 +1,7 @@
 package src.Model;
+
+import java.io.Serializable;
+
 /**
  * This program creates a hero character.
  *
@@ -7,7 +10,7 @@ package src.Model;
  * @author Anastasia Vilenius
  * @version 05/09/23
  */
-public class heroTwo extends Hero {
+public class heroTwo extends Hero implements Serializable {
 
     /**
      * Indicated minimum amount of hit points that can be healed.

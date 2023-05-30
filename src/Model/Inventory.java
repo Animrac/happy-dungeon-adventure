@@ -1,5 +1,8 @@
 package src.Model;
-public class Inventory {
+
+import java.io.Serializable;
+
+public class Inventory implements Serializable {
     private int visionPotionCount;
     private int healthPotionCount;
     private int pillarCount;
