@@ -19,9 +19,11 @@ import src.Model.*;
 import java.io.*;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import java.util.Collections;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Controller class for the game scene, mainGame.fxml.
@@ -439,9 +441,9 @@ public class GameController implements Initializable {
         if (model.getMyRoom().getHasMonster()) {
 
             model.getMyRoom().removeRoomMonster();
-
-            Scene scene = SceneMaker.createScene("src/View/battle.fxml");
-            Main.getPrimaryStage().setScene(scene);
+//TODO BATTLE
+//            Scene scene = SceneMaker.createScene("src/View/battle.fxml");
+//            Main.getPrimaryStage().setScene(scene);
         }
 
     }
@@ -539,7 +541,12 @@ public class GameController implements Initializable {
                 [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
                 .getHasPit()) {
 
-            model.getMyHero().setHealth(model.getMyHero().getHealth());
+            int pitSubtract = ThreadLocalRandom.current().nextInt(1, 20 + 1);
+
+            System.out.println(model.getMyHero().getHealth() - pitSubtract);
+
+            model.getMyHero()
+                    .setHealth(model.getMyHero().getHealth() - pitSubtract);
 
             myNotification.setText(PIT_TEXT);
             notifyPlayer();
