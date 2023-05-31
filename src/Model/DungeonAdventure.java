@@ -1,16 +1,20 @@
 package src.Model;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
+ * The state class that holds all the current information about the game, e.g. player, dungeon layout, etc.
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
  * @version 05/29/23
  */
 public class DungeonAdventure implements Serializable {
 
-    private static final DungeonAdventure instance = new DungeonAdventure();
+    private static final long serialversionUID =
+            129348938L;
+
+    private static DungeonAdventure instance = new DungeonAdventure();
+//    private static DungeonAdventure instance;
 
     /**
      * Random object used to generate random monsters.
@@ -33,97 +37,9 @@ public class DungeonAdventure implements Serializable {
 
     private String currScene;
 
+    private Hero myHero;
+
     private String[] myPillars = new String[]{"ABSTRACTION", "ENCAPSULATION", "INHERITANCE", "POLYMORPHISM"};
-
-    /**
-     * Prompts user to enter name of monster,
-     * and then randomly generates a kind of monster.
-     *
-     * @return randoMonster
-     */
-    public static Monster spawnMonster() {
-        Scanner in  = new Scanner(System.in);
-
-        int rand = MY_RANDOM.nextInt(3);
-
-        Monster randoMonster = null;
-
-        if (rand == 0) {
-            randoMonster = new monsterOne();
-        } else if (rand == 1) {
-            randoMonster = new monsterTwo();
-        } else {
-            randoMonster = new monsterThree();
-        }
-        return randoMonster;
-    }
-
-    /**
-     * Prompts user to name their hero,
-     * and then allows them to pick between three types of heroes to play as.
-     *
-     * @return chosenHero
-     */
-    public static Hero chooseHero() {
-        Scanner in = new Scanner(System.in);
-
-        System.out.print("Now choose a name for your hero: ");
-        String name = in.next();
-
-        System.out.println("Time to choose your hero!");
-        System.out.println();
-        System.out.println("1: heroOne \n2: heroTwo \n3: heroThree");
-        System.out.println();
-
-        Hero chosenHero = null;
-
-        if (in.nextInt() == 1) {
-            chosenHero = new heroOne(name);
-        } else if (in.nextInt() == 2) {
-            chosenHero = new heroTwo(name);
-        } else if (in.nextInt() == 3) {
-            chosenHero = new heroThree(name);
-        }
-        return chosenHero;
-    }
-
-    public static void battle(Hero hero, Monster monster) {
-        while (hero.alive() && monster.alive() && !hero.runAway()) {
-            System.out.println(hero.getName() + " hit points: " + hero.getHealth());
-            System.out.println(monster.getName() + "hit points: " + monster.getHealth());
-            hero.attack(monster);
-
-            if(!hero.runAway()) {
-                monster.attack(hero);
-                System.out.println("Press enter for next round");
-                Adventurer.input.nextLine();
-            }
-            else {
-                System.out.println(hero.getName() + " bravely ran away...");
-            }
-        }
-        if(monster.alive()) {
-            System.out.println(monster.getName() + " defeated " + hero.getName() + "!");
-        }
-        else {
-            System.out.println(hero.getName() + " defeated " + monster.getName() + "!");
-        }
-    }
-
-    /**
-     *
-     */
-    public static void gamePlay() {
-        Monster monster = spawnMonster();
-        System.out.println("Oh no! A " + monster.getClass() + " has spawned!");
-        System.out.println();
-
-        Hero hero = chooseHero();
-        System.out.println("Woah! " + hero.getName() + ", a " + hero.getClass() + ", dares to enter the dungeon!");
-        System.out.println();
-
-        battle(hero, monster);
-    }
 
     //GETTERS//
     public static DungeonAdventure getInstance() {
@@ -146,6 +62,10 @@ public class DungeonAdventure implements Serializable {
         return myClass;
     }
 
+    public Hero getMyHero() {
+        return myHero;
+    }
+
     public Inventory getMyInventory() {
         return myInventory;
     }
@@ -155,6 +75,10 @@ public class DungeonAdventure implements Serializable {
     }
 
     //SETTERS//
+    public static void setInstance(DungeonAdventure theInstance) {
+        instance = theInstance;
+    }
+
     public void setMyDungeonLayout(Dungeon theDungeonLayout) {
         myDungeonLayout = theDungeonLayout;
     }
@@ -169,6 +93,10 @@ public class DungeonAdventure implements Serializable {
 
     public void setMyClass(String theClass) {
         myClass = theClass;
+    }
+
+    public void setMyHero(Hero theHero) {
+        myHero = theHero;
     }
 
     public boolean getInGame() {
@@ -194,4 +122,6 @@ public class DungeonAdventure implements Serializable {
     public String[] getMyPillars(){
         return myPillars;
     }
+
+
 }
