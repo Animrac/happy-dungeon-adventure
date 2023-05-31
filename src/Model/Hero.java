@@ -1,5 +1,7 @@
 package src.Model;
 
+import java.io.Serializable;
+
 /**
  * This program creates an outline for a hero character that differs from Adventurer
  * as it has the ability to use a special attack.
@@ -7,7 +9,7 @@ package src.Model;
  * @author Anastasia Vilenius
  * @version 05/07/23
  */
-public abstract class Hero extends Adventurer {
+public abstract class Hero extends Adventurer implements Serializable {
 
     /**
      * Indicates whether a hero chose to run away.
@@ -18,10 +20,6 @@ public abstract class Hero extends Adventurer {
      */
     private double mySpecialSkillOdds;
 
-    /**
-     * Inventory for the hero
-     */
-    private final Inventory myInventory;
 
     /**
      * Constructor that initializes fields.
@@ -40,7 +38,6 @@ public abstract class Hero extends Adventurer {
         super(theName, theHealth, theMinDamage, theMaxDamage, theAttackOdds, theBlockOdds, theAttackSpeed);
         setRunAway(false);
         setSpecialSkillOdds(theSpecialSkillOdds);
-        myInventory = new Inventory();
     }
 
     /**
@@ -79,13 +76,6 @@ public abstract class Hero extends Adventurer {
      */
     public final boolean runAway() {
         return myRunAway;
-    }
-    /**
-     * Get the inventory
-     * @return myInventory
-     */
-    public Inventory getInventory() {
-        return myInventory;
     }
 
     /**
@@ -166,37 +156,6 @@ public abstract class Hero extends Adventurer {
         return choice;
     }
 
-//    public int getVisionPotionCount() {
-//        return myInventory.getVisionPotionCount();
-//    }
-//
-//    public void addVisionPotion() {
-//        myInventory.addVisionPotion();
-//    }
-//
-//    public void removeVisionPotion() {
-//        myInventory.removeVisionPotion();
-//    }
-//
-//    public int getHealthPotionCount() {
-//        return myInventory.getHealthPotionCount();
-//    }
-//
-//    public void addHealthPotion() {
-//        myInventory.addHealthPotion();
-//    }
-//
-//    public void removeHealthPotion() {
-//        myInventory.removeHealthPotion();
-//    }
-//
-//    public void addPillar() {
-//        myInventory.addPillar();
-//    }
-//
-//    public void getPillarCount() {
-//        myInventory.getPillarCount();
-//    }
 }
 
 

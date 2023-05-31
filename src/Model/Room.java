@@ -1,9 +1,6 @@
 package src.Model;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
     /*
@@ -176,9 +173,9 @@ public class Room implements Serializable {
             this.isExit = true;
         }
         else if (theKey == 'P'){ //a pillar
-            this.currRoom[1][1] = 'P'; //TODO: this needs to be randomized somehow to A, E, I, P. Not just P.
+            this.currRoom[1][1] = 'P';
             this.hasPillar = true;
-            this.hasMonster = true; //since pillar should contain difficult boss monster
+            this.hasMonster = true; //since pillar should contain a difficult boss monster
         }
     }
 
@@ -325,22 +322,13 @@ public class Room implements Serializable {
         return isEntrance;
     }
 
-    public void setEntrance ( boolean isEntrance){
-        this.isEntrance = isEntrance;
-    }
-
     public boolean isExit () {
         return isExit;
-    }
-
-    public void setExit ( boolean isExit){
-        this.isExit = isExit;
     }
 
     public boolean getCanGoNorth(){
         return canGoNorth;
     }
-
     public boolean getCanGoSouth(){
         return canGoSouth;
     }
@@ -352,7 +340,7 @@ public class Room implements Serializable {
     }
 
     // Getter and setter methods for other properties
-    public boolean isHasHealingPotion() {
+    public boolean getHasHealingPotion() {
         return hasHealingPotion;
     }
 
@@ -360,7 +348,7 @@ public class Room implements Serializable {
         this.hasHealingPotion = hasHealingPotion;
     }
 
-    public boolean isHasVisionPotion() {
+    public boolean getHasVisionPotion() {
         return hasVisionPotion;
     }
 
@@ -368,15 +356,11 @@ public class Room implements Serializable {
         this.hasVisionPotion = hasVisionPotion;
     }
 
-    public boolean isHasPit() {
+    public boolean getHasPit() {
         return hasPit;
     }
 
-    public void setHasPit(boolean hasPit){
-        this.hasPit = hasPit;
-    }
-
-    public boolean HasMonster() {
+    public boolean getHasMonster() {
         return hasMonster;
     }
 
@@ -392,7 +376,7 @@ public class Room implements Serializable {
         this.pillar = pillar;
     }
 
-    public boolean isHasPillar() {
+    public boolean getHasPillar() {
         return hasPillar;
     }
 
@@ -401,10 +385,10 @@ public class Room implements Serializable {
     }
 
     public boolean getHasItem() {
-        if(hasPillar || hasVisionPotion || hasHealingPotion) {
-            return true;
-        }
-        return false;
+        return (hasPillar || hasVisionPotion || hasHealingPotion);
     }
 
+    public void removeRoomMonster() {
+        this.setHasMonster(false);
+    }
 }

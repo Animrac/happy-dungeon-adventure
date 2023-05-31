@@ -3,11 +3,13 @@ package src.Model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.io.Serializable;
+
 /**
  * Details object helps us contain information about the type of hero
  * and their description for the GUI.
  */
-public class Details {
+public class Details implements Serializable {
 
     private final StringProperty name;
     private final StringProperty text;

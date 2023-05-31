@@ -2,7 +2,7 @@ package src.Model;
 
 import java.io.*;
 
-public class SaveLoadGame {
+public class SaveLoadGame implements Serializable {
     String savedGame = "SavedGame.txt";
 
     public void saveGame(){

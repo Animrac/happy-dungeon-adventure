@@ -14,45 +14,68 @@ import src.Main.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import src.Model.Dungeon;
-import src.Model.DungeonAdventure;
-import src.Model.SceneMaker;
+import src.Model.*;
 
-import java.io.File;
+import java.io.*;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import java.util.Collections;
 
+/**
+ * Controller class for the game scene, mainGame.fxml.
+ * Everything shown is controlled in this class.
+ * @author Carmina Cruz
+ */
 public class GameController implements Initializable {
 
+    /**
+     * Notification text when entering a room with a pit.
+     */
     private static final String PIT_TEXT = "ouch! you fell in a pit :(";
 
+    /**
+     * Notification text when all four pillars were collected and the game can be completed.
+     */
     private final String ALL_PILLARS = "you found all the pillars! get to the exit!";
 
+    /**
+     * Notification text when the player collects an item.
+     */
     private final String COLLECTED = "you collected a ";
 
+    /**
+     * Full opacity constant at 100%. Shown.
+     */
     private final double FULL_OPACITY = 1.0;
 
+    /**
+     * No opacity constant at 0%. Hidden.
+     */
     private final double NO_OPACITY = 0.0;
 
-    @FXML
-    private Button collectButton;
-
-    @FXML
-    private Button exitButton;
-
+    /**
+     * An image of the player. TODO Can change based on what character you choose.
+     */
     @FXML
     private ImageView player;
 
+    /**
+     * An image to signify in game if the current room is the entrance.
+     */
     @FXML
     private ImageView startSign;
 
+    /**
+     * An image to signify in game if the current room is the exit.
+     */
     @FXML
     private ImageView exitSign;
 
+    /**
+     * Images to signify walls.
+     */
     @FXML
     private ImageView wallEast1;
     @FXML
@@ -85,59 +108,127 @@ public class GameController implements Initializable {
     @FXML
     private ImageView wallWest4;
 
+    /**
+     * Image to signify a pit in the current room in game.
+     */
     @FXML
     private ImageView pit;
 
+    /**
+     * Image to signify a health potion in the current room in game.
+     */
     @FXML
     private ImageView healthpotion;
 
+    /**
+     * Image to signify a vision in the current room in game.
+     */
     @FXML
     private ImageView visionpotion;
 
+    /**
+     * Image to signify a pillar in the current room in game.
+     */
     @FXML
     private ImageView pillar;
 
+    /**
+     * A button that, when clicked, allows the player to collect an item in the current room.
+     */
+    @FXML
+    private Button collectButton;
+
+    /**
+     * A button that, when clicked, allows the player to exit the dungeon and complete the game.
+     */
+    @FXML
+    private Button exitButton;
+
+    /**
+     * A button that, when clicked, allows the player to go into the room east of the current room.
+     */
     @FXML
     private Button buttonEast;
 
+    /**
+     * A button that, when clicked, allows the player to go into the room north of the current room.
+     */
     @FXML
     private Button buttonNorth;
 
+    /**
+     * A button that, when clicked, allows the player to go into the room south of the current room.
+     */
     @FXML
     private Button buttonSouth;
 
+    /**
+     * A button that, when clicked, allows the player to go into the room west of the current room.
+     */
     @FXML
     private Button buttonWest;
 
-    @FXML
-    private Label textRoom;
-
+    /**
+     * Displays the player's current health.
+     */
     @FXML
     private Text myHealth;
 
+    /**
+     * Displays the player's name chosen at the start of the game.
+     */
     @FXML
     private Text myName;
 
+    /**
+     * Displays the player's class chosen at the start of the game.
+     */
     @FXML
     private Text myClass;
 
+    /**
+     * Displays a notification.
+     */
     @FXML
     private Text myNotification;
 
+    /**
+     * The instance of DungeonAdventure, the current game.
+     */
     private DungeonAdventure model;
 
+    /**
+     * The sound played when clicking the collect button.
+     */
     private Media collectSound = new Media(new File("src/View/pickup.mp3").toURI().toString());
 
+    /**
+     * The sound played when clicking an arrow button to move.
+     */
     private Media walkSound = new Media(new File("src/View/walk.mp3").toURI().toString());
 
+    /**
+     * The transition used for notifications.
+     */
     private SequentialTransition notifyTransition = new SequentialTransition();
 
+    /**
+     * Constructor of the class implementing the Singleton design pattern
+     * to get the single instance of the DungeonAdventure class.
+     */
     public GameController() {
         model = DungeonAdventure.getInstance();
     }
 
+    /**
+     * When used by the .fxml class, initialize method is called first, similar to a constructor.
+     * Creates the transition effect for the notifications in game, sets the current room of the player
+     * based on the start of the dungeon, shuffles the pillar order, and generates the dungeon.
+     * @param theURL
+     * @param theResourceBundle
+     */
     @Override
-    public void initialize(URL theURL, ResourceBundle theResourceBundle) { //this is every time a Parent is called i think
+    public void initialize(URL theURL, ResourceBundle theResourceBundle) {
 
         // Create a fade-in transition
         FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.2), myNotification);
@@ -161,8 +252,11 @@ public class GameController implements Initializable {
 
         myName.setText(model.getMyName());
         myClass.setText(model.getMyClass());
+        model.setMyHero(heroCreation());
         //TODO
 //            myHealth.setText(model.getMyHealth());
+
+
 
         if (!model.getInGame()){
 
@@ -183,10 +277,6 @@ public class GameController implements Initializable {
                 model.setMyDungeonLayout(new Dungeon()); // 10x10
             }
 
-
-//            System.out.println();
-//            System.out.println("Start Row: " + model.getDungeonLayout().getStartRow());
-//            System.out.println("Start Col: " + model.getDungeonLayout().getStartCol());
             model.getMyDungeonLayout().setCurrRow(model.getMyDungeonLayout().getStartRow());
             model.getMyDungeonLayout().setCurrCol(model.getMyDungeonLayout().getStartCol());
             model.setMyRoom(model.getMyDungeonLayout().getMyDungeonRooms()
@@ -195,21 +285,21 @@ public class GameController implements Initializable {
             exitButton.setDisable(true);
             exitButton.setOpacity(NO_OPACITY);
 
-//            System.out.println(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
-
             model.setInGame(true);
 
         }
 
         checkRoom(); // For collection and escape buttons.
         checkSurroundings(); // For arrow buttons.
-
-        //we want to set the text in the view to be the current room as a tostring for now, will change to image tiles later
-        //textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
         setRoom(); // For visualizing the current room.
 
     }
 
+    /**
+     * Shows the inventory screen, inventory.fxml.
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void openInventory(ActionEvent event) {
         Scene scene = SceneMaker.createScene("src/View/inventory.fxml");
@@ -221,7 +311,7 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(collectSound);
         mediaPlayer.play();
 
-        if (model.getMyRoom().isHasPillar()){
+        if (model.getMyRoom().getHasPillar()){
             model.getMyInventory().addPillar();
 
             // Displays current pillar
@@ -234,14 +324,14 @@ public class GameController implements Initializable {
             }
         }
 
-        if (model.getMyRoom().isHasHealingPotion()){
+        if (model.getMyRoom().getHasHealingPotion()){
             model.getMyInventory().addHealthPotion();
 
             myNotification.setText(COLLECTED + "health potion!");
             notifyPlayer();
         }
 
-        if (model.getMyRoom().isHasVisionPotion()){
+        if (model.getMyRoom().getHasVisionPotion()){
             model.getMyInventory().addVisionPotion();
 
             myNotification.setText(COLLECTED + "vision potion!");
@@ -252,13 +342,13 @@ public class GameController implements Initializable {
         collectButton.setDisable(true);
 
         setRoom();
-//        textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
-
     }
 
     private void setRoom() {
-        model.setMyRoom(model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]);
-//        textRoom.setText(model.getDungeonLayout().getMyDungeonRooms()[model.getDungeonLayout().getCurrRow()][model.getDungeonLayout().getCurrCol()].toString());
+
+        model.setMyRoom(model.getMyDungeonLayout().getMyDungeonRooms()
+                [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]);
+
         if (model.getMyRoom().getCanGoNorth()) {
             wallNorth1.setOpacity(NO_OPACITY);
             wallNorth2.setOpacity(NO_OPACITY);
@@ -305,19 +395,19 @@ public class GameController implements Initializable {
         }
 
         //ITEMS//
-        if (model.getMyRoom().isHasPillar()) {
+        if (model.getMyRoom().getHasPillar()) {
             pillar.setOpacity(FULL_OPACITY);
         }
         else {
             pillar.setOpacity(NO_OPACITY);
         }
-        if (model.getMyRoom().isHasHealingPotion()) {
+        if (model.getMyRoom().getHasHealingPotion()) {
             healthpotion.setOpacity(FULL_OPACITY);
         }
         else {
             healthpotion.setOpacity(NO_OPACITY);
         }
-        if (model.getMyRoom().isHasVisionPotion()) {
+        if (model.getMyRoom().getHasVisionPotion()) {
             visionpotion.setOpacity(FULL_OPACITY);
         }
         else {
@@ -353,7 +443,8 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
         mediaPlayer.play();
 
-        model.getMyDungeonLayout().setCurrRow(model.getMyDungeonLayout().getCurrRow() - 1);
+        model.getMyDungeonLayout()
+                .setCurrRow(model.getMyDungeonLayout().getCurrRow() - 1);
         setRoom();
 
         checkRoom();
@@ -367,7 +458,8 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
         mediaPlayer.play();
 
-        model.getMyDungeonLayout().setCurrRow(model.getMyDungeonLayout().getCurrRow() + 1);
+        model.getMyDungeonLayout()
+                .setCurrRow(model.getMyDungeonLayout().getCurrRow() + 1);
         setRoom();
 
         checkRoom();
@@ -381,7 +473,8 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
         mediaPlayer.play();
 
-        model.getMyDungeonLayout().setCurrCol(model.getMyDungeonLayout().getCurrCol() + 1);
+        model.getMyDungeonLayout()
+                .setCurrCol(model.getMyDungeonLayout().getCurrCol() + 1);
         setRoom();
 
         checkRoom();
@@ -394,7 +487,8 @@ public class GameController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(walkSound);
         mediaPlayer.play();
 
-        model.getMyDungeonLayout().setCurrCol(model.getMyDungeonLayout().getCurrCol() - 1);
+        model.getMyDungeonLayout()
+                .setCurrCol(model.getMyDungeonLayout().getCurrCol() - 1);
         setRoom();
 
         checkRoom();
@@ -420,8 +514,6 @@ public class GameController implements Initializable {
         Main.getPrimaryStage().setScene(scene);
     }
 
-    //in the game:
-
     private void checkRoom(){
 
         if (!model.getMyDungeonLayout().getMyDungeonRooms()
@@ -436,7 +528,7 @@ public class GameController implements Initializable {
         //TODO IF A PIT, REDUCE HEALTH
         if (model.getMyDungeonLayout().getMyDungeonRooms()
                 [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
-                .isHasPit()) {
+                .getHasPit()) {
             myNotification.setText(PIT_TEXT);
             notifyPlayer();
         }
@@ -445,28 +537,36 @@ public class GameController implements Initializable {
     }
 
     private void checkSurroundings(){
-        if (!model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()].getCanGoWest()){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()
+                [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
+                .getCanGoWest()){
             buttonWest.setDisable(true);
         }
         else {
             buttonWest.setDisable(false);
         }
 
-        if (!model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()].getCanGoEast()){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()
+                [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
+                .getCanGoEast()){
             buttonEast.setDisable(true);
         }
         else {
             buttonEast.setDisable(false);
         }
 
-        if (!model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()].getCanGoNorth()){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()
+                [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
+                .getCanGoNorth()){
             buttonNorth.setDisable(true);
         }
         else {
             buttonNorth.setDisable(false);
         }
 
-        if (!model.getMyDungeonLayout().getMyDungeonRooms()[model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()].getCanGoSouth()){
+        if (!model.getMyDungeonLayout().getMyDungeonRooms()
+                [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
+                .getCanGoSouth()){
             buttonSouth.setDisable(true);
         }
         else {
@@ -487,10 +587,69 @@ public class GameController implements Initializable {
     //TODO load and save
     @FXML
     void load(ActionEvent event) {
-        Platform.exit();
+
+        DungeonAdventure instance = null;
+
+        System.out.println("My name before loading is " + model.getMyName());
+
+        try {
+            FileInputStream fileIn = new FileInputStream("saveFile.txt");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+
+//            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
+            DungeonAdventure loadedInstance = (DungeonAdventure) in.readObject();
+
+//            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
+
+            model.setMyDungeonLayout(loadedInstance.getMyDungeonLayout());
+            model.setMyName(loadedInstance.getMyName());
+
+            in.close();
+            fileIn.close();
+
+            System.out.println("Deserialized and loaded!");
+            System.out.println("My loaded name is " + model.getMyName());
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+//        } catch (ClassNotFoundException c) {
+//            System.out.println("YourModelClassName not found");
+//            c.printStackTrace();
+        }
+
+        System.out.println("load");
     }
+
     @FXML
     void save(ActionEvent event) {
-        Platform.exit();
+        System.out.println("saved!");
+//        gameSave();
+        try {
+            FileOutputStream fileOut = new FileOutputStream("saveFile.txt");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(DungeonAdventure.getInstance());
+            out.close();
+            fileOut.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
     }
+
+
+
+
+    public Hero heroCreation() {
+        Hero chosenHero = null;
+
+        if (model.getMyClass().equals("Warrior")) {
+            chosenHero = new heroOne(model.getMyName());
+        } else if (model.getMyClass().equals("Thief")) {
+            chosenHero = new heroTwo(model.getMyName());
+        } else if (model.getMyClass().equals("Priestess")) {
+            chosenHero = new heroThree(model.getMyName());
+        }
+        return chosenHero;
+    }
+
+
 }
