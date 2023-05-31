@@ -111,10 +111,12 @@ public abstract class Adventurer implements Serializable {
      * @param theHealth the number of hit points a character has
      */
     public final void setHealth(final int theHealth) {
-        if (theHealth < 0) {
-            throw new IllegalArgumentException("hit points passed to setHitPoints are negative");
-        }
-        myHealth = theHealth;
+//        if (theHealth < 0) {
+//            throw new IllegalArgumentException("hit points passed to setHitPoints are negative");
+//        }
+//        else {
+            myHealth = theHealth;
+//        }
     }
 
     /**

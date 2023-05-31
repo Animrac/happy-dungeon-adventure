@@ -29,7 +29,7 @@ public class DungeonAdventure implements Serializable {
 
     private Dungeon myDungeonLayout;
 
-    private final Inventory myInventory = new Inventory();
+    private Inventory myInventory = new Inventory();
 
     private Room myRoom;
 

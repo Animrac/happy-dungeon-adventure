@@ -391,4 +391,8 @@ public class Room implements Serializable {
     public void removeRoomMonster() {
         this.setHasMonster(false);
     }
+
+    public void setHasPit(boolean hasPit) {
+        this.hasPit = hasPit;
+    }
 }

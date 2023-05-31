@@ -255,7 +255,7 @@ public class GameController implements Initializable {
         myName.setText(model.getMyName());
         myClass.setText(model.getMyClass());
         model.setMyHero(heroCreation());
-
+//remove pit save
         myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
 
 
@@ -548,11 +548,24 @@ public class GameController implements Initializable {
             model.getMyHero()
                     .setHealth(model.getMyHero().getHealth() - pitSubtract);
 
+            // Remove the pit from the room.
+//            model.getMyRoom().setHasPit(false);
+
+            myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
+            checkHealth();
+
             myNotification.setText(PIT_TEXT);
             notifyPlayer();
         }
 
 
+    }
+
+    private void checkHealth() {
+        if (model.getMyHero().getHealth() <= 0) {
+            Scene scene = SceneMaker.createScene("src/View/badEnd.fxml");
+            Main.getPrimaryStage().setScene(scene);
+        }
     }
 
     private void checkSurroundings(){
@@ -644,6 +657,13 @@ public class GameController implements Initializable {
         }
 
         System.out.println("load");
+
+        refreshScene();
+    }
+
+    private void refreshScene() {
+        Scene scene = SceneMaker.createScene(model.getCurrScene());
+        Main.getPrimaryStage().setScene(scene);
     }
 
     @FXML
