@@ -126,7 +126,7 @@ public abstract class Hero extends Adventurer implements Serializable {
      * @param theAmount the amount of hit points to be subtracted
      */
     @Override
-    protected void subtractHitPoints(final int theAmount) {
+    public void subtractHitPoints(final int theAmount) {
         if (MY_RANDOM.nextInt(101) <= myBlockOdds) {
             System.out.println(getName() + " blocked the attack!");
         }

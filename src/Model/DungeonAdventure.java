@@ -1,7 +1,6 @@
 package src.Model;
 
 import java.io.*;
-import java.util.Random;
 
 /**
  * The state class that holds all the current information about the game, e.g. player, dungeon layout, etc.
@@ -19,7 +18,6 @@ public class DungeonAdventure implements Serializable {
     /**
      * Random object used to generate random monsters.
      */
-    private static final Random MY_RANDOM = new Random();
 
     private String myName;
 
@@ -31,7 +29,7 @@ public class DungeonAdventure implements Serializable {
 
     private Dungeon myDungeonLayout;
 
-    private Inventory myInventory = new Inventory();
+    private final Inventory myInventory = new Inventory();
 
     private Room myRoom;
 
@@ -39,7 +37,7 @@ public class DungeonAdventure implements Serializable {
 
     private Hero myHero;
 
-    private String[] myPillars = new String[]{"ABSTRACTION", "ENCAPSULATION", "INHERITANCE", "POLYMORPHISM"};
+    private final String[] myPillars = new String[]{"ABSTRACTION", "ENCAPSULATION", "INHERITANCE", "POLYMORPHISM"};
 
     //GETTERS//
     public static DungeonAdventure getInstance() {
@@ -116,7 +114,7 @@ public class DungeonAdventure implements Serializable {
     }
 
     public String getMyDifficulty() {
-        return myDifficulty.toString();
+        return myDifficulty;
     }
 
     public String[] getMyPillars(){
