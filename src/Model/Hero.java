@@ -166,38 +166,37 @@ public abstract class Hero extends Adventurer {
         return choice;
     }
 
-    public int getVisionPotionCount() {
-        return myInventory.getVisionPotionCount();
-    }
-
-    public void addVisionPotion() {
-        myInventory.addVisionPotion();
-    }
-
-    public void removeVisionPotion() {
-        myInventory.removeVisionPotion();
-    }
-
-    public int getHealthPotionCount() {
-        return myInventory.getHealthPotionCount();
-    }
-
-    public void addHealthPotion() {
-        myInventory.addHealthPotion();
-    }
-
-    public void removeHealthPotion() {
-        myInventory.removeHealthPotion();
-    }
-
-    public void addPillar() {
-        myInventory.addPillar();
-    }
-
-    public void getPillarCount() {
-        myInventory.getPillarCount();
-    }
-
+//    public int getVisionPotionCount() {
+//        return myInventory.getVisionPotionCount();
+//    }
+//
+//    public void addVisionPotion() {
+//        myInventory.addVisionPotion();
+//    }
+//
+//    public void removeVisionPotion() {
+//        myInventory.removeVisionPotion();
+//    }
+//
+//    public int getHealthPotionCount() {
+//        return myInventory.getHealthPotionCount();
+//    }
+//
+//    public void addHealthPotion() {
+//        myInventory.addHealthPotion();
+//    }
+//
+//    public void removeHealthPotion() {
+//        myInventory.removeHealthPotion();
+//    }
+//
+//    public void addPillar() {
+//        myInventory.addPillar();
+//    }
+//
+//    public void getPillarCount() {
+//        myInventory.getPillarCount();
+//    }
 }
 
 

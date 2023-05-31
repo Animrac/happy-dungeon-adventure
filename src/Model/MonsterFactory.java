@@ -15,8 +15,10 @@ public class MonsterFactory {
 
     static SQLiteDataSource ds = null;
     private static final Random MY_RANDOM = new Random();
-    //private static java.sql.Connection connection;
 
+    /**
+     *
+     */
     private MonsterFactory() {
         //establish connection (creates db file if it does not exist :-)
         try {
@@ -88,13 +90,6 @@ public class MonsterFactory {
              ResultSet rs = stmt.executeQuery(query)) {
 
             while (rs.next()) {
-//                String name = rs.getString("NAME");
-//                String health = rs.getString("HEALTH");
-//                String minDamage = rs.getString("MIN_DAMAGE");
-//                String maxDamage = rs.getString("MAX_DAMAGE");
-//                String attackOdds = rs.getString("ATTACK_ODDS");
-//                String blockOdds = rs.getString("BLOCK_ODDS");
-//                String attackSpeed = rs.getString("ATTACK_SPEED");
                 String name = rs.getString("NAME");
                 int health = rs.getInt("HEALTH");
                 int minDamage = rs.getInt("MIN_DAMAGE");
@@ -104,8 +99,6 @@ public class MonsterFactory {
                 int attackSpeed = rs.getInt("ATTACK_SPEED");
 
                 Monster monster = new Monster(name, health, minDamage, maxDamage, attackOdds, blockOdds, attackSpeed);
-//                System.out.println("Result: Name = " + name +
-//                        ", Health = " + health + minDamage + maxDamage + attackOdds + blockOdds + attackSpeed);
                 monsters.add(monster);
 
             }
