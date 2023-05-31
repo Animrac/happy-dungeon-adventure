@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Random monster generation added to MonsterFactory">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Adventurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Dungeon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/monsterOne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/monsterThree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/monsterTwo.java" beforeDir="false" />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Updated Adventurer">
+      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +102,7 @@
       <workItem from="1684393648288" duration="8082000" />
       <workItem from="1684423669787" duration="2081000" />
       <workItem from="1685127363314" duration="19663000" />
-      <workItem from="1685566058919" duration="3412000" />
+      <workItem from="1685566058919" duration="3490000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -293,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685571742960</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Updated Adventurer">
+      <created>1685572613603</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1685572613603</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +329,8 @@
     <MESSAGE value="MonsterFactory tweaked" />
     <MESSAGE value="MonsterFactory working" />
     <MESSAGE value="Random monster generation added to MonsterFactory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Random monster generation added to MonsterFactory" />
+    <MESSAGE value="Updated Adventurer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Adventurer" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dungeon_Adventure$Dungeon.ic" NAME="Dungeon Coverage Results" MODIFIED="1683363348003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
