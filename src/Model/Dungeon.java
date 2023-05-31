@@ -23,12 +23,12 @@ public class Dungeon implements Serializable {
     /**
      * Default rows for the dungeon maze.
      */
-    private int dungeonRows;
+    private final int dungeonRows;
 
     /**
      * Default columns for the dungeon maze.
      */
-    private int dungeonColumns;
+    private final int dungeonColumns;
 
     /**
      * This boolean tells us if the dungeon can be successfully traversed or not.
@@ -57,7 +57,7 @@ public class Dungeon implements Serializable {
     /**
      * 2d array of the dungeon with Room objects.
      */
-    private Room[][] myDungeonRooms;
+    private final Room[][] myDungeonRooms;
 
 
     /**
