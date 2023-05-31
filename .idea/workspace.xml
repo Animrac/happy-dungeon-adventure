@@ -9,21 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="edited load save method cleaned again">
-      <change afterPath="$PROJECT_DIR$/src/View/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/battle.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MonsterFightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BattleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/heroOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroOne.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,28 +51,31 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PIqMnS0CNRrIAiFN5l4yhKf4Dp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Mina/Desktop/happy-dungeon-adventure-clean-dungeon-and-room",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mina/Desktop/happy-dungeon-adventure-clean-dungeon-and-room&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\src" />
@@ -96,7 +89,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
       <module name="Dungeon_Adventure" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-20.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$PROJECT_DIR$/../javafx-sdk-20.0.1/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="src.Main.*" />

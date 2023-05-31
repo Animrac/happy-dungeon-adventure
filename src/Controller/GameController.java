@@ -590,7 +590,7 @@ public class GameController implements Initializable {
 
         DungeonAdventure instance = null;
 
-        System.out.println("My name before loading is " + model.getMyName());
+        System.out.println("My pillar count before loading is " + model.getMyInventory().getPillarCount());
 
         try {
             FileInputStream fileIn = new FileInputStream("saveFile.txt");
@@ -602,13 +602,20 @@ public class GameController implements Initializable {
 //            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
 
             model.setMyDungeonLayout(loadedInstance.getMyDungeonLayout());
+            model.setCurrScene(loadedInstance.getCurrScene());
             model.setMyName(loadedInstance.getMyName());
+            model.setMyClass(loadedInstance.getMyClass());
+            model.setMyHero(loadedInstance.getMyHero());
+            model.setInGame(loadedInstance.getInGame());
+            model.setMyRoom(loadedInstance.getMyRoom());
+            model.setMyDifficulty(loadedInstance.getMyDifficulty());
+            model.setMyInventory(loadedInstance.getMyInventory());
 
             in.close();
             fileIn.close();
 
             System.out.println("Deserialized and loaded!");
-            System.out.println("My loaded name is " + model.getMyName());
+            System.out.println("My loaded number of pillars are " + model.getMyInventory().getPillarCount());
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -634,9 +641,6 @@ public class GameController implements Initializable {
             i.printStackTrace();
         }
     }
-
-
-
 
     public Hero heroCreation() {
         Hero chosenHero = null;
