@@ -253,8 +253,8 @@ public class GameController implements Initializable {
         myName.setText(model.getMyName());
         myClass.setText(model.getMyClass());
         model.setMyHero(heroCreation());
-        //TODO
-//            myHealth.setText(model.getMyHealth());
+
+        myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
 
 
 
@@ -435,6 +435,15 @@ public class GameController implements Initializable {
         else {
             startSign.setOpacity(NO_OPACITY);
         }
+
+        if (model.getMyRoom().getHasMonster()) {
+
+            model.getMyRoom().removeRoomMonster();
+
+            Scene scene = SceneMaker.createScene("src/View/battle.fxml");
+            Main.getPrimaryStage().setScene(scene);
+        }
+
     }
 
     @FXML
@@ -445,8 +454,8 @@ public class GameController implements Initializable {
 
         model.getMyDungeonLayout()
                 .setCurrRow(model.getMyDungeonLayout().getCurrRow() - 1);
-        setRoom();
 
+        setRoom();
         checkRoom();
         checkSurroundings();
 
@@ -460,8 +469,8 @@ public class GameController implements Initializable {
 
         model.getMyDungeonLayout()
                 .setCurrRow(model.getMyDungeonLayout().getCurrRow() + 1);
-        setRoom();
 
+        setRoom();
         checkRoom();
         checkSurroundings();
 
@@ -475,8 +484,8 @@ public class GameController implements Initializable {
 
         model.getMyDungeonLayout()
                 .setCurrCol(model.getMyDungeonLayout().getCurrCol() + 1);
-        setRoom();
 
+        setRoom();
         checkRoom();
         checkSurroundings();
 
@@ -489,8 +498,8 @@ public class GameController implements Initializable {
 
         model.getMyDungeonLayout()
                 .setCurrCol(model.getMyDungeonLayout().getCurrCol() - 1);
-        setRoom();
 
+        setRoom();
         checkRoom();
         checkSurroundings();
 
@@ -529,6 +538,9 @@ public class GameController implements Initializable {
         if (model.getMyDungeonLayout().getMyDungeonRooms()
                 [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
                 .getHasPit()) {
+
+            model.getMyHero().setHealth(model.getMyHero().getHealth());
+
             myNotification.setText(PIT_TEXT);
             notifyPlayer();
         }
