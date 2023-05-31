@@ -14,9 +14,7 @@ import src.Main.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import src.Model.Dungeon;
-import src.Model.DungeonAdventure;
-import src.Model.SceneMaker;
+import src.Model.*;
 
 import java.io.*;
 import java.net.URL;
@@ -254,8 +252,11 @@ public class GameController implements Initializable {
 
         myName.setText(model.getMyName());
         myClass.setText(model.getMyClass());
+        model.setMyHero(heroCreation());
         //TODO
 //            myHealth.setText(model.getMyHealth());
+
+
 
         if (!model.getInGame()){
 
@@ -586,33 +587,69 @@ public class GameController implements Initializable {
     //TODO load and save
     @FXML
     void load(ActionEvent event) {
+
+        DungeonAdventure instance = null;
+
+        System.out.println("My name before loading is " + model.getMyName());
+
         try {
             FileInputStream fileIn = new FileInputStream("saveFile.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            model = (DungeonAdventure) in.readObject();
+
+//            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
+            DungeonAdventure loadedInstance = (DungeonAdventure) in.readObject();
+
+//            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
+
+            model.setMyDungeonLayout(loadedInstance.getMyDungeonLayout());
+            model.setMyName(loadedInstance.getMyName());
+
             in.close();
             fileIn.close();
-        } catch (IOException i) {
-            i.printStackTrace();
-        } catch (ClassNotFoundException c) {
-            System.out.println("YourModelClassName not found");
-            c.printStackTrace();
+
+            System.out.println("Deserialized and loaded!");
+            System.out.println("My loaded name is " + model.getMyName());
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+//        } catch (ClassNotFoundException c) {
+//            System.out.println("YourModelClassName not found");
+//            c.printStackTrace();
         }
+
         System.out.println("load");
     }
 
     @FXML
     void save(ActionEvent event) {
+        System.out.println("saved!");
 //        gameSave();
         try {
             FileOutputStream fileOut = new FileOutputStream("saveFile.txt");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(model);
+            out.writeObject(DungeonAdventure.getInstance());
             out.close();
             fileOut.close();
         } catch (IOException i) {
             i.printStackTrace();
         }
     }
+
+
+
+
+    public Hero heroCreation() {
+        Hero chosenHero = null;
+
+        if (model.getMyClass().equals("Warrior")) {
+            chosenHero = new heroOne(model.getMyName());
+        } else if (model.getMyClass().equals("Thief")) {
+            chosenHero = new heroTwo(model.getMyName());
+        } else if (model.getMyClass().equals("Priestess")) {
+            chosenHero = new heroThree(model.getMyName());
+        }
+        return chosenHero;
+    }
+
 
 }

@@ -10,7 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="edited load save method cleaned again">
+      <change afterPath="$PROJECT_DIR$/src/View/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/battle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MonsterFightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BattleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/heroOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroOne.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +39,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/AnastasiaBranch" />
+    <option name="BRANCH" value="origin/HuiWagnerBranch" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -58,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Mina/Desktop/tcss2023/Dungeon_Adventure/src/sqlite-jdbc-3.34.0.jar",
+    "last_opened_file_path": "C:/Users/Mina/Desktop/happy-dungeon-adventure-clean-dungeon-and-room",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -147,7 +160,9 @@
       <workItem from="1685303431280" duration="16866000" />
       <workItem from="1685365160369" duration="15816000" />
       <workItem from="1685411130543" duration="7862000" />
-      <workItem from="1685424214054" duration="13752000" />
+      <workItem from="1685424214054" duration="13979000" />
+      <workItem from="1685483193282" duration="2199000" />
+      <workItem from="1685514934082" duration="9727000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -345,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685481314445</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="edited load save method cleaned again">
+      <created>1685483051495</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1685483051495</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

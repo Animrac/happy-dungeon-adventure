@@ -20,10 +20,6 @@ public abstract class Hero extends Adventurer implements Serializable {
      */
     private double mySpecialSkillOdds;
 
-    /**
-     * Inventory for the hero
-     */
-    private final Inventory myInventory;
 
     /**
      * Constructor that initializes fields.
@@ -42,7 +38,6 @@ public abstract class Hero extends Adventurer implements Serializable {
         super(theName, theHealth, theMinDamage, theMaxDamage, theAttackOdds, theBlockOdds, theAttackSpeed);
         setRunAway(false);
         setSpecialSkillOdds(theSpecialSkillOdds);
-        myInventory = new Inventory();
     }
 
     /**
@@ -81,13 +76,6 @@ public abstract class Hero extends Adventurer implements Serializable {
      */
     public final boolean runAway() {
         return myRunAway;
-    }
-    /**
-     * Get the inventory
-     * @return myInventory
-     */
-    public Inventory getInventory() {
-        return myInventory;
     }
 
     /**
@@ -166,38 +154,6 @@ public abstract class Hero extends Adventurer implements Serializable {
         input.nextLine();
 
         return choice;
-    }
-
-    public int getVisionPotionCount() {
-        return myInventory.getVisionPotionCount();
-    }
-
-    public void addVisionPotion() {
-        myInventory.addVisionPotion();
-    }
-
-    public void removeVisionPotion() {
-        myInventory.removeVisionPotion();
-    }
-
-    public int getHealthPotionCount() {
-        return myInventory.getHealthPotionCount();
-    }
-
-    public void addHealthPotion() {
-        myInventory.addHealthPotion();
-    }
-
-    public void removeHealthPotion() {
-        myInventory.removeHealthPotion();
-    }
-
-    public void addPillar() {
-        myInventory.addPillar();
-    }
-
-    public void getPillarCount() {
-        myInventory.getPillarCount();
     }
 
 }

@@ -388,4 +388,7 @@ public class Room implements Serializable {
         return (hasPillar || hasVisionPotion || hasHealingPotion);
     }
 
+    public void removeRoomMonster() {
+        this.setHasMonster(false);
+    }
 }
