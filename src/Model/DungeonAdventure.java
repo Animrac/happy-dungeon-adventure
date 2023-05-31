@@ -122,4 +122,9 @@ public class DungeonAdventure implements Serializable {
     }
 
 
+    public Inventory setMyInventory(Inventory myInventory) {
+            return this.myInventory = myInventory;
+
+    }
+
 }
