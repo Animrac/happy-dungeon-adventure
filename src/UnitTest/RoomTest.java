@@ -23,7 +23,6 @@ class RoomTest {
     Room roomEntry;
     Room roomExit;
     Room roomWithItem;
-
     Room roomEmpty;
 
     @BeforeEach
