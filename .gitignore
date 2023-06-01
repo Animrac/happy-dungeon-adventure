@@ -23,5 +23,5 @@
 hs_err_pid*
 replay_pid*
 
-.idea/workspace.xml
-.idea/libraries/lib.xml
+*.idea/workspace.xml
+*.idea/libraries/lib.xml
