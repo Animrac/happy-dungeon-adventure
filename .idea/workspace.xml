@@ -9,7 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Game state serialization." />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Game state serialization.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/DungeonAdventureTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/DungeonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/InventoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +66,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -80,7 +95,7 @@
       <recent name="src.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.RoomTest.testRoomCreation">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
       <module name="Dungeon_Adventure" />
@@ -95,20 +110,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dungeon_Adventure.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Dungeon_Adventure_jar/Dungeon_Adventure.jar" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-20.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2" />
+    <configuration name="InventoryTest.testAddHealthPotion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.InventoryTest" />
+      <option name="METHOD_NAME" value="testAddHealthPotion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoomTest.testRoomCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.RoomTest" />
+      <option name="METHOD_NAME" value="testRoomCreation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JAR Application.Dungeon_Adventure.jar" />
+      <item itemvalue="JUnit.RoomTest.testRoomCreation" />
+      <item itemvalue="JUnit.InventoryTest.testAddHealthPotion" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RoomTest.testRoomCreation" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JAR Application.Dungeon_Adventure.jar" />
+        <item itemvalue="JUnit.InventoryTest.testAddHealthPotion" />
       </list>
     </recent_temporary>
   </component>
@@ -151,6 +194,8 @@
       <workItem from="1685424214054" duration="13979000" />
       <workItem from="1685483193282" duration="2199000" />
       <workItem from="1685514934082" duration="9727000" />
+      <workItem from="1685637013780" duration="101000" />
+      <workItem from="1685637121439" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -369,7 +414,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685573762595</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Game state serialization.">
+      <created>1685573855928</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1685573855928</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Game state serialization.">
+      <created>1685637099965</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1685637099965</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
