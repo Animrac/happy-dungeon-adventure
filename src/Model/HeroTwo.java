@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author Anastasia Vilenius
  * @version 05/09/23
  */
-public class heroTwo extends Hero implements Serializable {
+public class HeroTwo extends Hero implements Serializable {
 
     /**
      * Indicated minimum amount of hit points that can be healed.
@@ -27,7 +27,7 @@ public class heroTwo extends Hero implements Serializable {
      *
      * @param theName the name chosen by the player
      */
-    public heroTwo(final String theName) {
+    public HeroTwo(final String theName) {
         super(theName, 100, 30, 60, .8, 3, 4, .6);
         setMinSpecialHeal(20);
         setMaxSpecialHeal(40);
