@@ -89,7 +89,7 @@
                   <Image url="@player.gif" />
                </image>
             </ImageView>
-            <Text layoutX="120.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Potion - Heals 20 HP">
+            <Text layoutX="120.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Potion - Heals 5-15 HP">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
