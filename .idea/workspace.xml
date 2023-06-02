@@ -9,31 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added you died screen, implemented pits to function properly and subtract character health">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/battle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/battle.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/nameCharacter.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BattleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BattleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CharacterSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CharacterSelectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EndingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EndingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InventoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/MonsterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MonsterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/badEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/badEnd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/battle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/battle.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/end.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/end.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/inventory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/mainGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/mainGame.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/nameCharacter.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added map screen, map function, using vision potion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +149,7 @@
       <workItem from="1685483193282" duration="2199000" />
       <workItem from="1685514934082" duration="24808000" />
       <workItem from="1685592283207" duration="1775000" />
-      <workItem from="1685636611862" duration="11329000" />
+      <workItem from="1685636611862" duration="11875000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -413,7 +389,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685576270133</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added map screen, map function, using vision potion">
+      <created>1685726566314</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1685726566314</updated>
+    </task>
+    <task id="LOCAL-00036" summary="added map screen, map function, using vision potion">
+      <created>1685726763791</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1685726763791</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +457,8 @@
     <MESSAGE value="saving and loading works but needs cleanup" />
     <MESSAGE value="trying to make pits work and implementing hero" />
     <MESSAGE value="added you died screen, implemented pits to function properly and subtract character health" />
-    <option name="LAST_COMMIT_MESSAGE" value="added you died screen, implemented pits to function properly and subtract character health" />
+    <MESSAGE value="added map screen, map function, using vision potion" />
+    <option name="LAST_COMMIT_MESSAGE" value="added map screen, map function, using vision potion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
