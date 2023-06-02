@@ -2,6 +2,8 @@ package src.Model;
 
 import org.sqlite.SQLiteDataSource;
 
+import java.io.File;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,11 +16,22 @@ import java.util.Scanner;
  * @author Anastasia Vilenius
  * @version 05/28/23
  */
-public class MonsterFactory {
+public class MonsterFactory implements Serializable {
 
     //private static final MonsterFactory mf = new MonsterFactory();
     private static java.sql.Connection connection;
     public MonsterFactory() {
+
+//        String filePath = "src/monsterFactory.db"; // Replace with the actual file path
+//
+//        File file = new File(filePath);
+//
+//        if (file.exists()) {
+////            System.out.println("File exists.");
+//        }
+//        else {
+//            System.out.println("File does not exist. Creating database now.");
+
         SQLiteDataSource ds = null;
 
         //establish connection (creates db file if it does not exist :-)
@@ -29,8 +42,8 @@ public class MonsterFactory {
             e.printStackTrace();
             System.exit(0);
         }
-//
-        System.out.println("Opened database successfully");
+
+//            System.out.println("Opened database successfully");
 
 
         //now create a table
@@ -46,31 +59,31 @@ public class MonsterFactory {
         try (Connection connection = ds.getConnection();
              Statement stmt = connection.createStatement()) {
             int rv = stmt.executeUpdate(query);
-            System.out.println("executeUpdate() returned " + rv);
+//                System.out.println("executeUpdate() returned " + rv);
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(0);
         }
-        System.out.println("Created monsterFactory table successfully");
+//            System.out.println("Created monsterFactory table successfully");
 
         //next insert 3 rows of data
-        System.out.println("Attempting to insert 3 rows into monsterFactory table");
+//            System.out.println("Attempting to insert 3 rows into monsterFactory table");
 
-        String query1 = "INSERT INTO monsterFactory VALUES ('Monster One', 80, 20, 40, .8, 3, 3)";
-        String query2 = "INSERT INTO monsterFactory VALUES ('Monster Two', 80, 20, 40, .8, 3, 3)";
-        String query3 = "INSERT INTO monsterFactory VALUES ('Monster Three', 80, 20, 40, .8, 3, 3)";
+        String query1 = "INSERT INTO monsterFactory VALUES ('Tom Nook #1', 80, 20, 40, .8, 3, 3)";
+        String query2 = "INSERT INTO monsterFactory VALUES ('Tom Nook #2', 80, 20, 40, .8, 3, 3)";
+        String query3 = "INSERT INTO monsterFactory VALUES ('Tom Nook #3', 80, 20, 40, .8, 3, 3)";
 
 
         try (Connection conn = ds.getConnection();
              Statement stmt = conn.createStatement();) {
             int rv = stmt.executeUpdate(query1);
-            System.out.println("1st executeUpdate() returned " + rv);
+//                System.out.println("1st executeUpdate() returned " + rv);
 
             rv = stmt.executeUpdate(query2);
-            System.out.println("2nd executeUpdate() returned " + rv);
+//                System.out.println("2nd executeUpdate() returned " + rv);
 
             rv = stmt.executeUpdate(query3);
-            System.out.println("3rd executeUpdate() returned " + rv);
+//                System.out.println("3rd executeUpdate() returned " + rv);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -108,8 +121,8 @@ public class MonsterFactory {
                 String blockOdds = rs.getString( "BLOCK_ODDS" );
                 String attackSpeed = rs.getString( "ATTACK_SPEED" );
 
-                System.out.println( "Result: Name = " + name +
-                        ", Health = " + health + minDamage + maxDamage + attackOdds + blockOdds + attackSpeed);
+//                    System.out.println( "Result: Name = " + name +
+//                            ", Health = " + health + minDamage + maxDamage + attackOdds + blockOdds + attackSpeed);
             }
 
 
@@ -118,6 +131,8 @@ public class MonsterFactory {
             System.exit(0);
         }
     }
+//    }
+
 
 }
 

@@ -64,36 +64,6 @@
                   <Image url="@player.gif" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="89.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="myMonsterHealth" fill="WHITE" layoutX="143.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="myMonsterName" fill="WHITE" layoutX="36.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert name&gt;" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="438.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:" textAlignment="RIGHT">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="myHealth" fill="WHITE" layoutX="492.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="RIGHT">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="myName" fill="WHITE" layoutX="385.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert name&gt;" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Text>
             <Button fx:id="pokemonButton" layoutX="347.0" layoutY="338.0" mnemonicParsing="false" onAction="#noPokemon" prefHeight="33.0" prefWidth="130.0" text="POKéMON">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -121,14 +91,52 @@
             </TextArea>
             <Button fx:id="attackButton" layoutX="347.0" layoutY="296.0" mnemonicParsing="false" onAction="#attack" prefHeight="34.0" prefWidth="61.0" text="KILL">
                <font>
-                  <Font name="System Bold" size="10.0" />
+                  <Font name="System Bold" size="11.0" />
                </font>
             </Button>
             <Button fx:id="specialAttackButton" layoutX="416.0" layoutY="296.0" mnemonicParsing="false" onAction="#specialAttack" prefHeight="34.0" prefWidth="61.0" text="SPECIAL">
                <font>
-                  <Font name="System Bold" size="10.0" />
+                  <Font name="System Bold" size="11.0" />
                </font>
             </Button>
+            <AnchorPane layoutX="398.0" layoutY="38.0" prefHeight="85.0" prefWidth="209.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:" textAlignment="RIGHT" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="35.0">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="myHealth" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="myName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="i" textAlignment="RIGHT" textOrigin="CENTER" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="32.0" layoutY="38.0" prefHeight="86.0" prefWidth="209.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="myMonsterHealth" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="100" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="35.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="myMonsterName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="i" textOrigin="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
          </children>
     </AnchorPane>
   </children>

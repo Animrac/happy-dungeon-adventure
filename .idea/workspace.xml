@@ -5,9 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Worked on JUnit tests">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_01.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Adventurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/monsterFactory.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_base_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_base_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_controls_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_fxml_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_graphics_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/sqlite_jdbc_3_34_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/battle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/battle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MonsterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MonsterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelTests/src/ModelTests/AdventurerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModelTests/AdventurerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelTests/src/ModelTests/HeroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModelTests/HeroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelTests/src/ModelTests/MonsterFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModelTests/MonsterFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelTests/src/ModelTests/MonsterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModelTests/MonsterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelTests/src/ModelTests/heroOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModelTests/heroOneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelTests/src/ModelTests/heroThreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModelTests/heroThreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelTests/src/ModelTests/heroTwoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModelTests/heroTwoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +107,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43218392" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -83,7 +128,7 @@
       <recent name="src.Model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AdventurerTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -137,7 +182,7 @@
       <option name="MAIN_CLASS_NAME" value="src.ModelTests.AdventurerTest" />
       <option name="METHOD_NAME" value="generateRangedValue" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea$MAVEN_REPOSITORY$" />
+      <option name="VM_PARAMETERS" value="-ea/Users/anastasiavilenius/.m2/repository" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -204,7 +249,8 @@
       <workItem from="1684393648288" duration="8082000" />
       <workItem from="1684423669787" duration="2081000" />
       <workItem from="1685127363314" duration="19663000" />
-      <workItem from="1685566058919" duration="13637000" />
+      <workItem from="1685566058919" duration="14210000" />
+      <workItem from="1685732701354" duration="6783000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -409,7 +455,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685688748303</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Worked on JUnit tests">
+      <created>1685732129225</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1685732129225</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Worked on JUnit tests">
+      <created>1685732195620</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1685732195620</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
