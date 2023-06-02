@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.BattleController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER" />
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="261.0" fitWidth="594.0" layoutX="23.0" layoutY="25.0">
+               <image>
+                  <Image url="@background.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="264.0" layoutX="21.0" layoutY="22.0" stroke="#c4c4c4" strokeType="OUTSIDE" strokeWidth="2.0" width="598.0" />
+            <ImageView fx:id="bossMonster" fitHeight="77.0" fitWidth="50.0" layoutX="116.0" layoutY="196.0">
+               <image>
+                  <Image url="@tomnook.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player" layoutX="442.0" layoutY="136.0">
+               <image>
+                  <Image url="@player.gif" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="89.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="myMonsterHealth" fill="WHITE" layoutX="143.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="myMonsterName" fill="WHITE" layoutX="36.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert name&gt;" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="438.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="myHealth" fill="WHITE" layoutX="492.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="RIGHT">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="myName" fill="WHITE" layoutX="385.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert name&gt;" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <Button fx:id="pokemonButton" layoutX="347.0" layoutY="338.0" mnemonicParsing="false" onAction="#noPokemon" prefHeight="33.0" prefWidth="130.0" text="POKéMON">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="inventoryButton" layoutX="486.0" layoutY="296.0" mnemonicParsing="false" onAction="#openInventory" prefHeight="33.0" prefWidth="130.0" text="INVENTORY">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="runButton" layoutX="486.0" layoutY="338.0" mnemonicParsing="false" onAction="#runAway" prefHeight="33.0" prefWidth="130.0" text="RUN">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Text layoutX="30.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert battle dialogue here&gt;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="myLog" editable="false" layoutX="22.0" layoutY="294.0" prefHeight="77.0" prefWidth="310.0" text="&lt;insert battle dialogue here&gt;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextArea>
+            <Button fx:id="attackButton" layoutX="347.0" layoutY="296.0" mnemonicParsing="false" onAction="#attack" prefHeight="34.0" prefWidth="61.0" text="KILL">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="specialAttackButton" layoutX="416.0" layoutY="296.0" mnemonicParsing="false" onAction="#specialAttack" prefHeight="34.0" prefWidth="61.0" text="SPECIAL">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
