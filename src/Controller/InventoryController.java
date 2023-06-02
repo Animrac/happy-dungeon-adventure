@@ -12,8 +12,9 @@ import src.Model.SceneMaker;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class InventoryController implements Initializable {
+public class InventoryController implements Initializable, StateHandler {
 
     @FXML
     private Text abstractionPillar;
@@ -63,17 +64,23 @@ public class InventoryController implements Initializable {
 
     @FXML
     void returnGame(ActionEvent event) {
-        Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");
+        Scene scene = SceneMaker.createScene(model.getCurrScene());
         Main.getPrimaryStage().setScene(scene);
     }
 
 
     @FXML
     void useHealth(ActionEvent event) {
+
         model.getMyInventory().removeHealthPotion();
         healthInventory.setText("x" + model.getMyInventory().getHealthPotionCount());
         checkPotions();
-        //TODO ADD HEALTH BACK TO PLAYER
+
+        int healthRandom = ThreadLocalRandom.current().nextInt(5, 15 + 1);
+        model.getMyHero().setHealth(model.getMyHero().getHealth() + healthRandom);
+
+        myHealth.setText(Integer.toString(model.getMyHero().getHealth())); //TODO REPEATED CODE?
+
     }
 
     @FXML
@@ -81,10 +88,17 @@ public class InventoryController implements Initializable {
         model.getMyInventory().removeVisionPotion();
         visionInventory.setText("x" + model.getMyInventory().getVisionPotionCount());
         checkPotions();
+
+        Scene scene = SceneMaker.createScene("src/View/map.fxml");
+        Main.getPrimaryStage().setScene(scene);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if (model.getInBattle()){
+            useVisionButton.setDisable(true);
+        }
+
         checkPotions();
         pillarInventory.setText("x" + model.getMyInventory().getPillarCount());
         visionInventory.setText("x" + model.getMyInventory().getVisionPotionCount());
@@ -92,20 +106,19 @@ public class InventoryController implements Initializable {
 
         myName.setText(model.getMyName());
         myClass.setText(model.getMyClass());
-        //TODO after adventurer or hero class
-//        myHealth.setText(model.get);
+        myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
 
         for (int i = 0; i < model.getMyInventory().getPillarCount(); i ++){
             if (model.getMyPillars()[i].equals("ABSTRACTION")){
                 abstractionPillar.setOpacity(1);
             }
-            if (model.getMyPillars()[i].equals("INHERITANCE")){
+            else if (model.getMyPillars()[i].equals("INHERITANCE")){
                 inheritancePillar.setOpacity(1);
             }
-            if (model.getMyPillars()[i].equals("ENCAPSULATION")){
+            else if (model.getMyPillars()[i].equals("ENCAPSULATION")){
                 encapsulationPillar.setOpacity(1);
             }
-            if (model.getMyPillars()[i].equals("POLYMORPHISM")){
+            else if (model.getMyPillars()[i].equals("POLYMORPHISM")){
                 polymorphismPillar.setOpacity(1);
             }
         }

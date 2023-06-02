@@ -33,8 +33,6 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -44,17 +42,12 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fitHeight="864.0" fitWidth="753.0" layoutX="-21.0" layoutY="-404.0">
-               <image>
-                  <Image url="@outside.gif" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="92.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Congrats!&#10;&#10;You escaped the dungeon." textAlignment="CENTER" wrappingWidth="456.34678649902344">
+            <Text fill="#ef9999" layoutX="92.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How sad!&#10;&#10;You died :(" textAlignment="CENTER" wrappingWidth="456.34678649902344">
                <font>
                   <Font name="System Bold" size="33.0" />
                </font>
             </Text>
-            <Button fx:id="trueEndButton" layoutX="240.0" layoutY="287.0" mnemonicParsing="false" onAction="#quitGame" text="PLAY AGAIN">
+            <Button fx:id="trueEndButton" layoutX="240.0" layoutY="283.0" mnemonicParsing="false" onAction="#quitGame" text="PLAY AGAIN">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>

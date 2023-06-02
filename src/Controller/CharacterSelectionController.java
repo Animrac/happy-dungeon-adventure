@@ -13,11 +13,13 @@ import src.Main.*;
 import src.Model.DungeonAdventure;
 import src.Model.SceneMaker;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CharacterSelectionController implements Initializable {
+public class CharacterSelectionController implements Initializable, StateHandler {
 
     @FXML
     private ChoiceBox<?> heroChoice;
@@ -105,8 +107,10 @@ public class CharacterSelectionController implements Initializable {
 
     @FXML
     void load(ActionEvent event) {
-        //GameController.gameLoad();
+        loadState();
+        refreshScene();
     }
+
 
     public TextField getHeroName() {
         return heroName;

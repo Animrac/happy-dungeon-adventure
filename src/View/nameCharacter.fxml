@@ -58,7 +58,7 @@
         <Menu mnemonicParsing="false" text="Help">
           <items>
             <MenuItem fx:id="menuControls" mnemonicParsing="false" onAction="#showControls" text="Game Play Instructions" />
-                  <MenuItem fx:id="menuLore" mnemonicParsing="false" onAction="#showLore" text="About (aka Juicy Lore)" />
+                  <MenuItem fx:id="menuLore" mnemonicParsing="false" onAction="#showLore" text="About" />
           </items>
         </Menu>
       </menus>

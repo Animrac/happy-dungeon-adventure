@@ -19,16 +19,18 @@ import src.Model.*;
 import java.io.*;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import java.util.Collections;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Controller class for the game scene, mainGame.fxml.
  * Everything shown is controlled in this class.
  * @author Carmina Cruz
  */
-public class GameController implements Initializable {
+public class GameController implements Initializable, StateHandler {
 
     /**
      * Notification text when entering a room with a pit.
@@ -252,11 +254,12 @@ public class GameController implements Initializable {
 
         myName.setText(model.getMyName());
         myClass.setText(model.getMyClass());
-        model.setMyHero(heroCreation());
-        //TODO
-//            myHealth.setText(model.getMyHealth());
 
-
+//remove pit save
+        if (model.getMyHero() == null) {
+            model.setMyHero(heroCreation());
+        }
+        myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
 
         if (!model.getInGame()){
 
@@ -337,6 +340,11 @@ public class GameController implements Initializable {
             myNotification.setText(COLLECTED + "vision potion!");
             notifyPlayer();
         }
+
+//        if (model.getMyRoom().getHasMultipleItems()){
+//            myNotification.setText(COLLECTED + "health potion and a vision potion!");
+//            notifyPlayer();
+//        }
 
         model.getMyRoom().removeRoomItems();
         collectButton.setDisable(true);
@@ -435,6 +443,15 @@ public class GameController implements Initializable {
         else {
             startSign.setOpacity(NO_OPACITY);
         }
+
+        if (model.getMyRoom().getHasMonster()) {
+
+            model.getMyRoom().removeRoomMonster();
+//TODO BATTLE
+            Scene scene = SceneMaker.createScene("src/View/battle.fxml");
+            Main.getPrimaryStage().setScene(scene);
+        }
+
     }
 
     @FXML
@@ -445,8 +462,8 @@ public class GameController implements Initializable {
 
         model.getMyDungeonLayout()
                 .setCurrRow(model.getMyDungeonLayout().getCurrRow() - 1);
-        setRoom();
 
+        setRoom();
         checkRoom();
         checkSurroundings();
 
@@ -460,8 +477,8 @@ public class GameController implements Initializable {
 
         model.getMyDungeonLayout()
                 .setCurrRow(model.getMyDungeonLayout().getCurrRow() + 1);
-        setRoom();
 
+        setRoom();
         checkRoom();
         checkSurroundings();
 
@@ -475,8 +492,8 @@ public class GameController implements Initializable {
 
         model.getMyDungeonLayout()
                 .setCurrCol(model.getMyDungeonLayout().getCurrCol() + 1);
-        setRoom();
 
+        setRoom();
         checkRoom();
         checkSurroundings();
 
@@ -489,8 +506,8 @@ public class GameController implements Initializable {
 
         model.getMyDungeonLayout()
                 .setCurrCol(model.getMyDungeonLayout().getCurrCol() - 1);
-        setRoom();
 
+        setRoom();
         checkRoom();
         checkSurroundings();
 
@@ -529,11 +546,32 @@ public class GameController implements Initializable {
         if (model.getMyDungeonLayout().getMyDungeonRooms()
                 [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
                 .getHasPit()) {
+
+            int pitRandom = ThreadLocalRandom.current().nextInt(1, 20 + 1);
+
+            System.out.println(model.getMyHero().getHealth() - pitRandom);
+
+            model.getMyHero()
+                    .setHealth(model.getMyHero().getHealth() - pitRandom);
+
+            // Remove the pit from the room.
+//            model.getMyRoom().setHasPit(false);
+
+            myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
+            checkHealth();
+
             myNotification.setText(PIT_TEXT);
             notifyPlayer();
         }
 
 
+    }
+
+    private void checkHealth() {
+        if (model.getMyHero().getHealth() <= 0) {
+            Scene scene = SceneMaker.createScene("src/View/badEnd.fxml");
+            Main.getPrimaryStage().setScene(scene);
+        }
     }
 
     private void checkSurroundings(){
@@ -584,59 +622,20 @@ public class GameController implements Initializable {
     void quit(ActionEvent event) {
         Platform.exit();
     }
-    //TODO load and save
+
     @FXML
     void load(ActionEvent event) {
-
-        DungeonAdventure instance = null;
-
-        System.out.println("My name before loading is " + model.getMyName());
-
-        try {
-            FileInputStream fileIn = new FileInputStream("saveFile.txt");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-
-//            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
-            DungeonAdventure loadedInstance = (DungeonAdventure) in.readObject();
-
-//            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
-
-            model.setMyDungeonLayout(loadedInstance.getMyDungeonLayout());
-            model.setMyName(loadedInstance.getMyName());
-
-            in.close();
-            fileIn.close();
-
-            System.out.println("Deserialized and loaded!");
-            System.out.println("My loaded name is " + model.getMyName());
-
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-//        } catch (ClassNotFoundException c) {
-//            System.out.println("YourModelClassName not found");
-//            c.printStackTrace();
-        }
-
-        System.out.println("load");
+        loadState();
+        refreshScene();
     }
+
 
     @FXML
     void save(ActionEvent event) {
-        System.out.println("saved!");
-//        gameSave();
-        try {
-            FileOutputStream fileOut = new FileOutputStream("saveFile.txt");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(DungeonAdventure.getInstance());
-            out.close();
-            fileOut.close();
-        } catch (IOException i) {
-            i.printStackTrace();
-        }
+        saveState();
+        myNotification.setText("saved!");
+        notifyPlayer();
     }
-
-
-
 
     public Hero heroCreation() {
         Hero chosenHero = null;
