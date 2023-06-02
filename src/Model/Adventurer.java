@@ -110,11 +110,13 @@ public abstract class Adventurer implements Serializable {
      *
      * @param theHealth the number of hit points a character has
      */
-    protected final void setHealth(final int theHealth) {
-        if (theHealth < 0) {
-            throw new IllegalArgumentException("hit points passed to setHitPoints are negative");
-        }
-        myHealth = theHealth;
+    public final void setHealth(final int theHealth) {
+//        if (theHealth < 0) {
+//            throw new IllegalArgumentException("hit points passed to setHitPoints are negative");
+//        }
+//        else {
+            myHealth = theHealth;
+//        }
     }
 
     /**
@@ -123,7 +125,7 @@ public abstract class Adventurer implements Serializable {
      *
      * @param theMinDamage the minimum amount of damage a character can generate in an attack
      */
-    protected final void setMinDamage(final int theMinDamage) {
+    public final void setMinDamage(final int theMinDamage) {
         if (theMinDamage <= 0) {
             throw new IllegalArgumentException("min damage must be greater than 0");
         }
@@ -139,7 +141,7 @@ public abstract class Adventurer implements Serializable {
      *
      * @param theMaxDamage the max amount of damage a character can generate in an attack
      */
-    protected final void setMaxDamage(final int theMaxDamage) {
+    public final void setMaxDamage(final int theMaxDamage) {
         if (theMaxDamage <= 0) {
             throw new IllegalArgumentException("max damage must be greater than 0");
         }
@@ -151,7 +153,7 @@ public abstract class Adventurer implements Serializable {
      * Checks to make sure the max amount of damage is greater than
      * the minimum amount of damage.
      */
-    private void checkMinVersusMax() {
+    public void checkMinVersusMax() {
         if (myMinDamage > myMaxDamage) {
             throw new IllegalArgumentException("min damage cannot be greater than max damage");
         }
@@ -163,7 +165,7 @@ public abstract class Adventurer implements Serializable {
      *
      * @param theAttackOdds the odds of an attack succeeding
      */
-    protected final void setAttackOdds(final double theAttackOdds) {
+    public final void setAttackOdds(final double theAttackOdds) {
         if (theAttackOdds <= 0 || theAttackOdds >= 100) {
             throw new IllegalArgumentException("chance to hit must be greater than 0 and less than 100");
         }
@@ -176,7 +178,7 @@ public abstract class Adventurer implements Serializable {
      *
      * @param theBlockOdds the odds of an attack succeeding
      */
-    protected final void setBlockOdds(final double theBlockOdds) {
+    public final void setBlockOdds(final double theBlockOdds) {
         if (theBlockOdds <= 0 || theBlockOdds >= 100) {
             throw new IllegalArgumentException("chance to block must be greater than 0 and less than 100");
         }
@@ -189,7 +191,7 @@ public abstract class Adventurer implements Serializable {
      *
      * @param theAttackSpeed the # of attack that can be generated during a round
      */
-    protected final void setAttackSpeed(final int theAttackSpeed) {
+    public final void setAttackSpeed(final int theAttackSpeed) {
         if (theAttackSpeed < 0) {
             throw new IllegalArgumentException("attack speed passed to setAttackSpeed is negative");
         }
@@ -203,7 +205,7 @@ public abstract class Adventurer implements Serializable {
      *
      * @param theAmount the amount of damage to be subtracted from a character's health
      */
-    protected void subtractHitPoints(final int theAmount) {
+    public void subtractHitPoints(final int theAmount) {
         if(theAmount < 0) {
             throw new IllegalArgumentException("hit points passed to subtractHitPoints are negative");
         }
@@ -233,21 +235,21 @@ public abstract class Adventurer implements Serializable {
         return myHealth;
     }
 
-//    /**
-//     *
-//     * @return myMaxDamage
-//     */
-//    public final int getMaxDamage() {
-//        return myMaxDamage;
-//    }
+    /**
+     *
+     * @return myMaxDamage
+     */
+    public final int getMaxDamage() {
+        return myMaxDamage;
+    }
 
-//    /**
-//     *
-//     * @return myMinDamage
-//     */
-//    public final int getMinDamage() {
-//        return myMinDamage;
-//    }
+    /**
+     *
+     * @return myMinDamage
+     */
+    public final int getMinDamage() {
+        return myMinDamage;
+    }
 
     /**
      *
@@ -257,21 +259,21 @@ public abstract class Adventurer implements Serializable {
         return myAttackSpeed;
     }
 
-//    /**
-//     *
-//     * @return myAttackOdds
-//     */
-//    public final double getAttackOdds() {
-//        return myAttackOdds;
-//    }
+    /**
+     *
+     * @return myAttackOdds
+     */
+    public final double getAttackOdds() {
+        return myAttackOdds;
+    }
 
-//    /**
-//     *
-//     * @return myBlockOdds
-//     */
-//    public final double getBlockOdds() {
-//        return myBlockOdds;
-//    }
+    /**
+     *
+     * @return myBlockOdds
+     */
+    public final double getBlockOdds() {
+        return myBlockOdds;
+    }
 
     /**
      * Checks if character is still alive.

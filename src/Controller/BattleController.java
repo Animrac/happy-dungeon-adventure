@@ -72,25 +72,27 @@ public class BattleController implements Initializable {
 
         model.setCurrScene("src/View/battle.fxml");
 
+        model.setInBattle(false);
         myName.setText(model.getMyName());
 //        myHealth.setText(model.getMyHealth());
-        myLog.setText("What will " + myName + " do?");
+        myLog.setText("What will " + model.getMyName() + " do?");
         //TODO set the monster, monster health, current health, names, battledialogue
     }
 
     @FXML
     void attack(ActionEvent event) {
-
+        myLog.setText(model.getMyName() + " attacks!");
     }
 
     @FXML
     void specialAttack(ActionEvent event) {
+        myLog.setText(model.getMyName() + " uses a special attack!");
 
     }
 
     @FXML
     void noPokemon(ActionEvent event) {
-        myLog.setText("???");
+        myLog.setText("What are you doing???");
     }
 
     @FXML
@@ -101,6 +103,7 @@ public class BattleController implements Initializable {
 
     @FXML
     void runAway(ActionEvent event) {
+        model.setInBattle(false);
         model.getMyRoom().removeRoomMonster();
 
         Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");
