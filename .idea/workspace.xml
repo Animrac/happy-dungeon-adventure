@@ -9,17 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Game state serialization.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitTest/DungeonAdventureTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitTest/DungeonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitTest/InventoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" afterDir="false" />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Hero class unit test code update.">
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/HeroTestHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +38,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -52,6 +50,14 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1de6267c-0c24-41e0-ac95-a419ab2338a3" />
+        <option name="url" value="https://github.com/Animrac/Dungeon_Adventure.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -95,22 +101,55 @@
       <recent name="src.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RoomTest.testRoomCreation">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
+  <component name="RunManager" selected="JUnit.HeroTest.testSubtractHitPoints">
+    <configuration name="DungeonTest.testCustomConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$PROJECT_DIR$/../javafx-sdk-20.0.1/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.Main.*" />
+          <option name="PATTERN" value="src.UnitTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.DungeonTest" />
+      <option name="METHOD_NAME" value="testCustomConstructor" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryTest.testAddHealthPotion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeroTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.HeroTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HeroTest.testSubtractHitPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.HeroTest" />
+      <option name="METHOD_NAME" value="testSubtractHitPoints" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -120,13 +159,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
       <option name="MAIN_CLASS_NAME" value="src.UnitTest.InventoryTest" />
-      <option name="METHOD_NAME" value="testAddHealthPotion" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoomTest.testRoomCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -136,22 +174,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
       <option name="MAIN_CLASS_NAME" value="src.UnitTest.RoomTest" />
-      <option name="METHOD_NAME" value="testRoomCreation" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.RoomTest.testRoomCreation" />
-      <item itemvalue="JUnit.InventoryTest.testAddHealthPotion" />
+      <item itemvalue="JUnit.DungeonTest.testCustomConstructor" />
+      <item itemvalue="JUnit.InventoryTest" />
+      <item itemvalue="JUnit.RoomTest" />
+      <item itemvalue="JUnit.HeroTest" />
+      <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RoomTest.testRoomCreation" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.InventoryTest.testAddHealthPotion" />
+        <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
+        <item itemvalue="JUnit.RoomTest" />
+        <item itemvalue="JUnit.InventoryTest" />
+        <item itemvalue="JUnit.DungeonTest.testCustomConstructor" />
+        <item itemvalue="JUnit.HeroTest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,6 +237,9 @@
       <workItem from="1685514934082" duration="9727000" />
       <workItem from="1685637013780" duration="101000" />
       <workItem from="1685637121439" duration="24000" />
+      <workItem from="1685637154338" duration="12295000" />
+      <workItem from="1685671450742" duration="3221000" />
+      <workItem from="1685725226164" duration="1800000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -428,7 +472,49 @@
       <option name="project" value="LOCAL" />
       <updated>1685637099965</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Game state serialization.">
+      <created>1685637185105</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1685637185105</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Game state serialization.">
+      <created>1685637222697</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1685637222697</updated>
+    </task>
+    <task id="LOCAL-00036" summary="RoomTest unit test code update.">
+      <created>1685644665806</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1685644665806</updated>
+    </task>
+    <task id="LOCAL-00037" summary="DungeonTest unit test code update.">
+      <created>1685651269566</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1685651269566</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Hero class unit test code update.">
+      <created>1685653498262</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1685653498262</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Hero class unit test code update.">
+      <created>1685681712734</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1685681712734</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +566,10 @@
     <MESSAGE value="edited load save method cleaned" />
     <MESSAGE value="edited load save method cleaned again" />
     <MESSAGE value="Game state serialization." />
-    <option name="LAST_COMMIT_MESSAGE" value="Game state serialization." />
+    <MESSAGE value="RoomTest unit test code update." />
+    <MESSAGE value="DungeonTest unit test code update." />
+    <MESSAGE value="Hero class unit test code update." />
+    <option name="LAST_COMMIT_MESSAGE" value="Hero class unit test code update." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
