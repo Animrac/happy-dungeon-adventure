@@ -8,6 +8,8 @@ import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import src.Model.Monster;
+import src.Model.MonsterFactory;
 import src.Model.SceneMaker;
 
 import java.io.File;
@@ -39,7 +41,6 @@ public class Main extends Application {
         catch (Exception e){
             e.printStackTrace();
         }
-
     }
 
     private void playAudio() throws MalformedURLException {

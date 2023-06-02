@@ -22,7 +22,7 @@ public abstract class Adventurer implements Serializable {
     /**
      * Scanner for user input.
      */
-    static final Scanner input = new Scanner(System.in);
+    final static Scanner input = new Scanner(System.in);
 
     /**
      * Indicates the name of the hero or monster.
