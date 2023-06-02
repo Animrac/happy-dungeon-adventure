@@ -26,7 +26,7 @@ public class Room implements Serializable {
     /**
      * The chance there will be a vision potion in the current Room.
      */
-    private static final int VISION_POTION_CHANCE = 10;
+    private static final int VISION_POTION_CHANCE = 90;
 
     /**
      * The chance there will be a pit in the current Room.
@@ -36,7 +36,7 @@ public class Room implements Serializable {
     /**
      * The chance there will be a monster in the current Room.
      */
-    private static final int MONSTER_CHANCE = 20; //not sure yet
+    private static final int MONSTER_CHANCE = 1; //not sure yet
 
     /**
      * A 3x3 char array to represent what is inside the current room
@@ -394,5 +394,21 @@ public class Room implements Serializable {
 
     public void setHasPit(boolean hasPit) {
         this.hasPit = hasPit;
+    }
+
+    public boolean getHasMultipleItems() {
+        return isAtLeastOneItem;
+    }
+
+    public boolean getHasWall() {
+        return (this.currRoom[1][1] == '*');
+    }
+
+    public boolean getHasEntrance() {
+        return (this.currRoom[1][1] == 'i');
+    }
+
+    public boolean getHasExit() {
+        return (this.currRoom[1][1] == 'O');
     }
 }

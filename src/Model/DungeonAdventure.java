@@ -9,9 +9,6 @@ import java.io.*;
  */
 public class DungeonAdventure implements Serializable {
 
-    private static final long serialversionUID =
-            129348938L;
-
     private static DungeonAdventure instance = new DungeonAdventure();
 //    private static DungeonAdventure instance;
 
@@ -26,6 +23,8 @@ public class DungeonAdventure implements Serializable {
     private String myDifficulty;
 
     private boolean inGame = false;
+
+    private boolean inBattle = false;
 
     private Dungeon myDungeonLayout;
 
@@ -125,6 +124,14 @@ public class DungeonAdventure implements Serializable {
     public Inventory setMyInventory(Inventory myInventory) {
             return this.myInventory = myInventory;
 
+    }
+
+    public boolean getInBattle() {
+        return inBattle;
+    }
+
+    public void setInBattle(boolean theInBattle) {
+        inBattle = theInBattle;
     }
 
 }

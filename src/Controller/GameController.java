@@ -30,7 +30,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * Everything shown is controlled in this class.
  * @author Carmina Cruz
  */
-public class GameController implements Initializable {
+public class GameController implements Initializable, StateHandler {
 
     /**
      * Notification text when entering a room with a pit.
@@ -254,11 +254,12 @@ public class GameController implements Initializable {
 
         myName.setText(model.getMyName());
         myClass.setText(model.getMyClass());
-        model.setMyHero(heroCreation());
+
 //remove pit save
+        if (model.getMyHero() == null) {
+            model.setMyHero(heroCreation());
+        }
         myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
-
-
 
         if (!model.getInGame()){
 
@@ -339,6 +340,11 @@ public class GameController implements Initializable {
             myNotification.setText(COLLECTED + "vision potion!");
             notifyPlayer();
         }
+
+//        if (model.getMyRoom().getHasMultipleItems()){
+//            myNotification.setText(COLLECTED + "health potion and a vision potion!");
+//            notifyPlayer();
+//        }
 
         model.getMyRoom().removeRoomItems();
         collectButton.setDisable(true);
@@ -442,8 +448,8 @@ public class GameController implements Initializable {
 
             model.getMyRoom().removeRoomMonster();
 //TODO BATTLE
-//            Scene scene = SceneMaker.createScene("src/View/battle.fxml");
-//            Main.getPrimaryStage().setScene(scene);
+            Scene scene = SceneMaker.createScene("src/View/battle.fxml");
+            Main.getPrimaryStage().setScene(scene);
         }
 
     }
@@ -541,12 +547,12 @@ public class GameController implements Initializable {
                 [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
                 .getHasPit()) {
 
-            int pitSubtract = ThreadLocalRandom.current().nextInt(1, 20 + 1);
+            int pitRandom = ThreadLocalRandom.current().nextInt(1, 20 + 1);
 
-            System.out.println(model.getMyHero().getHealth() - pitSubtract);
+            System.out.println(model.getMyHero().getHealth() - pitRandom);
 
             model.getMyHero()
-                    .setHealth(model.getMyHero().getHealth() - pitSubtract);
+                    .setHealth(model.getMyHero().getHealth() - pitRandom);
 
             // Remove the pit from the room.
 //            model.getMyRoom().setHasPit(false);
@@ -616,69 +622,19 @@ public class GameController implements Initializable {
     void quit(ActionEvent event) {
         Platform.exit();
     }
-    //TODO load and save
+
     @FXML
     void load(ActionEvent event) {
-
-        DungeonAdventure instance = null;
-
-        System.out.println("My pillar count before loading is " + model.getMyInventory().getPillarCount());
-
-        try {
-            FileInputStream fileIn = new FileInputStream("saveFile.txt");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-
-//            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
-            DungeonAdventure loadedInstance = (DungeonAdventure) in.readObject();
-
-//            DungeonAdventure.setInstance((DungeonAdventure) in.readObject());
-
-            model.setMyDungeonLayout(loadedInstance.getMyDungeonLayout());
-            model.setCurrScene(loadedInstance.getCurrScene());
-            model.setMyName(loadedInstance.getMyName());
-            model.setMyClass(loadedInstance.getMyClass());
-            model.setMyHero(loadedInstance.getMyHero());
-            model.setInGame(loadedInstance.getInGame());
-            model.setMyRoom(loadedInstance.getMyRoom());
-            model.setMyDifficulty(loadedInstance.getMyDifficulty());
-            model.setMyInventory(loadedInstance.getMyInventory());
-
-            in.close();
-            fileIn.close();
-
-            System.out.println("Deserialized and loaded!");
-            System.out.println("My loaded number of pillars are " + model.getMyInventory().getPillarCount());
-
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-//        } catch (ClassNotFoundException c) {
-//            System.out.println("YourModelClassName not found");
-//            c.printStackTrace();
-        }
-
-        System.out.println("load");
-
+        loadState();
         refreshScene();
     }
 
-    private void refreshScene() {
-        Scene scene = SceneMaker.createScene(model.getCurrScene());
-        Main.getPrimaryStage().setScene(scene);
-    }
 
     @FXML
     void save(ActionEvent event) {
-        System.out.println("saved!");
-//        gameSave();
-        try {
-            FileOutputStream fileOut = new FileOutputStream("saveFile.txt");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(DungeonAdventure.getInstance());
-            out.close();
-            fileOut.close();
-        } catch (IOException i) {
-            i.printStackTrace();
-        }
+        saveState();
+        myNotification.setText("saved!");
+        notifyPlayer();
     }
 
     public Hero heroCreation() {

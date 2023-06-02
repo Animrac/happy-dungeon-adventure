@@ -9,14 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="trying to make pits work and implementing hero">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added you died screen, implemented pits to function properly and subtract character health">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/battle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/battle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/nameCharacter.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BattleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BattleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CharacterSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CharacterSelectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EndingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EndingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Adventurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MonsterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MonsterFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/badEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/badEnd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/battle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/battle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/end.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/end.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/inventory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/mainGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/mainGame.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/nameCharacter.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +80,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mina/Desktop/happy-dungeon-adventure-clean-dungeon-and-room&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mina/Desktop/tcss2023/Dungeon_Adventure/src/sqlite-jdbc-3.34.0.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -155,7 +171,9 @@
       <workItem from="1685411130543" duration="7862000" />
       <workItem from="1685424214054" duration="13979000" />
       <workItem from="1685483193282" duration="2199000" />
-      <workItem from="1685514934082" duration="15343000" />
+      <workItem from="1685514934082" duration="24808000" />
+      <workItem from="1685592283207" duration="1775000" />
+      <workItem from="1685636611862" duration="11329000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -388,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685573841057</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added you died screen, implemented pits to function properly and subtract character health">
+      <created>1685576270133</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1685576270133</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,9 +466,19 @@
     <MESSAGE value="edited load save method cleaned again" />
     <MESSAGE value="saving and loading works but needs cleanup" />
     <MESSAGE value="trying to make pits work and implementing hero" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to make pits work and implementing hero" />
+    <MESSAGE value="added you died screen, implemented pits to function properly and subtract character health" />
+    <option name="LAST_COMMIT_MESSAGE" value="added you died screen, implemented pits to function properly and subtract character health" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/MapController.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="pause" />
@@ -457,6 +492,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dungeon_Adventure$Dungeon.ic" NAME="Dungeon Coverage Results" MODIFIED="1683363348003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>src.Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Dungeon_Adventure$Main.ic" NAME="Main Coverage Results" MODIFIED="1685590668324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>src.Main.*</FILTER>
     </SUITE>
   </component>
 </project>

@@ -72,6 +72,7 @@ public class BattleController implements Initializable {
 
         model.setCurrScene("src/View/battle.fxml");
 
+        model.setInBattle(false);
         myName.setText(model.getMyName());
 //        myHealth.setText(model.getMyHealth());
         myLog.setText("What will " + model.getMyName() + " do?");
@@ -102,6 +103,7 @@ public class BattleController implements Initializable {
 
     @FXML
     void runAway(ActionEvent event) {
+        model.setInBattle(false);
         model.getMyRoom().removeRoomMonster();
 
         Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");

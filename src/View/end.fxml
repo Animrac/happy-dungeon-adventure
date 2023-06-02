@@ -54,7 +54,7 @@
                   <Font name="System Bold" size="33.0" />
                </font>
             </Text>
-            <Button fx:id="trueEndButton" layoutX="264.0" layoutY="285.0" mnemonicParsing="false" onAction="#quitGame" text="The End">
+            <Button fx:id="trueEndButton" layoutX="240.0" layoutY="287.0" mnemonicParsing="false" onAction="#quitGame" text="PLAY AGAIN">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
