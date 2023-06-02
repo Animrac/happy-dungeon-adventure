@@ -77,16 +77,26 @@ public class BattleController implements Initializable {
 //        myHealth.setText(model.getMyHealth());
         myLog.setText("What will " + model.getMyName() + " do?");
         //TODO set the monster, monster health, current health, names, battledialogue
+        model.setMyCurrMonster(model.getRandomMonster());
+        myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth()));
+        myMonsterName.setText(model.getMyCurrMonster().getName());
     }
 
     @FXML
     void attack(ActionEvent event) {
-        myLog.setText(model.getMyName() + " attacks!");
+//        model.getMyHero().getAttackOdds(); TODO ANASTASIA I WANT IT ALL IN ONE METHOD MAYBE ATTACK ODDS
+        int damageToMonster = model.getMyCurrMonster().generateDamage();
+        myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth() - damageToMonster));
+        myLog.setText(model.getMyName() + " attacks! " + model.getMyCurrMonster().getName() + " loses " + damageToMonster + " HP!");
+        checkHealth();
     }
 
     @FXML
-    void specialAttack(ActionEvent event) {
-        myLog.setText(model.getMyName() + " uses a special attack!");
+    void specialAttack(ActionEvent event) { //TODO ANASTASIA
+        int damageToMonster = model.getMyCurrMonster().generateDamage();
+        myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth() - damageToMonster));
+        myLog.setText(model.getMyName() + " uses a special attack! " + model.getMyCurrMonster().getName() + " loses " + damageToMonster + " HP!");
+        checkHealth();
 
     }
 
@@ -132,6 +142,19 @@ public class BattleController implements Initializable {
         }
         else {
             System.out.println(hero.getName() + " defeated " + monster.getName() + "!");
+        }
+    }
+
+    private void checkHealth() {
+        if (model.getMyCurrMonster().getHealth() <= 0) {
+            myLog.setText(model.getMyCurrMonster().getName() + " was killed :D");
+
+            Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");
+            Main.getPrimaryStage().setScene(scene);
+        }
+        if (model.getMyHero().getHealth() <= 0) {
+            Scene scene = SceneMaker.createScene("src/View/badEnd.fxml");
+            Main.getPrimaryStage().setScene(scene);
         }
     }
 
