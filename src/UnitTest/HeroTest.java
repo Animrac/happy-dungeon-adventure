@@ -1,24 +1,20 @@
 package src.UnitTest;
-import src.Model.HeroOne;
-import src.Model.HeroThree;
-import src.Model.HeroTwo;
+import src.UnitTest.HeroTestHelper;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class HeroTest {
-
-    private HeroOne heroOne;
-    private HeroTwo heroTwo;
-    private HeroThree heroThree;
+    private HeroTestHelper.TestableHeroOne heroOne;
+    private HeroTestHelper.TestableHeroTwo heroTwo;
+    private HeroTestHelper.TestableHeroThree heroThree;
 
     @BeforeEach
     public void setUp() {
-        heroOne = new HeroOne("HeroOneTest");
-        heroTwo = new HeroTwo("HeroTwoTest");
-        heroThree = new HeroThree("HeroThreeTest");
+        heroOne = new HeroTestHelper.TestableHeroOne("HeroOneTest");
+        heroTwo = new HeroTestHelper.TestableHeroTwo("HeroTwoTest");
+        heroThree = new HeroTestHelper.TestableHeroThree("HeroThreeTest");
     }
 
     @Test
@@ -41,3 +37,4 @@ public class HeroTest {
     }
 
 }
+
