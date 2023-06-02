@@ -5,7 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Updated Adventurer">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_11_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_11_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_11_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_11_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_11_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_11_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_11_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_11_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MonsterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MonsterFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +42,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -45,12 +72,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="openjdk-20" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/ModelTests" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.12547052" />
+    <property name="project.structure.side.proportion" value="0.43218392" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -59,8 +95,19 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\src\Model" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="src.ModelTests" />
+      <recent name="src.Model" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="src.ModelTests" />
+      <recent name="src.Model" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AdventurerTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -71,6 +118,85 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AdventurerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.ModelTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.ModelTests" />
+      <option name="MAIN_CLASS_NAME" value="src.ModelTests.AdventurerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdventurerTest.alive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.ModelTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.ModelTests" />
+      <option name="MAIN_CLASS_NAME" value="src.ModelTests.AdventurerTest" />
+      <option name="METHOD_NAME" value="alive" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdventurerTest.generateRangedValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.ModelTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.ModelTests" />
+      <option name="MAIN_CLASS_NAME" value="src.ModelTests.AdventurerTest" />
+      <option name="METHOD_NAME" value="generateRangedValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea$MAVEN_REPOSITORY$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdventurerTest.getBlockOdds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.ModelTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.ModelTests" />
+      <option name="MAIN_CLASS_NAME" value="src.ModelTests.AdventurerTest" />
+      <option name="METHOD_NAME" value="getBlockOdds" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.AdventurerTest" />
+      <item itemvalue="JUnit.AdventurerTest.alive" />
+      <item itemvalue="JUnit.AdventurerTest.generateRangedValue" />
+      <item itemvalue="JUnit.AdventurerTest.getBlockOdds" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AdventurerTest" />
+        <item itemvalue="JUnit.AdventurerTest.generateRangedValue" />
+        <item itemvalue="JUnit.AdventurerTest.getBlockOdds" />
+        <item itemvalue="JUnit.AdventurerTest.alive" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,7 +228,7 @@
       <workItem from="1684393648288" duration="8082000" />
       <workItem from="1684423669787" duration="2081000" />
       <workItem from="1685127363314" duration="19663000" />
-      <workItem from="1685566058919" duration="3490000" />
+      <workItem from="1685566058919" duration="10749000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -293,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685572613603</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Updated Adventurer">
+      <created>1685572684882</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1685572684882</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

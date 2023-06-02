@@ -115,3 +115,5 @@ public class MonsterFactory {
         return monsters.get(row);
     }
 }
+
+//get attack, gen random amount of damage
