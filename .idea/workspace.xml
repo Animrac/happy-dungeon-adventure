@@ -10,9 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Hero class unit test code update.">
-      <change afterPath="$PROJECT_DIR$/src/UnitTest/HeroTestHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libdecora_sse.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libfxplugins.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libglass.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libglib-lite.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libgstreamer-lite.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjavafx_font.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjavafx_iio.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjfxmedia.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjfxmedia_avf.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjfxwebkit.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libprism_common.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libprism_es2.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libprism_sw.dylib" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +42,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/HuiWagnerBranch" />
+    <option name="BRANCH" value="origin/CarminaBranch" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -101,8 +115,22 @@
       <recent name="src.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HeroTest.testSubtractHitPoints">
-    <configuration name="DungeonTest.testCustomConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
+      <module name="Dungeon_Adventure" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$PROJECT_DIR$/../javafx-sdk-20.0.1/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DungeonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -112,22 +140,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
       <option name="MAIN_CLASS_NAME" value="src.UnitTest.DungeonTest" />
-      <option name="METHOD_NAME" value="testCustomConstructor" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HeroTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Dungeon_Adventure" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.UnitTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="src.UnitTest" />
-      <option name="MAIN_CLASS_NAME" value="src.UnitTest.HeroTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,19 +192,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.DungeonTest.testCustomConstructor" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.DungeonTest" />
       <item itemvalue="JUnit.InventoryTest" />
       <item itemvalue="JUnit.RoomTest" />
-      <item itemvalue="JUnit.HeroTest" />
       <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DungeonTest" />
         <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
         <item itemvalue="JUnit.RoomTest" />
         <item itemvalue="JUnit.InventoryTest" />
-        <item itemvalue="JUnit.DungeonTest.testCustomConstructor" />
-        <item itemvalue="JUnit.HeroTest" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +251,7 @@
       <workItem from="1685637121439" duration="24000" />
       <workItem from="1685637154338" duration="12295000" />
       <workItem from="1685671450742" duration="3221000" />
-      <workItem from="1685725226164" duration="1800000" />
+      <workItem from="1685725226164" duration="2433000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -514,7 +526,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685681712734</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Hero class unit test code update.">
+      <created>1685730182913</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1685730182913</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Hero class unit test code update.">
+      <created>1685730228796</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1685730228796</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
