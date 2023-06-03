@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Dungeon_Adventure:jar" />
+      <artifact name="DungeonAdventure" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,23 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Hero class unit test code update.">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_0.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dungeon_Adventure.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libdecora_sse.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libfxplugins.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libglass.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libglib-lite.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libgstreamer-lite.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjavafx_font.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjavafx_iio.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjfxmedia.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjfxmedia_avf.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libjfxwebkit.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libprism_common.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libprism_es2.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx-sdk-20.0.1/lib/libprism_sw.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Dungeon_Adventure_jar/Main-1.0.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/sqlite_jdbc_3_34_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/sqlite_jdbc_3_34_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,12 +86,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Mina/Desktop/happy-dungeon-adventure-clean-dungeon-and-room&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
@@ -108,6 +101,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\src" />
       <recent name="C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\src\Model" />
     </key>
@@ -119,7 +113,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
       <module name="Dungeon_Adventure" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$PROJECT_DIR$/../javafx-sdk-20.0.1/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$PROJECT_DIR$/lib/javafx-sdk-20.0.1/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="src.Main.*" />
@@ -251,7 +245,8 @@
       <workItem from="1685637121439" duration="24000" />
       <workItem from="1685637154338" duration="12295000" />
       <workItem from="1685671450742" duration="3221000" />
-      <workItem from="1685725226164" duration="2433000" />
+      <workItem from="1685725226164" duration="6499000" />
+      <workItem from="1685734706952" duration="12793000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -540,7 +535,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685730228796</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Hero class unit test code update.">
+      <created>1685730631581</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1685730631581</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Hero class unit test code update.">
+      <created>1685730654810</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1685730654810</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
