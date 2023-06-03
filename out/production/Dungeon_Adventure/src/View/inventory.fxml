@@ -54,17 +54,17 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="inheritancePillar" fill="#2da1ff" layoutX="329.0" layoutY="366.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inheritance">
+            <Text fx:id="inheritancePillar" fill="#0098ff" layoutX="329.0" layoutY="366.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inheritance">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="encapsulationPillar" fill="#00ff32" layoutX="165.0" layoutY="367.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encapsulation">
+            <Text fx:id="encapsulationPillar" fill="#85ff88" layoutX="165.0" layoutY="367.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encapsulation">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="abstractionPillar" fill="RED" layoutX="165.0" layoutY="339.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Abstraction">
+            <Text fx:id="abstractionPillar" fill="#ff7252" layoutX="165.0" layoutY="339.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Abstraction">
                <font>
                   <Font size="20.0" />
                </font>

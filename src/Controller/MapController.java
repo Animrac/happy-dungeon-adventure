@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 import src.Main.Main;
@@ -64,13 +63,13 @@ public class MapController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         mapGrid.setAlignment(Pos.CENTER);
 
-        System.out.println("Dungeon:");
-        for (int i = 0; i < model.getMyDungeonLayout().getMyDungeonLayout().length; i++) {
-            for (int j = 0; j < model.getMyDungeonLayout().getMyDungeonLayout()[i].length; j++) {
-                System.out.print(model.getMyDungeonLayout().getMyDungeonLayout()[i][j]);
-            }
-            System.out.println();
-        }
+//        System.out.println("Dungeon:");
+//        for (int i = 0; i < model.getMyDungeonLayout().getMyDungeonLayout().length; i++) {
+//            for (int j = 0; j < model.getMyDungeonLayout().getMyDungeonLayout()[i].length; j++) {
+//                System.out.print(model.getMyDungeonLayout().getMyDungeonLayout()[i][j]);
+//            }
+//            System.out.println();
+//        }
 
         // Look at 4 rooms all around player
         for (int mapRow = -4; mapRow <= 4; mapRow++) {
@@ -81,7 +80,6 @@ public class MapController implements Initializable {
 
                 if (mapRow == 0 && mapCol == 0) { // Where the player will be on the map
                     Image image = new Image("src/View/player.gif");
-                    System.out.println("hit");
                     imageView = new ImageView(image);
                 }
                 else {
@@ -116,13 +114,13 @@ public class MapController implements Initializable {
                             image = new Image("src/View/exit.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasHealingPotion()) {
-                            image = new Image("src/View/healthpotion.png");
+                            image = new Image("src/View/healthBig.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasVisionPotion()) {
-                            image = new Image("src/View/visionpotion.png");
+                            image = new Image("src/View/visionBig.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasPillar()) {
-                            image = new Image("src/View/pillar.png");
+                            image = new Image("src/View/pillarBig.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasMonster()) {
                             image = new Image("src/View/tomnook.png");

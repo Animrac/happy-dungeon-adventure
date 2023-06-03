@@ -9,25 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="completed README.md with directions, made MapController.java finally work, edited values of monsters to match requirements, added more javadoc comments">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="made the JavaFX UI better in the inventory and battle, resized enemies based on enemy type, sound effects are less annoying">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/monsterFactory.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/battle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/battle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/badEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/badEnd.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/inventory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/map.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/walk.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/walk.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BattleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BattleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/walk2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EndingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EndingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SceneMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SceneMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/battle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/battle.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/inventory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/walk.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/walk.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/badEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/badEnd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/nameCharacter.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/walk2.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +166,8 @@
       <workItem from="1685736311910" duration="15460000" />
       <workItem from="1685773137518" duration="1174000" />
       <workItem from="1685774426769" duration="171000" />
-      <workItem from="1685774609107" duration="779000" />
+      <workItem from="1685774609107" duration="1989000" />
+      <workItem from="1685776981058" duration="361000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -454,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685770762116</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="made the JavaFX UI better in the inventory and battle, resized enemies based on enemy type, sound effects are less annoying">
+      <created>1685775502641</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1685775502641</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Worked on driver class" />
     <MESSAGE value="Coded basic hero and monster child classes" />
     <MESSAGE value="Edited driver class" />
     <MESSAGE value="merged everyone's current files, added a line to make DungeonAdventure run" />
@@ -509,7 +510,8 @@
     <MESSAGE value="added map screen, map function, using vision potion" />
     <MESSAGE value="got monsters to work" />
     <MESSAGE value="completed README.md with directions, made MapController.java finally work, edited values of monsters to match requirements, added more javadoc comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed README.md with directions, made MapController.java finally work, edited values of monsters to match requirements, added more javadoc comments" />
+    <MESSAGE value="made the JavaFX UI better in the inventory and battle, resized enemies based on enemy type, sound effects are less annoying" />
+    <option name="LAST_COMMIT_MESSAGE" value="made the JavaFX UI better in the inventory and battle, resized enemies based on enemy type, sound effects are less annoying" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

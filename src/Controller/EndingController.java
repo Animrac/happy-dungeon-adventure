@@ -23,7 +23,7 @@ public class EndingController {
     void quitGame(ActionEvent event) {
 //        Platform.exit();
         model.setInGame(false);
-
+        model.setInBattle(false);
         model.getMyInventory().emptyInventory();
 
         Scene scene = SceneMaker.createScene("src/View/nameCharacter.fxml");
