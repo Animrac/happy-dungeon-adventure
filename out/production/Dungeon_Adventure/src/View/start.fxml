@@ -42,7 +42,7 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.BeginningController">
   <children>
-    <AnchorPane fx:id="begin" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="NEVER">
+    <AnchorPane fx:id="begin" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="NEVER">
       <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="441.0" stroke="BLACK" strokeType="INSIDE" width="680.0" />
             <ImageView fitHeight="767.0" fitWidth="1012.0" layoutX="-189.0" layoutY="-74.0" opacity="0.6">

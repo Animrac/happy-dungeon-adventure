@@ -3,6 +3,7 @@ package src.Model;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.transform.Scale;
 import src.Main.Main;
 
 import java.io.IOException;
@@ -20,6 +21,8 @@ public class SceneMaker implements Serializable {
 
         try {
             root = (Parent)FXMLLoader.load(SceneMaker.class.getClassLoader().getResource(fxmlFilePath));
+            double scaleFactor = 2.0;
+            root.getTransforms().add(new Scale(scaleFactor, scaleFactor));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -27,6 +30,7 @@ public class SceneMaker implements Serializable {
         Scene scene = new Scene(root);
 
         scene.getStylesheets().add(css);
+
 
         return scene;
 

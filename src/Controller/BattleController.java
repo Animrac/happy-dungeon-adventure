@@ -25,6 +25,10 @@ public class BattleController implements Initializable {
 
     final static Random MY_RANDOM = new Random();
 
+    private static final double FULL_OPACITY = 1.0;
+
+    private static final double NO_OPACITY = 0.0;
+
     @FXML
     private ImageView bossMonster;
 
@@ -79,13 +83,33 @@ public class BattleController implements Initializable {
 
         model.setCurrScene("src/View/battle.fxml");
 
-        model.setInBattle(false);
+
         myName.setText(model.getMyName());
         myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
 
         myLog.setText("What will " + model.getMyName() + " do?");
         //TODO set the monster, monster health, current health, names, battledialogue
-        model.setMyCurrMonster(model.getRandomMonster());
+        if (model.getInBattle() == false){
+            model.setInBattle(true);
+            model.setMyCurrMonster(model.getRandomMonster());
+        }
+
+//        if (model.getMyCurrMonster().getHealth() == 200 ||
+//                model.getMyDungeonLayout().getMyDungeonRooms()
+//                        [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
+//                        .getHasPillar()) { // OGRE OR BOSS MONSTER
+        if (model.getMyCurrMonster().getHealth() == 200) { // OGRE
+            bossMonster.setFitHeight(200);
+            bossMonster.setFitWidth(130);
+        }
+        else if (model.getMyCurrMonster().getHealth() == 70) { // GREMLIN
+            bossMonster.setFitHeight(20);
+            bossMonster.setFitWidth(13);
+        }
+        else if (model.getMyCurrMonster().getHealth() == 80) { // SKELETON
+            bossMonster.setFitHeight(70);
+            bossMonster.setFitWidth(45.5);
+        }
 
         myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth()));
         myMonsterName.setText(model.getMyCurrMonster().getName());
@@ -223,11 +247,12 @@ public class BattleController implements Initializable {
     private void checkHealth() {
         if (model.getMyCurrMonster().getHealth() <= 0) {
             myLog.setText(model.getMyCurrMonster().getName() + " was killed :D");
-
+            model.setInBattle(false);
             Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");
             Main.getPrimaryStage().setScene(scene);
         }
         if (model.getMyHero().getHealth() <= 0) {
+            model.setInBattle(false);
             Scene scene = SceneMaker.createScene("src/View/badEnd.fxml");
             Main.getPrimaryStage().setScene(scene);
         }

@@ -102,47 +102,40 @@ public class MapController implements Initializable {
                         dungeonRow = model.getMyDungeonLayout().getCurrCol() + mapCol;
                     }
 
+                    Image image = null;
 
                     if (!(dungeonRow == -1 || dungeonCol == -1)) { // The higher on this list, the more priority
-                        System.out.println("Row: " + dungeonRow + ", Column: " + dungeonCol);
+//                        System.out.println("Row: " + dungeonRow + ", Column: " + dungeonCol);
                         if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasPit()) {
-                            Image image = new Image("src/View/pit.png");
-                            imageView = new ImageView(image);
+                            image = new Image("src/View/pit.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasEntrance()) {
-                            Image image = new Image("src/View/entrance.png");
-                            imageView = new ImageView(image);
+                            image = new Image("src/View/entrance.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasExit()) {
-                            Image image = new Image("src/View/exit.png");
-                            imageView = new ImageView(image);
+                            image = new Image("src/View/exit.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasHealingPotion()) {
-                            Image image = new Image("src/View/healthpotion.png");
-                            imageView = new ImageView(image);
+                            image = new Image("src/View/healthpotion.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasVisionPotion()) {
-                            Image image = new Image("src/View/visionpotion.png");
-                            imageView = new ImageView(image);
+                            image = new Image("src/View/visionpotion.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasPillar()) {
-                            Image image = new Image("src/View/pillar.png");
-                            imageView = new ImageView(image);
+                            image = new Image("src/View/pillar.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasMonster()) {
-                            Image image = new Image("src/View/tomnook.png");
-                            imageView = new ImageView(image);
+                            image = new Image("src/View/tomnook.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasWall()) {
-                            Image image = new Image("src/View/tree.png");
-                            imageView = new ImageView(image);
+                            image = new Image("src/View/tree.png");
                         }
                     }
                     else { // Out of bounds
-                        Image image = new Image("src/View/tree.png");
-                        imageView = new ImageView(image);
-                        System.out.println(1);
+                        image = new Image("src/View/tree.png");
                     }
+
+                    imageView = new ImageView(image);
 
                 }
                 // Add the image view to the grid pane
@@ -155,84 +148,3 @@ public class MapController implements Initializable {
         }
     }
 }
-//       for (int row = 0; row <= 8; row++) {
-//               for (int col = 0; col <= 8; col++) {
-//               int mapRow = -1, mapCol = -1;
-//               ImageView imageView = null;// only one image for now
-//
-//               if (row == 4 && col == 4) { // Where the player is
-//               Image image = new Image("src/View/player.gif");
-////                    Image image = new Image("src/View/tomnook.png");
-//               System.out.println("hit");
-//               imageView = new ImageView(image);
-//               }
-//               else {
-//               if (row <= 3 &&
-//               model.getMyDungeonLayout().getCurrRow() - row >= 0) { // Not out of bounds:
-//               mapRow = model.getMyDungeonLayout().getCurrRow() - row;
-//               } else if (row >= 4 &&
-//               model.getMyDungeonLayout().getCurrRow() - 4 + row <= model.getMyDungeonLayout().getMyDungeonRooms()[0].length - 1) {
-//               mapRow = model.getMyDungeonLayout().getCurrRow() - 4 + row;
-//               }
-//               else {
-//               mapRow = 500;
-//               }
-//
-//               if (col <= 3 &&
-//               model.getMyDungeonLayout().getCurrCol() + col >= 0) { // Not out of bounds:
-//               mapCol = model.getMyDungeonLayout().getCurrCol() + col;
-//               }
-//               else if (col >= 4 &&
-//               model.getMyDungeonLayout().getCurrCol() - 4 + col <= model.getMyDungeonLayout().getMyDungeonRooms()[0].length - 1) {
-//               mapCol = model.getMyDungeonLayout().getCurrCol() - 4 + col;
-//               }
-//               else {
-//               mapCol = 500;
-//               }
-//
-//
-//               if (!(mapRow == 500 || mapCol == 500)) {
-//               if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasPit()) {
-//               Image image = new Image("src/View/pit.png");
-//               imageView = new ImageView(image);
-//               }
-//               else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasHealingPotion()) {
-//               Image image = new Image("src/View/healthpotion.png");
-//               imageView = new ImageView(image);
-//               }
-//               else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasVisionPotion()) {
-//               Image image = new Image("src/View/visionpotion.png");
-//               imageView = new ImageView(image);
-//               }
-//               else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasMonster()) {
-//               Image image = new Image("src/View/tomnook.png");
-//               imageView = new ImageView(image);
-//               }
-//               else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasPillar()) {
-//               Image image = new Image("src/View/pillar.png");
-//               imageView = new ImageView(image);
-//               }
-//               else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasEntrance()) {
-//               Image image = new Image("src/View/entrance.png");
-//               imageView = new ImageView(image);
-//               }
-//               else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasExit()) {
-//               Image image = new Image("src/View/exit.png");
-//               imageView = new ImageView(image);
-//               }
-//               else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasWall()) {
-//               Image image = new Image("src/View/tree.png");
-//               imageView = new ImageView(image);
-//               }
-//
-//
-//               }
-//               }
-//               // Add the image view to the grid pane
-//               if (imageView != null && (mapCol != 500 || mapRow != 500)) {
-//               imageView.setFitWidth(30);
-//               imageView.setFitHeight(30);
-//               mapGrid.add(imageView, row, col);
-//               }
-//               }
-//               }
