@@ -289,7 +289,7 @@ public abstract class Adventurer implements Serializable {
      *
      * @return amount of damage in a set range
      */
-    private int generateDamage() {
+    public int generateDamage() {
         return Adventurer.generateRangedValue(myMinDamage, myMaxDamage);
     }
 

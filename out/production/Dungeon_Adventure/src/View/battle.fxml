@@ -54,16 +54,20 @@
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="264.0" layoutX="21.0" layoutY="22.0" stroke="#c4c4c4" strokeType="OUTSIDE" strokeWidth="2.0" width="598.0" />
-            <ImageView fx:id="bossMonster" fitHeight="77.0" fitWidth="50.0" layoutX="116.0" layoutY="196.0">
-               <image>
-                  <Image url="@tomnook.png" />
-               </image>
-            </ImageView>
             <ImageView fx:id="player" layoutX="442.0" layoutY="136.0">
                <image>
                   <Image url="@player.gif" />
                </image>
             </ImageView>
+            <AnchorPane layoutX="137.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="bossMonster" fitHeight="77.0" fitWidth="50.0" AnchorPane.bottomAnchor="0.0">
+                     <image>
+                        <Image url="@tomnook.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
             <Button fx:id="pokemonButton" layoutX="347.0" layoutY="338.0" mnemonicParsing="false" onAction="#noPokemon" prefHeight="33.0" prefWidth="130.0" text="POKéMON">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -86,7 +90,7 @@
             </Text>
             <TextArea fx:id="myLog" editable="false" layoutX="22.0" layoutY="294.0" prefHeight="77.0" prefWidth="310.0" text="&lt;insert battle dialogue here&gt;">
                <font>
-                  <Font size="16.0" />
+                  <Font size="14.0" />
                </font>
             </TextArea>
             <Button fx:id="attackButton" layoutX="347.0" layoutY="296.0" mnemonicParsing="false" onAction="#attack" prefHeight="34.0" prefWidth="61.0" text="KILL">
@@ -125,7 +129,7 @@
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Text>
-                  <Text fx:id="myMonsterHealth" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="100" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="35.0">
+                  <Text fx:id="myMonsterHealth" fill="WHITE" layoutX="52.0" layoutY="68.373046875" strokeType="OUTSIDE" strokeWidth="0.0" text="100" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="36.0">
                      <font>
                         <Font size="30.0" />
                      </font>

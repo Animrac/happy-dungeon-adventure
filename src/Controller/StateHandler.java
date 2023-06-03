@@ -1,6 +1,5 @@
 package src.Controller;
 
-import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import src.Main.Main;
 import src.Model.DungeonAdventure;
@@ -28,6 +27,8 @@ public interface StateHandler {
             DungeonAdventure loadedInstance = (DungeonAdventure) in.readObject();
 
             model.setMyHero(loadedInstance.getMyHero());
+            model.setMyCurrMonster(loadedInstance.getMyCurrMonster());
+//            model.setMyMonsterDatabase(loadedInstance.getMyMonsterDatabase());
             model.setMyDungeonLayout(loadedInstance.getMyDungeonLayout());
             model.setCurrScene(loadedInstance.getCurrScene());
             model.setMyName(loadedInstance.getMyName());

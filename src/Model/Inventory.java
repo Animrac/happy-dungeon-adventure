@@ -49,4 +49,10 @@ public class Inventory implements Serializable {
         pillarCount++;
     }
 
+    public void emptyInventory() {
+        pillarCount = 0;
+        healthPotionCount = 0;
+        visionPotionCount = 0;
+    }
+
 }

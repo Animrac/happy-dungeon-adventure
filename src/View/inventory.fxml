@@ -49,39 +49,39 @@
                   <Font name="System Bold" size="38.0" />
                </font>
             </Text>
-            <Text fx:id="polymorphismPillar" layoutX="329.0" layoutY="338.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Polymorphism">
+            <Text fx:id="polymorphismPillar" fill="#fff900" layoutX="329.0" layoutY="338.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Polymorphism">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="inheritancePillar" layoutX="329.0" layoutY="366.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inheritance">
+            <Text fx:id="inheritancePillar" fill="#0098ff" layoutX="329.0" layoutY="366.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inheritance">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="encapsulationPillar" layoutX="165.0" layoutY="367.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encapsulation">
+            <Text fx:id="encapsulationPillar" fill="#85ff88" layoutX="165.0" layoutY="367.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encapsulation">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="abstractionPillar" layoutX="165.0" layoutY="339.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Abstraction">
+            <Text fx:id="abstractionPillar" fill="#ff7252" layoutX="165.0" layoutY="339.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Abstraction">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="31.0" layoutY="85.0">
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="47.0" layoutY="99.0">
                <image>
-                  <Image url="@healthpotion.png" />
+                  <Image url="@healthBig.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="31.0" layoutY="179.0">
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="47.0" layoutY="192.0">
                <image>
-                  <Image url="@visionpotion.png" />
+                  <Image url="@visionBig.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="64.0" fitWidth="65.0" layoutX="43.0" layoutY="277.0">
                <image>
-                  <Image url="@pillar.png" />
+                  <Image url="@pillarBig.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="220.0" fitWidth="157.0" layoutX="469.0" layoutY="158.0">
@@ -104,17 +104,17 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="healthInventory" layoutX="121.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x0">
+            <Text fx:id="healthInventory" fill="WHITE" layoutX="121.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x0">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <Text fx:id="visionInventory" layoutX="121.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x0">
+            <Text fx:id="visionInventory" fill="WHITE" layoutX="121.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x0">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <Text fx:id="pillarInventory" layoutX="121.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x0">
+            <Text fx:id="pillarInventory" fill="WHITE" layoutX="121.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x0">
                <font>
                   <Font size="30.0" />
                </font>
@@ -134,22 +134,22 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Text layoutX="486.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:">
+            <Text fill="WHITE" layoutX="486.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP:">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <Text fx:id="myHealth" layoutX="540.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+            <Text fx:id="myHealth" fill="WHITE" layoutX="540.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <Text fx:id="myName" layoutX="486.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert name&gt;">
+            <Text fx:id="myName" fill="WHITE" layoutX="486.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert name&gt;">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <Text fx:id="myClass" layoutX="486.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert class&gt;">
+            <Text fx:id="myClass" fill="WHITE" layoutX="486.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;insert class&gt;">
                <font>
                   <Font name="System Italic" size="25.0" />
                </font>

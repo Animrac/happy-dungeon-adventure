@@ -18,6 +18,12 @@ import java.net.MalformedURLException;
 public class Main extends Application {
     private static Stage primaryStage;
 
+    private static final int INITIAL_WIDTH = 640;
+
+    private static final int INITIAL_HEIGHT = 400;
+
+    private static final double SCALE_FACTOR = 2.0;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -31,6 +37,8 @@ public class Main extends Application {
             Scene scene = SceneMaker.createScene("src/View/start.fxml");
 
             primaryStage.setScene(scene);
+            primaryStage.setWidth(INITIAL_WIDTH * SCALE_FACTOR);
+            primaryStage.setHeight(INITIAL_HEIGHT * SCALE_FACTOR);
             primaryStage.setResizable(false);
             primaryStage.show();
         }

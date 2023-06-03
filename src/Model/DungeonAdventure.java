@@ -1,11 +1,26 @@
 package src.Model;
 
 import java.io.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.sqlite.SQLiteDataSource;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import static src.Model.Adventurer.MY_RANDOM;
 
 /**
  * The state class that holds all the current information about the game, e.g. player, dungeon layout, etc.
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
- * @version 05/29/23
+ * @version 06/02/23
  */
 public class DungeonAdventure implements Serializable {
 
@@ -35,6 +50,10 @@ public class DungeonAdventure implements Serializable {
     private String currScene;
 
     private Hero myHero;
+
+    private final MonsterFactory myMonsterDatabase = new MonsterFactory();
+
+    private Monster myCurrMonster;
 
     private final String[] myPillars = new String[]{"ABSTRACTION", "ENCAPSULATION", "INHERITANCE", "POLYMORPHISM"};
 
@@ -70,6 +89,11 @@ public class DungeonAdventure implements Serializable {
     public Room getMyRoom() {
         return myRoom;
     }
+
+    public MonsterFactory getMyMonsterDatabase() {
+        return myMonsterDatabase;
+    }
+
 
     //SETTERS//
     public static void setInstance(DungeonAdventure theInstance) {
@@ -120,6 +144,13 @@ public class DungeonAdventure implements Serializable {
         return myPillars;
     }
 
+    public void setMyCurrMonster (Monster theMonster) {
+        myCurrMonster = theMonster;
+    }
+
+    public Monster getMyCurrMonster () {
+        return myCurrMonster;
+    }
 
     public Inventory setMyInventory(Inventory myInventory) {
             return this.myInventory = myInventory;
@@ -132,6 +163,55 @@ public class DungeonAdventure implements Serializable {
 
     public void setInBattle(boolean theInBattle) {
         inBattle = theInBattle;
+    }
+
+
+
+    /**
+     *
+     * @return random monster from database
+     */
+    public Monster getRandomMonster() {
+        SQLiteDataSource ds = null;
+        try {
+            ds = new SQLiteDataSource();
+            ds.setUrl("jdbc:sqlite:monsterFactory.db");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+
+        List<Monster> monsters = new ArrayList<>();
+        String query = "SELECT * FROM monsterFactory";
+
+        try (Connection conn = ds.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                String name = rs.getString("NAME");
+                int health = rs.getInt("HEALTH");
+                int minDamage = rs.getInt("MIN_DAMAGE");
+                int maxDamage = rs.getInt("MAX_DAMAGE");
+                double attackOdds = rs.getDouble("ATTACK_ODDS");
+                double blockOdds = rs.getDouble("BLOCK_ODDS");
+                int attackSpeed = rs.getInt("ATTACK_SPEED");
+
+                Monster monster = new Monster(name, health, minDamage, maxDamage, attackOdds, blockOdds, attackSpeed);
+                monsters.add(monster);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+
+        if(monsters.isEmpty()) {
+            throw new IllegalArgumentException(("MonsterFactory is empty."));
+        }
+
+        int row = MY_RANDOM.nextInt(monsters.size());
+        return monsters.get(row);
     }
 
 }
