@@ -40,6 +40,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -47,6 +48,8 @@
   <children>
     <AnchorPane fx:id="lore" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="505.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" width="133.0" />
             <ImageView fitHeight="399.0" fitWidth="648.0" layoutX="-8.0" opacity="0.7">
                <image>
                   <Image url="@paper.jpg" />
