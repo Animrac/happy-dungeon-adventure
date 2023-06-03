@@ -14,6 +14,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
      */
 
+/**
+ * The model class for dungeon generation.
+ *
+ * @author Carmina Cruz
+ * @version 06/02/23
+ */
 public class Dungeon implements Serializable {
 
     private final int INITIAL_VALUE = -1;

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * This program creates an outline for a monster character.
  *
- * @author anastasiavilenius
+ * @author Anastasia Vilenius
  * @version 05/07/23
  */
 public class Monster extends Adventurer implements Serializable {

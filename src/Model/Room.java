@@ -16,6 +16,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
      */
 
+/**
+ * The model class for the rooms in the dungeon.
+ *
+ * @author Carmina Cruz, Hui Wagner
+ * @version 06/02/23
+ */
 public class Room implements Serializable {
 
     /**
@@ -26,7 +32,7 @@ public class Room implements Serializable {
     /**
      * The chance there will be a vision potion in the current Room.
      */
-    private static final int VISION_POTION_CHANCE = 90;
+    private static final int VISION_POTION_CHANCE = 10;
 
     /**
      * The chance there will be a pit in the current Room.
@@ -36,7 +42,7 @@ public class Room implements Serializable {
     /**
      * The chance there will be a monster in the current Room.
      */
-    private static final int MONSTER_CHANCE = 1; //not sure yet
+    private static final int MONSTER_CHANCE = 5;
 
     /**
      * A 3x3 char array to represent what is inside the current room

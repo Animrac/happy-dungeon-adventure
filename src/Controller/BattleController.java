@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -13,10 +12,18 @@ import src.Main.Main;
 import src.Model.*;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
+/**
+ * The controller class for the battle scene.
+ *
+ * @author Carmina Cruz
+ * @version 06/02/23
+ */
 public class BattleController implements Initializable {
+
+    final static Random MY_RANDOM = new Random();
 
     @FXML
     private ImageView bossMonster;
@@ -74,30 +81,98 @@ public class BattleController implements Initializable {
 
         model.setInBattle(false);
         myName.setText(model.getMyName());
-//        myHealth.setText(model.getMyHealth());
+        myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
+
         myLog.setText("What will " + model.getMyName() + " do?");
         //TODO set the monster, monster health, current health, names, battledialogue
         model.setMyCurrMonster(model.getRandomMonster());
+
         myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth()));
         myMonsterName.setText(model.getMyCurrMonster().getName());
     }
 
     @FXML
     void attack(ActionEvent event) {
-//        model.getMyHero().getAttackOdds(); TODO ANASTASIA I WANT IT ALL IN ONE METHOD MAYBE ATTACK ODDS
-        int damageToMonster = model.getMyCurrMonster().generateDamage();
-        myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth() - damageToMonster));
-        myLog.setText(model.getMyName() + " attacks! " + model.getMyCurrMonster().getName() + " loses " + damageToMonster + " HP!");
+
+        StringBuilder log = new StringBuilder();
+
+        double randDoubleHero = MY_RANDOM.nextDouble();
+        double randDoubleMonster = MY_RANDOM.nextDouble();
+
+        if (randDoubleHero <= model.getMyHero().getAttackOdds()) {
+            int heroDamage = model.getMyHero().generateDamage();
+            model.getMyCurrMonster().setHealth(model.getMyCurrMonster().getHealth() - heroDamage);
+            myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth()));
+
+            log.append(model.getMyName() + " attacks! \n" +
+                    model.getMyCurrMonster().getName() + " loses " + heroDamage + " HP!\n");
+        } else {
+            log.append(model.getMyName() + " misses! Oops, silly you!\n");
+        }
+
+        if (model.getMyCurrMonster().getHealth() > 0) { // if the monster didn't die, allow them to attack
+            log.append(monsterAttack());
+        }
+
         checkHealth();
+
+        myLog.setText(log.toString());
+
     }
 
     @FXML
-    void specialAttack(ActionEvent event) { //TODO ANASTASIA
-        int damageToMonster = model.getMyCurrMonster().generateDamage();
-        myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth() - damageToMonster));
-        myLog.setText(model.getMyName() + " uses a special attack! " + model.getMyCurrMonster().getName() + " loses " + damageToMonster + " HP!");
+    void specialAttack(ActionEvent event) { //TODO JUST A NORMAL ATTACK
+
+        StringBuilder log = new StringBuilder();
+
+        double randDoubleHero = MY_RANDOM.nextDouble();
+
+        //HERO TIME
+        if (randDoubleHero <= model.getMyHero().getAttackOdds()) {
+//            int heroDamage = model.getMyHero().generateSpecialDamage(); TODO ANASTASIA PUT GENERATE SPECIAL DAMAGE IN HERO
+            int heroDamage = model.getMyHero().generateDamage();
+            model.getMyCurrMonster().setHealth(model.getMyCurrMonster().getHealth() - heroDamage);
+            myMonsterHealth.setText(Integer.toString(model.getMyCurrMonster().getHealth()));
+
+            log.append(model.getMyName() + " uses a special attack! \n" +
+                    model.getMyCurrMonster().getName() + " loses " + heroDamage + " HP!\n");
+            
+        } else {
+            log.append(model.getMyName() + " misses! Oops, silly you!\n");
+        }
+
+        if (model.getMyCurrMonster().getHealth() > 0) { // if the monster didn't die, allow them to attack
+            log.append(monsterAttack());
+        }
+
         checkHealth();
 
+        myLog.setText(log.toString());
+
+    }
+
+    private StringBuilder monsterAttack() {
+
+        StringBuilder log = new StringBuilder();
+
+        double randDoubleMonster = MY_RANDOM.nextDouble();
+
+        //MONSTER TIME
+        if (randDoubleMonster <= model.getMyCurrMonster().getAttackOdds()) {
+
+            int monsterDamage = model.getMyCurrMonster().generateDamage();
+            model.getMyHero().setHealth(model.getMyHero().getHealth() - monsterDamage);
+            myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
+
+            log.append(model.getMyCurrMonster().getName() + " bites you!\n" +
+                    model.getMyName() + " loses " + monsterDamage + " HP!");
+        } else {
+            log.append(model.getMyCurrMonster().getName() + " misses! Hooray!");
+        }
+
+        checkHealth();
+
+        return log;
     }
 
     @FXML

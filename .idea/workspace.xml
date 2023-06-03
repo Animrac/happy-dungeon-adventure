@@ -9,13 +9,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added map screen, map function, using vision potion">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="got monsters to work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/monsterFactory.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/map.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BattleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BattleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Adventurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BeginningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeginningController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ControlsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ControlsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EndingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EndingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Dungeon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MonsterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MonsterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SaveLoadGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/heroOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/heroThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/heroTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/battle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/battle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +176,8 @@
       <workItem from="1685483193282" duration="2199000" />
       <workItem from="1685514934082" duration="24808000" />
       <workItem from="1685592283207" duration="1775000" />
-      <workItem from="1685636611862" duration="15558000" />
+      <workItem from="1685636611862" duration="19784000" />
+      <workItem from="1685736311910" duration="12588000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -417,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685727862549</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="got monsters to work">
+      <created>1685732114883</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1685732114883</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +475,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added main class to model &amp; cleaned up Adventurer" />
     <MESSAGE value="Cleaned up Hero class" />
     <MESSAGE value="Worked on driver class" />
     <MESSAGE value="Coded basic hero and monster child classes" />
@@ -472,16 +499,16 @@
     <MESSAGE value="trying to make pits work and implementing hero" />
     <MESSAGE value="added you died screen, implemented pits to function properly and subtract character health" />
     <MESSAGE value="added map screen, map function, using vision potion" />
-    <option name="LAST_COMMIT_MESSAGE" value="added map screen, map function, using vision potion" />
+    <MESSAGE value="got monsters to work" />
+    <option name="LAST_COMMIT_MESSAGE" value="got monsters to work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controller/MapController.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

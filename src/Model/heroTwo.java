@@ -88,7 +88,7 @@ public class heroTwo extends Hero implements Serializable {
      *
      * @return range of values of healing points
      */
-    private int generateHealingPower() {
+    public int generateHealingPower() {
         return Adventurer.generateRangedValue(myMinSpecialHeal, myMaxSpecialHeal);
     }
 }

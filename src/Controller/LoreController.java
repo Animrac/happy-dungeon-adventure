@@ -9,6 +9,13 @@ import src.Model.SceneMaker;
 
 import java.io.IOException;
 
+/**
+ * The controller class for the lore scene.
+ * Note that this is now the "About" scene.
+ *
+ * @author Carmina Cruz
+ * @version 06/02/23
+ */
 public class LoreController {
     private DungeonAdventure model;
 

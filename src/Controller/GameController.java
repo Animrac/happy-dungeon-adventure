@@ -26,9 +26,10 @@ import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Controller class for the game scene, mainGame.fxml.
- * Everything shown is controlled in this class.
+ * The controller class for the game scene, mainGame.fxml.
+ *
  * @author Carmina Cruz
+ * @version 06/02/23
  */
 public class GameController implements Initializable, StateHandler {
 
@@ -542,14 +543,13 @@ public class GameController implements Initializable, StateHandler {
             collectButton.setDisable(false);
         }
 
-        //TODO IF A PIT, REDUCE HEALTH
         if (model.getMyDungeonLayout().getMyDungeonRooms()
                 [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
                 .getHasPit()) {
 
             int pitRandom = ThreadLocalRandom.current().nextInt(1, 20 + 1);
 
-            System.out.println(model.getMyHero().getHealth() - pitRandom);
+//            System.out.println(model.getMyHero().getHealth() - pitRandom);
 
             model.getMyHero()
                     .setHealth(model.getMyHero().getHealth() - pitRandom);

@@ -20,7 +20,7 @@ import static src.Model.Adventurer.MY_RANDOM;
 /**
  * The state class that holds all the current information about the game, e.g. player, dungeon layout, etc.
  * @author Anastasia Vilenius, Carmina Cruz, Hui Wagner
- * @version 05/29/23
+ * @version 06/02/23
  */
 public class DungeonAdventure implements Serializable {
 

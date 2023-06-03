@@ -9,6 +9,12 @@ import src.Model.SceneMaker;
 
 import java.io.IOException;
 
+/**
+ * The controller class for the how to play scene.
+ *
+ * @author Carmina Cruz
+ * @version 06/02/23
+ */
 public class ControlsController {
 
     private DungeonAdventure model;

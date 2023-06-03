@@ -14,6 +14,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * The controller class for the inventory scene.
+ *
+ * @author Carmina Cruz
+ * @version 06/02/23
+ */
 public class InventoryController implements Initializable, StateHandler {
 
     @FXML

@@ -19,6 +19,12 @@ import src.Model.SceneMaker;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * The controller class for the map scene.
+ *
+ * @author Carmina Cruz
+ * @version 06/02/23
+ */
 public class MapController implements Initializable {
 
     @FXML
@@ -67,78 +73,83 @@ public class MapController implements Initializable {
         }
 
         // Look at 4 rooms all around player
-        for (int row = -4; row <= 4; row++) {
-            for (int col = -4; col <= 4; col++) {
-                int mapRow = 0, mapCol = 0;
-                ImageView imageView = null;// only one image for now
+        for (int mapRow = -4; mapRow <= 4; mapRow++) {
+            for (int mapCol = -4; mapCol <= 4; mapCol++) {
 
-                if (row == 0 && col == 0) { // Where the player is
+                int dungeonRow = -1, dungeonCol = -1; // Should stay at this value if there is nothing
+                ImageView imageView = null;
+
+                if (mapRow == 0 && mapCol == 0) { // Where the player will be on the map
                     Image image = new Image("src/View/player.gif");
-//                    Image image = new Image("src/View/tomnook.png");
                     System.out.println("hit");
                     imageView = new ImageView(image);
                 }
                 else {
-                    if (row <= 0 &&
-                            model.getMyDungeonLayout().getCurrRow() + row >= 0) { // Not out of bounds:
-                        mapRow = model.getMyDungeonLayout().getCurrRow() + row;
-                    } else if (row >= 1 &&
-                            model.getMyDungeonLayout().getCurrRow() + row <= model.getMyDungeonLayout().getMyDungeonRooms()[0].length - 1) {
-                        mapRow = model.getMyDungeonLayout().getCurrRow() + row;
+                    if (mapRow <= 0 &&
+                            model.getMyDungeonLayout().getCurrRow() + mapRow >= 0) { // Not out of bounds:
+                        dungeonCol = model.getMyDungeonLayout().getCurrRow() + mapRow;
+                    } else if (mapRow >= 1 &&
+                            model.getMyDungeonLayout().getCurrRow() + mapRow <= model.getMyDungeonLayout().getMyDungeonRooms().length - 1) {
+                        dungeonCol = model.getMyDungeonLayout().getCurrRow() + mapRow;
                     }
 
-                    if (col <= 0 &&
-                            model.getMyDungeonLayout().getCurrCol() + col >= 0) { // Not out of bounds:
-                        mapCol = model.getMyDungeonLayout().getCurrCol() + col;
+                    if (mapCol <= 0 &&
+                            model.getMyDungeonLayout().getCurrCol() + mapCol >= 0) { // Not out of bounds:
+                        dungeonRow = model.getMyDungeonLayout().getCurrCol() + mapCol;
                     }
-                    else if (col >= 1 &&
-                            model.getMyDungeonLayout().getCurrCol() + col <= model.getMyDungeonLayout().getMyDungeonRooms()[0].length - 1) {
-                        mapCol = model.getMyDungeonLayout().getCurrCol() + col;
+                    else if (mapCol >= 1 &&
+                            model.getMyDungeonLayout().getCurrCol() + mapCol <= model.getMyDungeonLayout().getMyDungeonRooms()[0].length - 1) {
+                        dungeonRow = model.getMyDungeonLayout().getCurrCol() + mapCol;
                     }
 
 
-                    if (mapRow != -1 || mapCol != -1) {
-                        if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasPit()) {
+                    if (!(dungeonRow == -1 || dungeonCol == -1)) { // The higher on this list, the more priority
+                        System.out.println("Row: " + dungeonRow + ", Column: " + dungeonCol);
+                        if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasPit()) {
                             Image image = new Image("src/View/pit.png");
                             imageView = new ImageView(image);
                         }
-                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasHealingPotion()) {
-                            Image image = new Image("src/View/healthpotion.png");
-                            imageView = new ImageView(image);
-                        }
-                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasVisionPotion()) {
-                            Image image = new Image("src/View/visionpotion.png");
-                            imageView = new ImageView(image);
-                        }
-                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasMonster()) {
-                            Image image = new Image("src/View/tomnook.png");
-                            imageView = new ImageView(image);
-                        }
-                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasPillar()) {
-                            Image image = new Image("src/View/pillar.png");
-                            imageView = new ImageView(image);
-                        }
-                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasEntrance()) {
+                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasEntrance()) {
                             Image image = new Image("src/View/entrance.png");
                             imageView = new ImageView(image);
                         }
-                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasExit()) {
+                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasExit()) {
                             Image image = new Image("src/View/exit.png");
                             imageView = new ImageView(image);
                         }
-                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[mapCol][mapRow].getHasWall()) {
+                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasHealingPotion()) {
+                            Image image = new Image("src/View/healthpotion.png");
+                            imageView = new ImageView(image);
+                        }
+                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasVisionPotion()) {
+                            Image image = new Image("src/View/visionpotion.png");
+                            imageView = new ImageView(image);
+                        }
+                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasPillar()) {
+                            Image image = new Image("src/View/pillar.png");
+                            imageView = new ImageView(image);
+                        }
+                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasMonster()) {
+                            Image image = new Image("src/View/tomnook.png");
+                            imageView = new ImageView(image);
+                        }
+                        else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasWall()) {
                             Image image = new Image("src/View/tree.png");
                             imageView = new ImageView(image);
                         }
-
-
                     }
+                    else { // Out of bounds
+                        Image image = new Image("src/View/tree.png");
+                        imageView = new ImageView(image);
+                        System.out.println(1);
+                    }
+
                 }
                 // Add the image view to the grid pane
                 if (imageView != null) {
                     imageView.setFitWidth(30);
                     imageView.setFitHeight(30);
-                    mapGrid.add(imageView, row+4, col+4);
+                    mapGrid.add(imageView, mapCol+4, mapRow+4);
                 }
             }
         }

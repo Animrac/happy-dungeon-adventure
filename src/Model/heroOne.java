@@ -76,7 +76,7 @@ public class heroOne extends Hero {
      *
      * @return range of values of special attack damage
      */
-    private int generateSpecialDamage() {
+    public int generateSpecialDamage() {
         return Adventurer.generateRangedValue(myMinSpecialDamage, myMaxSpecialDamage);
     }
 }

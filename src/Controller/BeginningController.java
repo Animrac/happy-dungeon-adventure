@@ -9,8 +9,10 @@ import src.Model.SceneMaker;
 import java.io.IOException;
 
 /**
- * Controller class for the starting scene, start.fxml.
+ * The controller class for the very first scene.
+ *
  * @author Carmina Cruz
+ * @version 06/02/23
  */
 public class BeginningController {
 
