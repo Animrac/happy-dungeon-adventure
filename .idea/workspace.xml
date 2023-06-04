@@ -9,42 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="removed some console output and made UI a little better">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/badEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/badEnd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/mainGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/mainGame.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/nameCharacter.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BattleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BattleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BeginningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeginningController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CharacterSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CharacterSelectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EndingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EndingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ChooseHeroView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/MonsterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MonsterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/heroOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/heroThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/heroThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/badEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/badEnd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/controls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/controls.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/healthpotion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/inventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/inventory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/lore.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/lore.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/mainGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/mainGame.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/nameCharacter.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/pillar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/pillar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/visionpotion.png" beforeDir="false" />
-    </list>
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,7 +157,7 @@
       <workItem from="1685774609107" duration="1989000" />
       <workItem from="1685776981058" duration="680000" />
       <workItem from="1685817690803" duration="9617000" />
-      <workItem from="1685848067893" duration="2687000" />
+      <workItem from="1685848067893" duration="3567000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -495,7 +460,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685777653479</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar">
+      <created>1685851716014</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1685851716014</updated>
+    </task>
+    <task id="LOCAL-00045" summary="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar">
+      <created>1685851726791</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685851726791</updated>
+    </task>
+    <task id="LOCAL-00046" summary="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar">
+      <created>1685851743230</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1685851743231</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +511,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Edited driver class" />
     <MESSAGE value="merged everyone's current files, added a line to make DungeonAdventure run" />
     <MESSAGE value="added JavaFX library and dependency and tried making a little window and button with label" />
     <MESSAGE value="added more JavaFX GUI and main name scene" />
@@ -550,7 +535,8 @@
     <MESSAGE value="completed README.md with directions, made MapController.java finally work, edited values of monsters to match requirements, added more javadoc comments" />
     <MESSAGE value="made the JavaFX UI better in the inventory and battle, resized enemies based on enemy type, sound effects are less annoying" />
     <MESSAGE value="removed some console output and made UI a little better" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed some console output and made UI a little better" />
+    <MESSAGE value="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
