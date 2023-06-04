@@ -42,17 +42,17 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Text layoutX="248.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to Play:" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="230.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to Play:" textAlignment="CENTER">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <Button layoutX="251.0" layoutY="320.0" mnemonicParsing="false" onAction="#returnPrevScene" text="Okie Dokie">
+            <Button layoutX="245.0" layoutY="321.0" mnemonicParsing="false" onAction="#returnPrevScene" text="OKIE DOKIE">
                <font>
-                  <Font size="22.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
             </Button>
-            <Text layoutX="41.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Click the arrows to move your character throughout the dungeon.&#10;&#10;2. Collect potions to aid you throughout your journey. &#10;You can access these in your INVENTORY by clicking the button on the top right.&#10;&#10;3. Do you know the Four PIllars of Object-Oriented Programming?  ... No? &#10;Well now's your chance to learn! Collect all four of them! &#10;&#10;4. You might die. Make sure to FIGHT if you encounter someone scary!&#10;&#10;5. Once you've found all Four PIllars, find the EXIT and ESCAPE!" wrappingWidth="556.3467864990234">
+            <Text fill="WHITE" layoutX="41.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Click the arrows to move your character throughout the dungeon.&#10;&#10;2. Collect potions to aid you throughout your journey. &#10;You can access these in your INVENTORY by clicking the button on the top right.&#10;&#10;3. Do you know the Four PIllars of Object-Oriented Programming?  ... No? &#10;Well now's your chance to learn! Collect all four of them! &#10;&#10;4. You might die. Make sure to FIGHT if you encounter someone scary!&#10;&#10;5. Once you've found all Four PIllars, find the EXIT and ESCAPE!" wrappingWidth="556.3467864990234">
                <font>
                   <Font size="15.0" />
                </font>

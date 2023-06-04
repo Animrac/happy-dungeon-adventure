@@ -4,6 +4,8 @@
     -fx-base: #373e43;
     -fx-control-inner-background: derive(-fx-base, 35%);
     -fx-control-inner-background-alt: -fx-control-inner-background ;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
 }
 
 .label{
@@ -22,10 +24,16 @@
 
 .button{
     -fx-focus-traversable: false;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+
 }
 
 .button:hover{
     -fx-text-fill: white;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+
 }
 
 .separator *.line { 
@@ -40,7 +48,10 @@
 
 .button:default {
     -fx-base: -fx-accent ;
+
 } 
+
+
 
 .table-view{
     /*-fx-background-color: derive(-fx-base, 10%);*/

@@ -1,17 +1,15 @@
 package src.Main;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+
 import src.Model.SceneMaker;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 
 
@@ -31,8 +29,8 @@ public class Main extends Application {
             playAudio();
 
             this.primaryStage = primaryStage;
-            primaryStage.getIcons().add(new Image("src/View/icon.png"));
-            primaryStage.setTitle("Happy Dungeon Adventure!");
+            primaryStage.getIcons().add(new Image("src/View/tree.png"));
+            primaryStage.setTitle("Happy Adventure!");
 
             Scene scene = SceneMaker.createScene("src/View/start.fxml");
 
@@ -64,13 +62,6 @@ public class Main extends Application {
     public static void main(String[] theArgs) {
         launch(theArgs);
     }
-
-    @FXML
-    void showLore(ActionEvent event) throws IOException {
-        Scene scene = SceneMaker.createScene("src/View/lore.fxml");
-        primaryStage.setScene(scene);
-    }
-
 
     public static Stage getPrimaryStage(){
         return primaryStage;

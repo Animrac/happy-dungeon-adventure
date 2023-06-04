@@ -42,19 +42,19 @@
   <children>
     <AnchorPane fx:id="lore" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button layoutX="252.0" layoutY="299.0" mnemonicParsing="false" onAction="#returnPrevScene" text="Okie Dokie">
+            <Button layoutX="245.0" layoutY="302.0" mnemonicParsing="false" onAction="#returnPrevScene" text="OKIE DOKIE">
                <font>
-                  <Font size="22.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
             </Button>
-            <Text layoutX="114.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carmina Cruz&#10;JavaFX (View), JavaFX (Controller), Dungeon and Room Generation (Model)&#10;&#10;Anastasia Vilenius&#10;Adventurer, Hero, and Monster Generation (Model)&#10;&#10;Hui Wagner&#10;Figured out that we had different OS, Inventory and Room Generation (Model)" textAlignment="CENTER" wrappingWidth="412.3467254638672">
+            <Text fill="WHITE" layoutX="114.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carmina Cruz&#10;JavaFX (View), JavaFX (Controller), Dungeon, Map, and Room Generation (Model)&#10;&#10;Anastasia Vilenius&#10;Adventurer, Hero, and Monster Generation (Model)&#10;&#10;Hui Wagner&#10;Figured out that we had different OS, Inventory and Room Generation (Model)" textAlignment="CENTER" wrappingWidth="412.3467254638672">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Text>
-            <Text layoutX="114.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A Little Game Created By:" textAlignment="CENTER" wrappingWidth="412.3467254638672">
+            <Text fill="WHITE" layoutX="114.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A Little Game Created By:" textAlignment="CENTER" wrappingWidth="412.3467254638672">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="System Bold" size="23.0" />
                </font>
             </Text>
       </children>

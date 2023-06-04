@@ -1,6 +1,7 @@
 package src.Controller;
 
 import javafx.scene.Scene;
+
 import src.Main.Main;
 import src.Model.DungeonAdventure;
 import src.Model.SceneMaker;
@@ -20,6 +21,7 @@ public interface StateHandler {
     }
 
     default void loadState() {
+        model.setLoadedGame(true);
         try {
             FileInputStream fileIn = new FileInputStream("saveFile.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
@@ -28,7 +30,6 @@ public interface StateHandler {
 
             model.setMyHero(loadedInstance.getMyHero());
             model.setMyCurrMonster(loadedInstance.getMyCurrMonster());
-//            model.setMyMonsterDatabase(loadedInstance.getMyMonsterDatabase());
             model.setMyDungeonLayout(loadedInstance.getMyDungeonLayout());
             model.setCurrScene(loadedInstance.getCurrScene());
             model.setMyName(loadedInstance.getMyName());
@@ -37,6 +38,9 @@ public interface StateHandler {
             model.setMyRoom(loadedInstance.getMyRoom());
             model.setMyDifficulty(loadedInstance.getMyDifficulty());
             model.setMyInventory(loadedInstance.getMyInventory());
+            model.setInBattle(loadedInstance.getInBattle());
+            model.setInGame(loadedInstance.getInGame());
+
 
             in.close();
             fileIn.close();

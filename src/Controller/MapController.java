@@ -4,13 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Rectangle;
 import src.Main.Main;
 import src.Model.DungeonAdventure;
 import src.Model.SceneMaker;
@@ -27,25 +24,7 @@ import java.util.ResourceBundle;
 public class MapController implements Initializable {
 
     @FXML
-    private Button backButton;
-
-    @FXML
-    private ImageView healthPotion;
-
-    @FXML
     private GridPane mapGrid;
-
-    @FXML
-    private ImageView monster;
-
-    @FXML
-    private ImageView pillar;
-
-    @FXML
-    private ImageView visionPotion;
-
-    @FXML
-    private Rectangle wall;
 
     private DungeonAdventure model;
 
@@ -120,7 +99,7 @@ public class MapController implements Initializable {
                             image = new Image("src/View/visionBig.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasPillar()) {
-                            image = new Image("src/View/pillarBig.png");
+                            image = new Image("src/View/pillarColumn.png");
                         }
                         else if (model.getMyDungeonLayout().getMyDungeonRooms()[dungeonCol][dungeonRow].getHasMonster()) {
                             image = new Image("src/View/tomnook.png");
@@ -130,7 +109,7 @@ public class MapController implements Initializable {
                         }
                     }
                     else { // Out of bounds
-                        image = new Image("src/View/tree.png");
+                        image = new Image("src/View/grass.png");
                     }
 
                     imageView = new ImageView(image);
@@ -138,8 +117,8 @@ public class MapController implements Initializable {
                 }
                 // Add the image view to the grid pane
                 if (imageView != null) {
-                    imageView.setFitWidth(30);
-                    imageView.setFitHeight(30);
+                    imageView.setFitWidth(35);
+                    imageView.setFitHeight(35);
                     mapGrid.add(imageView, mapCol+4, mapRow+4);
                 }
             }
