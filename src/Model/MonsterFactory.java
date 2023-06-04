@@ -2,13 +2,11 @@ package src.Model;
 
 import org.sqlite.SQLiteDataSource;
 
-import java.io.File;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 
 /**
  * This program stores the types of monsters in a database
@@ -18,17 +16,8 @@ import java.util.Scanner;
  */
 public class MonsterFactory implements Serializable {
     private static java.sql.Connection connection;
-    public MonsterFactory() {
 
-//        String filePath = "src/monsterFactory.db"; // Replace with the actual file path
-//
-//        File file = new File(filePath);
-//
-//        if (file.exists()) {
-////            System.out.println("File exists.");
-//        }
-//        else {
-//            System.out.println("File does not exist. Creating database now.");
+    public MonsterFactory() {
 
             SQLiteDataSource ds = null;
 
@@ -42,7 +31,6 @@ public class MonsterFactory implements Serializable {
             }
 
 //            System.out.println("Opened database successfully");
-
 
             //now create a table
             String query = "CREATE TABLE IF NOT EXISTS monsterFactory ( " +
@@ -74,14 +62,16 @@ public class MonsterFactory implements Serializable {
 
             try (Connection conn = ds.getConnection();
                  Statement stmt = conn.createStatement();) {
-                int rv = stmt.executeUpdate(query1);
-//                System.out.println("1st executeUpdate() returned " + rv);
-
-                rv = stmt.executeUpdate(query2);
-//                System.out.println("2nd executeUpdate() returned " + rv);
-
-                rv = stmt.executeUpdate(query3);
-//                System.out.println("3rd executeUpdate() returned " + rv);
+                if (!queryExists(stmt, "Tom Nook #1 (Ogre)")){
+                    int rv = stmt.executeUpdate(query1);
+//                    System.out.println("1st executeUpdate() returned " + rv);
+                }
+                if (!queryExists(stmt, "Tom Nook #2 (Gremlin)")){
+                    int rv = stmt.executeUpdate(query2);
+                }
+                if (!queryExists(stmt, "Tom Nook #3 (Skeleton)")){
+                    int rv = stmt.executeUpdate(query3);
+                }
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -108,20 +98,20 @@ public class MonsterFactory implements Serializable {
                         rs.getInt("ATTACK_SPEED")
                 );
 
-                //walk through each 'row' of results, grab data by column/field name
-                // and print it
-                while ( rs.next() ) {
-                    String name = rs.getString( "NAME" );
-                    String health = rs.getString( "HEALTH" );
-                    String minDamage = rs.getString( "MIN_DAMAGE" );
-                    String maxDamage = rs.getString( "MAX_DAMAGE" );
-                    String attackOdds = rs.getString( "ATTACK_ODDS" );
-                    String blockOdds = rs.getString( "BLOCK_ODDS" );
-                    String attackSpeed = rs.getString( "ATTACK_SPEED" );
-
+//                //walk through each 'row' of results, grab data by column/field name
+//                // and print it
+//                while ( rs.next() ) {
+//                    String name = rs.getString( "NAME" );
+//                    String health = rs.getString( "HEALTH" );
+//                    String minDamage = rs.getString( "MIN_DAMAGE" );
+//                    String maxDamage = rs.getString( "MAX_DAMAGE" );
+//                    String attackOdds = rs.getString( "ATTACK_ODDS" );
+//                    String blockOdds = rs.getString( "BLOCK_ODDS" );
+//                    String attackSpeed = rs.getString( "ATTACK_SPEED" );
+//
 //                    System.out.println( "Result: Name = " + name +
 //                            ", Health = " + health + minDamage + maxDamage + attackOdds + blockOdds + attackSpeed);
-                }
+//                }
 
 
             } catch (SQLException e) {
@@ -129,8 +119,22 @@ public class MonsterFactory implements Serializable {
                 System.exit(0);
             }
         }
-//    }
 
+    /**
+     * Checks if a query already exists.
+     * @param statement
+     * @param queryName
+     * @return
+     * @throws SQLException
+     */
+    private static boolean queryExists(Statement statement, String queryName) throws SQLException {
+            String query = "SELECT COUNT(*) FROM monsterFactory WHERE NAME = '" + queryName + "'";
+            ResultSet resultSet = statement.executeQuery(query);
+            resultSet.next();
+            int count = resultSet.getInt(1);
+            resultSet.close();
+            return count > 0;
+        }
 
 }
 

@@ -54,7 +54,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="inheritancePillar" fill="#0098ff" layoutX="329.0" layoutY="366.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inheritance">
+            <Text fx:id="inheritancePillar" fill="#5ebeff" layoutX="329.0" layoutY="366.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inheritance">
                <font>
                   <Font size="20.0" />
                </font>
@@ -81,10 +81,10 @@
             </ImageView>
             <ImageView fitHeight="64.0" fitWidth="65.0" layoutX="43.0" layoutY="277.0">
                <image>
-                  <Image url="@pillarBig.png" />
+                  <Image url="@pillarColumn.PNG" />
                </image>
             </ImageView>
-            <ImageView fitHeight="220.0" fitWidth="157.0" layoutX="469.0" layoutY="158.0">
+            <ImageView fitHeight="180.0" fitWidth="127.0" layoutX="475.0" layoutY="184.0">
                <image>
                   <Image url="@player.gif" />
                </image>

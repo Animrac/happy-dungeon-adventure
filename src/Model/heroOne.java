@@ -25,7 +25,7 @@ public class heroOne extends Hero {
      * @param theName the name chosen by the player for the hero
      */
     public heroOne(final String theName) {
-        super(theName, 150, 40, 60, .7, .2, 2, .2);
+        super(theName, 150, 40, 60, .8, .2, 2, .2);
 //        setMinSpecialDamage(75);
 //        setMaxSpecialDamage(175);
     }

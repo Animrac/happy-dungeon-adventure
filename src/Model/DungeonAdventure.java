@@ -10,11 +10,6 @@ import java.util.List;
 
 import org.sqlite.SQLiteDataSource;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import static src.Model.Adventurer.MY_RANDOM;
 
 /**
@@ -25,11 +20,8 @@ import static src.Model.Adventurer.MY_RANDOM;
 public class DungeonAdventure implements Serializable {
 
     private static DungeonAdventure instance = new DungeonAdventure();
-//    private static DungeonAdventure instance;
 
-    /**
-     * Random object used to generate random monsters.
-     */
+    private boolean monsterDatabaseExists = false;
 
     private String myName;
 
@@ -40,6 +32,8 @@ public class DungeonAdventure implements Serializable {
     private boolean inGame = false;
 
     private boolean inBattle = false;
+
+    private boolean inLoadedGame = false;
 
     private Dungeon myDungeonLayout;
 
@@ -94,6 +88,38 @@ public class DungeonAdventure implements Serializable {
         return myMonsterDatabase;
     }
 
+    public boolean getInGame() {
+        return inGame;
+    }
+
+    public String getMyDifficulty() {
+        return myDifficulty;
+    }
+
+    public String[] getMyPillars(){
+        return myPillars;
+    }
+
+    public Monster getMyCurrMonster () {
+        return myCurrMonster;
+    }
+
+    public boolean getInBattle() {
+        return inBattle;
+    }
+
+    public boolean getMonsterDatabaseExists () {
+        return monsterDatabaseExists;
+    }
+
+    /**
+     * Tells us if the current game was just loaded from a save file.
+     * @return
+     */
+    public boolean getLoadedGame() {
+        return inLoadedGame;
+    }
+
 
     //SETTERS//
     public static void setInstance(DungeonAdventure theInstance) {
@@ -120,10 +146,6 @@ public class DungeonAdventure implements Serializable {
         myHero = theHero;
     }
 
-    public boolean getInGame() {
-        return inGame;
-    }
-
     public void setInGame(boolean theInGame) {
         inGame = theInGame;
     }
@@ -136,37 +158,29 @@ public class DungeonAdventure implements Serializable {
         myDifficulty = theDifficulty;
     }
 
-    public String getMyDifficulty() {
-        return myDifficulty;
-    }
-
-    public String[] getMyPillars(){
-        return myPillars;
-    }
-
     public void setMyCurrMonster (Monster theMonster) {
         myCurrMonster = theMonster;
     }
 
-    public Monster getMyCurrMonster () {
-        return myCurrMonster;
-    }
-
     public Inventory setMyInventory(Inventory myInventory) {
             return this.myInventory = myInventory;
-
-    }
-
-    public boolean getInBattle() {
-        return inBattle;
     }
 
     public void setInBattle(boolean theInBattle) {
         inBattle = theInBattle;
     }
 
+    public void setMonsterDatabaseExists (boolean theMonsterDatabaseExists) {
+            monsterDatabaseExists = theMonsterDatabaseExists;
+    }
 
-
+    /**
+     * Sets if the current game was just loaded from a save file.
+     * @return
+     */
+    public void setLoadedGame(boolean theLoadedGame) {
+        inLoadedGame = theLoadedGame;
+    }
     /**
      *
      * @return random monster from database
@@ -213,5 +227,6 @@ public class DungeonAdventure implements Serializable {
         int row = MY_RANDOM.nextInt(monsters.size());
         return monsters.get(row);
     }
+
 
 }

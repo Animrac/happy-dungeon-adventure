@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
 
 public class CharacterSelectionController implements Initializable, StateHandler {
 
@@ -41,6 +44,8 @@ public class CharacterSelectionController implements Initializable, StateHandler
     public CharacterSelectionController() {
         model = DungeonAdventure.getInstance();
     }
+
+    private final int LIMIT = 9;
 
     @Override
     public void initialize(URL theURL, ResourceBundle theResourceBundle) { //this is every time a Parent is called i think
@@ -73,6 +78,21 @@ public class CharacterSelectionController implements Initializable, StateHandler
             Details d = (Details) nv;
             getDifficultySummary().setText(d.getText());
         });
+
+            heroName.lengthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable,
+                                Number oldValue, Number newValue) {
+                if (newValue.intValue() > oldValue.intValue()) {
+                    // Check if the new character is greater than LIMIT
+                    if (heroName.getText().length() >= LIMIT) {
+
+                        // if it's the 11th character, then setText to previous one
+                        heroName.setText(heroName.getText().substring(0, LIMIT));
+                    }
+                }
+            }
+            });
     }
 
 

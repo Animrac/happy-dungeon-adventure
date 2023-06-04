@@ -9,19 +9,18 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import src.Main.Main;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+
+import src.Main.Main;
 import src.Model.*;
 
 import java.io.*;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.ResourceBundle;
 
+import java.util.Arrays;
+import java.util.ResourceBundle;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -297,6 +296,24 @@ public class GameController implements Initializable, StateHandler {
         checkSurroundings(); // For arrow buttons.
         setRoom(); // For visualizing the current room.
 
+        if (model.getInBattle()){
+            model.setInBattle(false);
+            if (model.getMyCurrMonster().getHealth() <= 0) {
+                myNotification.setText(model.getMyCurrMonster().getName() + " was murdered :D");
+                notifyPlayer();
+            }
+            else { // Ran away
+                myNotification.setText("you ran for your life");
+            }
+            notifyPlayer();
+        }
+
+        if (model.getLoadedGame()) {
+            model.setLoadedGame(false);
+            myNotification.setText("loaded!");
+            notifyPlayer();
+        }
+
     }
 
     /**
@@ -312,41 +329,40 @@ public class GameController implements Initializable, StateHandler {
 
     @FXML
     void collectItem(ActionEvent event) {
+
+        StringBuilder log = new StringBuilder();
+
         MediaPlayer mediaPlayer = new MediaPlayer(collectSound);
         mediaPlayer.play();
+
 
         if (model.getMyRoom().getHasPillar()){
             model.getMyInventory().addPillar();
 
             // Displays current pillar
-            myNotification.setText(COLLECTED + "pillar of " + model.getMyPillars()[model.getMyInventory().getPillarCount()-1]);
-            notifyPlayer();
+            log.append((COLLECTED + "pillar of " + model.getMyPillars()[model.getMyInventory().getPillarCount()-1] + "\n"));
 
             if (model.getMyInventory().getPillarCount() == 4) {
-                myNotification.setText(ALL_PILLARS);
-                notifyPlayer();
+                log.append(ALL_PILLARS);
             }
         }
 
         if (model.getMyRoom().getHasHealingPotion()){
             model.getMyInventory().addHealthPotion();
 
-            myNotification.setText(COLLECTED + "health potion!");
+            log.append(COLLECTED + "health potion!\n");
             notifyPlayer();
         }
 
         if (model.getMyRoom().getHasVisionPotion()){
             model.getMyInventory().addVisionPotion();
 
-            myNotification.setText(COLLECTED + "vision potion!");
-            notifyPlayer();
+            log.append(COLLECTED + "vision potion!");
+
         }
 
-//        if (model.getMyRoom().getHasMultipleItems()){
-//            myNotification.setText(COLLECTED + "health potion and a vision potion!");
-//            notifyPlayer();
-//        }
-
+        myNotification.setText(log.toString());
+        notifyPlayer();
         model.getMyRoom().removeRoomItems();
         collectButton.setDisable(true);
 
@@ -549,12 +565,9 @@ public class GameController implements Initializable, StateHandler {
 
             int pitRandom = ThreadLocalRandom.current().nextInt(1, 20 + 1);
 
-//            System.out.println(model.getMyHero().getHealth() - pitRandom);
-
             model.getMyHero()
                     .setHealth(model.getMyHero().getHealth() - pitRandom);
 
-            // Remove the pit from the room.
 //            model.getMyRoom().setHasPit(false);
 
             myHealth.setText(Integer.toString(model.getMyHero().getHealth()));
@@ -649,6 +662,13 @@ public class GameController implements Initializable, StateHandler {
         }
         return chosenHero;
     }
+
+    @FXML
+    void restart (ActionEvent event){
+        Scene scene = SceneMaker.createScene("src/View/start.fxml");
+        Main.getPrimaryStage().setScene(scene);
+    }
+
 
 
 }

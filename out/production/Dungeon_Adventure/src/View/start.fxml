@@ -50,9 +50,9 @@
                   <Image url="@dungeonSplash.gif" />
                </image>
             </ImageView>
-            <Button fx:id="beginButton" layoutX="257.0" layoutY="272.0" mnemonicParsing="false" onAction="#showCharacterSelection" prefHeight="61.0" prefWidth="126.0" text="Play" textAlignment="CENTER">
+            <Button fx:id="beginButton" layoutX="245.0" layoutY="270.0" mnemonicParsing="false" onAction="#showCharacterSelection" prefHeight="69.0" prefWidth="143.0" text="PLAY" textAlignment="CENTER">
                <font>
-                  <Font size="37.0" />
+                  <Font name="System Bold" size="37.0" />
                </font>
             </Button>
             <ImageView fitHeight="242.0" fitWidth="453.0" layoutX="94.0" layoutY="14.0">

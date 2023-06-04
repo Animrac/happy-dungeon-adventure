@@ -39,67 +39,80 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <VBox fx:id="mainVBox" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.CharacterSelectionController">
   <children>
-    <MenuBar fx:id="myMenuBar" VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem fx:id="saveButton" disable="true" mnemonicParsing="false" text="Save Game" />
-            <MenuItem fx:id="loadButton" mnemonicParsing="false" onAction="#load" text="Load Game" />
-            <MenuItem fx:id="quitButton" mnemonicParsing="false" onAction="#quit" text="Exit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem fx:id="menuControls" mnemonicParsing="false" onAction="#showControls" text="Game Play Instructions" />
-                  <MenuItem fx:id="menuLore" mnemonicParsing="false" onAction="#showLore" text="About" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
     <AnchorPane fx:id="rootPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-        <Label alignment="CENTER" layoutX="21.0" layoutY="143.0" style="&#10;" text="Enter your NAME :)" textAlignment="CENTER" wrapText="false">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="441.0" layoutX="-28.0" layoutY="-34.0" stroke="BLACK" strokeType="INSIDE" width="680.0" />
+            <ImageView fitHeight="867.0" fitWidth="1144.0" layoutX="-496.0" layoutY="-175.0" opacity="0.29">
+               <image>
+                  <Image url="@dungeonSplash.gif" />
+               </image>
+            </ImageView>
+          <MenuBar fx:id="myMenuBar" prefHeight="26.0" prefWidth="652.0">
+            <menus>
+              <Menu mnemonicParsing="false" text="File">
+                <items>
+                  <MenuItem fx:id="saveButton" disable="true" mnemonicParsing="false" text="Save Game" />
+                  <MenuItem fx:id="loadButton" mnemonicParsing="false" onAction="#load" text="Load Game" />
+                        <MenuItem disable="true" mnemonicParsing="false" text="New Game" />
+                  <MenuItem fx:id="quitButton" mnemonicParsing="false" onAction="#quit" text="Exit" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Help">
+                <items>
+                  <MenuItem fx:id="menuControls" mnemonicParsing="false" onAction="#showControls" text="Game Play Instructions" />
+                        <MenuItem fx:id="menuLore" mnemonicParsing="false" onAction="#showLore" text="About" />
+                </items>
+              </Menu>
+            </menus>
+          </MenuBar>
+        <Label alignment="CENTER" layoutX="22.0" layoutY="175.0" style="&#10;" text="Enter your NAME :)" textAlignment="CENTER" textFill="#cfcfcf" wrapText="false">
           <font>
             <Font name="System Bold" size="20.0" />
           </font>
         </Label>
-            <TextField fx:id="heroName" alignment="CENTER" layoutX="219.0" layoutY="140.0" promptText="e.g. Isabelle...">
+            <TextField fx:id="heroName" alignment="CENTER" layoutX="220.0" layoutY="172.0" promptText="e.g. Isabelle...">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <Button fx:id="startButton" layoutX="244.0" layoutY="268.0" mnemonicParsing="false" onAction="#newGame" prefHeight="56.0" prefWidth="150.0" text="Start">
+            <Button fx:id="startButton" layoutX="252.0" layoutY="298.0" mnemonicParsing="false" onAction="#newGame" prefHeight="56.0" prefWidth="150.0" text="START">
                <font>
-                  <Font size="22.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="21.0" layoutY="83.0" style="&#10;" text="Select your HERO :)" textAlignment="CENTER" wrapText="false">
+            <Label alignment="CENTER" layoutX="22.0" layoutY="115.0" style="&#10;" text="Select your HERO :)" textAlignment="CENTER" textFill="#cfcfcf" wrapText="false">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="heroChoice" layoutX="292.0" layoutY="82.0" prefHeight="31.0" prefWidth="114.0" />
-            <Text fill="WHITE" layoutX="213.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I want to be a" />
-            <TextField fx:id="heroSummary" editable="false" layoutX="417.0" layoutY="82.0" prefHeight="31.0" prefWidth="199.0" />
-            <Label alignment="CENTER" layoutX="21.0" layoutY="203.0" style="&#10;" text="Choose your DIFFICULTY :)" textAlignment="CENTER" wrapText="false">
+            <ChoiceBox fx:id="heroChoice" layoutX="293.0" layoutY="114.0" prefHeight="31.0" prefWidth="114.0" />
+            <Text fill="WHITE" layoutX="211.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I want to be a">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
+            <TextField fx:id="heroSummary" editable="false" layoutX="418.0" layoutY="114.0" prefHeight="31.0" prefWidth="199.0" />
+            <Label alignment="CENTER" layoutX="22.0" layoutY="235.0" style="&#10;" text="Choose your DIFFICULTY :)" textAlignment="CENTER" textFill="#cfcfcf" wrapText="false">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Text layoutX="20.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
+            <Text fill="#e1e1e1" layoutX="21.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
                <font>
                   <Font name="System Bold" size="38.0" />
                </font>
             </Text>
-            <ChoiceBox fx:id="difficultyChoice" layoutX="286.0" layoutY="202.0" prefHeight="31.0" prefWidth="114.0" />
-            <TextField fx:id="difficultySummary" editable="false" layoutX="411.0" layoutY="202.0" prefHeight="31.0" prefWidth="199.0" />
+            <ChoiceBox fx:id="difficultyChoice" layoutX="287.0" layoutY="234.0" prefHeight="31.0" prefWidth="114.0" />
+            <TextField fx:id="difficultySummary" editable="false" layoutX="412.0" layoutY="234.0" prefHeight="31.0" prefWidth="199.0" />
       </children>
     </AnchorPane>
   </children>

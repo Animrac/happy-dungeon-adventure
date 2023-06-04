@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+
 import src.Main.Main;
 import src.Model.*;
 
@@ -98,15 +99,15 @@ public class BattleController implements Initializable {
 //                model.getMyDungeonLayout().getMyDungeonRooms()
 //                        [model.getMyDungeonLayout().getCurrRow()][model.getMyDungeonLayout().getCurrCol()]
 //                        .getHasPillar()) { // OGRE OR BOSS MONSTER
-        if (model.getMyCurrMonster().getHealth() == 200) { // OGRE
+        if (model.getMyCurrMonster().getName().equals("Tom Nook #1 (Ogre)")) { // OGRE
             bossMonster.setFitHeight(200);
             bossMonster.setFitWidth(130);
         }
-        else if (model.getMyCurrMonster().getHealth() == 70) { // GREMLIN
+        else if (model.getMyCurrMonster().getName().equals("Tom Nook #2 (Gremlin)")) { // GREMLIN
             bossMonster.setFitHeight(20);
             bossMonster.setFitWidth(13);
         }
-        else if (model.getMyCurrMonster().getHealth() == 80) { // SKELETON
+        else if (model.getMyCurrMonster().getName().equals("Tom Nook #3 (Skeleton)")) { // SKELETON
             bossMonster.setFitHeight(70);
             bossMonster.setFitWidth(45.5);
         }
@@ -145,7 +146,7 @@ public class BattleController implements Initializable {
     }
 
     @FXML
-    void specialAttack(ActionEvent event) { //TODO JUST A NORMAL ATTACK
+    void specialAttack(ActionEvent event) { //TODO JUST A NORMAL ATTACK WE NEED A SPECIAL ATTACK
 
         StringBuilder log = new StringBuilder();
 
@@ -212,61 +213,22 @@ public class BattleController implements Initializable {
 
     @FXML
     void runAway(ActionEvent event) {
-        model.setInBattle(false);
+
         model.getMyRoom().removeRoomMonster();
 
         Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");
         Main.getPrimaryStage().setScene(scene);
     }
 
-
-
-
-
-    public static void battle(Hero hero, Monster monster) {
-        while (hero.alive() && monster.alive() && !hero.runAway()) {
-            System.out.println(hero.getName() + " hit points: " + hero.getHealth());
-            System.out.println(monster.getName() + "hit points: " + monster.getHealth());
-            hero.attack(monster);
-
-            if(!hero.runAway()) {
-                monster.attack(hero);
-            }
-            else {
-                System.out.println(hero.getName() + " bravely ran away...");
-            }
-        }
-        if(monster.alive()) {
-            System.out.println(monster.getName() + " defeated " + hero.getName() + "!");
-        }
-        else {
-            System.out.println(hero.getName() + " defeated " + monster.getName() + "!");
-        }
-    }
-
     private void checkHealth() {
         if (model.getMyCurrMonster().getHealth() <= 0) {
-            myLog.setText(model.getMyCurrMonster().getName() + " was killed :D");
-            model.setInBattle(false);
             Scene scene = SceneMaker.createScene("src/View/mainGame.fxml");
             Main.getPrimaryStage().setScene(scene);
         }
         if (model.getMyHero().getHealth() <= 0) {
-            model.setInBattle(false);
             Scene scene = SceneMaker.createScene("src/View/badEnd.fxml");
             Main.getPrimaryStage().setScene(scene);
         }
     }
-
-    /**
-     *
-     */
-//    public void gamePlay() {
-//        Monster monster = spawnMonster();
-//        System.out.println("Oh no! A " + monster.getClass() + " has spawned!");
-//        battle(hero, monster);
-//    }
-
-
 
 }

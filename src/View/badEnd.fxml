@@ -44,7 +44,7 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-            <Text fill="#d44141" layoutX="92.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How sad!&#10;&#10;You died." textAlignment="CENTER" wrappingWidth="456.34678649902344">
+            <Text fill="#d44141" layoutX="92.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How sad!&#10;&#10;You died :(" textAlignment="CENTER" wrappingWidth="456.34678649902344">
                <font>
                   <Font name="System Bold" size="33.0" />
                </font>

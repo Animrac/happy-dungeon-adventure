@@ -28,7 +28,7 @@ public class heroThree extends Hero implements Serializable {
      * @param theName the name chosen by the player for the hero
      */
     public heroThree (final String theName) {
-        super(theName, 120, 20, 40, .9, 3, 3, .4);
+        super(theName, 120, 20, 40, .7, 3, 3, .4);
     }
 
     /**
