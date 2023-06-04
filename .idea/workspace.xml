@@ -11,8 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Hero class unit test code update.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/monsterFactory.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/HeroOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/HeroOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/HeroThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/HeroThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/MonsterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/MonsterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +107,7 @@
       <recent name="src.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.HeroTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
       <module name="Dungeon_Adventure" />
@@ -118,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DungeonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeroTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -127,7 +131,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
-      <option name="MAIN_CLASS_NAME" value="src.UnitTest.DungeonTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.HeroTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,7 +153,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeroTest.testValidConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -158,13 +162,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
-      <option name="MAIN_CLASS_NAME" value="src.UnitTest.InventoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.HeroTest" />
+      <option name="METHOD_NAME" value="testValidConstructor" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MonsterTest.testMonsterConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -173,26 +178,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
-      <option name="MAIN_CLASS_NAME" value="src.UnitTest.RoomTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.MonsterTest" />
+      <option name="METHOD_NAME" value="testMonsterConstructor" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DungeonTest" />
-      <item itemvalue="JUnit.InventoryTest" />
-      <item itemvalue="JUnit.RoomTest" />
+      <item itemvalue="JUnit.HeroTest" />
+      <item itemvalue="JUnit.HeroTest.testValidConstructor" />
+      <item itemvalue="JUnit.MonsterTest.testMonsterConstructor" />
       <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.DungeonTest" />
+        <item itemvalue="JUnit.HeroTest" />
+        <item itemvalue="JUnit.MonsterTest.testMonsterConstructor" />
         <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
-        <item itemvalue="JUnit.RoomTest" />
-        <item itemvalue="JUnit.InventoryTest" />
+        <item itemvalue="JUnit.HeroTest.testValidConstructor" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -242,6 +248,8 @@
       <workItem from="1685725226164" duration="6499000" />
       <workItem from="1685734706952" duration="13325000" />
       <workItem from="1685857668616" duration="36000" />
+      <workItem from="1685906996732" duration="931000" />
+      <workItem from="1685912279833" duration="2466000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -558,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685779288514</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Hero class unit test code update.">
+      <created>1685907101701</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1685907101701</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

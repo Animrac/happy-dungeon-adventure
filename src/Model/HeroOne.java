@@ -7,7 +7,7 @@ package src.Model;
  * @author Anastasia Vilenius
  * @version 05/09/23
  */
-public class heroOne extends Hero {
+public class HeroOne extends Hero {
 
     /**
      * Indicates minimum of damage that can be generated from a special attack.
@@ -24,7 +24,7 @@ public class heroOne extends Hero {
      *
      * @param theName the name chosen by the player for the hero
      */
-    public heroOne(final String theName) {
+    public HeroOne(final String theName) {
         super(theName, 150, 40, 60, .8, .2, 2, .2);
 //        setMinSpecialDamage(75);
 //        setMaxSpecialDamage(175);

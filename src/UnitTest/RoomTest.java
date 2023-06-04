@@ -134,7 +134,7 @@ class RoomTest {
         System.out.println("Checking roomWithItem pit...");
         assertEquals(false,roomWithItem.getHasPit());
 
-        // Why room with pillar will have monster there? Is it default has it from the project description?
+        // When the room has the pillar, there is default setting with a monster in it
         System.out.println("Checking roomWithItem monster...");
         assertEquals(true,roomWithItem.getHasMonster());
     }

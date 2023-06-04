@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author Anastasia Vilenius
  * @version 05/09/23
  */
-public class heroThree extends Hero implements Serializable {
+public class HeroThree extends Hero implements Serializable {
 
     /**
      * Indicates minimum of damage that can be generated from a special attack.
@@ -27,7 +27,7 @@ public class heroThree extends Hero implements Serializable {
      *
      * @param theName the name chosen by the player for the hero
      */
-    public heroThree (final String theName) {
+    public HeroThree(final String theName) {
         super(theName, 120, 20, 40, .7, 3, 3, .4);
     }
 
