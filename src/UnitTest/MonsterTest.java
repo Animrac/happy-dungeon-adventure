@@ -26,7 +26,7 @@ public class MonsterTest {
     }
 
 
-    // Subclass of Monster that we can instantiate in this package
+    // Subclass of Monster that we can instantiate in this package (So it won't interfere the encapsulation of Monster class)
     class TestMonster extends Monster {
         public TestMonster(String theName, int theHealth, int theMinDamage, int theMaxDamage,
                            double theAttackOdds, double theBlockOdds, int theAttackSpeed) {

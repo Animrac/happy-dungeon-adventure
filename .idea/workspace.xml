@@ -9,14 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Hero class unit test code update.">
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Monster class unit test code update.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/HeroOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/HeroOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/HeroThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/HeroThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTest/MonsterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/MonsterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +101,7 @@
       <recent name="src.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HeroTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
       <module name="Dungeon_Adventure" />
@@ -194,11 +188,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.HeroTest" />
         <item itemvalue="JUnit.MonsterTest.testMonsterConstructor" />
         <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
         <item itemvalue="JUnit.HeroTest.testValidConstructor" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +243,7 @@
       <workItem from="1685734706952" duration="13325000" />
       <workItem from="1685857668616" duration="36000" />
       <workItem from="1685906996732" duration="931000" />
-      <workItem from="1685912279833" duration="2466000" />
+      <workItem from="1685912279833" duration="3023000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -573,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685907101701</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Monster class unit test code update.">
+      <created>1685918607165</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1685918607165</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +604,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added main class to model &amp; cleaned up Adventurer" />
     <MESSAGE value="Cleaned up Hero class" />
     <MESSAGE value="Worked on driver class" />
     <MESSAGE value="Coded basic hero and monster child classes" />
@@ -628,7 +628,8 @@
     <MESSAGE value="RoomTest unit test code update." />
     <MESSAGE value="DungeonTest unit test code update." />
     <MESSAGE value="Hero class unit test code update." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hero class unit test code update." />
+    <MESSAGE value="Monster class unit test code update." />
+    <option name="LAST_COMMIT_MESSAGE" value="Monster class unit test code update." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
