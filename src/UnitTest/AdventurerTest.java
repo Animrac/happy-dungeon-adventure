@@ -19,7 +19,7 @@ public class AdventurerTest {
     @BeforeEach
     public void setUp() {
         adventurer = new TestableAdventurer("Hero", 150, 10, 40, 50.0, 50.0, 2);
-        opponent = new TestableAdventurer("Monster", 100, 10, 20, 50.0, 50.0, 2);
+        opponent = new TestableAdventurer("Monster", 80, 10, 20, 50.0, 50.0, 2);
     }
 
     // Test the adventurer's health is correctly updated
