@@ -227,6 +227,4 @@ public class DungeonAdventure implements Serializable {
         int row = MY_RANDOM.nextInt(monsters.size());
         return monsters.get(row);
     }
-
-
 }

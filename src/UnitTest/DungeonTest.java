@@ -1,47 +1,53 @@
 package src.UnitTest;
+import org.junit.jupiter.api.BeforeEach;
 import src.Model.Dungeon;
+import src.Model.Room;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class DungeonTest {
+    private Dungeon dungeon1;
+    private Dungeon dungeon2;
 
-    @Test
-    public void testCustomConstructor() {
-        Dungeon dungeon = new Dungeon(10, 10);
-         /**
-          * Check that the dungeon dimensions are as expected,
-         *+2 is to add the boarder that originally added inside the dungeon layout
-         * Which it won't be counted inside the dungeon?
-         */
-        assertEquals(dungeon.getDungeonLayout().length, 10 + 2);
-        assertEquals(dungeon.getDungeonLayout()[0].length, 10 + 2);
-        // Check that the dungeon is traversable
-        assertEquals(true,dungeon.isItTraversable());
+    // Set up method to initialize the dungeons before each test
+    @BeforeEach
+    public void setUp() {
+        dungeon1 = new Dungeon();
+        dungeon2 = new Dungeon(10,10);
     }
 
+    // Test the functionality of the Dungeon constructor with custom size
+    @Test
+    public void testCustomConstructor() {
+        assertEquals(dungeon2.getDungeonLayout().length, 10 + 2);
+        assertEquals(dungeon2.getDungeonLayout()[0].length, 10 + 2);
+        // Make sure that the generated dungeon is traversable
+        assertEquals(true,dungeon2.isItTraversable());
+    }
+
+    // Test the generation of rooms in the dungeon
     @Test
     public void testRoomGeneration() {
-        Dungeon dungeon = new Dungeon(10, 10);
-        // Check that each cell of the dungeon contains a room
-        for (int i = 0; i < dungeon.getDungeonLayout().length; i++) {
-            for (int j = 0; j < dungeon.getDungeonLayout()[0].length; j++) {
-                assertNotNull(dungeon.getMyDungeonRooms()[i][j]);
+        // Make sure that each cell in the dungeon has a room
+        for (int i = 0; i < dungeon2.getDungeonLayout().length; i++) {
+            for (int j = 0; j < dungeon2.getDungeonLayout()[0].length; j++) {
+                assertNotNull(dungeon2.getMyDungeonRooms()[i][j]);
             }
         }
     }
 
+    // Test the location of start, end, and pillars in the dungeon
     @Test
     public void testStartEndPillarLocation() {
-        Dungeon dungeon = new Dungeon();
-        // Check that the dungeon contains a start location, an end location, and four pillars
         int entryCount = 0;
         int exitCount = 0;
         int pillarCount = 0;
-        //Go through all the rooms in the dungeon, make sure there is only 1 entry and exit, and 4 pillars
-        for (int i = 0; i < dungeon.getDungeonLayout().length; i++) {
-            for (int j = 0; j < dungeon.getDungeonLayout()[0].length; j++) {
-                char cell = dungeon.getDungeonLayout()[i][j];
+        // Loop through each room to count the occurrences.
+        for (int i = 0; i < dungeon1.getDungeonLayout().length; i++) {
+            for (int j = 0; j < dungeon1.getDungeonLayout()[0].length; j++) {
+                char cell = dungeon1.getDungeonLayout()[i][j];
                 if (cell == 'S') {
                     entryCount++;
                 } else if (cell == 'E') {
@@ -51,8 +57,29 @@ public class DungeonTest {
                 }
             }
         }
+        // Make sure there is only one start, one end, and four pillars in the dungeon
         assertEquals(entryCount, 1);
         assertEquals(exitCount, 1);
         assertEquals(pillarCount, 4);
+    }
+
+    // Test the isTraversable() method of Dungeon
+    @Test
+    public void testIsTraversable() {
+        assertEquals(true,dungeon1.isItTraversable());
+    }
+
+    // Test the addRooms() method of Dungeon
+    @Test
+    public void testAddRooms() {
+        // Adds rooms to the dungeon
+        dungeon1.addRooms();
+        Room[][] rooms = dungeon1.getMyDungeonRooms();
+        // Make sure that each cell in the dungeon contains a room
+        for (Room[] row : rooms) {
+            for (Room room : row) {
+                assertNotNull(room);
+            }
+        }
     }
 }

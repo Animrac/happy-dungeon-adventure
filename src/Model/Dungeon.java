@@ -3,7 +3,7 @@ package src.Model;
 import java.io.Serializable;
 import java.util.concurrent.ThreadLocalRandom;
 
-    /*
+    /**
 
     Dungeon Map 2d Array Key:
     X - Wall
@@ -294,14 +294,6 @@ public class Dungeon implements Serializable {
         return startRow;
     }
 
-    public void setStartRow(int theStartRow) {
-        startRow = theStartRow;
-    } //might be useful for saving
-
-    public void setStartCol(int theStartCol) {
-        startCol = theStartCol;
-    }
-
     public int getStartCol() {
         return startCol;
     }
@@ -309,10 +301,6 @@ public class Dungeon implements Serializable {
     public char[][] getDungeonLayout() {
         return myDungeonLayout;
     }
-
-//    public void setDungeonLayout(Dungeon dungeonLayout) {
-//        this.myDungeonLayout = myDungeonLayout;
-//    }
 
     public int getCurrCol(){
         return currCol;

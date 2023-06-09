@@ -15,6 +15,11 @@ public class HeroTestHelper {
         public void subtractHitPoints(final int theAmount) {
             super.subtractHitPoints(theAmount);
         }
+
+        // Expose protected method setRunAway for testing
+        public void setTestRunAway(final boolean theRunAway) {
+            setRunAway(theRunAway);
+        }
     }
 
     static class TestableHeroTwo extends HeroTwo {
@@ -42,3 +47,4 @@ public class HeroTestHelper {
     }
 
 }
+

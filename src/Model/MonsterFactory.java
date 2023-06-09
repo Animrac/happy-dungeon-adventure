@@ -97,23 +97,6 @@ public class MonsterFactory implements Serializable {
                         rs.getDouble("BLOCK_ODDS"),
                         rs.getInt("ATTACK_SPEED")
                 );
-
-//                //walk through each 'row' of results, grab data by column/field name
-//                // and print it
-//                while ( rs.next() ) {
-//                    String name = rs.getString( "NAME" );
-//                    String health = rs.getString( "HEALTH" );
-//                    String minDamage = rs.getString( "MIN_DAMAGE" );
-//                    String maxDamage = rs.getString( "MAX_DAMAGE" );
-//                    String attackOdds = rs.getString( "ATTACK_ODDS" );
-//                    String blockOdds = rs.getString( "BLOCK_ODDS" );
-//                    String attackSpeed = rs.getString( "ATTACK_SPEED" );
-//
-//                    System.out.println( "Result: Name = " + name +
-//                            ", Health = " + health + minDamage + maxDamage + attackOdds + blockOdds + attackSpeed);
-//                }
-
-
             } catch (SQLException e) {
                 e.printStackTrace();
                 System.exit(0);

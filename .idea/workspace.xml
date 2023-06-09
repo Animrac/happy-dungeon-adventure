@@ -10,7 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="Monster class unit test code update.">
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/AdventurerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Dungeon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DungeonAdventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/HeroOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/HeroOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MonsterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MonsterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/DungeonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/DungeonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/HeroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/HeroTestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/HeroTestHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/InventoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/InventoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/MonsterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/MonsterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,22 +113,8 @@
       <recent name="src.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
-      <module name="Dungeon_Adventure" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$PROJECT_DIR$/lib/javafx-sdk-20.0.1/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.Main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HeroTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MonsterTest">
+    <configuration name="AdventurerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -125,8 +123,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
-      <option name="MAIN_CLASS_NAME" value="src.UnitTest.HeroTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.AdventurerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdventurerTest.testSetAttackSpeed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.AdventurerTest" />
+      <option name="METHOD_NAME" value="testSetAttackSpeed" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,7 +161,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HeroTest.testValidConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -156,14 +170,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
-      <option name="MAIN_CLASS_NAME" value="src.UnitTest.HeroTest" />
-      <option name="METHOD_NAME" value="testValidConstructor" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.InventoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MonsterTest.testMonsterConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MonsterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
       <extension name="coverage">
         <pattern>
@@ -173,26 +186,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="src.UnitTest" />
       <option name="MAIN_CLASS_NAME" value="src.UnitTest.MonsterTest" />
-      <option name="METHOD_NAME" value="testMonsterConstructor" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.HeroTest" />
-      <item itemvalue="JUnit.HeroTest.testValidConstructor" />
-      <item itemvalue="JUnit.MonsterTest.testMonsterConstructor" />
+      <item itemvalue="JUnit.AdventurerTest" />
+      <item itemvalue="JUnit.AdventurerTest.testSetAttackSpeed" />
+      <item itemvalue="JUnit.InventoryTest" />
+      <item itemvalue="JUnit.MonsterTest" />
       <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.HeroTest" />
-        <item itemvalue="JUnit.MonsterTest.testMonsterConstructor" />
+        <item itemvalue="JUnit.MonsterTest" />
+        <item itemvalue="JUnit.InventoryTest" />
         <item itemvalue="JUnit.HeroTest.testSubtractHitPoints" />
-        <item itemvalue="JUnit.HeroTest.testValidConstructor" />
+        <item itemvalue="JUnit.AdventurerTest" />
+        <item itemvalue="JUnit.AdventurerTest.testSetAttackSpeed" />
       </list>
     </recent_temporary>
   </component>
@@ -247,6 +259,8 @@
       <workItem from="1685919127387" duration="203000" />
       <workItem from="1685987576870" duration="808000" />
       <workItem from="1685990907400" duration="2669000" />
+      <workItem from="1686274762066" duration="1311000" />
+      <workItem from="1686323133241" duration="9900000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -584,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685919324983</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Monster class unit test code update.">
+      <created>1686274811629</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1686274811629</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

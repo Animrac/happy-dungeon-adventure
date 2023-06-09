@@ -108,6 +108,7 @@ class RoomTest {
         assertEquals(false,roomExit.getHasMonster());
     }
 
+    // Test if the RoomWithItem has been initialized correctly
     @Test
     void testRoomWithItem () {
         System.out.println("Checking roomWithItem north...");
@@ -139,6 +140,7 @@ class RoomTest {
         assertEquals(true,roomWithItem.getHasMonster());
     }
 
+    // Test if the EmptyRoom has been initialized correctly
     @Test
     void testEmptyRoom() {
         System.out.println("Checking roomEmpty north...");

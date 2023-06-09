@@ -66,7 +66,7 @@ public abstract class Hero extends Adventurer implements Serializable {
      *
      * @param theRunAway whether a hero chose to run away or not
      */
-    private void setRunAway(final boolean theRunAway) {
+    protected void setRunAway(final boolean theRunAway) {
         myRunAway = theRunAway;
     }
 
@@ -117,8 +117,6 @@ public abstract class Hero extends Adventurer implements Serializable {
      * @param theOpponent the monster that the hero battles
      */
     protected void specialAttack(final Adventurer theOpponent) {}
-
-
     /**
      * Overrides subtractHitPoints method in Adventure class by allowing hero a chance to block
      * an attack from a monster.
@@ -155,38 +153,6 @@ public abstract class Hero extends Adventurer implements Serializable {
 
         return choice;
     }
-
-//    public int getVisionPotionCount() {
-//        return myInventory.getVisionPotionCount();
-//    }
-//
-//    public void addVisionPotion() {
-//        myInventory.addVisionPotion();
-//    }
-//
-//    public void removeVisionPotion() {
-//        myInventory.removeVisionPotion();
-//    }
-//
-//    public int getHealthPotionCount() {
-//        return myInventory.getHealthPotionCount();
-//    }
-//
-//    public void addHealthPotion() {
-//        myInventory.addHealthPotion();
-//    }
-//
-//    public void removeHealthPotion() {
-//        myInventory.removeHealthPotion();
-//    }
-//
-//    public void addPillar() {
-//        myInventory.addPillar();
-//    }
-//
-//    public void getPillarCount() {
-//        myInventory.getPillarCount();
-//    }
 }
 
 

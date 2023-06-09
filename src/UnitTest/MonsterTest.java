@@ -11,11 +11,14 @@ public class MonsterTest {
 
     @BeforeEach
     public void setUp() {
+        // Initialize a test monster with predefined attributes
         monster = new TestMonster("TestMonster", 100, 20, 40, 0.6, 0.3, 2);
     }
 
+    // Test if the Monster constructor correctly sets all properties
     @Test
     public void testMonsterConstructor() {
+        // Check if all properties are set correctly during construction
         assertEquals("TestMonster", monster.getName());
         assertEquals(100, monster.getHealth());
         assertEquals(20, monster.getMinDamage());
