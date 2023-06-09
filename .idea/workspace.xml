@@ -244,6 +244,9 @@
       <workItem from="1685857668616" duration="36000" />
       <workItem from="1685906996732" duration="931000" />
       <workItem from="1685912279833" duration="3023000" />
+      <workItem from="1685919127387" duration="203000" />
+      <workItem from="1685987576870" duration="808000" />
+      <workItem from="1685990907400" duration="2669000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -574,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685918607165</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Monster class unit test code update.">
+      <created>1685919324983</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1685919324983</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
