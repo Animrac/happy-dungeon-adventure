@@ -654,11 +654,11 @@ public class GameController implements Initializable, StateHandler {
         Hero chosenHero = null;
 
         if (model.getMyClass().equals("Warrior")) {
-            chosenHero = new heroOne(model.getMyName());
+            chosenHero = new HeroOne(model.getMyName());
         } else if (model.getMyClass().equals("Thief")) {
-            chosenHero = new heroTwo(model.getMyName());
+            chosenHero = new HeroTwo(model.getMyName());
         } else if (model.getMyClass().equals("Priestess")) {
-            chosenHero = new heroThree(model.getMyName());
+            chosenHero = new HeroThree(model.getMyName());
         }
         return chosenHero;
     }
