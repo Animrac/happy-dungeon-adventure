@@ -9,26 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/monsterFactory.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/controls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/controls.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/pillarColumn.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/pillarColumn.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/tomnook.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/tomnook.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EndingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EndingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InventoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SceneMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SceneMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/controls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/controls.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/nameCharacter.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/pillarColumn.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/pillarColumn.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/tomnook.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/tomnook.png" afterDir="false" />
-    </list>
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="edited a few things, controls scene, name character scene, and beginning scene" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,12 +24,12 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/AnastasiaBranch" />
+    <option name="BRANCH" value="origin/HuiWagnerBranch" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="CarminaBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,25 +50,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CarminaBranch&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mina/Desktop/tcss2023/Dungeon_Adventure/src/sqlite-jdbc-3.34.0.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "CarminaBranch",
+    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-20.0.1/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mina\Desktop\tcss2023\Dungeon_Adventure\src" />
@@ -182,6 +163,7 @@
       <workItem from="1685854962902" duration="1909000" />
       <workItem from="1685915184969" duration="2071000" />
       <workItem from="1685989872827" duration="5640000" />
+      <workItem from="1686374454580" duration="283000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -505,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685851743231</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="edited a few things, controls scene, name character scene, and beginning scene">
+      <created>1686374615207</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1686374615207</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +524,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="merged everyone's current files, added a line to make DungeonAdventure run" />
     <MESSAGE value="added JavaFX library and dependency and tried making a little window and button with label" />
     <MESSAGE value="added more JavaFX GUI and main name scene" />
     <MESSAGE value="added somewhat working code for GUI but still broken" />
@@ -560,7 +548,8 @@
     <MESSAGE value="made the JavaFX UI better in the inventory and battle, resized enemies based on enemy type, sound effects are less annoying" />
     <MESSAGE value="removed some console output and made UI a little better" />
     <MESSAGE value="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar" />
+    <MESSAGE value="edited a few things, controls scene, name character scene, and beginning scene" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited a few things, controls scene, name character scene, and beginning scene" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
