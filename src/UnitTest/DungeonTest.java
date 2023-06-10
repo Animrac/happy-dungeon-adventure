@@ -11,14 +11,14 @@ public class DungeonTest {
     private Dungeon dungeon1;
     private Dungeon dungeon2;
 
-    // Set up method to initialize the dungeons before each test
+    /**Set up method to initialize the dungeons before each test*/
     @BeforeEach
     public void setUp() {
         dungeon1 = new Dungeon();
         dungeon2 = new Dungeon(10,10);
     }
 
-    // Test the functionality of the Dungeon constructor with custom size
+    /**Test the functionality of the Dungeon constructor with custom size*/
     @Test
     public void testCustomConstructor() {
         assertEquals(dungeon2.getDungeonLayout().length, 10 + 2);
@@ -27,7 +27,7 @@ public class DungeonTest {
         assertEquals(true,dungeon2.isItTraversable());
     }
 
-    // Test the generation of rooms in the dungeon
+    /**Test the generation of rooms in the dungeon*/
     @Test
     public void testRoomGeneration() {
         // Make sure that each cell in the dungeon has a room
@@ -38,7 +38,7 @@ public class DungeonTest {
         }
     }
 
-    // Test the location of start, end, and pillars in the dungeon
+    /**Test the location of start, end, and pillars in the dungeon*/
     @Test
     public void testStartEndPillarLocation() {
         int entryCount = 0;
@@ -57,19 +57,19 @@ public class DungeonTest {
                 }
             }
         }
-        // Make sure there is only one start, one end, and four pillars in the dungeon
+        /**Make sure there is only one start, one end, and four pillars in the dungeon*/
         assertEquals(entryCount, 1);
         assertEquals(exitCount, 1);
         assertEquals(pillarCount, 4);
     }
 
-    // Test the isTraversable() method of Dungeon
+    /**Test the isTraversable() method of Dungeon*/
     @Test
     public void testIsTraversable() {
         assertEquals(true,dungeon1.isItTraversable());
     }
 
-    // Test the addRooms() method of Dungeon
+    /**Test the addRooms() method of Dungeon*/
     @Test
     public void testAddRooms() {
         // Adds rooms to the dungeon

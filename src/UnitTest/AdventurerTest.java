@@ -22,7 +22,7 @@ public class AdventurerTest {
         opponent = new TestableAdventurer("Monster", 80, 10, 20, 50.0, 50.0, 2);
     }
 
-    // Test the adventurer's health is correctly updated
+    /** Test the adventurer's health is correctly updated*/
     @Test
     public void testSetHealth() {
         int health = 80;
@@ -30,7 +30,7 @@ public class AdventurerTest {
         assertEquals(health, adventurer.getHealth());
     }
 
-    // Test hit points are correctly subtracted from the adventurer's health
+    /**Test hit points are correctly subtracted from the adventurer's health*/
     @Test
     public void testSubtractHitPoints() {
         int initialHealth = adventurer.getHealth();
@@ -39,7 +39,7 @@ public class AdventurerTest {
         assertEquals(initialHealth - damage, adventurer.getHealth());
     }
 
-    // Test the adventurer's minimum damage value is correctly updated
+    /** Test the adventurer's minimum damage value is correctly updated*/
     @Test
     public void testSetMinDamage() {
         int minDamage = 15;
@@ -47,7 +47,7 @@ public class AdventurerTest {
         assertEquals(minDamage, adventurer.getMinDamage());
     }
 
-    // Test that the adventurer's maximum damage value is correctly updated
+    /** Test that the adventurer's maximum damage value is correctly updated*/
     @Test
     public void testSetMaxDamage() {
         int maxDamage = 30;
@@ -55,7 +55,7 @@ public class AdventurerTest {
         assertEquals(maxDamage, adventurer.getMaxDamage());
     }
 
-    // Test the adventurer's attack odds value is correctly updated
+    /** Test the adventurer's attack odds value is correctly updated*/
     @Test
     public void testSetAttackOdds() {
         double attackOdds = 70.0;
@@ -63,7 +63,7 @@ public class AdventurerTest {
         assertEquals(attackOdds, adventurer.getAttackOdds());
     }
 
-    // Test the adventurer's block odds value is correctly updated
+    /**Test the adventurer's block odds value is correctly updated*/
     @Test
     public void testSetBlockOdds() {
         double blockOdds = 40.0;
@@ -71,7 +71,7 @@ public class AdventurerTest {
         assertEquals(blockOdds, adventurer.getBlockOdds());
     }
 
-    // Test the adventurer's attack speed is correctly updated
+    /** Test the adventurer's attack speed is correctly updated*/
     @Test
     public void testSetAttackSpeed() {
         int attackSpeed = 3;
@@ -79,7 +79,7 @@ public class AdventurerTest {
         assertEquals(attackSpeed, adventurer.getAttackSpeed());
     }
 
-    // Test the alive method correctly identifies if the adventurer is alive or not
+    /** Test the alive method correctly identifies if the adventurer is alive or not*/
     @Test
     public void testAlive() {
         assertEquals(true,adventurer.alive());
@@ -87,7 +87,7 @@ public class AdventurerTest {
         assertEquals(false,adventurer.alive());
     }
 
-    // Test damage generation falls within the defined minimum and maximum damage range
+    /** Test damage generation falls within the defined minimum and maximum damage range*/
     @Test
     public void testGenerateDamage() {
         for (int i = 0; i < 1000; i++) {
@@ -96,7 +96,7 @@ public class AdventurerTest {
         }
     }
 
-    // Test an attack from the adventurer correctly reduces the opponent's health
+    /** Test an attack from the adventurer correctly reduces the opponent's health*/
     @Test
     public void testAttack() {
         int initialOpponentHealth = opponent.getHealth();
@@ -104,7 +104,7 @@ public class AdventurerTest {
         assertEquals(true,opponent.getHealth() <= initialOpponentHealth);
     }
 
-    // Test a fainted (zero health) adventurer can't inflict damage on the opponent
+    /** Test a fainted (zero health) adventurer can't inflict damage on the opponent*/
     @Test
     public void testAttackFaintedAdventurer() {
         adventurer.setHealth(0);

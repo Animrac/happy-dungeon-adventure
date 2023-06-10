@@ -12,7 +12,7 @@ public class InventoryTest {
         inventory = new Inventory();
     }
 
-    // Test that adding a vision potion increments the count correctly
+    /** Test that adding a vision potion increments the count correctly*/
     @Test
     void testAddVisionPotion() {
         inventory.addVisionPotion();
@@ -21,7 +21,7 @@ public class InventoryTest {
         assertEquals(1, result);
     }
 
-    // Test that removing a vision potion decrements the count correctly
+    /** Test that removing a vision potion decrements the count correctly*/
     @Test
     void testRemoveVisionPotion() {
         inventory.addVisionPotion();
@@ -31,7 +31,7 @@ public class InventoryTest {
         assertEquals(0, result);
     }
 
-    // Test that adding health potions increments the count correctly
+    /** Test that adding health potions increments the count correctly*/
     @Test
     void testAddHealthPotion() {
         inventory.addHealthPotion();
@@ -41,7 +41,7 @@ public class InventoryTest {
         assertEquals(2,result);
     }
 
-    // Test that removing health potions decrements the count correctly
+    /** Test that removing health potions decrements the count correctly*/
     @Test
     void testRemoveHealthPotion() {
         inventory.addHealthPotion();
@@ -54,7 +54,7 @@ public class InventoryTest {
         assertEquals(3,result);
     }
 
-    // Test that adding pillars increments the count correctly
+    /**Test that adding pillars increments the count correctly*/
     @Test
     void testAddPillar() {
         inventory.addPillar();

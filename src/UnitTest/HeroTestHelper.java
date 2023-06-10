@@ -10,13 +10,13 @@ public class HeroTestHelper {
             super(name);
         }
 
-        // Expose protected method for testing
+        /** Expose protected method for testing*/
         @Override
         public void subtractHitPoints(final int theAmount) {
             super.subtractHitPoints(theAmount);
         }
 
-        // Expose protected method setRunAway for testing
+        /** Expose protected method setRunAway for testing*/
         public void setTestRunAway(final boolean theRunAway) {
             setRunAway(theRunAway);
         }
@@ -27,7 +27,7 @@ public class HeroTestHelper {
             super(name);
         }
 
-        // Expose protected method for testing
+        /** Expose protected method for testing*/
         @Override
         public void subtractHitPoints(final int theAmount) {
             super.subtractHitPoints(theAmount);
@@ -39,7 +39,7 @@ public class HeroTestHelper {
             super(name);
         }
 
-        // Expose protected method for testing
+        /** Expose protected method for testing*/
         @Override
         public void subtractHitPoints(final int theAmount) {
             super.subtractHitPoints(theAmount);

@@ -11,11 +11,11 @@ public class MonsterTest {
 
     @BeforeEach
     public void setUp() {
-        // Initialize a test monster with predefined attributes
+        /** Initialize a test monster with predefined attributes*/
         monster = new TestMonster("TestMonster", 100, 20, 40, 0.6, 0.3, 2);
     }
 
-    // Test if the Monster constructor correctly sets all properties
+    /** Test if the Monster constructor correctly sets all properties*/
     @Test
     public void testMonsterConstructor() {
         // Check if all properties are set correctly during construction
@@ -29,7 +29,7 @@ public class MonsterTest {
     }
 
 
-    // Subclass of Monster that we can instantiate in this package (So it won't interfere the encapsulation of Monster class)
+    /** Subclass of Monster that we can instantiate in this package (So it won't interfere the encapsulation of Monster class)*/
     class TestMonster extends Monster {
         public TestMonster(String theName, int theHealth, int theMinDamage, int theMaxDamage,
                            double theAttackOdds, double theBlockOdds, int theAttackSpeed) {

@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
     M - Room with Multiple Items
     */
 
-// Some issue need to fixed, like the monster, multiple items
+/** Some issue need to fixed, like the monster, multiple items*/
 class RoomTest {
 
     char[][] dungeonLayout;
@@ -27,7 +27,7 @@ class RoomTest {
 
     @BeforeEach
     void setUp() {
-        // This is the dungeon layout which included all the rooms in the dungeon
+        /** This is the dungeon layout which included all the rooms in the dungeon*/
         dungeonLayout = new char[][]{
                 {'X', 'X', 'X', 'X', 'X'},
                 {'X', 'S', 'O', 'O', 'X'},
@@ -36,17 +36,17 @@ class RoomTest {
                 {'X', 'X', 'X', 'X', 'X'}
         };
 
-        // Initialize room at position (1,1) with key 'S'(Entry Room) (2D array starts on row 0 and col 0)
+        /** Initialize room at position (1,1) with key 'S'(Entry Room) (2D array starts on row 0 and col 0)*/
         roomEntry = new Room(dungeonLayout, 1, 1, 'S');
-        // Initialize room at position (3,2) with key 'E'(Exit Room)
+        /** Initialize room at position (3,2) with key 'E'(Exit Room)*/
         roomExit = new Room(dungeonLayout,3,2,'E');
-        // Initialize room at position (3,3) with key 'P'(Room with item)
+        /** Initialize room at position (3,3) with key 'P'(Room with item)*/
         roomWithItem = new Room(dungeonLayout,3,3,'P');
-        // Initialize room at position (1,2) with key 'O'(Empty room)
+        /** Initialize room at position (1,2) with key 'O'(Empty room)*/
         roomEmpty = new Room(dungeonLayout,1,2,'O');
     }
 
-    // Check What EntryRoom contains and the surroundings (North,South,West,East)
+    /** Check What EntryRoom contains and the surroundings (North,South,West,East)*/
     @Test
     void testEntryRoom() {
         System.out.println("Checking EntryRoom north...");
@@ -77,7 +77,7 @@ class RoomTest {
         assertEquals(false,roomEntry.getHasMonster());
     }
 
-    // Check What ExitRoom contains and the surroundings (North,South,West,East)
+    /** Check What ExitRoom contains and the surroundings (North,South,West,East)*/
     @Test
     void testExitRoom() {
         System.out.println("Checking ExitRoom north...");
@@ -108,7 +108,7 @@ class RoomTest {
         assertEquals(false,roomExit.getHasMonster());
     }
 
-    // Test if the RoomWithItem has been initialized correctly
+    /** Test if the RoomWithItem has been initialized correctly*/
     @Test
     void testRoomWithItem () {
         System.out.println("Checking roomWithItem north...");
@@ -135,12 +135,12 @@ class RoomTest {
         System.out.println("Checking roomWithItem pit...");
         assertEquals(false,roomWithItem.getHasPit());
 
-        // When the room has the pillar, there is default setting with a monster in it
+        /** When the room has the pillar, there is default setting with a monster in it*/
         System.out.println("Checking roomWithItem monster...");
         assertEquals(true,roomWithItem.getHasMonster());
     }
 
-    // Test if the EmptyRoom has been initialized correctly
+    /** Test if the EmptyRoom has been initialized correctly*/
     @Test
     void testEmptyRoom() {
         System.out.println("Checking roomEmpty north...");
