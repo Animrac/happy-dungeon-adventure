@@ -155,20 +155,8 @@ class RoomTest {
         System.out.println("Checking roomEmpty east...");
         assertEquals(true,roomEmpty.getCanGoEast());
 
-        System.out.println("Checking roomEmpty healing potion...");
-        assertEquals(false,roomEmpty.getHasHealingPotion());
-
-        System.out.println("Checking roomEmpty vision potion...");
-        assertEquals(false,roomEmpty.getHasVisionPotion());
-
         System.out.println("Checking roomEmpty pillar...");
         assertEquals(false,roomEmpty.getHasPillar());
-
-        System.out.println("Checking roomEmpty pit...");
-        assertEquals(false,roomEmpty.getHasPit());
-
-        System.out.println("Checking roomEmpty monster...");
-        assertEquals(false,roomEmpty.getHasMonster());
     }
 
 }

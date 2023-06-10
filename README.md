@@ -9,8 +9,10 @@ Created by: Carmina Cruz, Anastasia Vilenius, and Hui Wagner.
 What you'll need:
 - This game as an extracted .zip
 - IntelliJ IDEA
-- JavaFX 20
+- JavaFX Library
 - Java SDK 20
+- Jupiter (JUnit 5) Library
+- SQLite Library
 
 Directions:
 1. Open IntelliJ IDEA

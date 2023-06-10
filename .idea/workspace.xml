@@ -9,7 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="edited a few things, controls scene, name character scene, and beginning scene" />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="edited a few things, controls scene, name character scene, and beginning scene">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_base_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_base_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_controls_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_fxml_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_graphics_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_11_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/.idea/libraries/sqlite_jdbc_3_34_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/Dungeon_Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest/RoomTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/GameView.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,37 +100,96 @@
       <recent name="src.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.Main.Main" />
+  <component name="RunManager" selected="JUnit.RoomTest">
+    <configuration name="DungeonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dungeon_Adventure" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-20.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.Main.*" />
+          <option name="PATTERN" value="src.UnitTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.DungeonTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dungeon_Adventure.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Dungeon_Adventure_jar/Dungeon_Adventure.jar" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-20.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2" />
+    <configuration name="HeroTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.HeroTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.InventoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonsterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.MonsterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dungeon_Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="src.UnitTest.RoomTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JAR Application.Dungeon_Adventure.jar" />
+      <item itemvalue="JUnit.DungeonTest" />
+      <item itemvalue="JUnit.HeroTest" />
+      <item itemvalue="JUnit.InventoryTest" />
+      <item itemvalue="JUnit.MonsterTest" />
+      <item itemvalue="JUnit.RoomTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JAR Application.Dungeon_Adventure.jar" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JAR Application.Dungeon_Adventure.jar" />
+        <item itemvalue="JUnit.RoomTest" />
+        <item itemvalue="JUnit.MonsterTest" />
+        <item itemvalue="JUnit.InventoryTest" />
+        <item itemvalue="JUnit.HeroTest" />
+        <item itemvalue="JUnit.DungeonTest" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +244,7 @@
       <workItem from="1685854962902" duration="1909000" />
       <workItem from="1685915184969" duration="2071000" />
       <workItem from="1685989872827" duration="5640000" />
-      <workItem from="1686374454580" duration="283000" />
+      <workItem from="1686374454580" duration="2911000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -494,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686374615207</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="edited a few things, controls scene, name character scene, and beginning scene">
+      <created>1686374749697</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1686374749697</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
