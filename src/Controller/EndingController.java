@@ -23,10 +23,11 @@ public class EndingController {
         model.setInBattle(false);
         model.setMyHero(null); // Restart
         model.getMyInventory().emptyInventory();
+//        DungeonAdventure.resetInstance();
     }
     @FXML
     void quitGame(ActionEvent event) {
-        Scene scene = SceneMaker.createScene("src/View/nameCharacter.fxml");
+        Scene scene = SceneMaker.createScene("src/View/start.fxml");
         Main.getPrimaryStage().setScene(scene);
     }
 

@@ -33,6 +33,8 @@
 -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -52,11 +54,56 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Button>
-            <Text fill="WHITE" layoutX="41.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Click the arrows to move your character throughout the dungeon.&#10;&#10;2. Collect potions to aid you throughout your journey. &#10;You can access these in your INVENTORY by clicking the button on the top right.&#10;&#10;3. Do you know the Four PIllars of Object-Oriented Programming?  ... No? &#10;Well now's your chance to learn! Collect all four of them! &#10;&#10;4. You might die. Make sure to FIGHT if you encounter someone scary!&#10;&#10;5. Once you've found all Four PIllars, find the EXIT and ESCAPE!" wrappingWidth="556.3467864990234">
+            <Text fill="WHITE" layoutX="41.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Click the arrows to move your character throughout the dungeon.&#10;&#10;2. Collect potions to aid you throughout your journey. &#10;You can access these in your INVENTORY by clicking the button on the top right.&#10;&#10;3. Do you know the Four PIllars of Object-Oriented Programming?  ... No? &#10;Well now's your chance to learn! Collect all four of them! &#10;&#10;4. You might die. Make sure to KILL or RUN if you encounter someone scary!&#10;&#10;5. Once you've found all Four PIllars, find the EXIT and ESCAPE!" wrappingWidth="556.3467864990234">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="397.0" layoutY="118.0">
+               <image>
+                  <Image url="@healthBig.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="419.0" layoutY="118.0">
+               <image>
+                  <Image url="@visionBig.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="21.0" layoutX="552.0" layoutY="225.0" rotate="-38.3">
+               <image>
+                  <Image url="@tomnook.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="414.0" layoutY="201.0">
+               <image>
+                  <Image url="@pillarColumn.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="431.0" layoutY="201.0">
+               <image>
+                  <Image url="@pillarColumn.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="448.0" layoutY="200.0">
+               <image>
+                  <Image url="@pillarColumn.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="465.0" layoutY="200.0">
+               <image>
+                  <Image url="@pillarColumn.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="21.0" layoutX="559.0" layoutY="271.0">
+               <image>
+                  <Image url="@tomnook.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="21.0" layoutX="534.0" layoutY="308.0" rotate="28.7">
+               <image>
+                  <Image url="@tomnook.png" />
+               </image>
+            </ImageView>
       </children>
     </AnchorPane>
   </children>

@@ -21,8 +21,8 @@ public class SceneMaker implements Serializable {
 
         try {
             root = (Parent)FXMLLoader.load(SceneMaker.class.getClassLoader().getResource(fxmlFilePath));
-            double scaleFactor = 2.0;
-            root.getTransforms().add(new Scale(scaleFactor, scaleFactor));
+//            double scaleFactor = 2.0;
+//            root.getTransforms().add(new Scale(scaleFactor, scaleFactor));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

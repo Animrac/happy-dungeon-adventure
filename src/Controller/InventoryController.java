@@ -101,11 +101,9 @@ public class InventoryController implements Initializable, StateHandler {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (model.getInBattle()){
-            useVisionButton.setDisable(true);
-        }
 
         checkPotions();
+
         pillarInventory.setText("x" + model.getMyInventory().getPillarCount());
         visionInventory.setText("x" + model.getMyInventory().getVisionPotionCount());
         healthInventory.setText("x" + model.getMyInventory().getHealthPotionCount());
@@ -138,7 +136,7 @@ public class InventoryController implements Initializable, StateHandler {
         else {
             useHealthButton.setDisable(false);
         }
-        if (model.getMyInventory().getVisionPotionCount() == 0){
+        if (model.getMyInventory().getVisionPotionCount() == 0 || model.getInBattle()){
             useVisionButton.setDisable(true);
         }
         else {

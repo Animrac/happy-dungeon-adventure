@@ -35,8 +35,8 @@ public class Main extends Application {
             Scene scene = SceneMaker.createScene("src/View/start.fxml");
 
             primaryStage.setScene(scene);
-            primaryStage.setWidth(INITIAL_WIDTH * SCALE_FACTOR);
-            primaryStage.setHeight(INITIAL_HEIGHT * SCALE_FACTOR);
+//            primaryStage.setWidth(INITIAL_WIDTH * SCALE_FACTOR);
+//            primaryStage.setHeight(INITIAL_HEIGHT * SCALE_FACTOR);
             primaryStage.setResizable(false);
             primaryStage.show();
         }
@@ -69,3 +69,4 @@ public class Main extends Application {
 
 
 }
+

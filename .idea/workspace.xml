@@ -9,7 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar" />
+    <list default="true" id="93a40a7b-1cb4-4d9f-91dd-afa0e49b3cd9" name="Changes" comment="added a way to restart your game, a better character creation screen, fixed some bugs to do with dying and completing the game, made notifications for loading the game and collecting more than one potion and pillar dialogue, changed a few values of the monsters and heros, changed the image of the pillar to an actual pillar">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/monsterFactory.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/monsterFactory.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/controls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/controls.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/pillarColumn.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/pillarColumn.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/tomnook.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dungeon_Adventure/src/View/tomnook.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EndingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EndingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SceneMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SceneMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/controls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/controls.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/nameCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/nameCharacter.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/pillarColumn.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/pillarColumn.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/start.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/tomnook.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/tomnook.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CarminaBranch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,6 +126,8 @@
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JAR Application.Dungeon_Adventure.jar" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.Dungeon_Adventure.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +179,9 @@
       <workItem from="1685776981058" duration="680000" />
       <workItem from="1685817690803" duration="9617000" />
       <workItem from="1685848067893" duration="3567000" />
+      <workItem from="1685854962902" duration="1909000" />
+      <workItem from="1685915184969" duration="2071000" />
+      <workItem from="1685989872827" duration="5640000" />
     </task>
     <task id="LOCAL-00001" summary="Added main class to model &amp; cleaned up Adventurer">
       <created>1683320514942</created>
@@ -498,7 +522,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="CarminaBranch" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>

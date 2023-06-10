@@ -27,12 +27,12 @@ public class Room implements Serializable {
     /**
      * The chance there will be a healing potion in the current Room.
      */
-    private static final int HEALING_POTION_CHANCE = 10;
+    private static final int HEALING_POTION_CHANCE = 30;
 
     /**
      * The chance there will be a vision potion in the current Room.
      */
-    private static final int VISION_POTION_CHANCE = 10;
+    private static final int VISION_POTION_CHANCE = 30;
 
     /**
      * The chance there will be a pit in the current Room.
